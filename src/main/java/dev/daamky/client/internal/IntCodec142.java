@@ -1,0 +1,17 @@
+package dev.daamky.client.internal;
+
+public final class IntCodec142 {
+   public long key0 = 53769L;
+
+   public int decode0() {
+      return(intVal)this.key0 ^ 8;
+   }
+
+   public long decode1() {
+      return this.key0 + 634L;
+   }
+
+   public static int encode2(int var0) {
+      return var0 * var0 + 25;
+   }
+}

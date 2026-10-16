@@ -1,0 +1,62 @@
+{
+  "nursultan_off": {
+    "sounds": [
+      "daamky:nursultan_off"
+    ]
+  },
+  "nursultan_on": {
+    "sounds": [
+      "daamky:nursultan_on"
+    ]
+  },
+  "celestial_off": {
+    "sounds": [
+      "daamky:celestial_off"
+    ]
+  },
+  "celestial_on": {
+    "sounds": [
+      "daamky:celestial_on"
+    ]
+  },
+  "smooth_off": {
+    "sounds": [
+      "daamky:smooth_off"
+    ]
+  },
+  "smooth_on": {
+    "sounds": [
+      "daamky:smooth_on"
+    ]
+  },
+  "akrien_on": {
+    "sounds": [
+      "daamky:akrien_on"
+    ]
+  },
+  "akrien_off": {
+    "sounds": [
+      "daamky:akrien_off"
+    ]
+  },
+  "tech_on": {
+    "sounds": [
+      "daamky:tech_on"
+    ]
+  },
+  "tech_off": {
+    "sounds": [
+      "daamky:tech_off"
+    ]
+  },
+  "blop_on": {
+    "sounds": [
+      "daamky:blop_on"
+    ]
+  },
+  "blop_off": {
+    "sounds": [
+      "daamky:blop_off"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+#version 150
+
+in vec3 Position;
+in vec4 Color;
+in vec2 UV0;
+
+uniform mat4 ModelViewMat;
+uniform mat4 ProjMat;
+
+out vec4 vColor;
+out vec3 vPos;
+out vec2 vTexCoord;
+
+void main() {
+    vColor = Color;
+    vPos = Position;
+    vTexCoord = UV0;
+    gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+}

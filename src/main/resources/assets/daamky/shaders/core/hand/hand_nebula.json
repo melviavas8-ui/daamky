@@ -1,0 +1,18 @@
+{
+  "vertex": "daamky:core/hand/hand_nebula",
+  "fragment": "daamky:core/hand/hand_nebula",
+  "samplers": [
+    { "name": "Sampler0" }
+  ],
+  "uniforms": [
+    { "name": "ModelViewMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "uScreenSize", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] },
+    { "name": "uTime", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "uColor1", "type": "float", "count": 3, "values": [ 0.5, 0.3, 1.0 ] },
+    { "name": "uColor2", "type": "float", "count": 3, "values": [ 1.0, 0.4, 0.8 ] },
+    { "name": "uFlowSpeed", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "uPulse", "type": "float", "count": 1, "values": [ 0.3 ] },
+    { "name": "uIntensity", "type": "float", "count": 1, "values": [ 1.0 ] }
+  ]
+}

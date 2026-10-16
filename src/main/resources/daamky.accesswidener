@@ -1,0 +1,34 @@
+accessWidener	v1	intermediary
+accessible	class	net/minecraft/class_1796$class_1797
+accessible	field	net/minecraft/class_310	field_1752	I
+accessible	field	net/minecraft/class_276	field_1474	I
+accessible	field	net/minecraft/class_337	field_2060	Ljava/util/Map;
+accessible	field	net/minecraft/class_465	field_2779	I
+accessible	field	net/minecraft/class_465	field_2792	I
+accessible	field	net/minecraft/class_746	field_3919	Z
+accessible	field	net/minecraft/class_636	field_3716	I
+accessible	field	net/minecraft/class_638	field_37951	Lnet/minecraft/class_7202;
+accessible	field	net/minecraft/class_1309	field_6228	I
+accessible	field	net/minecraft/class_1309	field_6273	I
+accessible	field	net/minecraft/class_1796	field_8024	Ljava/util/Map;
+accessible	field	net/minecraft/class_1796	field_8025	I
+accessible	field	net/minecraft/class_10182	comp_3151	F
+accessible	field	net/minecraft/class_10182	comp_3150	F
+accessible	field	net/minecraft/class_1676	field_22478	Ljava/util/UUID;
+accessible	field	net/minecraft/class_2828	field_12885	F
+accessible	field	net/minecraft/class_2828	field_12887	F
+accessible	method	net/minecraft/class_310	method_1536	()Z
+accessible	method	net/minecraft/class_310	method_1583	()V
+accessible	method	net/minecraft/class_743	method_40218	(ZZ)F
+accessible	method	net/minecraft/class_742	method_3123	()Lnet/minecraft/class_640;
+accessible	method	net/minecraft/class_640	method_52803	(Lcom/mojang/authlib/GameProfile;)Ljava/util/function/Supplier;
+accessible	method	net/minecraft/class_757	method_3196	(Lnet/minecraft/class_4184;FZ)F
+accessible	method	net/minecraft/class_1297	method_18795	(Lnet/minecraft/class_243;FF)Lnet/minecraft/class_243;
+mutable	field	net/minecraft/class_10182	comp_3151	F
+mutable	field	net/minecraft/class_10182	comp_3150	F
+mutable	field	net/minecraft/class_243	field_1352	D
+mutable	field	net/minecraft/class_243	field_1351	D
+mutable	field	net/minecraft/class_243	field_1350	D
+accessible	field	net/minecraft/class_746	field_3920	Z
+accessible	class	net/minecraft/class_1921$class_4688
+accessible	class	net/minecraft/class_4668$class_4683

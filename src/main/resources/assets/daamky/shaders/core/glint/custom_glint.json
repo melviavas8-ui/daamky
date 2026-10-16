@@ -1,0 +1,21 @@
+{
+  "vertex": "daamky:core/glint/custom_glint",
+  "fragment": "daamky:core/glint/custom_glint",
+  "samplers": [
+    { "name": "Sampler0" }
+  ],
+  "uniforms": [
+    { "name": "ModelViewMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "TextureMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+    { "name": "uGlintMode", "type": "int", "count": 1, "values": [ 0 ] },
+    { "name": "uSolidGlint", "type": "int", "count": 1, "values": [ 0 ] },
+    { "name": "uScreenSize", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] },
+    { "name": "uTime", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "uColor1", "type": "float", "count": 3, "values": [ 0.0, 0.0, 0.0 ] },
+    { "name": "uColor2", "type": "float", "count": 3, "values": [ 0.0, 0.0, 0.0 ] },
+    { "name": "uFlowSpeed", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "uPulse", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "uIntensity", "type": "float", "count": 1, "values": [ 0.0 ] }
+  ]
+}
