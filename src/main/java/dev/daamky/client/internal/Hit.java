@@ -139,7 +139,7 @@ public class Hit extends Particles.BaseSettings {
             if (!var12.isEmpty()) {
                boolean var13 = false;
 
-               for (Hit.Particle var15 : var12) {
+               for (Hit.Particle var15 : (Iterable<Hit.Particle>)(Iterable)var12) {
                   Vec3d var16 = var15.initInit(var15.getFloat(), var15.getY(), var15.getZ(), var15.getX(), var15.getFloat2(), var15.getFloat3());
                   double var17 = var16.x * var16.x + var16.y * var16.y + var16.z * var16.z;
                   if (var17 <= 4096.0) {
@@ -153,7 +153,7 @@ public class Hit extends Particles.BaseSettings {
                   RenderSystem.setShaderTexture(0, var11);
                   BufferBuilder var33 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
 
-                  for (Hit.Particle var35 : var12) {
+                  for (Hit.Particle var35 : (Iterable<Hit.Particle>)(Iterable)var12) {
                      Vec3d var36 = var35.initInit(var35.getFloat(), var35.getY(), var35.getZ(), var35.getX(), var35.getFloat2(), var35.getFloat3());
                      double var18 = var36.x * var36.x + var36.y * var36.y + var36.z * var36.z;
                      if (!(var18 > 4096.0)) {

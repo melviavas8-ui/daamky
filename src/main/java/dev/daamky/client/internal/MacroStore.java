@@ -86,7 +86,7 @@ public final class MacroStore implements MinecraftAccess {
    }
 
    public MacroEngine.Macro getMacro(String name) {
-      return name == null ? null : this.list.stream().filter(MacroStore::lambda$getMacro$0).findFirst().orElse(null);
+      return name == null ? null : this.list.stream().filter((p0) -> MacroStore.lambda$getMacro$0(name, p0)).findFirst().orElse(null);
    }
 
    public void handleAdd(MacroEngine.Macro macro) {
@@ -95,12 +95,12 @@ public final class MacroStore implements MinecraftAccess {
    }
 
    public void removeMacro(String name) {
-      this.list.removeIf(MacroStore::lambda$removeMacro$1);
+      this.list.removeIf((p0) -> MacroStore.lambda$removeMacro$1(name, p0));
       this.closeFile();
    }
 
    public boolean hasMacro(String name) {
-      return this.list.stream().anyMatch(MacroStore::lambda$hasMacro$2);
+      return this.list.stream().anyMatch((p0) -> MacroStore.lambda$hasMacro$2(name, p0));
    }
 
    public void initRunning(MacroEngine.Macro macro) {
@@ -218,7 +218,7 @@ public final class MacroStore implements MinecraftAccess {
                }).getType();
                List var4 = (List)GSON.fromJson(var2, var3);
                if (var4 != null && !var4.isEmpty()) {
-                  for (MacroStore.OldMacro var6 : var4) {
+                  for (MacroStore.OldMacro var6 : (Iterable<MacroStore.OldMacro>)(Iterable)var4) {
                      MacroEngine.Macro var7 = new MacroEngine.Macro(var6.mocukxpq, var6.mehexmc);
                      boolean var8 = var6.mhsydf.startsWith("/");
                      MacroEngine.ActionType var9 = var8 ? MacroEngine.ActionType.USE_COMMAND : MacroEngine.ActionType.SEND_MESSAGE;

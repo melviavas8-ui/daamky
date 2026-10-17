@@ -338,7 +338,7 @@ public class ItemsHelper implements MinecraftAccess {
          float var9 = 2.0F * s;
          float var10 = 0.0F;
 
-         for (PotionEntryHelper.PotionEntry var12 : var6) {
+         for (PotionEntryHelper.PotionEntry var12 : (Iterable<PotionEntryHelper.PotionEntry>)(Iterable)var6) {
             float var13 = FontBootstrap.clientFont10.computeFloat(var12.text(), var7);
             if (var13 > var10) {
                var10 = var13;
@@ -350,7 +350,7 @@ public class ItemsHelper implements MinecraftAccess {
          float var19 = cx;
          float var14 = y + var9;
 
-         for (PotionEntryHelper.PotionEntry var16 : var6) {
+         for (PotionEntryHelper.PotionEntry var16 : (Iterable<PotionEntryHelper.PotionEntry>)(Iterable)var6) {
             FontBootstrap.clientFont6.handleColor(ms, var16.text(), var19 + 0.5F * s, var14 + 0.5F * s, var7, Color.BLACK);
             FontBootstrap.clientFont6.handleColor(ms, var16.text(), var19, var14, var7, this.mod.textColor.getValue());
             var14 += var7 + var8;

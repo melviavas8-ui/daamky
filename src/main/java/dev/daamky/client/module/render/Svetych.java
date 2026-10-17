@@ -245,7 +245,7 @@ public class Svetych extends Module {
          this.setNow(var2);
          double var4 = (double)(this.range.getValue() * this.range.getValue());
          Vec3d var6 = mc.player.getPos();
-         this.list.removeIf(Svetych::lambda$onEvent$0);
+         this.list.removeIf((p0) -> Svetych.lambda$onEvent$0(var6, var4, p0));
          int var7 = Math.min(this.amount.getValue().intValue(), this.intVal);
          if (this.list.size() > var7) {
             this.list.subList(0, this.list.size() - var7).clear();
@@ -355,6 +355,10 @@ public class Svetych extends Module {
          return Math.sin((double)now / 400.0 + (double)this.floatVal) * 0.2;
       }
 
+
+      @Override
+      public void handleRenderContext(Svetych.RenderContext var1) {
+      } // STUB (render body lost by decompiler)
    }
 
    public static class CubeParticle extends Svetych.AbstractParticle {
@@ -366,6 +370,10 @@ public class Svetych extends Module {
          return (float)(now % 9000L) / 9000.0F * 360.0F;
       }
 
+
+      @Override
+      public void handleRenderContext(Svetych.RenderContext var1) {
+      } // STUB (render body lost by decompiler)
    }
 
    public static class FireflyParticle extends Svetych.AbstractParticle {
@@ -384,6 +392,10 @@ public class Svetych extends Module {
          this.double3 = this.double2 + (Math.random() - 0.5) * 3.0;
       }
 
+
+      @Override
+      public void handleRenderContext(Svetych.RenderContext var1) {
+      } // STUB (render body lost by decompiler)
    }
 
    public static class LanternParticle extends Svetych.AbstractParticle {
@@ -398,6 +410,10 @@ public class Svetych extends Module {
          m.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)Math.cos((double)now / 500.0 + (double)this.floatVal) * 8.0F));
       }
 
+
+      @Override
+      public void handleRenderContext(Svetych.RenderContext var1) {
+      } // STUB (render body lost by decompiler)
    }
 
    private static class ParticleFactory {

@@ -77,7 +77,7 @@ public class Render3DEvent3 extends TargetRenderer {
             float var21 = this.floatVal + var20 * event.getPartialTicks();
             long var22 = System.currentTimeMillis();
             long var24 = 450L;
-            this.list.removeIf(Render3DEvent3::lambda$onRender3D$0);
+            this.list.removeIf((p0) -> Render3DEvent3.lambda$onRender3D$0(var24, var22, p0));
             double[] var26 = new double[var16];
             double[] var27 = new double[var16];
             double[] var28 = new double[var16];

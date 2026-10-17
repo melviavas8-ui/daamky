@@ -58,7 +58,7 @@ public class HealthResolver extends Module {
                      )
                    {
                      ReadableScoreboardScore var5 = var2.getScoreboard().getScore(var2, (ScoreboardObjective)var3);
-                     MutableText var6 = ReadableScoreboardScore.getFormattedScore(var5, var3.method_55380(StyledNumberFormat.EMPTY));
+                     MutableText var6 = ReadableScoreboardScore.getFormattedScore(var5, var3.getNumberFormatOr(StyledNumberFormat.EMPTY));
                      var4 = var6.getString();
                   }
 

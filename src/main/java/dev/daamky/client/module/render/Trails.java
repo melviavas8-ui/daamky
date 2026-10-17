@@ -588,7 +588,7 @@ public class Trails extends Module {
             BufferBuilder var111 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
             boolean var112 = false;
 
-            for (Trails.TrailParticle var114 : var109) {
+            for (Trails.TrailParticle var114 : (Iterable<Trails.TrailParticle>)(Iterable)var109) {
                Vec3d var115 = var114.initInit(var114.getFloat(), var114.getY(), var114.getZ(), var114.getX(), var114.getFloat2(), var114.getFloat3());
                double var116 = var115.x * var115.x + var115.y * var115.y + var115.z * var115.z;
                if (!(var116 > 4096.0)) {

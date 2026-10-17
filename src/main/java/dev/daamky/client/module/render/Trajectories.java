@@ -659,7 +659,7 @@ public class Trajectories extends Module {
       public int intVal = 0;
       public String string = "Landing";
       public boolean muhoj = false;
-      public ItemStack class_1799 = class_1799.EMPTY;
+      public ItemStack class_1799 = ItemStack.EMPTY;
 
       public PathInfo() {
       }

@@ -156,7 +156,7 @@ public class AutoExplosion extends Module {
          }
       }
 
-      if (!entity.method_5805()) {
+      if (!entity.isAlive()) {
          this.entity = null;
          this.class_2338 = null;
       }
@@ -200,7 +200,7 @@ public class AutoExplosion extends Module {
    }
 
    public boolean computeEnabled(Entity entity) {
-      if (entity != null && this.class_2338 != null && entity.method_5805() && mc.player != null) {
+      if (entity != null && this.class_2338 != null && entity.isAlive() && mc.player != null) {
          return this.delayedSwapBack.isEnabled("No suicide") && mc.player.getY() < (double)this.class_2338.getY()
             ? false
             : mc.player.getEyePos().distanceTo(RotationMath.initInit(entity)) < (double)this.distance.getValue().floatValue();

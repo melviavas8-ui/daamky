@@ -750,7 +750,7 @@ public class AttackAura extends Module {
 
    public Vec3d initGaussian(LivingEntity target) {
       Vec3d var2 = mc.player.getEyePos();
-      Box var3 = target.method_5829();
+      Box var3 = target.getBoundingBox();
       if (!var3.contains(var2) && (mc.player == null || !var3.intersects(mc.player.getBoundingBox()))) {
          String var4 = this.noAttackInContainer.isEnabled("Ignore walls") ? this.grim.getValue() : "Off";
          Vec3d var5 = OffHelper.initInit(target, true, var4);
@@ -770,7 +770,7 @@ public class AttackAura extends Module {
             MathHelper.clamp(var13.z, var3.minZ + var14, var3.maxZ - var14)
          );
       } else {
-         return new Vec3d(target.method_23317(), target.method_23318() + (double)target.method_17682() * 0.45, target.method_23321());
+         return new Vec3d(target.getX(), target.getY() + (double)target.getHeight() * 0.45, target.getZ());
       }
    }
 

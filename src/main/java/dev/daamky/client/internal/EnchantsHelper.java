@@ -92,7 +92,7 @@ public class EnchantsHelper {
          float var21 = 2.0F * scale;
          float var22 = 0.0F;
 
-         for (ItemStack var25 : var6) {
+         for (ItemStack var25 : (Iterable<ItemStack>)(Iterable)var6) {
             float var14 = FontBootstrap.clientFont10.computeFloat(var25.getName().getString(), var19);
             if (var14 > var22) {
                var22 = var14;
@@ -111,7 +111,7 @@ public class EnchantsHelper {
 
          float var16 = var15 + var21;
 
-         for (ItemStack var18 : var6) {
+         for (ItemStack var18 : (Iterable<ItemStack>)(Iterable)var6) {
             FontBootstrap.clientFont10.handleColor(var7, var18.getName().getString(), var27 + var21, var16, var19, new Color(255, 255, 255));
             var16 += var19 + var20;
          }

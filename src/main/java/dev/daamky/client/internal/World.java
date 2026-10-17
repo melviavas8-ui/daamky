@@ -98,7 +98,7 @@ public class World extends Particles.BaseSettings {
             BufferBuilder var11 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
             boolean var12 = false;
 
-            for (World.Particle var14 : var10) {
+            for (World.Particle var14 : (Iterable<World.Particle>)(Iterable)var10) {
                Vec3d var15 = var14.initInit(var14.getFloat(), var14.getY(), var14.getZ(), var14.getX(), var14.getFloat2(), var14.getFloat3());
                double var16 = var15.x * var15.x + var15.y * var15.y + var15.z * var15.z;
                if (!(var16 > 4096.0)) {

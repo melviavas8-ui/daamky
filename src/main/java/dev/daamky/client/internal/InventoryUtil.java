@@ -183,7 +183,7 @@ public final class InventoryUtil implements MinecraftAccess {
          VecRotationHelper var1 = VecRotationHelper.getInstance();
          float var2 = var1.getLast() != null ? var1.getCurrent().getYaw() : mc.player.getYaw();
          float var3 = var1.getLast() != null ? var1.getCurrent().getPitch() : mc.player.getPitch();
-         PacketHelper.closeClose(InventoryUtil::lambda$useItem$0);
+         PacketHelper.closeClose((p0) -> InventoryUtil.lambda$useItem$0(hand, var3, var2, p0));
          mc.player.swingHand(hand);
       }
    }
@@ -413,7 +413,7 @@ public final class InventoryUtil implements MinecraftAccess {
             this.flag = false;
          } else if (!this.flag && MinecraftAccess.mc.currentScreen == null && !MinecraftAccess.mc.player.getItemCooldownManager().isCoolingDown(this.item.getDefaultStack())) {
             if (isLegit) {
-               this.runnable = this::lambda$handleUse$1;
+               this.runnable = () -> this.lambda$handleUse$1(0);
             } else {
                this.runItem();
             }
@@ -492,7 +492,7 @@ public final class InventoryUtil implements MinecraftAccess {
                int var2 = InventoryUtil.getInt();
                if (var2 != -1 && this.mxaeo != -1) {
                   this.int3 = var2;
-                  Runnable var3 = this::lambda$executeLegitMode$2;
+                  Runnable var3 = () -> this.lambda$executeLegitMode$2(var2);
                   if (EntryHelper.check()) {
                      EntryHelper.handleLong(10L, var3);
                   } else {

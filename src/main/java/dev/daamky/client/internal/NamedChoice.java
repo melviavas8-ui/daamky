@@ -34,7 +34,7 @@ public abstract class NamedChoice extends Configurable implements ModeSetting.Na
    public static <T extends ModeSetting.NamedChoice> T getChoiceByName(String value, T... choices) {
       if (choices != null && choices.length != 0) {
          ModeSetting.NamedChoice var2 = choices[0];
-         return (T)Arrays.stream(choices).filter(NamedChoice::lambda$getChoiceByName$1).findFirst().orElse(var2);
+         return (T)Arrays.stream(choices).filter((p0) -> NamedChoice.lambda$getChoiceByName$1(value, p0)).findFirst().orElse(var2);
       } else {
          return null;
       }

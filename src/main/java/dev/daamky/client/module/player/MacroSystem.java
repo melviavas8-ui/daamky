@@ -53,7 +53,7 @@ public class MacroSystem extends Module {
       if (mc.player != null && mc.currentScreen == null) {
          if (event.action() == 1) {
             int var2 = event.key();
-            manager.getList().stream().filter(MacroSystem::lambda$onEvent$0).findFirst().ifPresent(manager::initRunning);
+            manager.getList().stream().filter((p0) -> MacroSystem.lambda$onEvent$0(var2, manager, p0)).findFirst().ifPresent(manager::initRunning);
          }
       }
    }

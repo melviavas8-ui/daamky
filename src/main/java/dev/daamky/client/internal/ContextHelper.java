@@ -40,7 +40,7 @@ public final class ContextHelper implements MinecraftAccess {
    }
 
    public static class Context {
-      public Vec3d class_243 = class_243.ZERO;
+      public Vec3d class_243 = Vec3d.ZERO;
       public final Quaternionf quaternionf = new Quaternionf();
       public float maoaj;
       public boolean flag;

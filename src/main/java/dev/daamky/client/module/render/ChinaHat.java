@@ -497,7 +497,7 @@ public class ChinaHat extends Module {
    }
 
    public static class HatPhysics {
-      public Vec3d class_243 = class_243.ZERO;
+      public Vec3d class_243 = Vec3d.ZERO;
       public Vec3d class_2432 = class_243.ZERO;
    }
 }

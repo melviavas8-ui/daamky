@@ -319,7 +319,7 @@ public class Boxes extends Module {
                float var42 = this.fillAlpha.getValue();
                BufferBuilder var46 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_COLOR);
 
-               for (Boxes.RenderEntityData var55 : var8) {
+               for (Boxes.RenderEntityData var55 : (Iterable<Boxes.RenderEntityData>)(Iterable)var8) {
                   int var17 = (int)((float)var55.color.getAlpha() * var42);
                   this.handleVal2(
                      var46,
@@ -350,7 +350,7 @@ public class Boxes extends Module {
                float var43 = this.cornerSize.getValue();
                BufferBuilder var47 = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
 
-               for (Boxes.RenderEntityData var56 : var8) {
+               for (Boxes.RenderEntityData var56 : (Iterable<Boxes.RenderEntityData>)(Iterable)var8) {
                   int var58 = var56.color.getRed();
                   int var60 = var56.color.getGreen();
                   int var19 = var56.color.getBlue();
@@ -374,7 +374,7 @@ public class Boxes extends Module {
             if (var6) {
                BufferBuilder var44 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_COLOR);
 
-               for (Boxes.RenderEntityData var54 : var8) {
+               for (Boxes.RenderEntityData var54 : (Iterable<Boxes.RenderEntityData>)(Iterable)var8) {
                   float var57 = 0.04F;
                   float var59 = 0.08F;
                   float var61 = var54.minX - var59 - var57;

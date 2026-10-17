@@ -179,7 +179,7 @@ public class Comets extends Module {
       if (mc.player != null && mc.world != null) {
          double var2 = (double)this.range.getValue().floatValue();
          Vec3d var4 = mc.player.getPos();
-         this.list.removeIf(Comets::lambda$onEvent$0);
+         this.list.removeIf((p0) -> Comets.lambda$onEvent$0(var4, var2, p0));
          int var5 = this.amount.getValue().intValue();
 
          while (this.list.size() > var5) {
