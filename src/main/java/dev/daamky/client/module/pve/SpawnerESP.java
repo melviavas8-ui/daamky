@@ -83,7 +83,7 @@ public class SpawnerESP extends Module {
                int var6 = var4.getY();
                int var7 = var4.getZ();
                ClientWorld var8 = mc.world;
-               this.thread = new Thread(this::lambda$onMotion$4, "daamky-spawneresp-scan");
+               this.thread = new Thread(() -> this.lambda$onMotion$4(var8, var3, var6, var5, var7), "daamky-spawneresp-scan");
                this.thread.setDaemon(true);
                this.thread.start();
             }

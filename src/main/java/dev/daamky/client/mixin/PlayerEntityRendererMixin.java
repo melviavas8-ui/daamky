@@ -40,8 +40,8 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
             ScoreboardObjective var7 = var6.getObjectiveForSlot(ScoreboardDisplaySlot.BELOW_NAME);
             if (var7 != null) {
                long var8 = System.currentTimeMillis();
-               if (var8 - longVal >= 1000L) {
-                  longVal = var8;
+               if (var8 - timeStamp >= 1000L) {
+                  timeStamp = var8;
 
                   for (PlayerEntity var11 : var5.world.getPlayers()) {
                      if (var11 != null && var11 != var5.player) {

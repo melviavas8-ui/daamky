@@ -26,7 +26,7 @@ public final class OffHelper implements MinecraftAccess {
          boolean var3 = !wallMode.equals("Off");
          long var4 = System.currentTimeMillis();
          int var6 = entity.getId();
-         if (class_2432 != null && var4 < longVal && intVal == var6) {
+         if (class_2432 != null && var4 < timeStamp && intVal == var6) {
             return class_2432;
          } else {
             Box var7 = entity.getBoundingBox();
@@ -54,7 +54,7 @@ public final class OffHelper implements MinecraftAccess {
             if (mc.world.raycast(var28).getType() == Type.MISS) {
                class_243 = var27;
                class_2432 = var27;
-               longVal = var4 + 80L;
+               timeStamp = var4 + 80L;
                intVal = var6;
                return var27;
             } else {
@@ -99,7 +99,7 @@ public final class OffHelper implements MinecraftAccess {
 
                class_243 = var30;
                class_2432 = var30;
-               longVal = var4 + 80L;
+               timeStamp = var4 + 80L;
                intVal = var6;
                return var30;
             }
@@ -193,7 +193,7 @@ public final class OffHelper implements MinecraftAccess {
 
    public static void run() {
       class_2432 = null;
-      longVal = 0L;
+      timeStamp = 0L;
       intVal = -1;
       class_243 = null;
    }

@@ -77,7 +77,7 @@ public class FontLoader {
             }
 
             AbstractTexture var13 = MinecraftClient.getInstance().getTextureManager().getTexture(this.atlasIdentifier);
-            RenderSystem.recordRenderCall(FontLoader::lambda$load$0);
+            RenderSystem.recordRenderCall(() -> FontLoader.lambda$load$0(var13));
             float var14 = var1.getAtlas().getWidth();
             float var15 = var1.getAtlas().getHeight();
             String var6 = var1.getAtlas().getYOrigin();

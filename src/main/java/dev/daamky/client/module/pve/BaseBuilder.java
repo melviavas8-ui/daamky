@@ -29,4 +29,8 @@ public class BaseBuilder extends Module {
    public void onDisable() {
       super.onDisable();
    }
+
+   @Override
+   public void onEvent() {
+   } // STUB
 }

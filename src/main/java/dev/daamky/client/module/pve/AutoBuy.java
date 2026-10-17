@@ -354,7 +354,7 @@ public class AutoBuy extends Module {
                   }
                }
 
-               return var2.getScoreboardEntries(var3).stream().map(AutoBuy::lambda$getMoneyLine$5).filter(AutoBuy::lambda$getMoneyLine$6).findFirst().orElse(null);
+               return var2.getScoreboardEntries(var3).stream().map((p0) -> AutoBuy.lambda$getMoneyLine$5(var2, p0)).filter(AutoBuy::lambda$getMoneyLine$6).findFirst().orElse(null);
             }
          }
       }

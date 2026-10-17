@@ -103,8 +103,8 @@ public class Optimization extends Module {
 
    public static void cleanRam() {
       long var0 = System.currentTimeMillis();
-      if (var0 - longVal >= 60000L) {
-         longVal = var0;
+      if (var0 - timeStamp >= 60000L) {
+         timeStamp = var0;
          Thread var2 = new Thread(Optimization::lambda$cleanRam$5, "Daamky-RAM-Cleaner");
          var2.setDaemon(true);
          var2.start();

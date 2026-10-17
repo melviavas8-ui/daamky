@@ -30,9 +30,9 @@ public abstract class LevelLoadingScreenMixin {
       cancellable = true
    )
    public void onRender(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) {
-      if (System.currentTimeMillis() - longVal > 5000L) {
+      if (System.currentTimeMillis() - timeStamp > 5000L) {
          string = stringList[new Random().nextInt(stringList.length)];
-         longVal = System.currentTimeMillis();
+         timeStamp = System.currentTimeMillis();
       }
 
       LevelLoadingScreen var6 = (LevelLoadingScreen)this;

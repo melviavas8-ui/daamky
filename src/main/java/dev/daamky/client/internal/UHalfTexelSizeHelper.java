@@ -65,8 +65,8 @@ public final class UHalfTexelSizeHelper {
       MinecraftClient var1 = MinecraftClient.getInstance();
       if (var1 != null && var1.player != null && var1.world != null && !var1.options.hudHidden) {
          long var2 = System.currentTimeMillis();
-         if (var2 - longVal > 200L) {
-            longVal = var2;
+         if (var2 - timeStamp > 200L) {
+            timeStamp = var2;
             muwelap = false;
             if (var1.currentScreen != null) {
                muwelap = true;

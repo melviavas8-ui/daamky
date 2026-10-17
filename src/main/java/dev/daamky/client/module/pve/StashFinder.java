@@ -106,7 +106,7 @@ public class StashFinder extends Module {
                   int var8 = var6.getY();
                   int var9 = var6.getZ();
                   ClientWorld var10 = mc.world;
-                  this.thread = new Thread(this::lambda$onScanTick$3, "daamky-stashfinder-scan");
+                  this.thread = new Thread(() -> this.lambda$onScanTick$3(var10, var5, var7, var9, var3, var4, var8), "daamky-stashfinder-scan");
                   this.thread.setDaemon(true);
                   this.thread.start();
                }
@@ -170,7 +170,7 @@ public class StashFinder extends Module {
 
                      for (int var23 = 0; var23 < var20.length; var23++) {
                         ChunkSection var25 = var20[var23];
-                        if (var25 != null && !var25.isEmpty() && var25.hasAny(StashFinder::lambda$onScanTick$2)) {
+                        if (var25 != null && !var25.isEmpty() && var25.hasAny((p0) -> StashFinder.lambda$onScanTick$2(wantObs, wantCry, p0))) {
                            int var26 = var16 + var23 << 4;
 
                            for (int var27 = 0; var27 < 16; var27++) {

@@ -45,7 +45,7 @@ public class MenuAnimation {
          if (var1 == null) {
             run();
          } else {
-            longVal = System.currentTimeMillis();
+            timeStamp = System.currentTimeMillis();
             mevjotv = false;
             flag = false;
             double var2 = Math.toRadians((double)var1.getYaw());
@@ -76,7 +76,7 @@ public class MenuAnimation {
    }
 
    public static float getCurrent() {
-      return longVal == 0L ? 1.0F : Math.min(1.0F, Math.max(0.0F, (float)(System.currentTimeMillis() - longVal) / 1600.0F));
+      return timeStamp == 0L ? 1.0F : Math.min(1.0F, Math.max(0.0F, (float)(System.currentTimeMillis() - timeStamp) / 1600.0F));
    }
 
    public static void initInit(int fbW, int fbH) {

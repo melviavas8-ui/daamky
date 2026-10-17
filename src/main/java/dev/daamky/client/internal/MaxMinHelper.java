@@ -42,9 +42,9 @@ public final class MaxMinHelper implements RenderAccess {
       }
 
       long var3 = System.currentTimeMillis();
-      if ((double)(var3 - longVal) > 250.0 + Math.random() * 300.0) {
+      if ((double)(var3 - timeStamp) > 250.0 + Math.random() * 300.0) {
          moxucu[0] = computeCurrent(min, max);
-         longVal = var3;
+         timeStamp = var3;
       }
 
       floats[0] = floats[0] + (moxucu[0] - floats[0]) * smoothness;

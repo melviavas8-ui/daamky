@@ -359,6 +359,10 @@ public class Svetych extends Module {
       @Override
       public void handleRenderContext(Svetych.RenderContext var1) {
       } // STUB (render body lost by decompiler)
+
+      @Override
+      public void handleNow(long var1) {
+      } // STUB (body lost by decompiler)
    }
 
    public static class CubeParticle extends Svetych.AbstractParticle {
@@ -374,6 +378,10 @@ public class Svetych extends Module {
       @Override
       public void handleRenderContext(Svetych.RenderContext var1) {
       } // STUB (render body lost by decompiler)
+
+      @Override
+      public void handleNow(long var1) {
+      } // STUB (body lost by decompiler)
    }
 
    public static class FireflyParticle extends Svetych.AbstractParticle {
@@ -396,6 +404,10 @@ public class Svetych extends Module {
       @Override
       public void handleRenderContext(Svetych.RenderContext var1) {
       } // STUB (render body lost by decompiler)
+
+      @Override
+      public void handleNow(long var1) {
+      } // STUB (body lost by decompiler)
    }
 
    public static class LanternParticle extends Svetych.AbstractParticle {
@@ -414,6 +426,10 @@ public class Svetych extends Module {
       @Override
       public void handleRenderContext(Svetych.RenderContext var1) {
       } // STUB (render body lost by decompiler)
+
+      @Override
+      public void handleNow(long var1) {
+      } // STUB (body lost by decompiler)
    }
 
    private static class ParticleFactory {

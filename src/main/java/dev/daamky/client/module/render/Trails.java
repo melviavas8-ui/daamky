@@ -565,7 +565,7 @@ public class Trails extends Module {
          }
 
          Render.renderEffect.handleBlend(matrixStack);
-         Map var100 = this.map;
+         Map<Identifier, List<Trails.TrailParticle>> var100 = this.map;
          var100.values().forEach(List::clear);
 
          for (Trails.TrailParticle var104 : this.list) {

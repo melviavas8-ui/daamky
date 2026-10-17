@@ -25,8 +25,8 @@ public class Vanilla2 extends MotionEventData {
    public void runSpeed() {
       KeyBindingUtil.handleDouble((double)this.speedH.getValue().floatValue());
       float var1 = this.speedV.getValue();
-      mc.player.getVelocity().y = mc.options.jumpKey.isPressed()
+      mc.player.setVelocity(mc.player.getVelocity().x, mc.options.jumpKey.isPressed()
          ? (double)var1
-         : (mc.options.sneakKey.isPressed() ? (double)(-var1) : 0.0);
+         : (mc.options.sneakKey.isPressed() ? (double)(-var1) : 0.0), mc.player.getVelocity().z);
    }
 }

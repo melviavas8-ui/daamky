@@ -126,7 +126,7 @@ public class StorageESP extends Module {
                   int var12 = var10.getY();
                   int var13 = var10.getZ();
                   ClientWorld var14 = mc.world;
-                  this.thread = new Thread(this::lambda$onScanTick$4, "daamky-storageesp-scan");
+                  this.thread = new Thread(() -> this.lambda$onScanTick$4(var14, var9, var11, var13, var3, var4, var5, var6, var7, var8, var12), "daamky-storageesp-scan");
                   this.thread.setDaemon(true);
                   this.thread.start();
                }
@@ -200,7 +200,7 @@ public class StorageESP extends Module {
 
                      for (int var26 = 0; var26 < var23.length; var26++) {
                         ChunkSection var28 = var23[var26];
-                        if (var28 != null && !var28.isEmpty() && var28.hasAny(StorageESP::lambda$onScanTick$3)) {
+                        if (var28 != null && !var28.isEmpty() && var28.hasAny((p0) -> StorageESP.lambda$onScanTick$3(tChest, tEnder, tShulker, tBarrel, tFurnace, tHopper, p0))) {
                            int var29 = var19 + var26 << 4;
 
                            for (int var30 = 0; var30 < 16; var30++) {

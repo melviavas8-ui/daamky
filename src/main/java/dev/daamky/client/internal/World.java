@@ -73,7 +73,7 @@ public class World extends Particles.BaseSettings {
          }
 
          Render.renderEffect.handleBlend(var2);
-         Map var25 = this.mafol;
+         Map<Identifier, List<World.Particle>> var25 = this.mafol;
          var25.values().forEach(List::clear);
 
          for (World.Particle var6 : this.list) {

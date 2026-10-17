@@ -219,6 +219,11 @@ public class Ambience extends Module {
          this.name = name;
       }
 
+      @Override
+      public String getName() {
+         return this.name;
+      }
+
       public static Ambience.WorldTime[] $values() {
          return new Ambience.WorldTime[]{NO_CHANGE, DAWN, DAY, NOON, DUSK, NIGHT, MID_NIGHT};
       }

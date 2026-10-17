@@ -18,7 +18,7 @@ import org.joml.Matrix4f;
 public class Render3DEvent2 extends TargetRenderer {
    public float floatVal = 0.0F;
    public float float2 = 0.0F;
-   public static final int intVal = 32;
+   public static int intVal = 32;
    public final double[] doubles = new double[32];
    public final float[] floats = new float[32];
    public final float[] floats2 = new float[32];

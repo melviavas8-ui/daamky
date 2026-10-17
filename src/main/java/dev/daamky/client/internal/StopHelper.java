@@ -23,7 +23,7 @@ public final class StopHelper {
          this.intVal = 0;
          this.class_243 = null;
          if (class_310.player.networkHandler != null) {
-            class_310.player.networkHandler.sendChatMessage("#goto " + goal.method_10263() + " " + goal.method_10264() + " " + goal.method_10260());
+            class_310.player.networkHandler.sendChatMessage("#goto " + goal.getX() + " " + goal.getY() + " " + goal.getZ());
          }
       }
    }

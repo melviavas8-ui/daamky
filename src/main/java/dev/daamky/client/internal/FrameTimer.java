@@ -23,9 +23,9 @@ public class FrameTimer {
                var5 = computeGlfw(var3, var2.getWindow().getWidth(), var2.getWindow().getHeight());
             }
 
-            if (var5 != longVal) {
+            if (var5 != timeStamp) {
                intVal = computeGlfw(var5);
-               longVal = var5;
+               timeStamp = var5;
             }
          }
       }

@@ -34,7 +34,7 @@ public abstract class TargetRenderer implements MinecraftAccess {
    public static void handleOut(Entity target) {
       if (target != null && target.isAlive()) {
          class_12972 = target;
-         longVal = System.currentTimeMillis();
+         timeStamp = System.currentTimeMillis();
          class_1297 = target;
          mbacy = target.getX();
          doubleVal = target.getY();

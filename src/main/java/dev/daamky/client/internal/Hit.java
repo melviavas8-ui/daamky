@@ -116,7 +116,7 @@ public class Hit extends Particles.BaseSettings {
          }
 
          Render.renderEffect.handleBlend(var3);
-         Map var28 = this.map;
+         Map<Identifier, List<Hit.Particle>> var28 = this.map;
          var28.values().forEach(List::clear);
 
          for (Hit.Particle var8 : this.list) {
