@@ -639,8 +639,9 @@ public final class GlyphMap {
          return this.expirationTime;
       }
 
-      @Override
-      private static class ColorKey {
+   }
+
+   private static class ColorKey {
       public final int red;
       public final int green;
       public final int blue;
