@@ -91,26 +91,26 @@ public final class MaxMinHelper implements RenderAccess {
    }
 
    public static float computeRandom(float min, float max) {
-      return(floatVal)(Math.random() * (double)(max - min) + (double)min);
+      return (float)(Math.random() * (double)(max - min) + (double)min);
    }
 
    public static float computeRandom(double min, double max) {
-      return(floatVal)(min + (max - min) * Math.random());
+      return (float)(min + (max - min) * Math.random());
    }
 
    public static float computeCurrent(double min, double max, double time) {
-      return(floatVal)(Math.sin((double)System.currentTimeMillis() / time) * (double)initInit((float)min, (float)max));
+      return (float)(Math.sin((double)System.currentTimeMillis() / time) * (double)initInit((float)min, (float)max));
    }
 
    public static float computeCos(double min, double max, double time) {
-      return(floatVal)(Math.cos((double)System.currentTimeMillis() / time) * (double)initInit((float)min, (float)max));
+      return (float)(Math.cos((double)System.currentTimeMillis() / time) * (double)initInit((float)min, (float)max));
    }
 
    public static float computeGaussian(double min, double max) {
       double var4 = (min + max) * 0.5;
       double var6 = (max - min) / 6.0;
       double var8 = var4 + random.nextGaussian() * var6;
-      return(floatVal)Math.max(min, Math.min(max, var8));
+      return (float)Math.max(min, Math.min(max, var8));
    }
 
    public static float computeCurrent2(double min, double max, double time) {
@@ -119,7 +119,7 @@ public final class MaxMinHelper implements RenderAccess {
       double var10 = random.nextGaussian() * var8;
       double var12 = Math.sin((double)System.currentTimeMillis() / time);
       double var14 = var6 + var10 * var12;
-      return(floatVal)Math.max(min, Math.min(max, var14));
+      return (float)Math.max(min, Math.min(max, var14));
    }
 
    public static double computeDouble(double delta, double start, double end) {
@@ -144,7 +144,7 @@ public final class MaxMinHelper implements RenderAccess {
    }
 
    public static float computeFloat(double oldValue, double newValue, double interpolationValue) {
-      return(floatVal)(oldValue + (newValue - oldValue) * interpolationValue);
+      return (float)(oldValue + (newValue - oldValue) * interpolationValue);
    }
 
    public static Vec3d initInit(Vec3d prevPos, Vec3d pos) {
@@ -193,7 +193,7 @@ public final class MaxMinHelper implements RenderAccess {
 
    public static float computeCurrent(float textWidth) {
       short var1 = 6000;
-      return(floatVal)MathHelper.clamp((double)(System.currentTimeMillis() % (long)var1) * Math.PI / (double)var1, 0.0, 1.0) * textWidth;
+      return (float)MathHelper.clamp((double)(System.currentTimeMillis() % (long)var1) * Math.PI / (double)var1, 0.0, 1.0) * textWidth;
    }
 
    public static int computeInt(int value, int min) {
@@ -209,7 +209,7 @@ public final class MaxMinHelper implements RenderAccess {
    }
 
    public static boolean computeFlag(int mouseX, int mouseY, float x, float y, float width, float height) {
-      return(floatVal)mouseX >= x && (float)mouseY >= y && (float)mouseX <= x + width && (float)mouseY <= y + height;
+      return (float)mouseX >= x && (float)mouseY >= y && (float)mouseX <= x + width && (float)mouseY <= y + height;
    }
 
    public static boolean computeFlag(float mouseX, float mouseY, float x, float y, float width, float height) {
@@ -217,21 +217,21 @@ public final class MaxMinHelper implements RenderAccess {
    }
 
    public static float computeRound(float value, float step) {
-      return(floatVal)Math.round(value / step) * step;
+      return (float)Math.round(value / step) * step;
    }
 
    public static double computePow(double value, int increment) {
       double var3 = Math.pow(10.0, (double)increment);
-      return(doubleVal)Math.round(value * var3) / var3;
+      return (double)Math.round(value * var3) / var3;
    }
 
    public static float computePow(float value, int decimals) {
       float var2 = (float)Math.pow(10.0, (double)decimals);
-      return(floatVal)Math.round(value * var2) / var2;
+      return (float)Math.round(value * var2) / var2;
    }
 
    public static float computeRound2(float value, float increment) {
-      return(floatVal)Math.round(value / increment) * increment;
+      return (float)Math.round(value / increment) * increment;
    }
 
    public static double getDouble() {

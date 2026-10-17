@@ -13,7 +13,7 @@ public final class IntCodec78 {
    }
 
    public int decode2() {
-      return(intVal)this.key0 ^ 26;
+      return (int)this.key0 ^ 26;
    }
 
    public static int encode1(int var0) {

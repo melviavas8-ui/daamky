@@ -122,7 +122,7 @@ public final class ColorMath {
       int var14 = color2 >> 16 & 0xFF;
       int var15 = color2 >> 8 & 0xFF;
       int var16 = color2 & 0xFF;
-      return(intVal)((float)var9 + (float)(var13 - var9) * var8) << 24
+      return (int)((float)var9 + (float)(var13 - var9) * var8) << 24
          | (int)((float)var10 + (float)(var14 - var10) * var8) << 16
          | (int)((float)var11 + (float)(var15 - var11) * var8) << 8
          | (int)((float)var12 + (float)(var16 - var12) * var8);

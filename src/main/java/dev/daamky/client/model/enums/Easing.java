@@ -45,7 +45,7 @@ public enum Easing {
    }
 
    public float apply(float x) {
-      return(floatVal)this.function.apply((double)x);
+      return (float)this.function.apply((double)x);
    }
 
    public double ease(double x) {
@@ -53,7 +53,7 @@ public enum Easing {
    }
 
    public float ease(float x) {
-      return(floatVal)this.function.apply((double)x);
+      return (float)this.function.apply((double)x);
    }
 
    @Override

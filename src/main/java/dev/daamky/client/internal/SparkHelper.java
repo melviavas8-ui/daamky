@@ -153,11 +153,11 @@ public class SparkHelper implements MinecraftAccess {
    }
 
    public float getValue() {
-      return(floatVal)this.animatedValue.getValue();
+      return (float)this.animatedValue.getValue();
    }
 
    public int getInt() {
-      return(intVal)(255.0F * this.getValue());
+      return (int)(255.0F * this.getValue());
    }
 
    public void runSpawn() {

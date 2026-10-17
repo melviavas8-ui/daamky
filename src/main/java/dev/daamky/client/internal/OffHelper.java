@@ -127,7 +127,7 @@ public final class OffHelper implements MinecraftAccess {
       double var9 = var2.x - var3;
       double var11 = var2.y - var5;
       double var13 = var2.z - var7;
-      return(floatVal)Math.sqrt(var9 * var9 + var11 * var11 + var13 * var13);
+      return (float)Math.sqrt(var9 * var9 + var11 * var11 + var13 * var13);
    }
 
    public static Vec3d computeClass_243(Entity entity) {

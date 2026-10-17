@@ -7,10 +7,10 @@ public class MotionConfig7JitterPresetImpl9 implements JitterPreset {
    }
 
    public float computeSin(long t) {
-      return(floatVal)(Math.sin((double)t / 125.0) * 13.5);
+      return (float)(Math.sin((double)t / 125.0) * 13.5);
    }
 
    public float computeCos(long t) {
-      return(floatVal)(Math.cos((double)t / 135.0) * 13.5);
+      return (float)(Math.cos((double)t / 135.0) * 13.5);
    }
 }

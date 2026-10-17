@@ -8,7 +8,7 @@ public final class IntCodec116 {
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 734L;
+      return (long)this.key0 + 734L;
    }
 
    public static int encode1(int var0) {

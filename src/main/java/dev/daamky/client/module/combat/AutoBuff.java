@@ -286,7 +286,7 @@ public class AutoBuff extends Module {
                var7.run();
             } else if (var6 != -1) {
                int var8 = InventoryUtil.getInt();
-               Runnable var9 = AutoBuff::lambda$throwAll$6;
+               Runnable var9 = () -> AutoBuff.lambda$throwAll$6(var6, var8, var7);
                if (EntryHelper.check()) {
                   EntryHelper.handleLong(10L, var9);
                } else {

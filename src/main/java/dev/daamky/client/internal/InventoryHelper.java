@@ -16,13 +16,13 @@ public class InventoryHelper implements MinecraftAccess {
                return this.computeFlag("Inventory", var4, var3, entity);
             }
 
-            EntryHelper.handleLong(10L, this::lambda$shouldBreakShield$0);
+            EntryHelper.handleLong(10L, () -> this.lambda$shouldBreakShield$0(var4, var3, entity));
             return true;
          }
 
          if (var4 != -1) {
             if (var2) {
-               EntryHelper.handleLong(150L, this::lambda$shouldBreakShield$1);
+               EntryHelper.handleLong(150L, () -> this.lambda$shouldBreakShield$1(var4, var3, entity));
                return true;
             }
 

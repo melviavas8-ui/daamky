@@ -173,7 +173,7 @@ public class RotationTaskHelper implements MinecraftAccess {
          mc.player.setPitch(var10.y);
          Rotation var11 = new Rotation(mc.player.getYaw(), mc.player.getPitch());
          this.withIdleTicks(0);
-         return(doubleVal)var11.computeAbs(rotation)
+         return (double)var11.computeAbs(rotation)
             < (
                this.currentTask.equals(RotationTaskHelper.RotationTask.RESET)
                   ? Math.hypot((double)this.currentYawReturnSpeed, (double)this.currentPitchReturnSpeed)

@@ -12,7 +12,7 @@ public class DeltaHelper {
    }
 
    public float sqrt() {
-      return(floatVal)Math.sqrt((double)(this.deltaYaw * this.deltaYaw + this.deltaPitch * this.deltaPitch));
+      return (float)Math.sqrt((double)(this.deltaYaw * this.deltaYaw + this.deltaPitch * this.deltaPitch));
    }
 
    public float getDeltaYaw() {

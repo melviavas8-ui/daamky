@@ -102,10 +102,10 @@ public class AutoExplosion extends Module {
                this.delayHelper2.runCurrent();
             }
          } else if (var4 == -1 && var3 != -1 && this.int3 != -1) {
-            this.runnable = this::lambda$handlePlaceEvent$5;
+            this.runnable = () -> this.lambda$handlePlaceEvent$5(var3);
             this.delayHelper2.runCurrent();
          } else if (var4 != -1) {
-            this.runnable = this::lambda$handlePlaceEvent$6;
+            this.runnable = () -> this.lambda$handlePlaceEvent$6(var4);
             this.delayHelper2.runCurrent();
          }
       }
@@ -274,7 +274,7 @@ public class AutoExplosion extends Module {
 
    public void lambda$handlePlaceEvent$5(int slotInv) {
       if (EntryHelper.check()) {
-         EntryHelper.handleLong(10L, this::lambda$handlePlaceEvent$4);
+         EntryHelper.handleLong(10L, () -> this.lambda$handlePlaceEvent$4(slotInv));
       } else {
          this.handleBack(slotInv);
       }

@@ -14,7 +14,7 @@ public final class EasingTypeHelper {
          case EASE_IN_SINE:
             return 1.0F - (float)Math.cos((double)(var2 * (float) Math.PI / 2.0F));
          case EASE_OUT_SINE:
-            return(floatVal)Math.sin((double)(var2 * (float) Math.PI / 2.0F));
+            return (float)Math.sin((double)(var2 * (float) Math.PI / 2.0F));
          case EASE_IN_OUT_SINE:
             return -((float)Math.cos((double)((float) Math.PI * var2)) - 1.0F) / 2.0F;
          case EASE_IN_QUAD:
@@ -58,7 +58,7 @@ public final class EasingTypeHelper {
          case EASE_IN_CIRC:
             return 1.0F - (float)Math.sqrt(1.0 - Math.pow((double)var2, 2.0));
          case EASE_OUT_CIRC:
-            return(floatVal)Math.sqrt(1.0 - Math.pow((double)var2 - 1.0, 2.0));
+            return (float)Math.sqrt(1.0 - Math.pow((double)var2 - 1.0, 2.0));
          case EASE_IN_OUT_CIRC:
             return var2 < 0.5F
                ? (1.0F - (float)Math.sqrt(1.0 - Math.pow(2.0 * (double)var2, 2.0))) / 2.0F
@@ -89,7 +89,7 @@ public final class EasingTypeHelper {
                   return 1.0F;
                }
 
-               return(floatVal)Math.pow(2.0, -10.0 * (double)var2) * (float)Math.sin((double)((var2 * 10.0F - 0.75F) * (float) (Math.PI * 2.0 / 3.0))) + 1.0F;
+               return (float)Math.pow(2.0, -10.0 * (double)var2) * (float)Math.sin((double)((var2 * 10.0F - 0.75F) * (float) (Math.PI * 2.0 / 3.0))) + 1.0F;
             }
          case EASE_IN_OUT_ELASTIC:
             if (var2 == 0.0F) {
@@ -114,9 +114,9 @@ public final class EasingTypeHelper {
          case EASE_IN_OUT_BOUNCE:
             return var2 < 0.5F ? (1.0F - computeFloat(1.0F - 2.0F * var2)) / 2.0F : (1.0F + computeFloat(2.0F * var2 - 1.0F)) / 2.0F;
          case PERLIN_NOISE:
-            return(floatVal)(0.5 + 0.5 * Math.sin((double)(var2 * 12.566F) + Math.sin((double)(var2 * 25.132F)) * 0.5));
+            return (float)(0.5 + 0.5 * Math.sin((double)(var2 * 12.566F) + Math.sin((double)(var2 * 25.132F)) * 0.5));
          case BROWNIAN_JITTER:
-            return(floatVal)((double)var2 + 0.08 * (Math.sin((double)(var2 * 31.415F)) + Math.cos((double)(var2 * 62.83F)) * 0.5));
+            return (float)((double)var2 + 0.08 * (Math.sin((double)(var2 * 31.415F)) + Math.cos((double)(var2 * 62.83F)) * 0.5));
          default:
             return var2;
       }

@@ -6,7 +6,7 @@ public final class IntCodec42 {
    public int key2 = 917;
 
    public int decode0() {
-      return(intVal)this.key0 ^ 33;
+      return (int)this.key0 ^ 33;
    }
 
    public static int encode0(int var0) {

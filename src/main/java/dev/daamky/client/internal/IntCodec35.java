@@ -14,7 +14,7 @@ public final class IntCodec35 {
    }
 
    public int decode2() {
-      return(intVal)this.key0 ^ 52;
+      return (int)this.key0 ^ 52;
    }
 
    public static int encode6(int var0) {

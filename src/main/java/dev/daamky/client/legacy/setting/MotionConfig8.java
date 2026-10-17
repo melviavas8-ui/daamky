@@ -190,7 +190,7 @@ public class MotionConfig8 extends LegacySetting {
          double var3 = (Double)mc.options.getMouseSensitivity().getValue() * 0.6000000498956214 + 0.19999998556632664;
          double var5 = var3 * var3 * var3 * 8.0 * 0.15000007F;
          double var7 = (double)MathHelper.wrapDegrees(current - lastAngle);
-         return(floatVal)((double)lastAngle + (double)Math.round(var7 / var5) * var5);
+         return (float)((double)lastAngle + (double)Math.round(var7 / var5) * var5);
       }
    }
 

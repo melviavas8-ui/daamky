@@ -9,7 +9,7 @@ public final class IntCodec69 {
    }
 
    public int decode1() {
-      return(intVal)this.key0 ^ 41;
+      return (int)this.key0 ^ 41;
    }
 
    public long decode2() {

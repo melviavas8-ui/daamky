@@ -51,7 +51,7 @@ public class ValueToHelper {
    }
 
    public double getCurrent() {
-      return(doubleVal)(System.currentTimeMillis() - this.getStart()) / this.getDuration();
+      return (double)(System.currentTimeMillis() - this.getStart()) / this.getDuration();
    }
 
    public boolean computeFlag(boolean safe, double valueTo) {

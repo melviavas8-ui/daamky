@@ -4,15 +4,15 @@ public final class IntCodec11 {
    public int key0 = 1185;
 
    public long decode0() {
-      return(longVal)this.key0 + 935L;
+      return (long)this.key0 + 935L;
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 837L;
+      return (long)this.key0 + 837L;
    }
 
    public long decode2() {
-      return(longVal)this.key0 + 297L;
+      return (long)this.key0 + 297L;
    }
 
    public static int encode2(int var0) {

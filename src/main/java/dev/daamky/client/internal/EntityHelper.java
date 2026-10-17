@@ -25,7 +25,7 @@ public final class EntityHelper implements MinecraftAccess {
    }
 
    public static float computeFloat(double oldValue, double newValue) {
-      return(floatVal)(oldValue + (newValue - oldValue) * (double)mc.getRenderTickCounter().getTickDelta(false));
+      return (float)(oldValue + (newValue - oldValue) * (double)mc.getRenderTickCounter().getTickDelta(false));
    }
 
    public static double computeDouble(double start, double end, double delta) {
@@ -51,15 +51,15 @@ public final class EntityHelper implements MinecraftAccess {
    }
 
    public static int computeInt(int oldValue, int newValue, float interpolationValue) {
-      return(intVal)((float)oldValue + (float)(newValue - oldValue) * interpolationValue);
+      return (int)((float)oldValue + (float)(newValue - oldValue) * interpolationValue);
    }
 
    public static double computeRound(double value, double step) {
-      return(doubleVal)Math.round(value / step) * step;
+      return (double)Math.round(value / step) * step;
    }
 
    public static float computeRound(float value, float step) {
-      return(floatVal)Math.round(value / step) * step;
+      return (float)Math.round(value / step) * step;
    }
 
    public static int computeRandom(int min, int max) {

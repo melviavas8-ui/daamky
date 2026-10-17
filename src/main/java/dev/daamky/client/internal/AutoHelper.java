@@ -306,15 +306,15 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public int getMc() {
-      return(intVal)(mc.mouse.getX() / mc.getWindow().getScaleFactor());
+      return (int)(mc.mouse.getX() / mc.getWindow().getScaleFactor());
    }
 
    public int getInt() {
-      return(intVal)(mc.mouse.getY() / mc.getWindow().getScaleFactor());
+      return (int)(mc.mouse.getY() / mc.getWindow().getScaleFactor());
    }
 
    public float computeRound(float value) {
-      return(floatVal)Math.round(value * 2.0F) / 2.0F;
+      return (float)Math.round(value * 2.0F) / 2.0F;
    }
 
    public void handleLast(float newWidth, float newHeight) {

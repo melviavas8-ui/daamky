@@ -8,7 +8,7 @@ public final class IntCodec164 {
    }
 
    public int decode1() {
-      return(intVal)this.key0 ^ 55;
+      return (int)this.key0 ^ 55;
    }
 
    public long decode2() {

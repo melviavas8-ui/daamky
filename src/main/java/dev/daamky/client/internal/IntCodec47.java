@@ -8,11 +8,11 @@ public final class IntCodec47 {
    }
 
    public int decode1() {
-      return(intVal)this.key0 ^ 29;
+      return (int)this.key0 ^ 29;
    }
 
    public int decode2() {
-      return(intVal)this.key0 ^ 6;
+      return (int)this.key0 ^ 6;
    }
 
    public static int encode2(int var0) {

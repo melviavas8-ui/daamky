@@ -13,12 +13,12 @@ public final class GameTimer implements MinecraftAccess {
    }
 
    public static float computeRound(float delta) {
-      return(floatVal)Math.round(delta / getMc2());
+      return (float)Math.round(delta / getMc2());
    }
 
    public static float computeRound2(float value) {
       float var1 = getMc2();
-      return(floatVal)Math.round(value / var1) * var1;
+      return (float)Math.round(value / var1) * var1;
    }
 
    public GameTimer() {

@@ -8,7 +8,7 @@ public final class IntCodec54 {
    }
 
    public int decode1() {
-      return(intVal)this.key0 ^ 25;
+      return (int)this.key0 ^ 25;
    }
 
    public static int encode3(int var0) {

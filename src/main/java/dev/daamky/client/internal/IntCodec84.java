@@ -12,7 +12,7 @@ public final class IntCodec84 {
    }
 
    public int decode2() {
-      return(intVal)this.key0 ^ 0;
+      return (int)this.key0 ^ 0;
    }
 
    public static int encode8(int var0) {

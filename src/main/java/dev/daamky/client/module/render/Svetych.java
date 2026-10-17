@@ -363,7 +363,7 @@ public class Svetych extends Module {
       }
 
       public float computeFloat(long now) {
-         return(floatVal)(now % 9000L) / 9000.0F * 360.0F;
+         return (float)(now % 9000L) / 9000.0F * 360.0F;
       }
 
    }

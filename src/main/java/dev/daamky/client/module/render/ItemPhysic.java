@@ -39,7 +39,7 @@ public class ItemPhysic extends Module {
          return 0.0F;
       } else {
          double var1 = (double)System.currentTimeMillis() / 1000.0 * (double)this.spinSpeed.getValue().floatValue();
-         return(floatVal)(var1 % 360.0);
+         return (float)(var1 % 360.0);
       }
    }
 

@@ -40,7 +40,7 @@ public class Zoom extends Module {
             animatedValue.animateTo(var0, (long)(zoom.smoothSpeed.getValue() * 50.0F), Easing.QUINT_OUT);
          }
 
-         return(floatVal)animatedValue.getValue();
+         return (float)animatedValue.getValue();
       }
    }
 

@@ -6,7 +6,7 @@ public final class IntCodec102 {
    public int key2 = 1420;
 
    public int decode0() {
-      return(intVal)this.key1 ^ 30;
+      return (int)this.key1 ^ 30;
    }
 
    public long decode1() {

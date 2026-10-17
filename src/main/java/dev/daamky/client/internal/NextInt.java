@@ -30,6 +30,6 @@ public class NextInt extends Random {
       this.seed = this.seed ^ this.seed << 13;
       this.seed = this.seed ^ this.seed >>> 17;
       this.seed = this.seed ^ this.seed << 5;
-      return(intVal)(this.seed & (1L << bits) - 1L);
+      return (int)(this.seed & (1L << bits) - 1L);
    }
 }

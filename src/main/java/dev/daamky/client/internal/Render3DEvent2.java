@@ -113,7 +113,7 @@ public class Render3DEvent2 extends TargetRenderer {
    }
 
    public float computeRadians(float value) {
-      return(floatVal)((Math.sin(Math.toRadians((double)value)) + 1.0) * 0.5);
+      return (float)((Math.sin(Math.toRadians((double)value)) + 1.0) * 0.5);
    }
 
    public void handlePow(MatrixStack ms, Vec3d cameraPos, float alpha, long now) {

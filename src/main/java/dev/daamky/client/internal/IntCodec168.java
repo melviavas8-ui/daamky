@@ -5,15 +5,15 @@ public final class IntCodec168 {
    public long key1 = 36233L;
 
    public int decode0() {
-      return(intVal)this.key1 ^ 41;
+      return (int)this.key1 ^ 41;
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 217L;
+      return (long)this.key0 + 217L;
    }
 
    public long decode2() {
-      return(longVal)this.key0 + 685L;
+      return (long)this.key0 + 685L;
    }
 
    public static int encode6(int var0) {

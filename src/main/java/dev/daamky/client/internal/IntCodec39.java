@@ -9,11 +9,11 @@ public final class IntCodec39 {
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 587L;
+      return (long)this.key0 + 587L;
    }
 
    public int decode2() {
-      return(intVal)this.key1 ^ 52;
+      return (int)this.key1 ^ 52;
    }
 
    public static int encode2(int var0) {

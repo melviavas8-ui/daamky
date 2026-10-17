@@ -282,7 +282,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
          return (1.0F - Math.min(1.0F, var2)) * 18.0F * this.U;
       } else {
          float var1 = MathHelper.clamp((float)(System.currentTimeMillis() - this.closeStartTime) / 260.0F, 0.0F, 1.0F);
-         return(floatVal)Math.pow((double)var1, 2.0) * 12.0F * this.U;
+         return (float)Math.pow((double)var1, 2.0) * 12.0F * this.U;
       }
    }
 

@@ -37,11 +37,11 @@ public abstract class Widget implements Callback10 {
    }
 
    public int getInt() {
-      return(intVal)(this.clamp() * 255.0F);
+      return (int)(this.clamp() * 255.0F);
    }
 
    public int computeClamp(float multiplier) {
-      return(intVal)Math.clamp(this.clamp() * 255.0F * multiplier, 0.0F, 255.0F);
+      return (int)Math.clamp(this.clamp() * 255.0F * multiplier, 0.0F, 255.0F);
    }
 
    public float getX() {

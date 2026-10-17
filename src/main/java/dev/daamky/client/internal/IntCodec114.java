@@ -8,11 +8,11 @@ public final class IntCodec114 {
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 270L;
+      return (long)this.key0 + 270L;
    }
 
    public long decode2() {
-      return(longVal)this.key0 + 125L;
+      return (long)this.key0 + 125L;
    }
 
    public static int encode6(int var0) {

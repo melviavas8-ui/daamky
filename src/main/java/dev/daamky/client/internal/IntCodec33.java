@@ -4,7 +4,7 @@ public final class IntCodec33 {
    public long key0 = 12899L;
 
    public int decode0() {
-      return(intVal)this.key0 ^ 48;
+      return (int)this.key0 ^ 48;
    }
 
    public long decode1() {
@@ -12,7 +12,7 @@ public final class IntCodec33 {
    }
 
    public int decode2() {
-      return(intVal)this.key0 ^ 36;
+      return (int)this.key0 ^ 36;
    }
 
    public static int encode0(int var0) {

@@ -374,7 +374,7 @@ public class AutoWarden extends Module {
                if (var12.find()) {
                   int var13 = Integer.parseInt(var12.group(1));
                   int var10 = Integer.parseInt(var12.group(2));
-                  return(longVal)var13 * 60L + (long)var10;
+                  return (long)var13 * 60L + (long)var10;
                }
 
                Matcher var9 = pattern2.matcher(var11);

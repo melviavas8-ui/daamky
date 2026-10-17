@@ -104,7 +104,7 @@ public class TotemInfo extends Module {
             }
          }
 
-         Collection var9 = mc.player.getStatusEffects();
+         Collection<StatusEffectInstance> var9 = mc.player.getStatusEffects();
          HashMap var10 = new HashMap();
 
          for (StatusEffectInstance var5 : var9) {

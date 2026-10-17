@@ -6,15 +6,15 @@ public final class IntCodec62 {
    public int key2 = 511;
 
    public long decode0() {
-      return(longVal)this.key1 + 489L;
+      return (long)this.key1 + 489L;
    }
 
    public long decode1() {
-      return(longVal)this.key1 + 478L;
+      return (long)this.key1 + 478L;
    }
 
    public long decode2() {
-      return(longVal)this.key1 + 735L;
+      return (long)this.key1 + 735L;
    }
 
    public static int encode5(int var0) {

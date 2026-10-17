@@ -20,11 +20,11 @@ public abstract class ExpandableSettingComponent3 extends Widget {
 
    @Override
    public float getFloat() {
-      return(floatVal)this.quintOutHelper.getAnimatedValue().getValue();
+      return (float)this.quintOutHelper.getAnimatedValue().getValue();
    }
 
    public boolean check() {
-      return(doubleVal)this.getFloat() < 0.8;
+      return (double)this.getFloat() < 0.8;
    }
 
    public QuintOutHelper getQuintOutHelper() {

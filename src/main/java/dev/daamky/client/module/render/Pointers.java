@@ -188,11 +188,11 @@ public class Pointers extends Module {
    }
 
    public float getMc() {
-      return(floatVal)mc.getWindow().getScaledWidth() / 2.0F;
+      return (float)mc.getWindow().getScaledWidth() / 2.0F;
    }
 
    public float getFloat() {
-      return(floatVal)mc.getWindow().getScaledHeight() / 2.0F;
+      return (float)mc.getWindow().getScaledHeight() / 2.0F;
    }
 
    public float getMax() {

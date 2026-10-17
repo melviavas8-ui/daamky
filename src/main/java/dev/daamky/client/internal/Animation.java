@@ -70,9 +70,9 @@ public abstract class Animation {
          return 0.0F;
       } else if (this.check()) {
          double var1 = (double)Math.min((long)this.duration, Math.max(0L, (long)this.duration - this.timerUtil.getCurrent()));
-         return(floatVal)(this.computeDuration(var1) * this.endPoint);
+         return (float)(this.computeDuration(var1) * this.endPoint);
       } else {
-         return(floatVal)((1.0 - this.computeDuration((double)this.timerUtil.getCurrent())) * this.endPoint);
+         return (float)((1.0 - this.computeDuration((double)this.timerUtil.getCurrent())) * this.endPoint);
       }
    }
 

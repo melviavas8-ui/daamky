@@ -227,8 +227,8 @@ public class SpecDetect extends Module {
       long var1 = System.currentTimeMillis();
       if (var1 - this.long3 >= 3000L) {
          this.long3 = var1;
-         this.map2.entrySet().removeIf(SpecDetect::lambda$cleanup$2);
-         this.map3.entrySet().removeIf(SpecDetect::lambda$cleanup$3);
+         this.map2.entrySet().removeIf(e -> SpecDetect.lambda$cleanup$2(var1, e));
+         this.map3.entrySet().removeIf(e -> SpecDetect.lambda$cleanup$3(var1, e));
       }
    }
 

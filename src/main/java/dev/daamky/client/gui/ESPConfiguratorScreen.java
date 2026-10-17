@@ -115,11 +115,11 @@ public class ESPConfiguratorScreen extends Screen {
    }
 
    public float getFloat() {
-      return(floatVal)(950.0 / this.getDouble());
+      return (float)(950.0 / this.getDouble());
    }
 
    public float getFloat2() {
-      return(floatVal)(580.0 / this.getDouble());
+      return (float)(580.0 / this.getDouble());
    }
 
    public float getMin() {

@@ -14,7 +14,7 @@ public final class IntCodec131 {
    }
 
    public int decode2() {
-      return(intVal)this.key2 ^ 16;
+      return (int)this.key2 ^ 16;
    }
 
    public static int encode6(int var0) {

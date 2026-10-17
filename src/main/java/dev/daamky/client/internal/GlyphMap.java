@@ -287,19 +287,19 @@ public final class GlyphMap {
    }
 
    public static float computeFloat(int c) {
-      return(floatVal)computeInt(c) / 255.0F;
+      return (float)computeInt(c) / 255.0F;
    }
 
    public static float computeFloat2(int c) {
-      return(floatVal)computeInt2(c) / 255.0F;
+      return (float)computeInt2(c) / 255.0F;
    }
 
    public static float computeFloat3(int c) {
-      return(floatVal)computeInt3(c) / 255.0F;
+      return (float)computeInt3(c) / 255.0F;
    }
 
    public static float computeFloat4(int c) {
-      return(floatVal)computeInt4(c) / 255.0F;
+      return (float)computeInt4(c) / 255.0F;
    }
 
    public static int[] computeInts5(int c) {
@@ -507,7 +507,7 @@ public final class GlyphMap {
    }
 
    public static int computeInt3(int b1, int b2, float fraction) {
-      return(intVal)((float)b1 + (float)(b2 - b1) * fraction);
+      return (int)((float)b1 + (float)(b2 - b1) * fraction);
    }
 
    public static int computeInt2(float alpha) {

@@ -21,7 +21,7 @@ public class LegacyTimeHelper {
    }
 
    public boolean computeCurrent(double delay) {
-      return(doubleVal)System.currentTimeMillis() - delay >= (double)this.longVal;
+      return (double)System.currentTimeMillis() - delay >= (double)this.longVal;
    }
 
    public boolean computeFlag(double delay) {
@@ -70,7 +70,7 @@ public class LegacyTimeHelper {
    }
 
    public boolean computeFlag2(double milliseconds) {
-      return(doubleVal)this.getTime2() >= milliseconds;
+      return (double)this.getTime2() >= milliseconds;
    }
 
    public long getTime2() {

@@ -114,7 +114,7 @@ public class FontRegistry {
             }
          }
 
-         return(floatVal)var5 * (this.computeDelegate(size) + 2.0F);
+         return (float)var5 * (this.computeDelegate(size) + 2.0F);
       } else {
          return 0.0F;
       }

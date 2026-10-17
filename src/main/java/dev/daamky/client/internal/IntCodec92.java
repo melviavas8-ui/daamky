@@ -6,7 +6,7 @@ public final class IntCodec92 {
    public int key2 = 1042;
 
    public long decode0() {
-      return(longVal)this.key2 + 271L;
+      return (long)this.key2 + 271L;
    }
 
    public long decode1() {

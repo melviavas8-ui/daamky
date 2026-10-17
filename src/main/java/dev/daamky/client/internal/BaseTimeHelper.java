@@ -41,6 +41,6 @@ public class BaseTimeHelper implements MinecraftAccess {
    }
 
    public float computeFloat(int baseTime) {
-      return(floatVal)(mc.player.lastAttackedTicks + baseTime) / mc.player.getAttackCooldownProgressPerTick();
+      return (float)(mc.player.lastAttackedTicks + baseTime) / mc.player.getAttackCooldownProgressPerTick();
    }
 }

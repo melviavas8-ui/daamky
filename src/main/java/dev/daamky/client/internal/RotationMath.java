@@ -141,7 +141,7 @@ public final class RotationMath implements MinecraftAccess {
 
    public static float computeRound(float value) {
       float var1 = getMax();
-      return(floatVal)Math.round(value / var1) * var1;
+      return (float)Math.round(value / var1) * var1;
    }
 
    public static Rotation initInit(Rotation rotation) {

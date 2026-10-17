@@ -5,7 +5,7 @@ public final class IntCodec148 {
    public long key1 = 64351L;
 
    public int decode0() {
-      return(intVal)this.key0 ^ 42;
+      return (int)this.key0 ^ 42;
    }
 
    public long decode1() {

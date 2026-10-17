@@ -51,7 +51,7 @@ public class InvokeHelper {
    }
 
    public float computeFloat(float a, float b, double f) {
-      return(floatVal)((double)a + f * (double)(b - a));
+      return (float)((double)a + f * (double)(b - a));
    }
 
    public float computeMax(float val, float min, float max) {

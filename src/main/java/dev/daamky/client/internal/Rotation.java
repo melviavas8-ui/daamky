@@ -56,7 +56,7 @@ public class Rotation {
    public float computeAbs(Rotation target) {
       float var2 = MathHelper.wrapDegrees(target.getYaw() - this.yaw);
       float var3 = target.getPitch() - this.pitch;
-      return(floatVal)Math.hypot((double)Math.abs(var2), (double)Math.abs(var3));
+      return (float)Math.hypot((double)Math.abs(var2), (double)Math.abs(var3));
    }
 
    public boolean computeFlag(Rotation other, float tolerance) {
@@ -103,7 +103,7 @@ public class Rotation {
 
    public static float getFloat() {
       double var0 = (Double)MinecraftClient.getInstance().options.getMouseSensitivity().getValue() * 0.6F + 0.2F;
-      return(floatVal)(var0 * var0 * var0 * 8.0 * 0.15F);
+      return (float)(var0 * var0 * var0 * 8.0 * 0.15F);
    }
 
    public Rotation initDelta(Rotation currentRotation) {

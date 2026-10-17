@@ -107,7 +107,7 @@ public class HitSounds extends Module {
 
    public void playSound(Entity entity) {
       if (this.executorService != null && !this.executorService.isShutdown()) {
-         this.executorService.submit(this::lambda$playSound$0);
+         this.executorService.submit(() -> this.lambda$playSound$0(entity));
       }
    }
 

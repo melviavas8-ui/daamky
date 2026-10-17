@@ -30,7 +30,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
             for (BooleanSetting var3 : value) {
                if (var3 != null) {
                   Runnable var4 = var3.getAction();
-                  var3.onAction(() -> this.lambda$setValue$0(var4));
+                  var3.onAction(() -> this.onChildActionSet(var4));
                }
             }
          }
@@ -48,7 +48,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
          for (BooleanSetting var5 : value) {
             if (var5 != null) {
                Runnable var6 = var5.getAction();
-               var5.onAction(() -> this.lambda$addValues$1(var6));
+               var5.onAction(() -> this.onChildActionAdd(var6));
                this.value.add(var5);
             }
          }
@@ -121,7 +121,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
       return this.value(param1);
    }
 
-   public void lambda$addValues$1(Runnable oldAction) {
+   public void onChildActionAdd(Runnable oldAction) {
       if (oldAction != null) {
          oldAction.run();
       }
@@ -129,7 +129,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
       this.invokeAction();
    }
 
-   public void lambda$setValue$0(Runnable oldAction) {
+   public void onChildActionSet(Runnable oldAction) {
       if (oldAction != null) {
          oldAction.run();
       }

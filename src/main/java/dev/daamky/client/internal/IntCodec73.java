@@ -10,7 +10,7 @@ public final class IntCodec73 {
    }
 
    public int decode1() {
-      return(intVal)this.key1 ^ 62;
+      return (int)this.key1 ^ 62;
    }
 
    public int decode2() {

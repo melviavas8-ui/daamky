@@ -42,7 +42,7 @@ public class TargetHud extends HudElement {
             ScoreboardObjective var6 = var3.getScoreboard().getObjectiveForSlot(ScoreboardDisplaySlot.BELOW_NAME);
             int var5;
             if (var6 != null && (var5 = var3.getScoreboard().getScore(var3, var6).getScore()) > 0) {
-               return(floatVal)var5;
+               return (float)var5;
             }
          } catch (Exception var7) {
          }

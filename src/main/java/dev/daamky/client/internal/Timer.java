@@ -8,7 +8,7 @@ public class Timer {
    }
 
    public boolean computeCurrent(double delay) {
-      return(doubleVal)(System.currentTimeMillis() - this.lastMS) >= delay;
+      return (double)(System.currentTimeMillis() - this.lastMS) >= delay;
    }
 
    public boolean computeFlag(boolean active, double delay) {

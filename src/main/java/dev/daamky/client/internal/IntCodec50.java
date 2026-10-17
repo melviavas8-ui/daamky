@@ -10,7 +10,7 @@ public final class IntCodec50 {
    }
 
    public long decode1() {
-      return(longVal)this.key2 + 937L;
+      return (long)this.key2 + 937L;
    }
 
    public static int encode3(int var0) {

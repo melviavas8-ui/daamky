@@ -48,12 +48,12 @@ public class MotionConfig7 extends LegacySetting {
    public final MotionConfig7.JitterPreset[] jitterPresetList = new MotionConfig7.JitterPreset[]{new MotionConfig7.JitterPreset() {
       @Override
       public float computeSin(long t) {
-         return(floatVal)(Math.cos((double)t / 90.0) * 12.0);
+         return (float)(Math.cos((double)t / 90.0) * 12.0);
       }
 
       @Override
       public float computeCos(long t) {
-         return(floatVal)(Math.sin((double)t / 90.0) * 16.0);
+         return (float)(Math.sin((double)t / 90.0) * 16.0);
       }
    }, new MotionConfig7.JitterPreset() {
    }, new MotionConfig7.JitterPreset() {
@@ -295,7 +295,7 @@ public class MotionConfig7 extends LegacySetting {
          double var2 = (Double)mc.options.getMouseSensitivity().getValue() * 0.6000000498956214 + 0.19999998556632664;
          double var4 = var2 * var2 * var2 * 8.0 * 0.15000007F;
          double var6 = (double)MathHelper.wrapDegrees(current - lastAngle);
-         return(floatVal)((double)lastAngle + (double)Math.round(var6 / var4) * var4);
+         return (float)((double)lastAngle + (double)Math.round(var6 / var4) * var4);
       }
    }
 

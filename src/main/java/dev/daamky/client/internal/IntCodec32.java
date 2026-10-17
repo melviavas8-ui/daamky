@@ -9,7 +9,7 @@ public final class IntCodec32 {
    }
 
    public int decode1() {
-      return(intVal)this.key1 ^ 46;
+      return (int)this.key1 ^ 46;
    }
 
    public static int encode2(int var0) {
