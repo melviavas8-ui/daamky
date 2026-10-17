@@ -1,7 +1,6 @@
 package dev.daamky.client.internal;
 
 import dev.daamky.client.module.Module;
-import dev.daamky.client.module.combat.AntiBot;
 import dev.daamky.client.module.combat.AttackAura;
 import dev.daamky.client.module.combat.AutoBuff;
 import dev.daamky.client.module.combat.AutoExplosion;
@@ -185,7 +184,6 @@ public class ModuleRegistry {
          CustomCrosshair.getInstance(),
          HitSounds.getInstance(),
          Criticals.getInstance(),
-         AntiBot.getInstance(),
          SkeletonESP.getInstance(),
          SpecDetect.getInstance(),
          BlockTweaks.getInstance(),
