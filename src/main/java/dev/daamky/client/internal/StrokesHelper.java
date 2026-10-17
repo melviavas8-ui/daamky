@@ -43,7 +43,7 @@ public class StrokesHelper {
    public int int7 = -1;
 
    public StrokesHelper(String name) {
-      this.name = namex;
+      this.name = name;
       this.neuralNet = new NeuralNet(30, 48, 14);
    }
 
@@ -274,10 +274,10 @@ public class StrokesHelper {
       if (this.list3.isEmpty()) {
          return new float[]{0.0F, 0.0F};
       } else {
-         if (this.intVal5 >= 0 && this.intVal5 < this.list3.size()) {
-            float[] var2 = this.list3.get(this.intVal5);
+         if (this.int5 >= 0 && this.int5 < this.list3.size()) {
+            float[] var2 = this.list3.get(this.int5);
             if (Math.abs(var2[2] - speed) <= computeMax(speed)) {
-               this.intVal5++;
+               this.int5++;
                return new float[]{var2[0], var2[1]};
             }
          }
@@ -300,7 +300,7 @@ public class StrokesHelper {
             }
          }
 
-         this.intVal5 = var8 + 1;
+         this.int5 = var8 + 1;
          float[] var9 = this.list3.get(var8);
          return new float[]{var9[0], var9[1]};
       }
@@ -330,10 +330,10 @@ public class StrokesHelper {
       if (this.list4.isEmpty()) {
          return null;
       } else {
-         if (this.intVal7 >= 0 && this.intVal7 < this.list4.size()) {
-            float[] var4 = this.list4.get(this.intVal7);
+         if (this.int7 >= 0 && this.int7 < this.list4.size()) {
+            float[] var4 = this.list4.get(this.int7);
             if (var4[4] >= 0.0F && computeMin(var4, yawErr, pitchErr, sinceAttack) <= computeFloat(yawErr, pitchErr)) {
-               this.intVal7++;
+               this.int7++;
                return computeFloats(var4, yawErr, pitchErr);
             }
          }
@@ -360,10 +360,10 @@ public class StrokesHelper {
          }
 
          if (var11 >= 0 && !(var5 > computeFloat(yawErr, pitchErr) * 4.0F)) {
-            this.intVal7 = var11 + 1;
+            this.int7 = var11 + 1;
             return computeFloats(this.list4.get(var11), yawErr, pitchErr);
          } else {
-            this.intVal7 = -1;
+            this.int7 = -1;
             return null;
          }
       }
@@ -392,7 +392,7 @@ public class StrokesHelper {
    public void initClear() {
       if (this.neuralNet.in != 30 || this.neuralNet.out != 14) {
          this.neuralNet = new NeuralNet(30, 48, 14);
-         this.intVal2 = 0;
+         this.int2 = 0;
          this.mvijuk = -1.0;
          this.list.clear();
          this.list2.clear();
@@ -423,7 +423,7 @@ public class StrokesHelper {
 
       this.list.add((double[])x.clone());
       this.list2.add((double[])y.clone());
-      this.intVal2++;
+      this.int2++;
    }
 
    public String initAppend() {
@@ -476,8 +476,8 @@ public class StrokesHelper {
    public static void createBlank(String name) {
       try {
          Files.createDirectories(path);
-         if (namex != null && !namex.isBlank()) {
-            Files.writeString(path2, namex, StandardCharsets.UTF_8);
+         if (name != null && !name.isBlank()) {
+            Files.writeString(path2, name, StandardCharsets.UTF_8);
          } else {
             Files.deleteIfExists(path2);
          }
@@ -516,7 +516,7 @@ public class StrokesHelper {
          var2.append("inputs=").append(30).append("\n");
          var2.append("hidden=").append(48).append("\n");
          var2.append("outputs=").append(14).append("\n");
-         var2.append("samples=").append(this.intVal2).append("\n");
+         var2.append("samples=").append(this.int2).append("\n");
          var2.append("loss=").append(this.mvijuk).append("\n");
          var2.append("weights=\n").append(this.neuralNet.initAppend());
          Files.writeString(var1, var2.toString(), StandardCharsets.UTF_8);
@@ -527,7 +527,7 @@ public class StrokesHelper {
    public void createCreate() {
       try {
          Files.createDirectories(path);
-         String var1 = this.intVal2 + " " + this.mvijuk + "\n" + this.neuralNet.initAppend() + this.initAppend3() + this.initAppend() + this.initAppend2();
+         String var1 = this.int2 + " " + this.mvijuk + "\n" + this.neuralNet.initAppend() + this.initAppend3() + this.initAppend() + this.initAppend2();
          Files.writeString(this.resolve(), var1, StandardCharsets.UTF_8);
          this.createAppend();
       } catch (Exception var2) {
@@ -536,12 +536,12 @@ public class StrokesHelper {
 
    public static StrokesHelper initInit(String name) {
       try {
-         Path var1 = path.resolve(namex + ".neuro");
+         Path var1 = path.resolve(name + ".neuro");
          if (!Files.exists(var1)) {
-            String var2 = System.getProperty("user.home") + "\\OneDrive\\Робочий стіл\\" + namex + ".neuro";
+            String var2 = System.getProperty("user.home") + "\\OneDrive\\Робочий стіл\\" + name + ".neuro";
             var1 = Path.of(var2);
             if (!Files.exists(var1)) {
-               var2 = System.getProperty("user.home") + "\\Desktop\\" + namex + ".neuro";
+               var2 = System.getProperty("user.home") + "\\Desktop\\" + name + ".neuro";
                var1 = Path.of(var2);
                if (!Files.exists(var1)) {
                   return null;
@@ -551,7 +551,7 @@ public class StrokesHelper {
 
          String var9 = Files.readString(var1, StandardCharsets.UTF_8).trim();
          if (var9.startsWith("{")) {
-            StrokesHelper var10 = new StrokesHelper(namex);
+            StrokesHelper var10 = new StrokesHelper(name);
             var10.setJson(var9);
             return var10;
          } else {
@@ -561,7 +561,7 @@ public class StrokesHelper {
             } else {
                String var4 = var9.substring(0, var3).trim();
                String[] var5 = var4.split("\\s+");
-               StrokesHelper var6 = new StrokesHelper(namex);
+               StrokesHelper var6 = new StrokesHelper(name);
                var6.int2 = Integer.parseInt(var5[0]);
                var6.mvijuk = Double.parseDouble(var5[1]);
                var6.neuralNet = NeuralNet.parseParse(var9.substring(var3 + 1));
@@ -606,7 +606,7 @@ public class StrokesHelper {
             var22[11] = var20 ? 1.0 : 0.6;
             this.list.add(var21);
             this.list2.add(var22);
-            this.intVal2++;
+            this.int2++;
          }
       } catch (Exception var23) {
       }
@@ -753,28 +753,28 @@ public class StrokesHelper {
          float peak,
          boolean remembered
       ) {
-         this.yawSpeed = yawSpeedx;
-         this.pitchSpeed = pitchSpeedx;
-         this.hitX = hitXx;
-         this.hitY = hitYx;
-         this.hitZ = hitZx;
-         this.yawShake = yawShakex;
-         this.pitchShake = pitchShakex;
-         this.yawLead = yawLeadx;
-         this.pitchLead = pitchLeadx;
-         this.yawAccel = yawAccelx;
-         this.pitchAccel = pitchAccelx;
-         this.smoothness = smoothnessx;
-         this.curveArc = curveArcx;
-         this.overshootRatio = overshootRatiox;
-         this.peak = peakx;
-         this.remembered = rememberedx;
+         this.yawSpeed = yawSpeed;
+         this.pitchSpeed = pitchSpeed;
+         this.hitX = hitX;
+         this.hitY = hitY;
+         this.hitZ = hitZ;
+         this.yawShake = yawShake;
+         this.pitchShake = pitchShake;
+         this.yawLead = yawLead;
+         this.pitchLead = pitchLead;
+         this.yawAccel = yawAccel;
+         this.pitchAccel = pitchAccel;
+         this.smoothness = smoothness;
+         this.curveArc = curveArc;
+         this.overshootRatio = overshootRatio;
+         this.peak = peak;
+         this.remembered = remembered;
       }
 
       public StrokesHelper.Prediction initHit(float yawSpeed, float pitchSpeed) {
          return new StrokesHelper.Prediction(
-            yawSpeedx,
-            pitchSpeedx,
+            yawSpeed,
+            pitchSpeed,
             this.hitX,
             this.hitY,
             this.hitZ,

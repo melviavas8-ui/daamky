@@ -12,7 +12,7 @@ public class SwitchComponent extends Component<Boolean> {
 
    public SwitchComponent(Module parent, String name, Runnable action) {
       super(parent, name, false);
-      this.action = actionx;
+      this.action = action;
    }
 
    public void runAction() {
@@ -30,6 +30,6 @@ public class SwitchComponent extends Component<Boolean> {
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeSwitchComponent(var1);
+      return this.computeSwitchComponent(param1);
    }
 }

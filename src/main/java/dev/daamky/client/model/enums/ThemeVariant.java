@@ -80,13 +80,13 @@ public enum ThemeVariant {
    public Animation animation = new Direction2(300, 1.0);
 
    private ThemeVariant(String name, int client, int rect, int text, int text_dark, int rect_two, int text_client_c) {
-      this.name = namex;
-      this.client = clientx;
-      this.rect = rectx;
-      this.text = textx;
-      this.text_dark = text_darkx;
-      this.rect_two = rect_twox;
-      this.text_client_c = text_client_cx;
+      this.name = name;
+      this.client = client;
+      this.rect = rect;
+      this.text = text;
+      this.text_dark = text_dark;
+      this.rect_two = rect_two;
+      this.text_client_c = text_client_c;
    }
 
    public String getName() {

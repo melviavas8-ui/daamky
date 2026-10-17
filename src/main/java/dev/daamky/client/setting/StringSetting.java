@@ -48,12 +48,7 @@ public class StringSetting extends Setting<String> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((String)param1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((String)param1);
+   public Setting withValue(String param1) {
+      return this.value(param1);
    }
 }

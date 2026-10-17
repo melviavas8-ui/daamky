@@ -41,7 +41,7 @@ public class EnchantsHelper {
    );
 
    public EnchantsHelper(NameTags module) {
-      this.module = modulex;
+      this.module = module;
    }
 
    public void handleNext(ItemStack stack, MatrixStack matrices, float x, float y, float scale) {

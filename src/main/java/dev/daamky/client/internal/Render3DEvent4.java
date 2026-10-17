@@ -95,11 +95,11 @@ public class Render3DEvent4 extends TargetRenderer {
             for (byte var23 = 0; var23 < 360; var21++) {
                float var24 = (float)Math.toRadians((double)((float)var23 + var13 * 0.3F));
                this.mamqu[var21] = (float)(Math.sin((double)var24) * (double)var16 * (double)var17);
-               this.floatValVals2[var21] = (float)(Math.cos((double)var24) * (double)var16 * (double)var17);
+               this.floats2[var21] = (float)(Math.cos((double)var24) * (double)var16 * (double)var17);
                this.maaia[var21] = 0.1F + var15 * Math.abs((float)Math.sin((double)var23));
                int var25 = ThemeColor.computeCurrent((int)((float)var23 + var13), (int)(255.0F * var2));
-               this.intValVals3[var21] = this.computeMin(var25, var22);
-               vector3f.set(-this.mamqu[var21], var15 * 0.5F - 1.0F, -this.floatValVals2[var21]);
+               this.ints3[var21] = this.computeMin(var25, var22);
+               vector3f.set(-this.mamqu[var21], var15 * 0.5F - 1.0F, -this.floats2[var21]);
                if (vector3f.lengthSquared() < 1.0E-8F) {
                   vector3f.set(0.0F, 1.0F, 0.0F);
                } else {
@@ -115,10 +115,10 @@ public class Render3DEvent4 extends TargetRenderer {
 
             for (int var35 = 0; var35 < var20; var35++) {
                var3.push();
-               var3.translate(this.mamqu[var35], this.maaia[var35], this.floatValVals2[var35]);
+               var3.translate(this.mamqu[var35], this.maaia[var35], this.floats2[var35]);
                var3.multiply(this.quaternionfList[var35]);
                var3.scale(var18, var18, var18);
-               handleMin(var3.peek().getPositionMatrix(), var34, this.intValVals3[var35]);
+               handleMin(var3.peek().getPositionMatrix(), var34, this.ints3[var35]);
                var3.pop();
             }
 
@@ -128,10 +128,10 @@ public class Render3DEvent4 extends TargetRenderer {
 
             for (int var37 = 0; var37 < var20; var37++) {
                var3.push();
-               var3.translate(this.mamqu[var37], this.maaia[var37], this.floatValVals2[var37]);
+               var3.translate(this.mamqu[var37], this.maaia[var37], this.floats2[var37]);
                var3.multiply(this.quaternionfList[var37]);
                var3.scale(var18, var18, var18);
-               int var26 = this.computeMin(this.intValVals3[var37], var2);
+               int var26 = this.computeMin(this.ints3[var37], var2);
                handleVal(var3.peek().getPositionMatrix(), var36, var26);
                var3.pop();
             }
@@ -147,9 +147,9 @@ public class Render3DEvent4 extends TargetRenderer {
 
                for (int var27 = 0; var27 < var20; var27++) {
                   var3.push();
-                  var3.translate(this.mamqu[var27], this.maaia[var27], this.floatValVals2[var27]);
+                  var3.translate(this.mamqu[var27], this.maaia[var27], this.floats2[var27]);
                   Matrix4f var28 = var3.peek().getPositionMatrix();
-                  int var29 = this.intValVals3[var27];
+                  int var29 = this.ints3[var27];
                   int var30 = var29 >> 16 & 0xFF;
                   int var31 = var29 >> 8 & 0xFF;
                   int var32 = var29 & 0xFF;

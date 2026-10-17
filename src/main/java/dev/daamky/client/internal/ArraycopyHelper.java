@@ -35,7 +35,7 @@ public class ArraycopyHelper {
    }
 
    public ArraycopyHelper(String name) {
-      this.name = namex;
+      this.name = name;
       this.colors[0] = -1;
       this.colors[1] = -15856110;
       this.colors[2] = -1;
@@ -45,7 +45,7 @@ public class ArraycopyHelper {
       this.colors[6] = -1;
       this.colors[7] = -15066592;
       System.arraycopy(SLIDER_DEF, 0, this.sliders, 0, this.sliders.length);
-      System.arraycopy(BOOL_DEF, 0, this.booleanValVals, 0, this.booleanValVals.length);
+      System.arraycopy(BOOL_DEF, 0, this.booleans, 0, this.booleans.length);
    }
 
    public int computeColors(int index) {
@@ -78,18 +78,18 @@ public class ArraycopyHelper {
    }
 
    public boolean computeBooleans(int index) {
-      return this.booleanValVals[index];
+      return this.booleans[index];
    }
 
    public void handleBooleans(int index, boolean value) {
-      this.booleanValVals[index] = value;
+      this.booleans[index] = value;
    }
 
    public ArraycopyHelper initArraycopy(String newName) {
       ArraycopyHelper var2 = new ArraycopyHelper(newName);
       System.arraycopy(this.colors, 0, var2.colors, 0, 8);
       System.arraycopy(this.sliders, 0, var2.sliders, 0, this.sliders.length);
-      System.arraycopy(this.booleanValVals, 0, var2.booleans, 0, this.booleanValVals.length);
+      System.arraycopy(this.booleans, 0, var2.booleans, 0, this.booleans.length);
       return var2;
    }
 }

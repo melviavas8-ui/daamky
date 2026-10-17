@@ -25,11 +25,11 @@ public abstract class Command implements MinecraftAccess {
    }
 
    public static <T> RequiredArgumentBuilder<CommandSource, T> argument(String name, ArgumentType<T> type) {
-      return RequiredArgumentBuilder.argument(namex, type);
+      return RequiredArgumentBuilder.argument(name, type);
    }
 
    public static LiteralArgumentBuilder<CommandSource> literal(String name) {
-      return LiteralArgumentBuilder.literal(namex);
+      return LiteralArgumentBuilder.literal(name);
    }
 
    public String getName() {

@@ -69,13 +69,13 @@ public abstract class Module implements RenderAccess {
    }
 
    public void handleFlag(boolean enabled) {
-      this.handleEnabled(enabledx, true);
+      this.handleEnabled(enabled, true);
    }
 
    public void handleEnabled(boolean enabled, boolean notification) {
-      if (this.enabled != enabledx && (this.allowDisable || enabledx)) {
-         this.enabled = enabledx;
-         if (enabledx) {
+      if (this.enabled != enabled && (this.allowDisable || enabled)) {
+         this.enabled = enabled;
+         if (enabled) {
             this.getMc();
          } else {
             this.run3();
@@ -104,7 +104,7 @@ public abstract class Module implements RenderAccess {
    }
 
    public void setExpanded(boolean expanded) {
-      this.expanded = expandedx;
+      this.expanded = expanded;
    }
 
    public void run3() {
@@ -229,71 +229,71 @@ public abstract class Module implements RenderAccess {
    }
 
       public void setModuleInfo(ModuleInfo moduleInfo) {
-      this.moduleInfo = moduleInfox;
+      this.moduleInfo = moduleInfo;
    }
 
       public void setName(String name) {
-      this.name = namex;
+      this.name = name;
    }
 
       public void setBigName(String bigName) {
-      this.bigName = bigNamex;
+      this.bigName = bigName;
    }
 
       public void setDesc(String desc) {
-      this.desc = descx;
+      this.desc = desc;
    }
 
       public void setCategory(ModuleCategory category) {
-      this.category = categoryx;
+      this.category = category;
    }
 
       public void setAutoEnabled(boolean autoEnabled) {
-      this.autoEnabled = autoEnabledx;
+      this.autoEnabled = autoEnabled;
    }
 
       public void setAllowDisable(boolean allowDisable) {
-      this.allowDisable = allowDisablex;
+      this.allowDisable = allowDisable;
    }
 
       public void setHidden(boolean hidden) {
-      this.hidden = hiddenx;
+      this.hidden = hidden;
    }
 
       public void setKey(int key) {
-      this.key = keyx;
+      this.key = key;
    }
 
       public void setAnimation(Animation animation) {
-      this.animation = animationx;
+      this.animation = animation;
    }
 
       public void setAnimation1(Animation animation1) {
-      this.animation1 = animation1x;
+      this.animation1 = animation1;
    }
 
       public void setAnimation2(Animation animation2) {
-      this.animation2 = animation2x;
+      this.animation2 = animation2;
    }
 
       public void setAnimation3(Animation animation3) {
-      this.animation3 = animation3x;
+      this.animation3 = animation3;
    }
 
       public void setAnimation12(Animation animation12) {
-      this.animation12 = animation12x;
+      this.animation12 = animation12;
    }
 
       public void setAnimation14(Animation animation14) {
-      this.animation14 = animation14x;
+      this.animation14 = animation14;
    }
 
       public void setAnimation15(Animation animation15) {
-      this.animation15 = animation15x;
+      this.animation15 = animation15;
    }
 
       public void setAnimation16(Animation animation16) {
-      this.animation16 = animation16x;
+      this.animation16 = animation16;
    }
 
       public boolean computeAnimation(Object o) {

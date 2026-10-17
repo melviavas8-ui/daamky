@@ -35,9 +35,9 @@ public abstract class Module extends Configurable implements MinecraftAccess {
    }
 
    public Module(String name, String description, ModuleCategory tag) {
-      this.name = namex;
-      this.description = descriptionx;
-      this.tag = tagx;
+      this.name = name;
+      this.description = description;
+      this.tag = tag;
       this.subCategory = "";
       this.bind = -999;
    }
@@ -47,7 +47,7 @@ public abstract class Module extends Configurable implements MinecraftAccess {
    }
 
    public String getCategoryDescription(ModuleCategory tag) {
-      return switch (tagx) {
+      return switch (tag) {
          case BATTLE -> "Боевой модуль: помогает в PvP и атаке.";
          case MOTION -> "Движение: меняет скорость, перемещение или управление.";
          case VISUALS -> "Визуальный модуль: меняет отображение и интерфейс.";
@@ -134,11 +134,11 @@ public abstract class Module extends Configurable implements MinecraftAccess {
    }
 
    public void setBind(int bind) {
-      this.bind = bindx;
+      this.bind = bind;
    }
 
    public void setBindHold(boolean bindHold) {
-      this.bindHold = bindHoldx;
+      this.bindHold = bindHold;
    }
 
    public String getDisplayName() {

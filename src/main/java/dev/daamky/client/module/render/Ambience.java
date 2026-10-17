@@ -196,7 +196,7 @@ public class Ambience extends Module {
       }
 
       private Weather(String name) {
-         this.name = namex;
+         this.name = name;
       }
 
       public static Ambience.Weather[] $values() {
@@ -216,7 +216,7 @@ public class Ambience extends Module {
       public final String name;
 
       private WorldTime(String name) {
-         this.name = namex;
+         this.name = name;
       }
 
       public static Ambience.WorldTime[] $values() {

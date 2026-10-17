@@ -30,7 +30,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
             for (BooleanSetting var3 : value) {
                if (var3 != null) {
                   Runnable var4 = var3.getAction();
-                  var3.onAction(this::lambda$setValue$0);
+                  var3.onAction(() -> this.lambda$setValue$0(var4));
                }
             }
          }
@@ -48,7 +48,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
          for (BooleanSetting var5 : value) {
             if (var5 != null) {
                Runnable var6 = var5.getAction();
-               var5.onAction(this::lambda$addValues$1);
+               var5.onAction(() -> this.lambda$addValues$1(var6));
                this.value.add(var5);
             }
          }
@@ -90,11 +90,11 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
    }
 
    public List<String> getValues() {
-      return this.value.stream().map(MultiBooleanSetting::lambda$getAllNames$2).collect(Collectors.toList());
+      return this.value.stream().map(BooleanSetting::getName).collect(Collectors.toList());
    }
 
    public List<String> getAllNames() {
-      return this.value.stream().filter(MultiBooleanSetting::lambda$getList$3).map(MultiBooleanSetting::lambda$getList$4).collect(Collectors.toList());
+      return this.value.stream().filter(s -> Boolean.TRUE.equals(s.getValue())).map(BooleanSetting::getName).collect(Collectors.toList());
    }
 
    public Optional<BooleanSetting> get(String name) {
@@ -117,25 +117,8 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((List<BooleanSetting>)var1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((List<BooleanSetting>)var1);
-   }
-
-   public static Object lambda$getList$4(Object s) {
-      return s.getName();
-   }
-
-   public static boolean lambda$getList$3(Object s) {
-      return Boolean.TRUE.equals(s.getValue());
-   }
-
-   public static Object lambda$getAllNames$2(Object s) {
-      return s.getName();
+   public Setting withValue(List<BooleanSetting> param1) {
+      return this.value(param1);
    }
 
    public void lambda$addValues$1(Runnable oldAction) {

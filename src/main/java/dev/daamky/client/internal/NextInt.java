@@ -6,7 +6,7 @@ public class NextInt extends Random {
    public long seed;
 
    public NextInt(long seed) {
-      this.seed = seedx;
+      this.seed = seed;
    }
 
    public NextInt() {

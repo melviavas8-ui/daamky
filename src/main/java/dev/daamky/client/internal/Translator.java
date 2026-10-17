@@ -79,13 +79,13 @@ public class Translator extends Widget implements MinecraftAccess {
       this.animatedValue.animateTo(var12 ? 1.0 : 0.0, 150L, Easing.QUINT_OUT, true);
       float var13 = (float)this.animatedValue.getValue();
       float var5;
-      if (this.longVal == 0L) {
+      if (this.timeStamp == 0L) {
          var5 = 1.0F;
       } else {
-         float var14 = (float)(System.currentTimeMillis() - this.longVal) / 380.0F;
+         float var14 = (float)(System.currentTimeMillis() - this.timeStamp) / 380.0F;
          if (var14 >= 1.0F) {
             var5 = 1.0F;
-            this.longVal = 0L;
+            this.timeStamp = 0L;
          } else {
             var5 = Easing.QUINT_OUT.apply(var14);
          }
@@ -298,7 +298,7 @@ public class Translator extends Widget implements MinecraftAccess {
          if (Geometry.computeFlag(mouseX, mouseY, (double)var7, (double)this.getFloat(), (double)var8, (double)this.getFloat2())) {
             this.string = EngHelper.getInstance().getEng();
             EngHelper.getInstance().run();
-            this.longVal = System.currentTimeMillis();
+            this.timeStamp = System.currentTimeMillis();
          } else {
             float var9 = this.getFloat3();
             float var10 = var9 + InterfaceMetrics.computeFloat(9.0F);
@@ -335,7 +335,7 @@ public class Translator extends Widget implements MinecraftAccess {
 
    @Override
    public void setAlpha(float alpha) {
-      this.alpha = alphax;
+      this.alpha = alpha;
    }
 
    public static Translator getInstance() {

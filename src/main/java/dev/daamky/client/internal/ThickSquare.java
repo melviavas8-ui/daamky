@@ -28,7 +28,7 @@ public class ThickSquare extends TargetRenderer {
    @Override
    public void runOrbit() {
       if (this.getValue()) {
-         this.floatVal2 = this.floatVal;
+         this.float2 = this.floatVal;
          if (animatedValue.getValue() > 0.05) {
             float var1 = (float)animatedValue.getValue();
             this.mihvu = (this.flag ? this.mihvu - 0.5F : this.mihvu + 0.5F) * var1;
@@ -65,7 +65,7 @@ public class ThickSquare extends TargetRenderer {
       matrices.translate(var3, var5 + (double)(TargetRenderer.getFloat3() / 2.0F), var7);
       matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-(camera.getYaw() + 180.0F)));
       matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-camera.getPitch()));
-      matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(EntityHelper.computeFloat((double)this.floatVal2, (double)this.floatVal)));
+      matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(EntityHelper.computeFloat((double)this.float2, (double)this.floatVal)));
       RenderSystem.enableBlend();
       RenderSystem.blendFuncSeparate(SrcFactor.SRC_ALPHA, DstFactor.ONE, SrcFactor.ONE, DstFactor.ZERO);
       RenderSystem.setShader(ShaderProgramKeys.POSITION_TEX_COLOR);

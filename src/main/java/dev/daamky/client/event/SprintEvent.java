@@ -20,8 +20,8 @@ public class SprintEvent extends Event<SprintEvent.SprintEventData> {
    }
 
    @Override
-   public boolean postAndCheckCancelled(Object param1) {
-      return this.computeCancelled((SprintEvent.SprintEventData)var1);
+   public boolean postAndCheckCancelled(SprintEvent.SprintEventData param1) {
+      return this.computeCancelled(param1);
    }
 
    public static class SprintEventData {
@@ -29,7 +29,7 @@ public class SprintEvent extends Event<SprintEvent.SprintEventData> {
       public final InputState directionalInput;
 
       public void setSprint(boolean sprint) {
-         this.sprint = sprintx;
+         this.sprint = sprint;
       }
 
       public boolean isSprint() {
@@ -41,7 +41,7 @@ public class SprintEvent extends Event<SprintEvent.SprintEventData> {
       }
 
       public SprintEventData(InputState directionalInput) {
-         this.directionalInput = directionalInputx;
+         this.directionalInput = directionalInput;
       }
    }
 }

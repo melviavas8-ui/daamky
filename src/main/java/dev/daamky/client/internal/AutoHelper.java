@@ -84,7 +84,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowCombat(boolean showCombat) {
-      this.showCombat = showCombatx;
+      this.showCombat = showCombat;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -93,7 +93,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowMovement(boolean showMovement) {
-      this.showMovement = showMovementx;
+      this.showMovement = showMovement;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -102,7 +102,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowRender(boolean showRender) {
-      this.showRender = showRenderx;
+      this.showRender = showRender;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -111,7 +111,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowPlayer(boolean showPlayer) {
-      this.showPlayer = showPlayerx;
+      this.showPlayer = showPlayer;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -120,7 +120,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowOther(boolean showOther) {
-      this.showOther = showOtherx;
+      this.showOther = showOther;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -129,7 +129,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setShowSuffix(boolean showSuffix) {
-      this.showSuffix = showSuffixx;
+      this.showSuffix = showSuffix;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -138,7 +138,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setAlignSide(String alignSide) {
-      this.alignSide = alignSidex;
+      this.alignSide = alignSide;
       DraggableManagerSaveHelper.getInstance().save();
    }
 
@@ -173,7 +173,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setCardMode(boolean cardMode) {
-      this.cardMode = cardModex;
+      this.cardMode = cardMode;
    }
 
    public boolean getGraphMode() {
@@ -181,7 +181,7 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setGraphMode(boolean graphMode) {
-      this.graphMode = graphModex;
+      this.graphMode = graphMode;
    }
 
    public boolean getAttachInfoHUD() {
@@ -193,12 +193,12 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public AutoHelper(Module feature, String name, float initialXVal, float initialYVal) {
-      this.feature = featurex;
-      this.name = namex;
-      this.x = this.computeRound(initialXValx);
-      this.y = this.computeRound(initialYValx);
-      this.initialXVal = initialXValx;
-      this.initialYVal = initialYValx;
+      this.feature = feature;
+      this.name = name;
+      this.x = this.computeRound(initialXVal);
+      this.y = this.computeRound(initialYVal);
+      this.initialXVal = initialXVal;
+      this.initialYVal = initialYVal;
       FramebufferResizeEvent.getInstance().subscribe(new EventListener<>(-1, this::lambda$new$0));
    }
 
@@ -468,67 +468,67 @@ public class AutoHelper implements MinecraftAccess {
    }
 
    public void setX(float x) {
-      this.x = xx;
+      this.x = x;
    }
 
    public void setY(float y) {
-      this.y = yx;
+      this.y = y;
    }
 
    public void setBlur(boolean blur) {
-      this.blur = blurx;
+      this.blur = blur;
    }
 
    public void setScale(float scale) {
-      this.scale = scalex;
+      this.scale = scale;
    }
 
    public void setAttachInfoHUD(Boolean attachInfoHUD) {
-      this.attachInfoHUD = attachInfoHUDx;
+      this.attachInfoHUD = attachInfoHUD;
    }
 
    public void setMergeCards(Boolean mergeCards) {
-      this.mergeCards = mergeCardsx;
+      this.mergeCards = mergeCards;
    }
 
    public void setInitialXVal(float initialXVal) {
-      this.initialXVal = initialXValx;
+      this.initialXVal = initialXVal;
    }
 
    public void setInitialYVal(float initialYVal) {
-      this.initialYVal = initialYValx;
+      this.initialYVal = initialYVal;
    }
 
    public void setStartX(float startX) {
-      this.startX = startXx;
+      this.startX = startX;
    }
 
    public void setStartY(float startY) {
-      this.startY = startYx;
+      this.startY = startY;
    }
 
    public void setDragging(boolean dragging) {
-      this.dragging = draggingx;
+      this.dragging = dragging;
    }
 
    public void setWidth(float width) {
-      this.width = widthx;
+      this.width = width;
    }
 
    public void setHeight(float height) {
-      this.height = heightx;
+      this.height = height;
    }
 
    public void setOnReleaseCallback(Runnable onReleaseCallback) {
-      this.onReleaseCallback = onReleaseCallbackx;
+      this.onReleaseCallback = onReleaseCallback;
    }
 
    public void setDragFilter(BiPredicate<Float, Float> dragFilter) {
-      this.dragFilter = dragFilterx;
+      this.dragFilter = dragFilter;
    }
 
    public void setClickCallback(BiConsumer<Float, Float> clickCallback) {
-      this.clickCallback = clickCallbackx;
+      this.clickCallback = clickCallback;
    }
 
    public void lambda$new$0(FramebufferResizeEvent event) {

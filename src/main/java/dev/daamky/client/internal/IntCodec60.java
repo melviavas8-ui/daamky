@@ -14,7 +14,7 @@ public final class IntCodec60 {
    }
 
    public long decode2() {
-      return(longVal)this.key1 + 445L;
+      return(key2)this.key1 + 445L;
    }
 
    public static int encode3(int var0) {

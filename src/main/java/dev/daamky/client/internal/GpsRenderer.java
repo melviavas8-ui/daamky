@@ -196,7 +196,7 @@ public class GpsRenderer implements MinecraftAccess {
    }
 
    public void setGpsPosition(Vector2i gpsPosition) {
-      this.gpsPosition = gpsPositionx;
+      this.gpsPosition = gpsPosition;
    }
 
    public void lambda$load$1(dev.daamky.client.event.Render3DEvent.Render3DEventData event) {

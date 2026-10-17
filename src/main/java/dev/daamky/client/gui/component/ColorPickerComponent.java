@@ -55,22 +55,22 @@ public class ColorPickerComponent extends Component<Integer> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeColorPickerComponent(var1);
+      return this.computeColorPickerComponent(param1);
    }
 
    @Override
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Integer)var1);
+   public Component withValue(Integer param1) {
+      return this.withCachedValue(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

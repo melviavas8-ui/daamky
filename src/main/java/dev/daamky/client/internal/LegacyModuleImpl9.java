@@ -8,7 +8,7 @@ import java.awt.Color;
 public class LegacyModuleImpl9 extends ColorPickerComponent {
    public LegacyModuleImpl9(final LegacyModule this$0, Module parent, String name, Integer value, final ColorSetting param5) {
       super(parent, name, value);
-      this.colorSetting = var5;
+      this.colorSetting = param5;
    }
 
    public ColorPickerComponent withCachedValue(Integer value) {
@@ -26,7 +26,8 @@ public class LegacyModuleImpl9 extends ColorPickerComponent {
       return this.getCachedValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Integer)var1);
+   public Component withValue(Integer param1) {
+      return this.withCachedValue(param1);
    }
+
 }

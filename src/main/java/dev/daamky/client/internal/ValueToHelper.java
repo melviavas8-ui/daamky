@@ -13,15 +13,15 @@ public class ValueToHelper {
    public Runnable finishAction;
 
    public ValueToHelper computeValueToHelper(double valueTo, double duration) {
-      return this.computeDebug(valueTo, durationx, ValueHelper.applyFunction2, false);
+      return this.computeDebug(valueTo, duration, ValueHelper.applyFunction2, false);
    }
 
    public ValueToHelper computeValueToHelper(double valueTo, double duration, ApplyFunction2 easing) {
-      return this.computeDebug(valueTo, durationx, easingx, false);
+      return this.computeDebug(valueTo, duration, easing, false);
    }
 
    public ValueToHelper computeValueToHelper(double valueTo, double duration, boolean safe) {
-      return this.computeDebug(valueTo, durationx, ValueHelper.applyFunction2, safe);
+      return this.computeDebug(valueTo, duration, ValueHelper.applyFunction2, safe);
    }
 
    public ValueToHelper computeDebug(double valueTo, double duration, ApplyFunction2 easing, boolean safe) {
@@ -30,7 +30,7 @@ public class ValueToHelper {
             System.out.println("Animate cancelled due to target val equals from val");
          }
       } else {
-         this.withEasing(easingx).withDuration(durationx * 1000.0).withStart(System.currentTimeMillis()).withFromValue(this.getValue()).withToValue(valueTo);
+         this.withEasing(easing).withDuration(duration * 1000.0).withStart(System.currentTimeMillis()).withFromValue(this.getValue()).withToValue(valueTo);
          if (this.isDebug()) {
             System.out
                .println(
@@ -59,46 +59,46 @@ public class ValueToHelper {
    }
 
    public double computeDouble(double start, double end, double pct) {
-      return startx + (end - startx) * pct;
+      return start + (end - start) * pct;
    }
 
    public ValueToHelper withStart(long start) {
-      this.start = startx;
+      this.start = start;
       return this;
    }
 
    public ValueToHelper withDuration(double duration) {
-      this.duration = durationx;
+      this.duration = duration;
       return this;
    }
 
    public ValueToHelper withFromValue(double fromValue) {
-      this.fromValue = fromValuex;
+      this.fromValue = fromValue;
       return this;
    }
 
    public ValueToHelper withToValue(double toValue) {
-      this.toValue = toValuex;
+      this.toValue = toValue;
       return this;
    }
 
    public ValueToHelper withValue(double value) {
-      this.value = valuex;
+      this.value = value;
       return this;
    }
 
    public ValueToHelper withPrevValue(double prevValue) {
-      this.prevValue = prevValuex;
+      this.prevValue = prevValue;
       return this;
    }
 
    public ValueToHelper withEasing(ApplyFunction2 easing) {
-      this.easing = easingx;
+      this.easing = easing;
       return this;
    }
 
    public ValueToHelper withDebug(boolean debug) {
-      this.debug = debugx;
+      this.debug = debug;
       return this;
    }
 
@@ -108,9 +108,9 @@ public class ValueToHelper {
    }
 
    public void handleAction(double value) {
-      this.computeValueToHelper(valuex, 0.0);
+      this.computeValueToHelper(value, 0.0);
       this.getFinishAction();
-      this.withValue(valuex);
+      this.withValue(value);
    }
 
       public long getStart() {

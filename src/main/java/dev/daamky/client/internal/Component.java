@@ -18,19 +18,19 @@ public class Component<Value> implements Callback3, RenderAccess {
    }
 
    public Component(String name, Value value) {
-      this.name = namex;
-      this.value = (Value)valuex;
+      this.name = name;
+      this.value = (Value)value;
    }
 
    public Component(Module parent, String name, Value value) {
-      this.parent = parentx;
-      this.name = namex;
-      this.value = (Value)valuex;
-      parentx.getSettings().add(this);
+      this.parent = parent;
+      this.name = name;
+      this.value = (Value)value;
+      parent.getSettings().add(this);
    }
 
    public Component<?> withValue(Value value) {
-      this.value = (Value)valuex;
+      this.value = (Value)value;
       if (mc.world != null && mc.player != null && this.onAction != null) {
          this.onAction.run();
       }
@@ -40,7 +40,7 @@ public class Component<Value> implements Callback3, RenderAccess {
 
    @Override
    public Component<?> withValue(Supplier<Boolean> value) {
-      this.visible = valuex;
+      this.visible = value;
       if (mc.world != null && mc.player != null && this.onSetVisible != null) {
          this.onSetVisible.run();
       }

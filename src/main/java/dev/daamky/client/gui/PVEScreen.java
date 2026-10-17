@@ -97,10 +97,10 @@ public class PVEScreen extends Screen implements MinecraftAccess {
 
    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
       long var5;
-      if (this.flag4 && (var5 = System.currentTimeMillis()) - this.longValVal2 > 35L) {
+      if (this.flag4 && (var5 = System.currentTimeMillis()) - this.long2 > 35L) {
          if (!this.string.isEmpty()) {
             this.string = this.string.substring(0, this.string.length() - 1);
-            this.longValVal2 = var5;
+            this.long2 = var5;
          } else {
             this.flag4 = false;
          }
@@ -296,7 +296,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
                if (!this.string.isEmpty()) {
                   this.flag4 = true;
                   this.flag3 = false;
-                  this.longValVal2 = System.currentTimeMillis();
+                  this.long2 = System.currentTimeMillis();
                } else {
                   this.flag3 = false;
                }
@@ -488,7 +488,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
    }
 
    public long getLong() {
-      return this.longVal;
+      return this.timeStamp;
    }
 
    public List<ClickGui> getList() {
@@ -512,7 +512,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
    }
 
    public long getLong2() {
-      return this.longValVal2;
+      return this.long2;
    }
 
    public String getString2() {

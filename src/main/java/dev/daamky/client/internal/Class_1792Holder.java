@@ -9,7 +9,7 @@ public class Class_1792Holder extends BooleanSetting {
 
    public Class_1792Holder(String name, Item icon) {
       super(name);
-      this.icon = iconx;
+      this.icon = icon;
    }
 
    public Class_1792Holder computeClass_1792Holder(Boolean value) {
@@ -23,11 +23,12 @@ public class Class_1792Holder extends BooleanSetting {
 
    @Override
    public BooleanSetting value(Boolean param1) {
-      return this.computeClass_1792Holder(var1);
+      return this.computeClass_1792Holder(param1);
    }
 
    @Override
-   public Setting withValue(Object param1) {
-      return this.computeClass_1792Holder((Boolean)var1);
+   public Setting withValue(Boolean param1) {
+      return this.computeClass_1792Holder(param1);
    }
+
 }

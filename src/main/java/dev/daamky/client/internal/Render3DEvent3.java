@@ -33,13 +33,13 @@ public class Render3DEvent3 extends TargetRenderer {
    public void runOrbit() {
       if (this.getValue()) {
          int var1 = this.getInstance().getGhostCount().getValue().intValue();
-         if (class_1297 == null || class_1297.getId() != this.intVal || var1 != this.intValVal2) {
+         if (class_1297 == null || class_1297.getId() != this.intVal || var1 != this.int2) {
             this.list.clear();
             if (class_1297 != null) {
                this.intVal = class_1297.getId();
             }
 
-            this.intValVal2 = var1;
+            this.int2 = var1;
          }
 
          this.floatVal = this.mbouenw;
@@ -281,12 +281,12 @@ public class Render3DEvent3 extends TargetRenderer {
       public int cometIndex;
 
       public TrailPoint(double x, double y, double z, float angle, long time, int cometIndex) {
-         this.x = xx;
-         this.y = yx;
-         this.z = zx;
-         this.angle = anglex;
-         this.time = timex;
-         this.cometIndex = cometIndexx;
+         this.x = x;
+         this.y = y;
+         this.z = z;
+         this.angle = angle;
+         this.time = time;
+         this.cometIndex = cometIndex;
       }
    }
 }

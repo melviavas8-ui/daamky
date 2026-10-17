@@ -81,22 +81,22 @@ public final class ContextHelper implements MinecraftAccess {
             float var5 = MinecraftAccess.mc.getRenderTickCounter().getTickDelta(false);
             int var6 = MinecraftAccess.mc.getWindow().getScaledWidth();
             int var7 = MinecraftAccess.mc.getWindow().getScaledHeight();
-            if (var2 != this.floatValVal6
-               || var3 != this.floatValVal7
+            if (var2 != this.float6
+               || var3 != this.float7
                || var4.x != this.mzaet
                || var4.y != this.doubleVal
                || var4.z != this.miava
-               || var5 != this.floatValVal8
+               || var5 != this.float8
                || var6 != this.intVal
-               || var7 != this.intValVal2) {
-               this.floatValVal6 = var2;
-               this.floatValVal7 = var3;
+               || var7 != this.int2) {
+               this.float6 = var2;
+               this.float7 = var3;
                this.mzaet = var4.x;
                this.doubleVal = var4.y;
                this.miava = var4.z;
-               this.floatValVal8 = var5;
+               this.float8 = var5;
                this.intVal = var6;
-               this.intValVal2 = var7;
+               this.int2 = var7;
                this.class_243 = var4;
                this.quaternionf4.identity().rotationY((float)Math.toRadians((double)(-var2)));
                this.quaternionf5.identity().rotationX((float)Math.toRadians((double)var3));
@@ -105,16 +105,16 @@ public final class ContextHelper implements MinecraftAccess {
                this.maoaj = MinecraftAccess.mc.gameRenderer.getFov(var1, var5, true);
                this.flag = (Boolean)MinecraftAccess.mc.options.getBobView().getValue();
                this.class_742 = MinecraftAccess.mc.getCameraEntity() instanceof AbstractClientPlayerEntity var9 ? var9 : null;
-               this.floatValVal2 = (float)var6 / 2.0F;
-               this.floatValVal3 = (float)var7 / 2.0F;
+               this.float2 = (float)var6 / 2.0F;
+               this.float3 = (float)var7 / 2.0F;
                if (this.flag && this.class_742 != null) {
                   float var16 = this.class_742.distanceMoved;
                   float var10 = this.class_742.lastDistanceMoved;
                   float var11 = var16 - var10;
                   float var12 = -(var16 + var11 * this.floatVal);
                   float var13 = MathHelper.lerp(this.floatVal, this.class_742.prevStrideDistance, this.class_742.strideDistance);
-                  this.floatValVal4 = MathHelper.sin(var12 * (float) Math.PI) * var13 * 0.5F;
-                  this.floatValVal5 = -Math.abs(MathHelper.cos(var12 * (float) Math.PI) * var13);
+                  this.float4 = MathHelper.sin(var12 * (float) Math.PI) * var13 * 0.5F;
+                  this.float5 = -Math.abs(MathHelper.cos(var12 * (float) Math.PI) * var13);
                   float var14 = MathHelper.sin(var12 * (float) Math.PI) * var13 * 3.0F * (float) (Math.PI / 180.0);
                   float var15 = Math.abs(MathHelper.cos(var12 * (float) Math.PI - 0.2F)) * var13 * 5.0F * (float) (Math.PI / 180.0);
                   if (var14 != 0.0F) {
@@ -131,8 +131,8 @@ public final class ContextHelper implements MinecraftAccess {
                      this.mhoig = false;
                   }
                } else {
-                  this.floatValVal4 = 0.0F;
-                  this.floatValVal5 = 0.0F;
+                  this.float4 = 0.0F;
+                  this.float5 = 0.0F;
                   this.flag2 = false;
                   this.mhoig = false;
                }
@@ -152,9 +152,9 @@ public final class ContextHelper implements MinecraftAccess {
             this.handleRotate(var8);
          }
 
-         double var9 = (double)this.floatValVal3 / ((double)var8.z * Math.tan(Math.toRadians((double)this.maoaj / 2.0)));
+         double var9 = (double)this.float3 / ((double)var8.z * Math.tan(Math.toRadians((double)this.maoaj / 2.0)));
          return var8.z < 0.0F
-            ? out.set((float)((double)(-var8.x) * var9 + (double)this.floatValVal2), (float)((double)this.floatValVal3 - (double)var8.y * var9))
+            ? out.set((float)((double)(-var8.x) * var9 + (double)this.float2), (float)((double)this.float3 - (double)var8.y * var9))
             : out.set(Float.MAX_VALUE, Float.MAX_VALUE);
       }
 
@@ -167,7 +167,7 @@ public final class ContextHelper implements MinecraftAccess {
             result3f.rotate(this.quaternionf3);
          }
 
-         result3f.add(this.floatValVal4, -this.floatValVal5, 0.0F);
+         result3f.add(this.float4, -this.float5, 0.0F);
       }
    }
 }

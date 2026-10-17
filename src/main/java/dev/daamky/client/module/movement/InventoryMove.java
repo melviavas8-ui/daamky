@@ -166,9 +166,9 @@ public class InventoryMove extends Module {
       public final boolean shulker;
 
       public PacketInfo(Packet<?> packet, int delay, boolean shulker) {
-         this.packet = packetx;
-         this.delay = delayx;
-         this.shulker = shulkerx;
+         this.packet = packet;
+         this.delay = delay;
+         this.shulker = shulker;
       }
    }
 }

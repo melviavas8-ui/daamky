@@ -27,7 +27,7 @@ public class CustomRotations extends Configurable implements MinecraftAccess {
    public final ModeSetting rotateAt = new ModeSetting("Rotate at").value(this.anchorPoint).enumValues(AnchorPoint.values()).onAction(this::lambda$new$0);
 
    public CustomRotations(ElytraTarget elytraTargetModule) {
-      this.elytraTargetModule = elytraTargetModulex;
+      this.elytraTargetModule = elytraTargetModule;
       this.addSettings(new Setting[]{this.customRotations, this.sharp, this.autoDistance, this.rotateAt});
       this.addSettings(this.supplier.get().getSettings());
    }

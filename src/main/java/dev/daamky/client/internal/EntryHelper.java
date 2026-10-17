@@ -106,9 +106,9 @@ public final class EntryHelper implements MinecraftAccess {
       public boolean flag = false;
 
       public Entry(long execNs, long endNs, Runnable action) {
-         this.execNs = execNsx;
-         this.endNs = endNsx;
-         this.action = actionx;
+         this.execNs = execNs;
+         this.endNs = endNs;
+         this.action = action;
       }
    }
 }

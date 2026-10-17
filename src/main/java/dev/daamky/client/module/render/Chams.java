@@ -198,7 +198,7 @@ public class Chams extends Module {
       }
 
       public void setDelegate(BufferBuilder delegate) {
-         this.delegate = delegatex;
+         this.delegate = delegate;
       }
 
       public VertexConsumer vertex(float x, float y, float z) {

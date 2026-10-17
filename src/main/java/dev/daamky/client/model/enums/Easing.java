@@ -37,7 +37,7 @@ public enum Easing {
    public final Easing.EasingFunction function;
 
    private Easing(Easing.EasingFunction function) {
-      this.function = functionx;
+      this.function = function;
    }
 
    public double apply(double x) {

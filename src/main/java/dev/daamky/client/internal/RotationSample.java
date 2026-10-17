@@ -6,8 +6,8 @@ public class RotationSample {
    public float pitchOffset;
 
    public RotationSample(long timeOffset, float yawOffset, float pitchOffset) {
-      this.timeOffset = timeOffsetx;
-      this.yawOffset = yawOffsetx;
-      this.pitchOffset = pitchOffsetx;
+      this.timeOffset = timeOffset;
+      this.yawOffset = yawOffset;
+      this.pitchOffset = pitchOffset;
    }
 }

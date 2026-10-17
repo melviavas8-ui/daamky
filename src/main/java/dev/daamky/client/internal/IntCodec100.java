@@ -5,11 +5,11 @@ public final class IntCodec100 {
    public long key1 = 27226L;
 
    public long decode0() {
-      return(longVal)this.key0 + 450L;
+      return(key1)this.key0 + 450L;
    }
 
    public long decode1() {
-      return(longVal)this.key0 + 501L;
+      return(key1)this.key0 + 501L;
    }
 
    public int decode2() {

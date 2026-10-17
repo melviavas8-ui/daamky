@@ -62,7 +62,7 @@ public class ElytraStrafe extends Module {
          }
 
          long var3 = (long)(this.fireworkDelay.getValue() * 1000.0F);
-         if (mc.player.isGliding() && System.currentTimeMillis() - this.longVal > var3 && !mc.player.isUsingItem()) {
+         if (mc.player.isGliding() && System.currentTimeMillis() - this.timeStamp > var3 && !mc.player.isUsingItem()) {
             this.runCurrent();
          }
       }
@@ -75,13 +75,13 @@ public class ElytraStrafe extends Module {
          InventoryUtil.handleInt(var1);
          InventoryUtil.useItem(Hand.MAIN_HAND);
          InventoryUtil.handleInt(var2);
-         this.longVal = System.currentTimeMillis();
+         this.timeStamp = System.currentTimeMillis();
       } else {
          int var4 = InventoryUtil.computeInt(Items.FIREWORK_ROCKET, false);
          if (var4 != -1) {
             int var3 = (int)(this.fireworkSlot.getValue() - 1.0F);
             InventoryUtil.initInit(var4, var3);
-            this.longVal = System.currentTimeMillis();
+            this.timeStamp = System.currentTimeMillis();
          }
       }
    }

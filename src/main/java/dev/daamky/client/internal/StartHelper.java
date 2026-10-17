@@ -126,11 +126,11 @@ public class StartHelper {
       public double double3;
 
       public Node(BlockPos pos) {
-         this.pos = posx;
+         this.pos = pos;
       }
 
       public void run() {
-         this.doubleVal3 = this.doubleVal + this.doubleVal2;
+         this.double3 = this.doubleVal + this.double2;
       }
 
       public boolean computePos(Object o) {

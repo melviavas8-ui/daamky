@@ -91,7 +91,7 @@ public class AutoExplosion extends Module {
          boolean var2 = mc.player.getOffHandStack().getItem() == Items.END_CRYSTAL;
          int var3 = InventoryUtil.computeInt(Items.END_CRYSTAL, false);
          int var4 = InventoryUtil.computeInt(Items.END_CRYSTAL, true);
-         this.intVal3 = InventoryUtil.getMc();
+         this.int3 = InventoryUtil.getMc();
          if (this.delayedSwapBack.isEnabled("Delayed swap back") && mc.player.getMainHandStack().getItem() == Items.END_CRYSTAL) {
             this.delayHelper3.runCurrent();
          }
@@ -101,7 +101,7 @@ public class AutoExplosion extends Module {
                this.runnable = this::lambda$handlePlaceEvent$3;
                this.delayHelper2.runCurrent();
             }
-         } else if (var4 == -1 && var3 != -1 && this.intVal3 != -1) {
+         } else if (var4 == -1 && var3 != -1 && this.int3 != -1) {
             this.runnable = this::lambda$handlePlaceEvent$5;
             this.delayHelper2.runCurrent();
          } else if (var4 != -1) {
@@ -132,7 +132,7 @@ public class AutoExplosion extends Module {
 
       if (this.delayedSwapBack.isEnabled("Delayed swap back") && this.flag) {
          int var3 = mc.player.getInventory().selectedSlot;
-         if (var3 != this.intVal2 && var3 != this.intVal) {
+         if (var3 != this.int2 && var3 != this.intVal) {
             this.flag = false;
             return;
          }
@@ -145,25 +145,25 @@ public class AutoExplosion extends Module {
    }
 
    public void setEntity(Entity entity) {
-      if (this.computeEnabled(entityx) && mc.player.getAttackCooldownProgress(1.0F) >= 1.0F) {
-         EntityHitResult var2 = RaytraceUtil.raytraceEntity((double)this.distance.getValue().floatValue(), this.initInit(entityx), false);
-         boolean var3 = var2 != null && var2.getEntity() == entityx || !this.delayedSwapBack.isEnabled("Raytrace");
+      if (this.computeEnabled(entity) && mc.player.getAttackCooldownProgress(1.0F) >= 1.0F) {
+         EntityHitResult var2 = RaytraceUtil.raytraceEntity((double)this.distance.getValue().floatValue(), this.initInit(entity), false);
+         boolean var3 = var2 != null && var2.getEntity() == entity || !this.delayedSwapBack.isEnabled("Raytrace");
          if (var3) {
-            mc.interactionManager.attackEntity(mc.player, entityx);
+            mc.interactionManager.attackEntity(mc.player, entity);
             mc.player.swingHand(Hand.MAIN_HAND);
             this.delayHelper.runCurrent();
-            this.entity = entityx;
+            this.entity = entity;
          }
       }
 
-      if (!entityx.method_5805()) {
+      if (!entity.method_5805()) {
          this.entity = null;
          this.class_2338 = null;
       }
    }
 
    public Rotation initInit(Entity entity) {
-      Vec3d var2 = RotationMath.initInit(entityx);
+      Vec3d var2 = RotationMath.initInit(entity);
       Rotation var3 = RotationMath.initAtan(var2);
       RotationHelper var4 = new RotationHelper(this.getMotionConfig3(), false, false).withTicksUntilReset(this.attackDelay.getValue().intValue());
       VecRotationHelper.getInstance().handleModule(var3, var4, Priority.REQUIRED, this);
@@ -200,10 +200,10 @@ public class AutoExplosion extends Module {
    }
 
    public boolean computeEnabled(Entity entity) {
-      if (entityx != null && this.class_2338 != null && entityx.method_5805() && mc.player != null) {
+      if (entity != null && this.class_2338 != null && entity.method_5805() && mc.player != null) {
          return this.delayedSwapBack.isEnabled("No suicide") && mc.player.getY() < (double)this.class_2338.getY()
             ? false
-            : mc.player.getEyePos().distanceTo(RotationMath.initInit(entityx)) < (double)this.distance.getValue().floatValue();
+            : mc.player.getEyePos().distanceTo(RotationMath.initInit(entity)) < (double)this.distance.getValue().floatValue();
       } else {
          return false;
       }
@@ -214,29 +214,29 @@ public class AutoExplosion extends Module {
    }
 
    public void handleBack(int slot) {
-      InventoryUtil.initInit(slot, this.intVal3);
+      InventoryUtil.initInit(slot, this.int3);
       if (this.class_2338 != null) {
          this.intVal = mc.player.getInventory().selectedSlot;
-         this.initInit(this.intVal3, this.class_2338);
+         this.initInit(this.int3, this.class_2338);
          if (this.delayedSwapBack.isEnabled("Delayed swap back")) {
             this.delayHelper3.runCurrent();
             this.flag = true;
-            this.intVal2 = mc.player.getInventory().selectedSlot;
+            this.int2 = mc.player.getInventory().selectedSlot;
          } else {
             mc.player.getInventory().selectedSlot = this.intVal;
          }
       }
 
-      InventoryUtil.initInit(this.intVal3, slot);
+      InventoryUtil.initInit(this.int3, slot);
    }
 
    public void runProvider() {
       this.entity = null;
       this.class_2338 = null;
       this.intVal = -1;
-      this.intVal3 = -1;
+      this.int3 = -1;
       this.flag = false;
-      this.intVal2 = -1;
+      this.int2 = -1;
       this.motionConfig3.run2();
       VecRotationHelper.getInstance().setProvider(this);
       this.delayHelper2.runCurrent();
@@ -265,7 +265,7 @@ public class AutoExplosion extends Module {
          if (this.delayedSwapBack.isEnabled("Delayed swap back")) {
             this.delayHelper3.runCurrent();
             this.flag = true;
-            this.intVal2 = mc.player.getInventory().selectedSlot;
+            this.int2 = mc.player.getInventory().selectedSlot;
          } else {
             mc.player.getInventory().selectedSlot = this.intVal;
          }
@@ -285,7 +285,7 @@ public class AutoExplosion extends Module {
    }
 
    public void lambda$handlePlaceEvent$3() {
-      this.initInit(this.intVal3, this.class_2338);
+      this.initInit(this.int3, this.class_2338);
    }
 
    public void lambda$onEvent$2(TickEvent event) {

@@ -24,6 +24,6 @@ public class Event<T> extends EventBus<T> {
    }
 
    public void setCancelled(boolean cancel) {
-      this.cancel = cancelx;
+      this.cancel = cancel;
    }
 }

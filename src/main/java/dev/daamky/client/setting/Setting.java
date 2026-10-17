@@ -9,7 +9,7 @@ public abstract class Setting<T> {
    public Runnable action;
 
    public Setting(String name) {
-      this.name = namex;
+      this.name = name;
    }
 
    public Setting<T> visibleWhen(Supplier<Boolean> condition) {
@@ -28,7 +28,7 @@ public abstract class Setting<T> {
    }
 
    public Setting<T> onAction(Runnable action) {
-      this.action = actionx;
+      this.action = action;
       return this;
    }
 
@@ -55,19 +55,19 @@ public abstract class Setting<T> {
    }
 
    public void setName(String name) {
-      this.name = namex;
+      this.name = name;
    }
 
    public void setValue(T value) {
-      this.value = (T)valuex;
+      this.value = (T)value;
    }
 
    public void setVisibilityCondition(Supplier<Boolean> visibilityCondition) {
-      this.visibilityCondition = visibilityConditionx;
+      this.visibilityCondition = visibilityCondition;
    }
 
    public void setAction(Runnable action) {
-      this.action = actionx;
+      this.action = action;
    }
 
    public static Boolean lambda$new$0() {

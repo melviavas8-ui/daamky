@@ -66,11 +66,11 @@ public class DisplayScale implements MinecraftAccess {
    }
 
    public void setScale(float scale) {
-      this.scale = scalex;
+      this.scale = scale;
    }
 
    public void setGuiScale(float guiScale) {
-      this.guiScale = guiScalex;
+      this.guiScale = guiScale;
    }
 
    public void lambda$new$0(Render2DEvent.Render2DEventData event) {

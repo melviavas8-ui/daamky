@@ -13,8 +13,8 @@ public enum AnchorPoint implements ModeSetting.NamedChoice {
    public final Function<LivingEntity, Vec3d> position;
 
    private AnchorPoint(String name, Function<LivingEntity, Vec3d> position) {
-      this.name = namex;
-      this.position = positionx;
+      this.name = name;
+      this.position = position;
    }
 
    public Vec3d getPosition(LivingEntity target) {

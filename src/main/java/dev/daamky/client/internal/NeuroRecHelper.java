@@ -247,7 +247,7 @@ public class NeuroRecHelper implements MinecraftAccess {
             this.strokesHelper.handleNext(this.list3);
             this.strokesHelper.handleNext2(this.list4);
             this.strokesHelper.createCreate();
-            long var5 = (System.currentTimeMillis() - this.longVal) / 1000L;
+            long var5 = (System.currentTimeMillis() - this.timeStamp) / 1000L;
             NotificationManager.initNext(
                "neuro_rec",
                "Запись " + this.strokesHelper.name + " завершена: " + var2 + " сэмплов, " + this.intVal + " ударов",
@@ -323,37 +323,37 @@ public class NeuroRecHelper implements MinecraftAccess {
       this.list2.clear();
       if (mc.player != null) {
          this.floatVal = mc.player.getYaw();
-         this.floatValVal2 = mc.player.getPitch();
-         this.floatValVal8 = mc.player.getYaw();
-         this.floatValVal9 = mc.player.getPitch();
+         this.float2 = mc.player.getPitch();
+         this.float8 = mc.player.getYaw();
+         this.float9 = mc.player.getPitch();
       }
 
-      this.floatValVal3 = 0.0F;
-      this.floatValVal4 = 0.0F;
-      this.floatValVal14 = 0.0F;
-      this.floatValVal15 = 0.0F;
+      this.float3 = 0.0F;
+      this.float4 = 0.0F;
+      this.float14 = 0.0F;
+      this.float15 = 0.0F;
       this.maumxe = 0.0F;
-      this.floatValVal16 = 0.0F;
-      this.floatValVal5 = 0.5F;
-      this.floatValVal6 = 0.5F;
-      this.floatValVal7 = 0.5F;
+      this.float16 = 0.0F;
+      this.float5 = 0.5F;
+      this.float6 = 0.5F;
+      this.float7 = 0.5F;
       this.flag = false;
-      this.floatValVal10 = 0.0F;
-      this.floatValVal11 = 0.0F;
-      this.intValVal2 = 0;
-      this.floatValVal12 = 1.0F;
-      this.floatValVal13 = 0.0F;
+      this.float10 = 0.0F;
+      this.float11 = 0.0F;
+      this.int2 = 0;
+      this.float12 = 1.0F;
+      this.float13 = 0.0F;
       this.list3.clear();
       this.list4.clear();
-      this.intValVal3 = 999;
+      this.int3 = 999;
       this.intVal = 0;
-      this.longVal = System.currentTimeMillis();
+      this.timeStamp = System.currentTimeMillis();
       this.class_1309 = null;
    }
 
    public void runMin() {
       if (this.recordType != NeuroRecHelper.RecordType.NONE && mc.player != null && mc.world != null) {
-         this.intValVal3 = Math.min(this.intValVal3 + 1, 999);
+         this.int3 = Math.min(this.int3 + 1, 999);
          if (this.recordType == NeuroRecHelper.RecordType.LIVE_DUELS) {
             this.getMc();
          } else if (this.recordType == NeuroRecHelper.RecordType.DUMMY_TRAIN) {
@@ -401,7 +401,7 @@ public class NeuroRecHelper implements MinecraftAccess {
 
    public void runAbs() {
       if (this.recordType != NeuroRecHelper.RecordType.NONE && mc.player != null) {
-         long var1 = System.currentTimeMillis() - this.longVal;
+         long var1 = System.currentTimeMillis() - this.timeStamp;
          long var3 = var1 / 1000L % 60L;
          long var5 = var1 / 60000L;
          String var7 = String.format("%02d:%02d", var5, var3);
@@ -414,21 +414,21 @@ public class NeuroRecHelper implements MinecraftAccess {
          float var9 = mc.player.getYaw();
          float var10 = mc.player.getPitch();
          if (!this.flag) {
-            this.floatValVal8 = var9;
-            this.floatValVal9 = var10;
+            this.float8 = var9;
+            this.float9 = var10;
             this.flag = true;
          } else {
-            float var11 = Math.abs(MathHelper.wrapDegrees(var9 - this.floatValVal8));
-            float var12 = Math.abs(var10 - this.floatValVal9);
+            float var11 = Math.abs(MathHelper.wrapDegrees(var9 - this.float8));
+            float var12 = Math.abs(var10 - this.float9);
             float var13 = (float)Math.hypot((double)var11, (double)var12);
-            this.floatValVal10 += var13;
-            if (var13 > this.floatValVal11) {
-               this.floatValVal11 = var13;
+            this.float10 += var13;
+            if (var13 > this.float11) {
+               this.float11 = var13;
             }
 
-            this.intValVal2++;
-            this.floatValVal8 = var9;
-            this.floatValVal9 = var10;
+            this.int2++;
+            this.float8 = var9;
+            this.float9 = var10;
          }
       }
    }
@@ -441,7 +441,7 @@ public class NeuroRecHelper implements MinecraftAccess {
          float var5 = (float)MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(var4.z, var4.x)) - 90.0);
          float var6 = (float)(-Math.toDegrees(Math.atan2(var4.y, Math.hypot(var4.x, var4.z))));
          float var7 = this.floatVal;
-         float var8 = this.floatValVal2;
+         float var8 = this.float2;
          float var9 = MathHelper.wrapDegrees(var5 - var7);
          float var10 = var6 - var8;
          float var11 = mc.player.getYaw();
@@ -449,18 +449,18 @@ public class NeuroRecHelper implements MinecraftAccess {
          float var13 = MathHelper.wrapDegrees(var11 - var7);
          float var14 = var12 - var8;
          this.floatVal = var11;
-         this.floatValVal2 = var12;
+         this.float2 = var12;
          float var15 = (float)Math.hypot((double)var13, (double)var14);
          Box var16 = target.getBoundingBox();
          boolean var17 = var16.raycast(var2, var2.add(mc.player.getRotationVector().multiply(6.0))).isPresent();
-         boolean var18 = var15 > 0.02F || var17 || this.intValVal3 <= 15;
+         boolean var18 = var15 > 0.02F || var17 || this.int3 <= 15;
          if (!var18) {
-            this.floatValVal3 = 0.0F;
-            this.floatValVal4 = 0.0F;
-            this.floatValVal14 = 0.0F;
-            this.floatValVal15 = 0.0F;
+            this.float3 = 0.0F;
+            this.float4 = 0.0F;
+            this.float14 = 0.0F;
+            this.float15 = 0.0F;
             this.maumxe = 0.0F;
-            this.floatValVal16 = 0.0F;
+            this.float16 = 0.0F;
          } else {
             double var19 = var2.distanceTo(var3);
             float var21 = (float)(target.getY() - mc.player.getY());
@@ -478,13 +478,13 @@ public class NeuroRecHelper implements MinecraftAccess {
             }
 
             float var39 = mc.player.getAttackCooldownProgress(0.5F);
-            float var40 = this.intValVal2 > 1 && this.floatValVal10 > 0.001F
-               ? MathHelper.clamp((float)Math.hypot((double)var13, (double)var14) / this.floatValVal10, 0.0F, 1.0F)
+            float var40 = this.int2 > 1 && this.float10 > 0.001F
+               ? MathHelper.clamp((float)Math.hypot((double)var13, (double)var14) / this.float10, 0.0F, 1.0F)
                : 1.0F;
-            float var41 = this.floatValVal11;
-            this.floatValVal10 = 0.0F;
-            this.floatValVal11 = 0.0F;
-            this.intValVal2 = 0;
+            float var41 = this.float11;
+            this.float10 = 0.0F;
+            this.float11 = 0.0F;
+            this.int2 = 0;
             Optional var31 = var16.raycast(var2, var2.add(mc.player.getRotationVector().multiply(6.0)));
             if (var31.isPresent()) {
                Vec3d var32 = (Vec3d)var31.get();
@@ -492,32 +492,32 @@ public class NeuroRecHelper implements MinecraftAccess {
                double var35 = var16.maxY - var16.minY;
                double var37 = var16.maxZ - var16.minZ;
                if (var33 > 0.001) {
-                  this.floatValVal5 = (float)MathHelper.clamp((var32.x - var16.minX) / var33, 0.1, 0.9);
+                  this.float5 = (float)MathHelper.clamp((var32.x - var16.minX) / var33, 0.1, 0.9);
                }
 
                if (var35 > 0.001) {
-                  this.floatValVal6 = (float)MathHelper.clamp((var32.y - var16.minY) / var35, 0.1, 0.9);
+                  this.float6 = (float)MathHelper.clamp((var32.y - var16.minY) / var35, 0.1, 0.9);
                }
 
                if (var37 > 0.001) {
-                  this.floatValVal7 = (float)MathHelper.clamp((var32.z - var16.minZ) / var37, 0.1, 0.9);
+                  this.float7 = (float)MathHelper.clamp((var32.z - var16.minZ) / var37, 0.1, 0.9);
                }
             }
 
-            float var42 = MathHelper.clamp(var13 - this.floatValVal3, -1.2F, 1.2F);
-            float var43 = MathHelper.clamp(var14 - this.floatValVal4, -0.8F, 0.8F);
+            float var42 = MathHelper.clamp(var13 - this.float3, -1.2F, 1.2F);
+            float var43 = MathHelper.clamp(var14 - this.float4, -0.8F, 0.8F);
             double[] var34 = StrokesHelper.computeMin(
                var9,
                var10,
-               this.floatValVal3,
-               this.floatValVal4,
-               this.floatValVal14,
-               this.floatValVal15,
+               this.float3,
+               this.float4,
+               this.float14,
+               this.float15,
                this.maumxe,
-               this.floatValVal16,
-               this.floatValVal5,
-               this.floatValVal6,
-               this.floatValVal7,
+               this.float16,
+               this.float5,
+               this.float6,
+               this.float7,
                (float)var19,
                var21,
                var8,
@@ -529,22 +529,22 @@ public class NeuroRecHelper implements MinecraftAccess {
                (float)var22.z,
                (float)var23.y,
                var39,
-               (float)this.intValVal3,
+               (float)this.int3,
                var40,
                var41
             );
             double[] var44 = new double[14];
             var44[0] = MathHelper.clamp((double)(Math.abs(var13) / 180.0F), 0.0, 1.0);
             var44[1] = MathHelper.clamp((double)(Math.abs(var14) / 120.0F), 0.0, 1.0);
-            var44[2] = (double)this.floatValVal5;
-            var44[3] = (double)this.floatValVal6;
-            var44[4] = (double)this.floatValVal7;
+            var44[2] = (double)this.float5;
+            var44[3] = (double)this.float6;
+            var44[4] = (double)this.float7;
             var44[5] = StrokesHelper.computeDouble(var42, 1.2F);
             var44[6] = StrokesHelper.computeDouble(var43, 0.8F);
             var44[7] = StrokesHelper.computeDouble(var26 * 0.12F, 12.0F);
             var44[8] = StrokesHelper.computeDouble(var27 * 0.12F, 8.0F);
-            float var36 = var13 - this.floatValVal3;
-            float var45 = var14 - this.floatValVal4;
+            float var36 = var13 - this.float3;
+            float var45 = var14 - this.float4;
             var44[9] = StrokesHelper.computeDouble(var36, 35.0F);
             var44[10] = StrokesHelper.computeDouble(var45, 22.0F);
             var44[11] = (double)var40;
@@ -553,13 +553,13 @@ public class NeuroRecHelper implements MinecraftAccess {
             this.list.add(var34);
             this.list2.add(var44);
             this.list3.add(new float[]{var42, var43, var15});
-            this.list4.add(new float[]{var9, var10, var13, var14, (float)this.intValVal3});
+            this.list4.add(new float[]{var9, var10, var13, var14, (float)this.int3});
             this.maumxe = var36;
-            this.floatValVal16 = var45;
-            this.floatValVal14 = this.floatValVal3;
-            this.floatValVal15 = this.floatValVal4;
-            this.floatValVal3 = var13;
-            this.floatValVal4 = var14;
+            this.float16 = var45;
+            this.float14 = this.float3;
+            this.float15 = this.float4;
+            this.float3 = var13;
+            this.float4 = var14;
          }
       }
    }
@@ -635,7 +635,7 @@ public class NeuroRecHelper implements MinecraftAccess {
 
    public void lambda$initEvents$2(AttackEvent.AttackEventData event) {
       if (this.recordType != NeuroRecHelper.RecordType.NONE) {
-         this.intValVal3 = 0;
+         this.int3 = 0;
          Entity var2 = event.entity();
          if (var2 instanceof LivingEntity var3) {
             this.class_1309 = var3;

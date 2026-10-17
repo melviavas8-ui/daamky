@@ -9,7 +9,7 @@ public class BaseTimeHelper implements MinecraftAccess {
    public boolean checkCurrent() {
       float var1 = mc.player != null ? mc.player.getAttackCooldownProgress(0.5F) : 1.0F;
       long var2 = System.currentTimeMillis();
-      long var4 = var2 - this.longVal;
+      long var4 = var2 - this.timeStamp;
       return var4 >= this.delay && var1 > 0.9F;
    }
 
@@ -18,12 +18,12 @@ public class BaseTimeHelper implements MinecraftAccess {
    }
 
    public long getCurrent() {
-      return System.currentTimeMillis() - this.longVal;
+      return System.currentTimeMillis() - this.timeStamp;
    }
 
    public void setDelay(long delay) {
-      this.longVal = System.currentTimeMillis();
-      this.delay = delayx;
+      this.timeStamp = System.currentTimeMillis();
+      this.delay = delay;
    }
 
    public boolean check() {

@@ -26,7 +26,8 @@ public class LegacyModuleImpl7 extends SliderComponent {
       return this.getCachedValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Float)var1);
+   public Component withValue(Float param1) {
+      return this.withCachedValue(param1);
    }
+
 }

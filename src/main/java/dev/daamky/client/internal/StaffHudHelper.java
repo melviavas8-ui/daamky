@@ -10,25 +10,25 @@ public class StaffHudHelper {
    public long long2 = 0L;
 
    public StaffHudHelper(boolean useMCFrameRate) {
-      this.useMCFrameRate = useMCFrameRatex;
+      this.useMCFrameRate = useMCFrameRate;
       this.intVal = 0;
    }
 
    public void handleFps(int fps, RunTask... calls) {
-      if (this.fps != fpsx) {
-         this.longVal2 = 1000000000L / (long)fpsx;
-         this.fps = fpsx;
+      if (this.fps != fps) {
+         this.long2 = 1000000000L / (long)fps;
+         this.fps = fps;
       }
 
       long var3;
       long var5;
-      if ((var5 = (var3 = System.nanoTime()) - this.longVal) > 50000000L) {
+      if ((var5 = (var3 = System.nanoTime()) - this.timeStamp) > 50000000L) {
          var5 = 50000000L;
-         this.longVal = var3 - var5;
+         this.timeStamp = var3 - var5;
       }
 
-      this.intVal = this.intVal + (int)(var5 / this.longVal2);
-      this.longVal = this.longVal + (long)this.intVal * this.longVal2;
+      this.intVal = this.intVal + (int)(var5 / this.long2);
+      this.timeStamp = this.timeStamp + (long)this.intVal * this.long2;
 
       for (this.intVal = Math.min(this.intVal, this.useMCFrameRate ? Math.min(this.fps, MinecraftClient.getInstance().getCurrentFps()) : this.fps); this.intVal > 0; this.intVal--) {
          for (RunTask var10 : calls) {

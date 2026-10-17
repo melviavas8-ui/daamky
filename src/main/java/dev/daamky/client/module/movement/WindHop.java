@@ -26,7 +26,7 @@ public class WindHop extends Module {
    public int intVal = -1;
 
    public WindHop() {
-      this.addSettings(new Setting[]{this.booleanValSetting, this.booleanValSetting2});
+      this.addSettings(new Setting[]{this.booleanSetting, this.booleanSetting2});
    }
 
    @Override
@@ -38,7 +38,7 @@ public class WindHop extends Module {
    }
 
    public boolean checkEnabled() {
-      return this.isEnabled() && this.booleanValSetting.getValue();
+      return this.isEnabled() && this.booleanSetting.getValue();
    }
 
    public static WindHop getInstance() {
@@ -46,7 +46,7 @@ public class WindHop extends Module {
    }
 
    public void lambda$onEvent$2(InputTransformEvent event) {
-      if (this.intVal == 0 && this.booleanValSetting2.getValue()) {
+      if (this.intVal == 0 && this.booleanSetting2.getValue()) {
          if (mc.player != null && mc.player.isOnGround()) {
             mc.player.jump();
          }

@@ -68,22 +68,17 @@ public class ComboComponent extends Component<String> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeComboComponent(var1);
-   }
-
-   @Override
-   public Component withValue(Object param1) {
-      return this.withValue((String)var1);
+      return this.computeComboComponent(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

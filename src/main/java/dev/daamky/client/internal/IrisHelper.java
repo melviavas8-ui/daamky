@@ -23,11 +23,11 @@ public class IrisHelper {
    public final Matrix4f matrix4f4 = new Matrix4f();
 
    public IrisHelper(MotionBlur config) {
-      this.config = configx;
+      this.config = config;
 
       try {
          Class.forName("org.ladysnake.satin.api.managed.ShaderEffectManager");
-         this.satinImpl = new IrisHelper.SatinImpl(configx);
+         this.satinImpl = new IrisHelper.SatinImpl(config);
          this.flag = true;
       } catch (Throwable var3) {
          this.satinImpl = null;
@@ -95,8 +95,8 @@ public class IrisHelper {
 
    public void setStrength(float strength) {
       if (this.flag && this.satinImpl != null) {
-         this.satinImpl.handleUniform(strengthx);
-         this.strength = strengthx;
+         this.satinImpl.handleUniform(strength);
+         this.strength = strength;
       }
    }
 

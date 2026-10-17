@@ -180,8 +180,8 @@ public enum KeyCode {
    }
 
       private KeyCode(final String name, final int key) {
-      this.name = namex;
-      this.key = keyx;
+      this.name = name;
+      this.key = key;
    }
 
    public static KeyCode[] $values() {

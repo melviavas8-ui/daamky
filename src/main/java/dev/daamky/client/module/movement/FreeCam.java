@@ -68,7 +68,7 @@ public class FreeCam extends Module {
    }
 
    public float[] getFloats() {
-      return new float[]{this.floatVal, this.floatVal2};
+      return new float[]{this.floatVal, this.float2};
    }
 
    @Override
@@ -186,7 +186,7 @@ public class FreeCam extends Module {
       if (mc.player != null && mc.world != null) {
          this.class_2432 = this.class_243 = mc.player.getEyePos();
          this.floatVal = mc.player.getYaw();
-         this.floatVal2 = mc.player.getPitch();
+         this.float2 = mc.player.getPitch();
          this.profile = new Profile(mc.world, new GameProfile(UUID.randomUUID(), mc.getSession().getUsername()));
          this.profile.copyFrom(mc.player);
          this.profile.copyPositionAndRotation(mc.player);
@@ -232,7 +232,7 @@ public class FreeCam extends Module {
    public void lambda$onEvent$0(MouseDeltaEvent event) {
       if (this.isEnabled() && mc.player != null) {
          this.floatVal = this.floatVal + (float)(event.getYaw() * 0.15);
-         this.floatVal2 = MathHelper.clamp(this.floatVal2 + (float)(event.getPitch() * 0.15), -90.0F, 90.0F);
+         this.float2 = MathHelper.clamp(this.float2 + (float)(event.getPitch() * 0.15), -90.0F, 90.0F);
          event.setCancelled(true);
       }
    }

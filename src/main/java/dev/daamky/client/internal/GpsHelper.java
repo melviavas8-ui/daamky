@@ -54,12 +54,12 @@ public class GpsHelper {
    public HudElement widget = null;
 
    public float computeFloat(HudElement widget) {
-      if (widgetx == null) {
+      if (widget == null) {
          return this.computeFloat(58.0F);
       } else {
-         boolean var2 = widgetx instanceof BpsHud;
-         boolean var3 = widgetx instanceof WatermarkHud || widgetx instanceof NotificationManager;
-         boolean var4 = widgetx instanceof PotionsHud;
+         boolean var2 = widget instanceof BpsHud;
+         boolean var3 = widget instanceof WatermarkHud || widget instanceof NotificationManager;
+         boolean var4 = widget instanceof PotionsHud;
          int var5 = 0;
          if (var4) {
             var5++;
@@ -78,15 +78,15 @@ public class GpsHelper {
    }
 
    public void handleMax(HudElement widget, float mouseX, float mouseY) {
-      this.activeConfigWidget = widgetx;
-      this.widget = widgetx;
+      this.activeConfigWidget = widget;
+      this.widget = widget;
       MinecraftClient var4 = MinecraftClient.getInstance();
       float var5 = (float)var4.getWindow().getScaledWidth();
       float var6 = (float)var4.getWindow().getScaledHeight();
       float var7 = this.computeFloat(96.0F);
-      float var8 = this.computeFloat(widgetx);
+      float var8 = this.computeFloat(widget);
       this.floatVal = Math.max(10.0F, Math.min(mouseX, var5 - var7 - 10.0F));
-      this.floatValVal2 = Math.max(10.0F, Math.min(mouseY, var6 - var8 - 10.0F));
+      this.float2 = Math.max(10.0F, Math.min(mouseY, var6 - var8 - 10.0F));
       this.flag3 = false;
       this.animatedValue2.handleStart(0.0);
    }
@@ -155,16 +155,16 @@ public class GpsHelper {
             float var13 = this.computeFloat(var5);
             ms.push();
             float var14 = this.floatVal + var9 / 2.0F;
-            float var15 = this.floatValVal2 + var13 / 2.0F;
+            float var15 = this.float2 + var13 / 2.0F;
             ms.translate(var14, var15, 0.0F);
             ms.scale(0.85F + 0.15F * var4, 0.85F + 0.15F * var4, 1.0F);
             ms.translate(-var14, -var15, 0.0F);
             int var16 = (int)(245.0F * var4);
             Color var17 = new Color(0, 0, 0, var16);
-            Render.shaderProgram.handleRgb(ms, this.floatVal, this.floatValVal2, var9, var13, var8, var17);
-            Render.rectRenderer.handleRgb(ms, this.floatVal, this.floatValVal2, var9, var13, var8, InterfaceMetrics.computeColor3((int)(20.0F * var4)));
+            Render.shaderProgram.handleRgb(ms, this.floatVal, this.float2, var9, var13, var8, var17);
+            Render.rectRenderer.handleRgb(ms, this.floatVal, this.float2, var9, var13, var8, InterfaceMetrics.computeColor3((int)(20.0F * var4)));
             float var18 = this.computeFloat(6.5F);
-            float var19 = this.floatValVal2 + var7 + this.computeFloat(0.5F);
+            float var19 = this.float2 + var7 + this.computeFloat(0.5F);
             FontBootstrap.mdoswa.handleColor(ms, var5.getName(), this.floatVal + var7, var19, var18, new Color(255, 255, 255, (int)(255.0F * var4)));
             float var20 = var19 + var18 + this.computeFloat(3.5F);
             Render.rectRenderer
@@ -289,10 +289,10 @@ public class GpsHelper {
       } else {
          float var3 = this.computeFloat(96.0F);
          float var4 = this.computeFloat(this.activeConfigWidget);
-         if (!(mouseX < this.floatVal) && !(mouseX > this.floatVal + var3) && !(mouseY < this.floatValVal2) && !(mouseY > this.floatValVal2 + var4)) {
+         if (!(mouseX < this.floatVal) && !(mouseX > this.floatVal + var3) && !(mouseY < this.float2) && !(mouseY > this.float2 + var4)) {
             float var5 = this.computeFloat(6.5F);
             float var6 = this.computeFloat(6.5F);
-            float var7 = this.floatValVal2 + var5 + this.computeFloat(0.5F);
+            float var7 = this.float2 + var5 + this.computeFloat(0.5F);
             float var8 = var7 + var6 + this.computeFloat(3.5F);
             float var9 = var8 + this.computeFloat(4.5F);
             float var10 = this.computeFloat(5.5F);
@@ -381,7 +381,7 @@ public class GpsHelper {
    }
 
    public long getLong() {
-      return this.longVal;
+      return this.timeStamp;
    }
 
    public AnimatedValue getAnimatedValue() {
@@ -397,7 +397,7 @@ public class GpsHelper {
    }
 
    public float getFloat2() {
-      return this.floatValVal2;
+      return this.float2;
    }
 
    public boolean check3() {
@@ -417,7 +417,7 @@ public class GpsHelper {
    }
 
    public void setActiveConfigWidget(HudElement activeConfigWidget) {
-      this.activeConfigWidget = activeConfigWidgetx;
+      this.activeConfigWidget = activeConfigWidget;
    }
 
    public void lambda$load$1(Render2DEvent.Render2DEventData event) {

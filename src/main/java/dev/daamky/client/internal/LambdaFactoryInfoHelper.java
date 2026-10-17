@@ -25,10 +25,10 @@ public class LambdaFactoryInfoHelper implements Callback7 {
       Map<Class<?>, List<Callback8>> listenerMap,
       Supplier<List<Callback8>> listenerListFactory
    ) {
-      this.listenerCache = listenerCachex;
-      this.staticListenerCache = staticListenerCachex;
-      this.listenerMap = listenerMapx;
-      this.listenerListFactory = listenerListFactoryx;
+      this.listenerCache = listenerCache;
+      this.staticListenerCache = staticListenerCache;
+      this.listenerMap = listenerMap;
+      this.listenerListFactory = listenerListFactory;
    }
 
    public static LambdaFactoryInfoHelper initInit() {

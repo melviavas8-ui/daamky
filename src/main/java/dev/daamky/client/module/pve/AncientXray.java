@@ -71,7 +71,7 @@ public class AncientXray extends Module {
       if (mc.player != null) {
          this.intVal = -this.range.getValue().intValue();
          this.mermur = -this.range.getValue().intValue();
-         this.intVal2 = -this.range.getValue().intValue();
+         this.int2 = -this.range.getValue().intValue();
       }
    }
 
@@ -111,18 +111,18 @@ public class AncientXray extends Module {
 
             if (this.mermur > var2) {
                this.mermur = -var2;
-               this.intVal2++;
+               this.int2++;
             }
 
-            if (this.intVal2 > var2) {
-               this.intVal2 = -var2;
+            if (this.int2 > var2) {
+               this.int2 = -var2;
                this.intVal = -var2;
                this.mermur = -var2;
                break;
             }
 
             int var9 = var5 + this.mermur;
-            var7.set(var4 + this.intVal, var9, var6 + this.intVal2);
+            var7.set(var4 + this.intVal, var9, var6 + this.int2);
             this.intVal++;
             Block var8;
             if (var9 >= -64

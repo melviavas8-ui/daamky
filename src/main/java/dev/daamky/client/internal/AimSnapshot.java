@@ -54,31 +54,31 @@ public class AimSnapshot {
       float deltaY,
       float deltaZ
    ) {
-      this.yawDelta = yawDeltax;
-      this.pitchDelta = pitchDeltax;
-      this.targetYaw = targetYawx;
-      this.targetPitch = targetPitchx;
-      this.sinceAttack = sinceAttackx;
-      this.distance = distancex;
-      this.onGround = onGroundx;
-      this.miniHitbox = miniHitboxx;
-      this.playerYaw = playerYawx;
-      this.playerPitch = playerPitchx;
-      this.playerPosX = playerPosXx;
-      this.playerPosY = playerPosYx;
-      this.playerPosZ = playerPosZx;
-      this.playerVelX = playerVelXx;
-      this.playerVelY = playerVelYx;
-      this.playerVelZ = playerVelZx;
-      this.targetPosX = targetPosXx;
-      this.targetPosY = targetPosYx;
-      this.targetPosZ = targetPosZx;
-      this.targetVelX = targetVelXx;
-      this.targetVelY = targetVelYx;
-      this.targetVelZ = targetVelZx;
-      this.deltaX = deltaXx;
-      this.deltaY = deltaYx;
-      this.deltaZ = deltaZx;
+      this.yawDelta = yawDelta;
+      this.pitchDelta = pitchDelta;
+      this.targetYaw = targetYaw;
+      this.targetPitch = targetPitch;
+      this.sinceAttack = sinceAttack;
+      this.distance = distance;
+      this.onGround = onGround;
+      this.miniHitbox = miniHitbox;
+      this.playerYaw = playerYaw;
+      this.playerPitch = playerPitch;
+      this.playerPosX = playerPosX;
+      this.playerPosY = playerPosY;
+      this.playerPosZ = playerPosZ;
+      this.playerVelX = playerVelX;
+      this.playerVelY = playerVelY;
+      this.playerVelZ = playerVelZ;
+      this.targetPosX = targetPosX;
+      this.targetPosY = targetPosY;
+      this.targetPosZ = targetPosZ;
+      this.targetVelX = targetVelX;
+      this.targetVelY = targetVelY;
+      this.targetVelZ = targetVelZ;
+      this.deltaX = deltaX;
+      this.deltaY = deltaY;
+      this.deltaZ = deltaZ;
    }
 
    public float getOnGround() {

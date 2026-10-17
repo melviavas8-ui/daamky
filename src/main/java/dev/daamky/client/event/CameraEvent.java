@@ -11,9 +11,9 @@ public class CameraEvent extends Event<CameraEvent> {
    }
 
    public void handlePartial(float yaw, float pitch, float partialTicks) {
-      this.yaw = yawx;
-      this.pitch = pitchx;
-      this.partialTicks = partialTicksx;
+      this.yaw = yaw;
+      this.pitch = pitch;
+      this.partialTicks = partialTicks;
    }
 
    public float getYaw() {
@@ -29,14 +29,14 @@ public class CameraEvent extends Event<CameraEvent> {
    }
 
    public void setYaw(float yaw) {
-      this.yaw = yawx;
+      this.yaw = yaw;
    }
 
    public void setPitch(float pitch) {
-      this.pitch = pitchx;
+      this.pitch = pitch;
    }
 
    public void setPartialTicks(float partialTicks) {
-      this.partialTicks = partialTicksx;
+      this.partialTicks = partialTicks;
    }
 }

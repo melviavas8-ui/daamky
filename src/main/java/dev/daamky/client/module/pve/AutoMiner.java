@@ -35,7 +35,7 @@ public class AutoMiner extends Module {
    @Override
    public void onEnable() {
       super.onEnable();
-      this.longVal = System.currentTimeMillis();
+      this.timeStamp = System.currentTimeMillis();
       this.flag = false;
       if (mc.player != null && mc.player.networkHandler != null) {
          this.handleString("Летим на шахту (/warp mine)... Ждем 7 секунд.");
@@ -56,7 +56,7 @@ public class AutoMiner extends Module {
 
    public void lambda$onEvent$0(PostMotionEvent.EventPostMotionData event) {
       if (mc.player != null) {
-         if (!this.flag && System.currentTimeMillis() - this.longVal >= 7000L) {
+         if (!this.flag && System.currentTimeMillis() - this.timeStamp >= 7000L) {
             this.flag = true;
             if (!MineHelper.getInstance().isEnabled()) {
                this.handleString("Ошибка: MineHelper выключен! Включи его, чтобы AutoMiner понял, какую руду копать.");

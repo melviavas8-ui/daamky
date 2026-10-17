@@ -18,7 +18,7 @@ public abstract class EventBus<T> implements EventListenerProvider<T>, EventSubs
    public Subscription subscribe(EventListener<T> listener) {
       this.listeners.add(listener);
       this.cache = this.listeners.toArray(EventBus::lambda$subscribe$0);
-      return new Subscription(this::lambda$subscribe$1);
+      return new Subscription(() -> this.lambda$subscribe$1(listener));
    }
 
    public void unsubscribe(EventListener<T> listener) {
@@ -32,16 +32,6 @@ public abstract class EventBus<T> implements EventListenerProvider<T>, EventSubs
       for (EventListener var5 : this.cache) {
          var5.getHandler().accept(event);
       }
-   }
-
-   @Override
-   public void unsubscribe(Object param1) {
-      this.unsubscribe((EventListener<T>)var1);
-   }
-
-   @Override
-   public Subscription subscribe(Object param1) {
-      return this.subscribe((EventListener<T>)var1);
    }
 
    public static EventListener[] lambda$unsubscribe$2(int x$0) {

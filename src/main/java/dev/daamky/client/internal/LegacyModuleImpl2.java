@@ -7,7 +7,7 @@ import dev.daamky.client.setting.IntegerSetting;
 public class LegacyModuleImpl2 extends NumberComponent {
    public LegacyModuleImpl2(final LegacyModule this$0, Module parent, String name, Integer value, final IntegerSetting param5) {
       super(parent, name, value);
-      this.intValValegerSetting = var5;
+      this.intValValegerSetting = param5;
    }
 
    public NumberComponent withCachedValue(Integer value) {
@@ -24,7 +24,8 @@ public class LegacyModuleImpl2 extends NumberComponent {
       return ((Number)this.intValValegerSetting.getValue()).intValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Integer)var1);
+   public Component withValue(Integer param1) {
+      return this.withCachedValue(param1);
    }
+
 }

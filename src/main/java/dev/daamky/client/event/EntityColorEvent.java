@@ -15,12 +15,12 @@ public class EntityColorEvent extends Event<EntityColorEvent.EntityColorEventDat
       }
 
       public EntityColorEvent.EntityColorEventData withColor(int color) {
-         this.color = colorx;
+         this.color = color;
          return this;
       }
 
       public EntityColorEventData(int color) {
-         this.color = colorx;
+         this.color = color;
       }
    }
 }

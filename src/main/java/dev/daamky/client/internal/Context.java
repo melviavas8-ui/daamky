@@ -12,7 +12,7 @@ public class Context extends Widget {
    public final AnimatedValue animatedValue2 = new AnimatedValue();
 
    public Context(ColorTheme theme) {
-      this.theme = themex;
+      this.theme = theme;
    }
 
    public void handleTheme(DrawContext context, int mouseX, int mouseY, float delta) {

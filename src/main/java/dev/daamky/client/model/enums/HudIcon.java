@@ -36,7 +36,7 @@ public enum HudIcon {
    }
 
    private HudIcon(String letter) {
-      this.letter = letterx;
+      this.letter = letter;
    }
 
    public static HudIcon[] $values() {

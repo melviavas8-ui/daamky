@@ -19,8 +19,8 @@ public class Render3DEvent extends Event<Render3DEvent.Render3DEventData> {
       public float partialTicks;
 
       public Render3DEventData(MatrixStack matrixStack, float partialTicks) {
-         this.matrixStack = matrixStackx;
-         this.partialTicks = partialTicksx;
+         this.matrixStack = matrixStack;
+         this.partialTicks = partialTicks;
       }
 
       public MatrixStack getMatrixStack() {

@@ -9,7 +9,7 @@ public class ColorTheme {
    public final List<ColorTheme.ElementColor> list = new ArrayList<>();
 
    public ColorTheme(String name) {
-      this.name = namex;
+      this.name = name;
       this.list.add(new ColorTheme.ElementColor("Primary", new Color(255, 255, 255)));
       this.list.add(new ColorTheme.ElementColor("Secondary", new Color(200, 200, 200)));
       this.list.add(new ColorTheme.ElementColor("Blur", new Color(10, 10, 10)));
@@ -101,8 +101,8 @@ public class ColorTheme {
       public final ExpandableSettingComponent expandableSettingComponent;
 
       public ElementColor(String name, Color color) {
-         this.name = namex;
-         this.color = colorx;
+         this.name = name;
+         this.color = color;
          this.expandableSettingComponent = new ExpandableSettingComponent(this);
       }
 
@@ -111,7 +111,7 @@ public class ColorTheme {
       }
 
       public void setColor(Color color) {
-         this.color = colorx;
+         this.color = color;
       }
    }
 }

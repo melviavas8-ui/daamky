@@ -13,9 +13,9 @@ public class InputTransformEvent extends Event<InputTransformEvent> {
    }
 
    public void handleForward(PlayerInput input, float forward, float strafe) {
-      this.input = inputx;
-      this.forward = forwardx;
-      this.strafe = strafex;
+      this.input = input;
+      this.forward = forward;
+      this.strafe = strafe;
    }
 
    public PlayerInput getInput() {
@@ -31,14 +31,14 @@ public class InputTransformEvent extends Event<InputTransformEvent> {
    }
 
    public void setInput(PlayerInput input) {
-      this.input = inputx;
+      this.input = input;
    }
 
    public void setForward(float forward) {
-      this.forward = forwardx;
+      this.forward = forward;
    }
 
    public void setStrafe(float strafe) {
-      this.strafe = strafex;
+      this.strafe = strafe;
    }
 }

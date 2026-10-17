@@ -205,8 +205,8 @@ public class ManagedShader {
          public final float val;
 
          public FloatEntry(int offset, float val) {
-            this.offset = offsetx;
-            this.val = valx;
+            this.offset = offset;
+            this.val = val;
          }
 
          @Override
@@ -228,9 +228,9 @@ public class ManagedShader {
          public final float y;
 
          public Vec2Entry(int offset, float x, float y) {
-            this.offset = offsetx;
-            this.x = xx;
-            this.y = yx;
+            this.offset = offset;
+            this.x = x;
+            this.y = y;
          }
 
       }
@@ -243,11 +243,11 @@ public class ManagedShader {
          public final float w;
 
          public Vec4Entry(int offset, float x, float y, float z, float w) {
-            this.offset = offsetx;
-            this.x = xx;
-            this.y = yx;
-            this.z = zx;
-            this.w = wx;
+            this.offset = offset;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.w = w;
          }
 
       }

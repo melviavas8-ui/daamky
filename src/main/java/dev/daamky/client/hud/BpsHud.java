@@ -59,7 +59,7 @@ public class BpsHud extends HudElement {
          matrixStack.push();
          matrixStack.translate(x1, y1, 0.0F);
          matrixStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(var11));
-         Render.rectRenderer.handleVal(matrixStack, 0.0F, -thickness / 2.0F, var10, thickness, thickness / 2.0F, colorx);
+         Render.rectRenderer.handleVal(matrixStack, 0.0F, -thickness / 2.0F, var10, thickness, thickness / 2.0F, color);
          matrixStack.pop();
       }
    }
@@ -70,16 +70,16 @@ public class BpsHud extends HudElement {
       float var4 = (float)EntityHelper.computeDouble(mc.player);
       this.floatVal = EntityHelper.computeFloat(this.floatVal, var4, 0.15F);
       long var5 = System.currentTimeMillis();
-      if (this.longVal == 0L) {
-         this.longVal = var5;
-         Arrays.fill(this.floatValVals, this.floatVal);
-         this.intValVal2 = this.floatValVals.length;
-      } else if (var5 - this.longVal >= 50L) {
-         this.longVal = var5;
-         this.floatValVals[this.intVal] = this.floatVal;
-         this.intVal = (this.intVal + 1) % this.floatValVals.length;
-         if (this.intValVal2 < this.floatValVals.length) {
-            this.intValVal2++;
+      if (this.timeStamp == 0L) {
+         this.timeStamp = var5;
+         Arrays.fill(this.floats, this.floatVal);
+         this.int2 = this.floats.length;
+      } else if (var5 - this.timeStamp >= 50L) {
+         this.timeStamp = var5;
+         this.floats[this.intVal] = this.floatVal;
+         this.intVal = (this.intVal + 1) % this.floats.length;
+         if (this.int2 < this.floats.length) {
+            this.int2++;
          }
       }
 
@@ -120,25 +120,25 @@ public class BpsHud extends HudElement {
          float var25 = this.computeFloat(8.5F);
          float var26 = 15.0F;
 
-         for (int var27 = 0; var27 < this.intValVal2; var27++) {
-            float var28 = this.floatValVals[var27];
+         for (int var27 = 0; var27 < this.int2; var27++) {
+            float var28 = this.floats[var27];
             if (var28 > var26) {
                var26 = var28;
             }
          }
 
-         int var57 = this.intValVal2;
+         int var57 = this.int2;
          if (var57 > 1) {
             float var58 = var23 / (float)(var57 - 1);
-            int var29 = (this.intVal - var57 + this.floatValVals.length) % this.floatValVals.length;
+            int var29 = (this.intVal - var57 + this.floats.length) % this.floats.length;
             float var30 = 0.0F;
             float var31 = 0.0F;
             float var32 = this.computeFloat(1.1F);
             int var33 = var16 & 16777215 | -872415232;
 
             for (int var34 = 0; var34 < var57; var34++) {
-               int var35 = (var29 + var34) % this.floatValVals.length;
-               float var36 = this.floatValVals[var35];
+               int var35 = (var29 + var34) % this.floats.length;
+               float var36 = this.floats[var35];
                float var37 = Math.max(0.0F, Math.min(var36 / var26, 1.0F));
                float var38 = var2 + var17 + (float)var34 * var58;
                float var39 = var24 + var25 * 0.4F - var37 * var25;

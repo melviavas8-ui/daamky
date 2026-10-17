@@ -7,7 +7,7 @@ import dev.daamky.client.setting.ModeSetting;
 public class LegacyModuleImpl4 extends ComboComponent {
    public LegacyModuleImpl4(final LegacyModule this$0, Module parent, String name, String[] values, final ModeSetting param5) {
       super(parent, name, values);
-      this.modeSetting = var5;
+      this.modeSetting = param5;
    }
 
    public ComboComponent withValue(String value) {
@@ -20,7 +20,4 @@ public class LegacyModuleImpl4 extends ComboComponent {
       return (String)this.modeSetting.getValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withValue((String)var1);
-   }
 }

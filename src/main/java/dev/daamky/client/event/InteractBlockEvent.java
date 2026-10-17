@@ -14,7 +14,7 @@ public class InteractBlockEvent extends Event<InteractBlockEvent.InteractBlockEv
       public boolean cancelled;
 
       public InteractBlockEventData(Block block) {
-         this.block = blockx;
+         this.block = block;
          this.cancelled = false;
       }
 
@@ -27,7 +27,7 @@ public class InteractBlockEvent extends Event<InteractBlockEvent.InteractBlockEv
       }
 
       public void setCancelled(boolean cancelled) {
-         this.cancelled = cancelledx;
+         this.cancelled = cancelled;
       }
    }
 }

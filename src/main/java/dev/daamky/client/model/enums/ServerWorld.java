@@ -16,7 +16,7 @@ public enum ServerWorld implements ModeSetting.NamedChoice {
    }
 
    private ServerWorld(String name) {
-      this.name = namex;
+      this.name = name;
    }
 
    public static ServerWorld[] $values() {

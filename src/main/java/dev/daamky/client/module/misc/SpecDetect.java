@@ -225,8 +225,8 @@ public class SpecDetect extends Module {
 
    public void cleanup() {
       long var1 = System.currentTimeMillis();
-      if (var1 - this.longVal3 >= 3000L) {
-         this.longVal3 = var1;
+      if (var1 - this.long3 >= 3000L) {
+         this.long3 = var1;
          this.map2.entrySet().removeIf(SpecDetect::lambda$cleanup$2);
          this.map3.entrySet().removeIf(SpecDetect::lambda$cleanup$3);
       }
@@ -282,8 +282,8 @@ public class SpecDetect extends Module {
    public void setMessage(String message) {
       if (this.chatAlerts.getValue()) {
          long var2 = System.currentTimeMillis();
-         if (var2 - this.longVal4 >= 3000L) {
-            this.longVal4 = var2;
+         if (var2 - this.long4 >= 3000L) {
+            this.long4 = var2;
             TextShaper.handleString(message);
          }
       }

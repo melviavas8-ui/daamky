@@ -37,14 +37,14 @@ public class FpsHud extends HudElement {
       float var2 = this.getAutoHelper().getX();
       float var3 = this.getAutoHelper().getY();
       int var4 = Optimization.getInstance().computeEnabled(mc.getCurrentFps());
-      this.mgasaq[this.intValVal3] = var4;
-      this.intValVal3 = (this.intValVal3 + 1) % this.mgasaq.length;
-      if (this.intValVal4 < this.mgasaq.length) {
-         this.intValVal4++;
+      this.mgasaq[this.int3] = var4;
+      this.int3 = (this.int3 + 1) % this.mgasaq.length;
+      if (this.int4 < this.mgasaq.length) {
+         this.int4++;
       }
 
-      if (var4 != this.intValVal5) {
-         this.intValVal5 = var4;
+      if (var4 != this.int5) {
+         this.int5 = var4;
          this.string = Integer.toString(var4);
       }
 
@@ -94,9 +94,9 @@ public class FpsHud extends HudElement {
          var24 = 240;
       }
 
-      int var25 = this.intValVal4 == this.mgasaq.length ? this.intValVal3 : 0;
+      int var25 = this.int4 == this.mgasaq.length ? this.int3 : 0;
 
-      for (int var26 = 0; var26 < this.intValVal4; var26++) {
+      for (int var26 = 0; var26 < this.int4; var26++) {
          int var27 = this.mgasaq[(var25 + var26) % this.mgasaq.length];
          float var28 = Math.min((float)var27 / (float)var24, 1.0F);
          float var29 = Math.max(var28 * var22, 1.0F);

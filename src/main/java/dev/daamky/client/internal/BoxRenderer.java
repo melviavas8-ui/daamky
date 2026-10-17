@@ -28,7 +28,7 @@ public class BoxRenderer implements MinecraftAccess {
    public int int3 = 0;
 
    public void initBlend(MatrixStack matrixStack) {
-      if (this.intVal != 0 || this.intValVal2 != 0 || this.intValVal3 != 0) {
+      if (this.intVal != 0 || this.int2 != 0 || this.int3 != 0) {
          Camera var2 = mc.gameRenderer.getCamera();
          Vec3d var3 = var2.getPos();
          Matrix4f var4 = matrixStack.peek().getPositionMatrix();
@@ -45,8 +45,8 @@ public class BoxRenderer implements MinecraftAccess {
          RenderSystem.enableDepthTest();
          RenderSystem.disableBlend();
          this.intVal = 0;
-         this.intValVal2 = 0;
-         this.intValVal3 = 0;
+         this.int2 = 0;
+         this.int3 = 0;
       }
    }
 
@@ -78,10 +78,10 @@ public class BoxRenderer implements MinecraftAccess {
    }
 
    public void handleLine(Frustum frustum, Matrix4f model, Vec3d camPos) {
-      if (this.intValVal2 != 0) {
+      if (this.int2 != 0) {
          boolean var4 = false;
 
-         for (int var5 = 0; var5 < this.intValVal2; var5++) {
+         for (int var5 = 0; var5 < this.int2; var5++) {
             if (this.mmaba.get(var5).computeFlag(frustum)) {
                var4 = true;
                break;
@@ -93,7 +93,7 @@ public class BoxRenderer implements MinecraftAccess {
             RenderSystem.lineWidth(1.5F);
             BufferBuilder var8 = Tessellator.getInstance().begin(DrawMode.LINES, VertexFormats.LINES);
 
-            for (int var6 = 0; var6 < this.intValVal2; var6++) {
+            for (int var6 = 0; var6 < this.int2; var6++) {
                BoxRenderer.OutlinedBox var7 = this.mmaba.get(var6);
                if (var7.computeFlag(frustum)) {
                   this.handleColor(var7, camPos, model, var8);
@@ -106,10 +106,10 @@ public class BoxRenderer implements MinecraftAccess {
    }
 
    public void handleLine2(Frustum frustum, Matrix4f model, Vec3d camPos) {
-      if (this.intValVal3 != 0) {
+      if (this.int3 != 0) {
          boolean var4 = false;
 
-         for (int var5 = 0; var5 < this.intValVal3; var5++) {
+         for (int var5 = 0; var5 < this.int3; var5++) {
             if (this.list2.get(var5).computeFlag(frustum)) {
                var4 = true;
                break;
@@ -120,7 +120,7 @@ public class BoxRenderer implements MinecraftAccess {
             RenderSystem.setShader(ShaderProgramKeys.RENDERTYPE_LINES);
             BufferBuilder var8 = Tessellator.getInstance().begin(DrawMode.LINES, VertexFormats.LINES);
 
-            for (int var6 = 0; var6 < this.intValVal3; var6++) {
+            for (int var6 = 0; var6 < this.int3; var6++) {
                BoxRenderer.StripedBox var7 = this.list2.get(var6);
                if (var7.computeFlag(frustum)) {
                   RenderSystem.lineWidth(var7.lineWidth);
@@ -281,27 +281,27 @@ public class BoxRenderer implements MinecraftAccess {
             break;
          case OUTLINE:
             BoxRenderer.OutlinedBox var12;
-            if (this.intValVal2 < this.mmaba.size()) {
-               var12 = this.mmaba.get(this.intValVal2);
+            if (this.int2 < this.mmaba.size()) {
+               var12 = this.mmaba.get(this.int2);
             } else {
                var12 = new BoxRenderer.OutlinedBox();
                this.mmaba.add(var12);
             }
 
             var12.initInit(x1, y1, z1, x2, y2, z2, lineWidth, color);
-            this.intValVal2++;
+            this.int2++;
             break;
          case STRIPED:
             BoxRenderer.StripedBox var11;
-            if (this.intValVal3 < this.list2.size()) {
-               var11 = this.list2.get(this.intValVal3);
+            if (this.int3 < this.list2.size()) {
+               var11 = this.list2.get(this.int3);
             } else {
                var11 = new BoxRenderer.StripedBox();
                this.list2.add(var11);
             }
 
             var11.initInit(x1, y1, z1, x2, y2, z2, lineWidth, color, gapDistance);
-            this.intValVal3++;
+            this.int3++;
       }
    }
 
@@ -316,14 +316,14 @@ public class BoxRenderer implements MinecraftAccess {
       public Box class_238 = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
       public void initInit(float x1, float y1, float z1, float x2, float y2, float z2, Color color) {
-         this.x1 = x1x;
-         this.y1 = y1x;
-         this.z1 = z1x;
-         this.x2 = x2x;
-         this.y2 = y2x;
-         this.z2 = z2x;
-         this.color = colorx;
-         this.class_238 = new Box((double)x1x, (double)y1x, (double)z1x, (double)x2x, (double)y2x, (double)z2x);
+         this.x1 = x1;
+         this.y1 = y1;
+         this.z1 = z1;
+         this.x2 = x2;
+         this.y2 = y2;
+         this.z2 = z2;
+         this.color = color;
+         this.class_238 = new Box((double)x1, (double)y1, (double)z1, (double)x2, (double)y2, (double)z2);
       }
 
       public boolean computeFlag(Frustum frustum) {
@@ -343,15 +343,15 @@ public class BoxRenderer implements MinecraftAccess {
       public Box class_238 = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
       public void initInit(float x1, float y1, float z1, float x2, float y2, float z2, float lineWidth, Color color) {
-         this.x1 = x1x;
-         this.y1 = y1x;
-         this.z1 = z1x;
-         this.x2 = x2x;
-         this.y2 = y2x;
-         this.z2 = z2x;
-         this.lineWidth = lineWidthx;
-         this.color = colorx;
-         this.class_238 = new Box((double)x1x, (double)y1x, (double)z1x, (double)x2x, (double)y2x, (double)z2x);
+         this.x1 = x1;
+         this.y1 = y1;
+         this.z1 = z1;
+         this.x2 = x2;
+         this.y2 = y2;
+         this.z2 = z2;
+         this.lineWidth = lineWidth;
+         this.color = color;
+         this.class_238 = new Box((double)x1, (double)y1, (double)z1, (double)x2, (double)y2, (double)z2);
       }
 
    }
@@ -379,16 +379,16 @@ public class BoxRenderer implements MinecraftAccess {
       public Box myialia = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
       public void initInit(float x1, float y1, float z1, float x2, float y2, float z2, float lineWidth, Color color, float gapDistance) {
-         this.x1 = x1x;
-         this.y1 = y1x;
-         this.z1 = z1x;
-         this.x2 = x2x;
-         this.y2 = y2x;
-         this.z2 = z2x;
-         this.lineWidth = lineWidthx;
-         this.color = colorx;
-         this.gapDistance = gapDistancex;
-         this.myialia = new Box((double)x1x, (double)y1x, (double)z1x, (double)x2x, (double)y2x, (double)z2x);
+         this.x1 = x1;
+         this.y1 = y1;
+         this.z1 = z1;
+         this.x2 = x2;
+         this.y2 = y2;
+         this.z2 = z2;
+         this.lineWidth = lineWidth;
+         this.color = color;
+         this.gapDistance = gapDistance;
+         this.myialia = new Box((double)x1, (double)y1, (double)z1, (double)x2, (double)y2, (double)z2);
       }
 
    }

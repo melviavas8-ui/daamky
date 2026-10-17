@@ -15,15 +15,15 @@ public final class StopHelper {
    public Vec3d class_243 = null;
 
    public void handleGoal(BlockPos goal, int tolerance) {
-      if (goalx != null && class_310.player != null) {
-         this.goal = goalx;
+      if (goal != null && class_310.player != null) {
+         this.goal = goal;
          this.flag = true;
          this.flag2 = false;
          this.flag3 = false;
          this.intVal = 0;
          this.class_243 = null;
          if (class_310.player.networkHandler != null) {
-            class_310.player.networkHandler.sendChatMessage("#goto " + goalx.method_10263() + " " + goalx.method_10264() + " " + goalx.method_10260());
+            class_310.player.networkHandler.sendChatMessage("#goto " + goal.method_10263() + " " + goal.method_10264() + " " + goal.method_10260());
          }
       }
    }

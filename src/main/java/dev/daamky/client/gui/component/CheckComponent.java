@@ -59,22 +59,22 @@ public class CheckComponent extends Component<Boolean> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeCheckComponent(var1);
+      return this.computeCheckComponent(param1);
    }
 
    @Override
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Boolean)var1);
+   public Component withValue(Boolean param1) {
+      return this.withCachedValue(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

@@ -28,7 +28,7 @@ public class MotionConfig7 extends LegacySetting {
    public float float3 = 0.0F;
    public float float4 = 0.0F;
    public long long2 = ThreadLocalRandom.current().nextLong(2000L, 4001L);
-   public long long3 = System.currentTimeMillis() + this.longVal2;
+   public long long3 = System.currentTimeMillis() + this.long2;
    public int int3 = 0;
    public int mbovumb = 1;
    public float float5 = 40.0F;
@@ -111,29 +111,29 @@ public class MotionConfig7 extends LegacySetting {
    }
 
    public void runCurrent2() {
-      this.intVal4 = 3;
+      this.int4 = 3;
       this.majhos++;
       if (this.majhos >= this.miqca) {
          this.majhos = 0;
          this.miqca = ThreadLocalRandom.current().nextInt(15, 20);
          this.flag2 = true;
-         this.longVal6 = System.currentTimeMillis();
-         this.longVal7 = ThreadLocalRandom.current().nextLong(50L, 71L);
+         this.long6 = System.currentTimeMillis();
+         this.long7 = ThreadLocalRandom.current().nextLong(50L, 71L);
       }
    }
 
    @Override
    public void run() {
-      this.intVal4 = 3;
+      this.int4 = 3;
    }
 
    public void runCurrent3() {
       this.flag = false;
-      this.floatVal3 = 0.0F;
-      this.floatVal4 = 0.0F;
-      this.floatVal5 = 44.0F;
-      this.floatVal6 = 120.0F;
-      this.intVal4 = 0;
+      this.float3 = 0.0F;
+      this.float4 = 0.0F;
+      this.float5 = 44.0F;
+      this.float6 = 120.0F;
+      this.int4 = 0;
       this.flag2 = false;
       this.majhos = 0;
       this.miqca = ThreadLocalRandom.current().nextInt(15, 20);
@@ -145,7 +145,7 @@ public class MotionConfig7 extends LegacySetting {
          super.runCurrent();
          if (this.flag) {
             this.floatVal = this.floatVal;
-            this.mubizl = this.floatVal2;
+            this.mubizl = this.float2;
          }
       }
    }
@@ -155,9 +155,9 @@ public class MotionConfig7 extends LegacySetting {
       if (mc.player != null && mc.world != null) {
          if (!this.flag) {
             this.floatVal = currentRotation != null ? currentRotation.getYaw() : mc.player.getYaw();
-            this.floatVal2 = currentRotation != null ? currentRotation.getPitch() : mc.player.getPitch();
-            this.floatVal7 = this.floatVal;
-            this.floatVal8 = this.floatVal2;
+            this.float2 = currentRotation != null ? currentRotation.getPitch() : mc.player.getPitch();
+            this.float7 = this.floatVal;
+            this.float8 = this.float2;
             this.flag = true;
          }
 
@@ -178,22 +178,22 @@ public class MotionConfig7 extends LegacySetting {
             float var19 = (float)MathHelper.clamp(
                -Math.toDegrees(Math.atan2(var17.y, Math.hypot(var17.x, var17.z))), -89.0, 89.0
             );
-            boolean var20 = this.intVal4 > 0;
+            boolean var20 = this.int4 > 0;
             if (var20) {
-               this.intVal4--;
-               this.floatVal7 = var18;
-               this.floatVal8 = var19;
+               this.int4--;
+               this.float7 = var18;
+               this.float8 = var19;
             } else {
-               this.floatVal7 = this.floatVal7 + (float)((double)MathHelper.wrapDegrees(var18 - this.floatVal7) * 0.45);
-               this.floatVal8 = this.floatVal8 + (float)((double)(var19 - this.floatVal8) * 0.45);
+               this.float7 = this.float7 + (float)((double)MathHelper.wrapDegrees(var18 - this.float7) * 0.45);
+               this.float8 = this.float8 + (float)((double)(var19 - this.float8) * 0.45);
             }
 
             if (var54 >= this.momott) {
-               this.intVal = this.intVal2;
-               this.intVal2 = ThreadLocalRandom.current().nextInt(this.jitterPresetList.length);
+               this.intVal = this.int2;
+               this.int2 = ThreadLocalRandom.current().nextInt(this.jitterPresetList.length);
 
-               while (this.intVal2 == this.intVal) {
-                  this.intVal2 = ThreadLocalRandom.current().nextInt(this.jitterPresetList.length);
+               while (this.int2 == this.intVal) {
+                  this.int2 = ThreadLocalRandom.current().nextInt(this.jitterPresetList.length);
                }
 
                this.longVal = ThreadLocalRandom.current().nextLong(1000L, 2001L);
@@ -201,7 +201,7 @@ public class MotionConfig7 extends LegacySetting {
             }
 
             MotionConfig7.JitterPreset var21 = this.jitterPresetList[this.intVal];
-            MotionConfig7.JitterPreset var22 = this.jitterPresetList[this.intVal2];
+            MotionConfig7.JitterPreset var22 = this.jitterPresetList[this.int2];
             float var23 = 1.0F - (float)(this.momott - var54) / (float)this.longVal;
             var23 = MathHelper.clamp(var23, 0.0F, 1.0F);
             var23 = var23 * var23 * (3.0F - 2.0F * var23);
@@ -212,48 +212,48 @@ public class MotionConfig7 extends LegacySetting {
             float var27 = var22.computeCos(var54);
             float var28 = MathHelper.lerp(var23, var24, var25);
             float var29 = MathHelper.lerp(var23, var26, var27);
-            this.floatVal3 = this.floatVal3 + (var28 - this.floatVal3) * 0.6F;
-            this.floatVal4 = this.floatVal4 + (var29 - this.floatVal4) * 0.6F;
-            float var30 = this.floatVal3;
-            float var31 = this.floatVal4;
-            if (this.flag2 && var54 - this.longVal6 >= this.longVal7) {
+            this.float3 = this.float3 + (var28 - this.float3) * 0.6F;
+            this.float4 = this.float4 + (var29 - this.float4) * 0.6F;
+            float var30 = this.float3;
+            float var31 = this.float4;
+            if (this.flag2 && var54 - this.long6 >= this.long7) {
                this.flag2 = false;
             }
 
-            if (var54 >= this.longVal3) {
-               this.intVal3 = this.mbovumb;
+            if (var54 >= this.long3) {
+               this.int3 = this.mbovumb;
                this.mbovumb = ThreadLocalRandom.current().nextInt(this.speedPresetList.length);
 
-               while (this.mbovumb == this.intVal3) {
+               while (this.mbovumb == this.int3) {
                   this.mbovumb = ThreadLocalRandom.current().nextInt(this.speedPresetList.length);
                }
 
-               this.longVal2 = ThreadLocalRandom.current().nextLong(2000L, 4001L);
-               this.longVal3 = var54 + this.longVal2;
+               this.long2 = ThreadLocalRandom.current().nextLong(2000L, 4001L);
+               this.long3 = var54 + this.long2;
             }
 
-            MotionConfig7.SpeedPreset var32 = this.speedPresetList[this.intVal3];
+            MotionConfig7.SpeedPreset var32 = this.speedPresetList[this.int3];
             MotionConfig7.SpeedPreset var33 = this.speedPresetList[this.mbovumb];
-            float var34 = 1.0F - (float)(this.longVal3 - var54) / (float)this.longVal2;
+            float var34 = 1.0F - (float)(this.long3 - var54) / (float)this.long2;
             var34 = MathHelper.clamp(var34, 0.0F, 1.0F);
             var34 = var34 * var34 * (3.0F - 2.0F * var34);
             var34 = var34 * var34 * (3.0F - 2.0F * var34);
             float var35 = MathHelper.lerp(var34, var32.getFloat(), var33.getFloat());
             float var36 = MathHelper.lerp(var34, var32.getFloat2(), var33.getFloat2());
-            this.floatVal5 = this.floatVal5 + (var35 - this.floatVal5) * 0.5F;
-            this.floatVal6 = this.floatVal6 + (var36 - this.floatVal6) * 0.5F;
-            float var37 = this.floatVal5 + computeCurrent(-2.5F, 2.5F);
-            float var38 = this.floatVal6 + computeCurrent(-1.0F, 1.0F);
+            this.float5 = this.float5 + (var35 - this.float5) * 0.5F;
+            this.float6 = this.float6 + (var36 - this.float6) * 0.5F;
+            float var37 = this.float5 + computeCurrent(-2.5F, 2.5F);
+            float var38 = this.float6 + computeCurrent(-1.0F, 1.0F);
             if (var20) {
                var37 *= 1.8F;
                var38 *= 1.6F;
             }
 
             float var39 = var20 ? 0.2F : 1.0F;
-            float var40 = this.floatVal7 + var30 * var39;
-            float var41 = MathHelper.clamp(this.floatVal8 + var31 * var39, -89.0F, 89.0F);
+            float var40 = this.float7 + var30 * var39;
+            float var41 = MathHelper.clamp(this.float8 + var31 * var39, -89.0F, 89.0F);
             float var42 = this.floatVal;
-            float var43 = this.floatVal2;
+            float var43 = this.float2;
             float var44 = MathHelper.wrapDegrees(var40 - var42);
             float var45 = var41 - var43;
             float var46 = MathHelper.clamp(var44, -var37, var37);
@@ -271,8 +271,8 @@ public class MotionConfig7 extends LegacySetting {
             }
 
             this.floatVal = var50;
-            this.floatVal2 = var51;
-            return new Rotation(this.floatVal, this.floatVal2);
+            this.float2 = var51;
+            return new Rotation(this.floatVal, this.float2);
          }
 
          float var6 = CameraManager.getFlag() ? CameraManager.getFloat() : mc.player.getYaw();

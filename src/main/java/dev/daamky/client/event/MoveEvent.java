@@ -38,21 +38,21 @@ public class MoveEvent extends Event<MoveEvent.MoveEventData> {
       }
 
       public void setX(double x) {
-         this.x = xx;
+         this.x = x;
       }
 
       public void setY(double y) {
-         this.y = yx;
+         this.y = y;
       }
 
       public void setZ(double z) {
-         this.z = zx;
+         this.z = z;
       }
 
       public MoveEventData(double x, double y, double z) {
-         this.x = xx;
-         this.y = yx;
-         this.z = zx;
+         this.x = x;
+         this.y = y;
+         this.z = z;
       }
    }
 }

@@ -32,18 +32,18 @@ public class VelocityEvent extends Event<VelocityEvent.VelocityEventData> {
       }
 
       public VelocityEventData(Vec3d movementInput, float speed, float yaw, Vec3d velocity) {
-         this.movementInput = movementInputx;
-         this.speed = speedx;
-         this.yaw = yawx;
-         this.velocity = velocityx;
+         this.movementInput = movementInput;
+         this.speed = speed;
+         this.yaw = yaw;
+         this.velocity = velocity;
       }
 
       public void setMovementInput(Vec3d movementInput) {
-         this.movementInput = movementInputx;
+         this.movementInput = movementInput;
       }
 
       public void setVelocity(Vec3d velocity) {
-         this.velocity = velocityx;
+         this.velocity = velocity;
       }
    }
 }

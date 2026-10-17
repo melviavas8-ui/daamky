@@ -18,7 +18,7 @@ public class EntityFilterHelper implements MinecraftAccess {
 
    public void setTarget(LivingEntity target) {
       if (this.target == null) {
-         this.target = targetx;
+         this.target = target;
       }
    }
 
@@ -49,9 +49,9 @@ public class EntityFilterHelper implements MinecraftAccess {
          }
       }
 
-      if (System.currentTimeMillis() - this.longVal > 150L) {
+      if (System.currentTimeMillis() - this.timeStamp > 150L) {
          this.list.sort(EntityFilterHelper::lambda$searchTargets$0);
-         this.longVal = System.currentTimeMillis();
+         this.timeStamp = System.currentTimeMillis();
       }
    }
 
@@ -85,7 +85,7 @@ public class EntityFilterHelper implements MinecraftAccess {
       public boolean mukey;
 
       public EntityFilter(List<String> targetSettings) {
-         this.targetSettings = targetSettingsx;
+         this.targetSettings = targetSettings;
       }
 
       public boolean computeFlag(LivingEntity entity) {

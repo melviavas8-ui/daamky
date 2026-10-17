@@ -366,13 +366,13 @@ public final class InventoryUtil implements MinecraftAccess {
 
       public void runIdle() {
          this.usageState = InventoryUtil.ItemUsage.UsageState.IDLE;
-         this.intValVal4 = 0;
+         this.int4 = 0;
          this.mxaeo = -1;
-         this.intValVal3 = -1;
+         this.int3 = -1;
       }
 
       public void setRotation(Rotation rotation) {
-         this.rotation = rotationx;
+         this.rotation = rotation;
       }
 
       public void initRotation() {
@@ -457,9 +457,9 @@ public final class InventoryUtil implements MinecraftAccess {
                }
 
                this.intVal = InventoryUtil.computeInt(this.item, true);
-               this.intValVal2 = MinecraftAccess.mc.player.getInventory().selectedSlot;
+               this.int2 = MinecraftAccess.mc.player.getInventory().selectedSlot;
                this.mxaeo = -1;
-               this.intValVal3 = -1;
+               this.int3 = -1;
                if (this.intVal == -1) {
                   this.mxaeo = InventoryUtil.computeInt(this.item, false);
                   if (this.mxaeo == -1) {
@@ -477,21 +477,21 @@ public final class InventoryUtil implements MinecraftAccess {
                   }
 
                   this.usageState = InventoryUtil.ItemUsage.UsageState.SWAP_ITEM;
-                  this.intValVal4 = 1;
+                  this.int4 = 1;
                } else {
                   MinecraftAccess.mc.player.getInventory().selectedSlot = this.intVal;
                   this.usageState = InventoryUtil.ItemUsage.UsageState.USE_ITEM;
-                  this.intValVal4 = 1;
+                  this.int4 = 1;
                }
                break;
             case SWAP_ITEM:
-               if (this.intValVal4-- > 0) {
+               if (this.int4-- > 0) {
                   return;
                }
 
                int var2 = InventoryUtil.getInt();
                if (var2 != -1 && this.mxaeo != -1) {
-                  this.intValVal3 = var2;
+                  this.int3 = var2;
                   Runnable var3 = this::lambda$executeLegitMode$2;
                   if (EntryHelper.check()) {
                      EntryHelper.handleLong(10L, var3);
@@ -503,27 +503,27 @@ public final class InventoryUtil implements MinecraftAccess {
                }
                break;
             case USE_ITEM:
-               if (this.intValVal4-- > 0) {
+               if (this.int4-- > 0) {
                   return;
                }
 
                this.initRotation();
                InventoryUtil.useItem(Hand.MAIN_HAND);
                this.usageState = InventoryUtil.ItemUsage.UsageState.RESTORE_SLOT;
-               this.intValVal4 = 1;
+               this.int4 = 1;
                break;
             case RESTORE_SLOT:
-               if (this.intValVal4-- > 0) {
+               if (this.int4-- > 0) {
                   return;
                }
 
-               if (this.mxaeo != -1 && this.intValVal3 != -1) {
-                  InventoryUtil.initInit(this.mxaeo, this.intValVal3);
+               if (this.mxaeo != -1 && this.int3 != -1) {
+                  InventoryUtil.initInit(this.mxaeo, this.int3);
                   this.mxaeo = -1;
-                  this.intValVal3 = -1;
+                  this.int3 = -1;
                }
 
-               MinecraftAccess.mc.player.getInventory().selectedSlot = this.intValVal2;
+               MinecraftAccess.mc.player.getInventory().selectedSlot = this.int2;
                this.usageState = InventoryUtil.ItemUsage.UsageState.IDLE;
                this.runnable = null;
                this.flag = true;
@@ -551,7 +551,7 @@ public final class InventoryUtil implements MinecraftAccess {
       }
 
       public int getInt4() {
-         return this.intValVal4;
+         return this.int4;
       }
 
       public Runnable getRunnable() {
@@ -563,12 +563,12 @@ public final class InventoryUtil implements MinecraftAccess {
       }
 
       public ItemUsage(Item item, Module provider) {
-         this.item = itemx;
-         this.provider = providerx;
+         this.item = item;
+         this.provider = provider;
       }
 
       public void setUseRotation(boolean useRotation) {
-         this.useRotation = useRotationx;
+         this.useRotation = useRotation;
       }
 
       public void lambda$executeLegitMode$2(int hotbarSlot) {
@@ -576,7 +576,7 @@ public final class InventoryUtil implements MinecraftAccess {
          MinecraftAccess.mc.player.getInventory().selectedSlot = this.intVal = hotbarSlot;
          InventoryUtil.handleInt(this.intVal);
          this.usageState = InventoryUtil.ItemUsage.UsageState.USE_ITEM;
-         this.intValVal4 = 1;
+         this.int4 = 1;
       }
 
       public void lambda$handleUse$1(int bind) {

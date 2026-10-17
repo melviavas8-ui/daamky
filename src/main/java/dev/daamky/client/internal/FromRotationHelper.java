@@ -29,15 +29,15 @@ public class FromRotationHelper implements MinecraftAccess {
       boolean freeMoveCorrection,
       Module provider
    ) {
-      this.rotation = rotationx;
-      this.vec3d = vec3dx;
-      this.entity = entityx;
-      this.rotationMode = rotationModex;
-      this.ticksUntilReset = ticksUntilResetx;
-      this.resetThreshold = resetThresholdx;
-      this.moveCorrection = moveCorrectionx;
-      this.freeMoveCorrection = freeMoveCorrectionx;
-      this.provider = providerx;
+      this.rotation = rotation;
+      this.vec3d = vec3d;
+      this.entity = entity;
+      this.rotationMode = rotationMode;
+      this.ticksUntilReset = ticksUntilReset;
+      this.resetThreshold = resetThreshold;
+      this.moveCorrection = moveCorrection;
+      this.freeMoveCorrection = freeMoveCorrection;
+      this.provider = provider;
    }
 
    public Rotation initRotation(Rotation fromRotation, boolean isResetting) {
@@ -96,17 +96,17 @@ public class FromRotationHelper implements MinecraftAccess {
    }
 
    public FromRotationHelper withFreeMoveCorrection(boolean freeMoveCorrection) {
-      this.freeMoveCorrection = freeMoveCorrectionx;
+      this.freeMoveCorrection = freeMoveCorrection;
       return this;
    }
 
    public FromRotationHelper withClientLook(boolean clientLook) {
-      this.clientLook = clientLookx;
+      this.clientLook = clientLook;
       return this;
    }
 
    public FromRotationHelper withNoClamp(boolean noClamp) {
-      this.noClamp = noClampx;
+      this.noClamp = noClamp;
       return this;
    }
 }

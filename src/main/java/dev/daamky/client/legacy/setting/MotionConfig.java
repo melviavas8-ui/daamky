@@ -29,7 +29,7 @@ public class MotionConfig extends LegacySetting {
 
    @Override
    public void run() {
-      this.intVal2 = 0;
+      this.int2 = 0;
       this.intVal = 0;
    }
 
@@ -42,25 +42,25 @@ public class MotionConfig extends LegacySetting {
       if (mc.player != null && mc.world != null) {
          if (!this.flag && entity instanceof LivingEntity var5 && var5.isAlive()) {
             long var28 = System.nanoTime();
-            if (this.longVal == 0L) {
-               this.longVal = var28;
+            if (this.timeStamp == 0L) {
+               this.timeStamp = var28;
             }
 
-            float var29 = (float)(var28 - this.longVal) / 1.0E9F;
-            this.longVal = var28;
+            float var29 = (float)(var28 - this.timeStamp) / 1.0E9F;
+            this.timeStamp = var28;
             var29 = MathHelper.clamp(var29, 0.001F, 0.05F);
             if (!this.flag) {
                this.floatVal = currentRotation.getYaw();
-               this.floatVal2 = currentRotation.getPitch();
+               this.float2 = currentRotation.getPitch();
                this.flag = true;
             }
 
-            this.intVal2++;
+            this.int2++;
             if (this.intVal > 0) {
                this.intVal--;
             }
 
-            boolean var9 = this.intVal > 0 || this.intVal2 <= 2;
+            boolean var9 = this.intVal > 0 || this.int2 <= 2;
             Vec3d var10 = mc.player.getEyePos();
             Box var11 = var5.getBoundingBox();
             boolean var12 = var11.contains(var10) || var10.squaredDistanceTo(var11.getCenter()) < 0.2;
@@ -133,8 +133,8 @@ public class MotionConfig extends LegacySetting {
             }
 
             this.floatVal = currentRotation.getYaw() + var38;
-            this.floatVal2 = MathHelper.clamp(currentRotation.getPitch() + var39, -89.0F, 89.0F);
-            Rotation var40 = this.initYaw(new Rotation(this.floatVal, this.floatVal2), currentRotation);
+            this.float2 = MathHelper.clamp(currentRotation.getPitch() + var39, -89.0F, 89.0F);
+            Rotation var40 = this.initYaw(new Rotation(this.floatVal, this.float2), currentRotation);
             if (var9 && !var12 && !OffHelper.initInit(var10, var40.getYaw(), var40.getPitch(), var34, var5, true)) {
                var40 = this.initYaw(new Rotation(var13, var14), currentRotation);
             }
@@ -174,8 +174,8 @@ public class MotionConfig extends LegacySetting {
    public void run3() {
       this.flag = false;
       this.intVal = 0;
-      this.intVal2 = 0;
-      this.longVal = 0L;
+      this.int2 = 0;
+      this.timeStamp = 0L;
       this.flag = false;
    }
 }

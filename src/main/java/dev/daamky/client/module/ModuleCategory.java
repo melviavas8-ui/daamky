@@ -21,8 +21,8 @@ public enum ModuleCategory {
    }
 
    private ModuleCategory(String label, String icon) {
-      this.label = labelx;
-      this.icon = iconx;
+      this.label = label;
+      this.icon = icon;
    }
 
    public static ModuleCategory[] $values() {

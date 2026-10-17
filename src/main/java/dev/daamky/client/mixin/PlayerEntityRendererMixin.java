@@ -62,6 +62,6 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
    }
 
    protected float getShadowRadius(EntityRenderState param1) {
-      return super.getShadowRadius((LivingEntityRenderState)var1);
+      return super.getShadowRadius((LivingEntityRenderState)param1);
    }
 }

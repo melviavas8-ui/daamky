@@ -456,8 +456,8 @@ public class SwapRadialMenuScreen extends Screen {
       public AnimatedValue animatedValue = new AnimatedValue();
 
       public RadialSlot(ItemStack stack, String label) {
-         this.stack = stackx;
-         this.label = labelx;
+         this.stack = stack;
+         this.label = label;
       }
    }
 }

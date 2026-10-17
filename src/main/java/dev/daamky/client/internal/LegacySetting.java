@@ -16,7 +16,7 @@ public abstract class LegacySetting implements MinecraftAccess, ModeSetting.Name
    public static final long long2 = 220L;
 
    public LegacySetting(String name) {
-      this.name = namex;
+      this.name = name;
    }
 
    @Override

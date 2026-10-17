@@ -6,11 +6,11 @@ public final class IntCodec30 {
    public int key2 = 1744;
 
    public long decode0() {
-      return(longVal)this.key2 + 101L;
+      return(key0)this.key2 + 101L;
    }
 
    public long decode1() {
-      return(longVal)this.key2 + 97L;
+      return(key0)this.key2 + 97L;
    }
 
    public long decode2() {

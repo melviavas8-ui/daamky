@@ -459,14 +459,14 @@ public class Boxes extends Module {
       public final Color color;
 
       public RenderEntityData(float minX, float minY, float minZ, float maxX, float maxY, float maxZ, float hpPercent, Color color) {
-         this.minX = minXx;
-         this.minY = minYx;
-         this.minZ = minZx;
-         this.maxX = maxXx;
-         this.maxY = maxYx;
-         this.maxZ = maxZx;
-         this.hpPercent = hpPercentx;
-         this.color = colorx;
+         this.minX = minX;
+         this.minY = minY;
+         this.minZ = minZ;
+         this.maxX = maxX;
+         this.maxY = maxY;
+         this.maxZ = maxZ;
+         this.hpPercent = hpPercent;
+         this.color = color;
       }
    }
 }

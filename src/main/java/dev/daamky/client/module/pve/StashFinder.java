@@ -129,7 +129,7 @@ public class StashFinder extends Module {
    }
 
    public void handleNext(List<BlockPos> list, Color outlineCol, Color fillCol, boolean outline, boolean fill) {
-      for (BlockPos var7 : listx) {
+      for (BlockPos var7 : list) {
          float var8 = (float)var7.getX();
          float var9 = (float)var7.getY();
          float var10 = (float)var7.getZ();

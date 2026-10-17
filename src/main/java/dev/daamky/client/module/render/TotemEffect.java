@@ -306,16 +306,16 @@ public class TotemEffect extends Module {
          this.double4 = this.doubleVal = x;
          this.mweet = this.double2 = y;
          this.double5 = this.double3 = z;
-         this.motX = motXx;
-         this.motY = motYx;
-         this.motZ = motZx;
-         this.size = sizex;
+         this.motX = motX;
+         this.motY = motY;
+         this.motZ = motZ;
+         this.size = size;
          this.floatVal = 0.0F;
-         this.lifetime = lifetimex;
+         this.lifetime = lifetime;
          this.mexto = 0;
          this.float3 = this.float2 = EntityHelper.computeRandom(-180.0F, 180.0F);
-         this.rotSpeed = rotSpeedx;
-         this.mode = modex;
+         this.rotSpeed = rotSpeed;
+         this.mode = mode;
          this.intVal = 255;
       }
 

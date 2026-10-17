@@ -7,7 +7,7 @@ import dev.daamky.client.setting.StringSetting;
 public class LegacyModuleImpl3 extends TextFieldComponent {
    public LegacyModuleImpl3(final LegacyModule this$0, Module parent, String name, String value, final StringSetting param5) {
       super(parent, name, value);
-      this.stringSetting = var5;
+      this.stringSetting = param5;
    }
 
    public TextFieldComponent withCachedValue(String value) {
@@ -20,7 +20,8 @@ public class LegacyModuleImpl3 extends TextFieldComponent {
       return (String)this.stringSetting.getValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withCachedValue((String)var1);
+   public Component withValue(String param1) {
+      return this.withCachedValue(param1);
    }
+
 }

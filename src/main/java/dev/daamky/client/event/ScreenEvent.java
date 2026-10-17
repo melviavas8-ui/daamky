@@ -25,7 +25,7 @@ public class ScreenEvent extends Event<ScreenEvent.ScreenEventData> {
       }
 
       public ScreenEventData(Screen screen) {
-         this.screen = screenx;
+         this.screen = screen;
       }
    }
 }

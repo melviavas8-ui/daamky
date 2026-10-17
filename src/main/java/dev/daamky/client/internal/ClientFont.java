@@ -54,12 +54,12 @@ public final class ClientFont {
       Map<Integer, BottomHelper> glyphs,
       Map<Integer, Map<Integer, Float>> kernings
    ) {
-      this.name = namex;
-      this.texture = texturex;
-      this.atlas = atlasx;
-      this.metrics = metricsx;
-      this.glyphs = glyphsx;
-      this.kernings = kerningsx;
+      this.name = name;
+      this.texture = texture;
+      this.atlas = atlas;
+      this.metrics = metrics;
+      this.glyphs = glyphs;
+      this.kernings = kernings;
       this.runNext();
       this.loaded = true;
    }
@@ -140,8 +140,8 @@ public final class ClientFont {
 
    public boolean computeNext(List<BottomHelper.ColoredGlyph> glyphs) {
       this.loadName();
-      if (this.glyphs != null && glyphsx != null && !glyphsx.isEmpty()) {
-         for (BottomHelper.ColoredGlyph var3 : glyphsx) {
+      if (this.glyphs != null && glyphs != null && !glyphs.isEmpty()) {
+         for (BottomHelper.ColoredGlyph var3 : glyphs) {
             if (this.glyphs.containsKey(Integer.valueOf(var3.c()))) {
                return true;
             }
@@ -421,16 +421,16 @@ public final class ClientFont {
    public void handleColor(
       Matrix4f matrix, VertexConsumer consumer, List<BottomHelper.ColoredGlyph> glyphs, float size, float thickness, float spacing, float x, float y, float z
    ) {
-      if (glyphsx != null && !glyphsx.isEmpty()) {
+      if (glyphs != null && !glyphs.isEmpty()) {
          this.loadName();
          if (this.glyphs != null) {
             int var10 = -1;
             boolean var11 = this.kernings != null && !this.kernings.isEmpty();
             float var12 = thickness + spacing;
-            int var13 = glyphsx.size();
+            int var13 = glyphs.size();
 
             for (int var14 = 0; var14 < var13; var14++) {
-               BottomHelper.ColoredGlyph var15 = (BottomHelper.ColoredGlyph)glyphsx.get(var14);
+               BottomHelper.ColoredGlyph var15 = (BottomHelper.ColoredGlyph)glyphs.get(var14);
                char var16 = var15.c();
                int var17 = var15.color();
                BottomHelper var18 = this.computeFast(var16);

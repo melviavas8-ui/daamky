@@ -4,7 +4,7 @@ public class KeyEntry extends GetClassHelper {
    public int key;
 
    public KeyEntry(int key) {
-      this.key = keyx;
+      this.key = key;
    }
 
    public int getKey() {
@@ -12,6 +12,6 @@ public class KeyEntry extends GetClassHelper {
    }
 
    public void setKey(int key) {
-      this.key = keyx;
+      this.key = key;
    }
 }

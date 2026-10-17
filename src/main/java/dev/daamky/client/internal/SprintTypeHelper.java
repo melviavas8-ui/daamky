@@ -9,7 +9,7 @@ public class SprintTypeHelper implements MinecraftAccess {
    public SprintTypeHelper.SprintType sprintType;
 
    public SprintTypeHelper(SprintTypeHelper.SprintType sprintType) {
-      this.sprintType = sprintTypex;
+      this.sprintType = sprintType;
    }
 
    public void handleLegit(SprintEvent.SprintEventData event, boolean rule) {

@@ -110,7 +110,7 @@ public class LegacyTimeHelper {
       public long lastMS;
 
       public void setLastMS(long lastMS) {
-         this.lastMS = lastMSx;
+         this.lastMS = lastMS;
       }
 
       public long getLastMS() {

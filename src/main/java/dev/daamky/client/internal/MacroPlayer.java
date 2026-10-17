@@ -9,7 +9,7 @@ public final class MacroPlayer {
    public int holdTicksRemaining;
 
    public MacroPlayer(MacroEngine.Macro macro2) {
-      this.macro2 = macro2x;
+      this.macro2 = macro2;
       this.currentIndex = 0;
       this.finished = false;
    }

@@ -19,6 +19,6 @@ public abstract class SettingRow extends Widget {
    }
 
    public SettingRow(Setting<?> setting) {
-      this.setting = settingx;
+      this.setting = setting;
    }
 }

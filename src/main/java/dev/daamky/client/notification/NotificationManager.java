@@ -456,15 +456,15 @@ public class NotificationManager extends HudElement {
       public List<NotificationManager.TextSpan> list = null;
 
       public Notification(String message, NotificationManager.Notification.Type type, long duration) {
-         this(messagex, typex, durationx, null);
+         this(message, type, duration, null);
       }
 
       public Notification(String message, NotificationManager.Notification.Type type, long duration, ItemStack itemStack) {
-         this.message = messagex;
-         this.type = typex;
-         this.duration = durationx;
+         this.message = message;
+         this.type = type;
+         this.duration = duration;
          this.timestamp = System.currentTimeMillis();
-         this.itemStack = itemStackx;
+         this.itemStack = itemStack;
       }
 
       public ItemStack getItemStack() {
@@ -624,7 +624,7 @@ public class NotificationManager extends HudElement {
       }
 
       public void setToggle(boolean toggle) {
-         this.toggle = togglex;
+         this.toggle = toggle;
          this.list = null;
       }
 
@@ -633,7 +633,7 @@ public class NotificationManager extends HudElement {
       }
 
       public void setToggledOn(boolean toggledOn) {
-         this.toggledOn = toggledOnx;
+         this.toggledOn = toggledOn;
          this.list = null;
       }
 
@@ -642,20 +642,20 @@ public class NotificationManager extends HudElement {
       }
 
       public void setTimestamp(long timestamp) {
-         this.timestamp = timestampx;
+         this.timestamp = timestamp;
       }
 
       public void setDuration(long duration) {
-         this.duration = durationx;
+         this.duration = duration;
       }
 
       public void setMessage(String message) {
-         this.message = messagex;
+         this.message = message;
          this.list = null;
       }
 
       public void setType(NotificationManager.Notification.Type type) {
-         this.type = typex;
+         this.type = type;
       }
 
       public String getTag() {
@@ -663,7 +663,7 @@ public class NotificationManager extends HudElement {
       }
 
       public void setTag(String tag) {
-         this.tag = tagx;
+         this.tag = tag;
       }
 
       public static enum Type {
@@ -678,8 +678,8 @@ public class NotificationManager extends HudElement {
          public final Color color;
 
          private Type(String icon, Color color) {
-            this.icon = iconx;
-            this.color = colorx;
+            this.icon = icon;
+            this.color = color;
          }
 
          public String getIcon() {
@@ -701,8 +701,8 @@ public class NotificationManager extends HudElement {
       public final Color color;
 
       public TextSpan(String text, Color color) {
-         this.text = textx;
-         this.color = colorx;
+         this.text = text;
+         this.color = color;
       }
    }
 }

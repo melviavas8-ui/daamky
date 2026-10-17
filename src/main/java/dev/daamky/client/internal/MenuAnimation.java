@@ -230,10 +230,10 @@ public class MenuAnimation {
       public final double y2;
 
       public CubicBezier(double x1, double y1, double x2, double y2) {
-         this.x1 = x1x;
-         this.y1 = y1x;
-         this.x2 = x2x;
-         this.y2 = y2x;
+         this.x1 = x1;
+         this.y1 = y1;
+         this.x2 = x2;
+         this.y2 = y2;
       }
 
       public float computeFloat(float t, float b, float c, float d) {
@@ -253,8 +253,8 @@ public class MenuAnimation {
          float var4 = targetX;
 
          for (int var5 = 0; var5 < 8; var5++) {
-            float var6 = this.computeFloat(var4, x1x, x2x);
-            float var7 = this.computeFloat2(var4, x1x, x2x);
+            float var6 = this.computeFloat(var4, x1, x2);
+            float var7 = this.computeFloat2(var4, x1, x2);
             if (Math.abs(var6 - targetX) < 1.0E-5F || Math.abs(var7) < 1.0E-6F) {
                break;
             }

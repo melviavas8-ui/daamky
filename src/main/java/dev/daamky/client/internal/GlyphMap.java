@@ -608,8 +608,8 @@ public final class GlyphMap {
       public final long expirationTime;
 
       public CacheEntry(GlyphMap.ColorKey key, int color, long ttl) {
-         this.key = keyx;
-         this.color = colorx;
+         this.key = key;
+         this.color = color;
          this.expirationTime = System.currentTimeMillis() + ttl;
       }
 
@@ -640,12 +640,7 @@ public final class GlyphMap {
       }
 
       @Override
-      public int compareTo(Object param1) {
-         return this.compareTo((Delayed)var1);
-      }
-   }
-
-   private static class ColorKey {
+      private static class ColorKey {
       public final int red;
       public final int green;
       public final int blue;
@@ -668,10 +663,10 @@ public final class GlyphMap {
       }
 
             public ColorKey(int red, int green, int blue, int alpha) {
-         this.red = redx;
-         this.green = greenx;
-         this.blue = bluex;
-         this.alpha = alphax;
+         this.red = red;
+         this.green = green;
+         this.blue = blue;
+         this.alpha = alpha;
       }
 
             public boolean computeBlue(Object o) {

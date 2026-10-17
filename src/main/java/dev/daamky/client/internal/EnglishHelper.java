@@ -27,8 +27,8 @@ public final class EnglishHelper {
    }
 
    public static void setLanguage(EnglishHelper.Language language) {
-      if (languagex != null && languagex != language) {
-         language = languagex;
+      if (language != null && language != language) {
+         language = language;
          createCreate();
       }
    }

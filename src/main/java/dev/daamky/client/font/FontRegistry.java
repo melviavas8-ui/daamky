@@ -10,15 +10,15 @@ public class FontRegistry {
    public final ClientFont delegate;
 
    public FontRegistry(String name) {
-      this.name = namex;
-      this.delegate = computeClientFont(namex);
+      this.name = name;
+      this.delegate = computeClientFont(name);
    }
 
    public static ClientFont computeClientFont(String name) {
-      if (namex == null) {
+      if (name == null) {
          return FontBootstrap.moyewa;
       } else {
-         String var1 = namex.toLowerCase();
+         String var1 = name.toLowerCase();
 
          return switch (var1) {
             case "sf_bold" -> FontBootstrap.clientFont6;

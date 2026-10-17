@@ -96,13 +96,13 @@ public class Svetych extends Module {
    }
 
    public void setNow(long now) {
-      if (nowx - this.now > 1000L) {
+      if (now - this.now > 1000L) {
          if (mc.world != null) {
             int var3 = mc.world.getPlayers().size();
             this.intVal = var3 > 30 ? 24 : (var3 > 20 ? 42 : 72);
          }
 
-         this.now = nowx;
+         this.now = now;
       }
    }
 
@@ -424,10 +424,10 @@ public class Svetych extends Module {
       public boolean flag3 = false;
 
       public RenderContext(BufferBuilder quads, BufferBuilder lines, BufferBuilder glowC, BufferBuilder glowG) {
-         this.quads = quadsx;
-         this.lines = linesx;
-         this.glowC = glowCx;
-         this.glowG = glowGx;
+         this.quads = quads;
+         this.lines = lines;
+         this.glowC = glowC;
+         this.glowG = glowG;
       }
 
       public void runGlow() {

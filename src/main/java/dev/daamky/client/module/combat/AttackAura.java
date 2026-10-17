@@ -207,10 +207,10 @@ public class AttackAura extends Module {
       this.class_13092 = null;
       this.class_243 = null;
       OffHelper.run();
-      this.intVal6 = 0;
-      this.intVal7 = -1;
-      this.intVal4 = 0;
-      this.intVal5 = 0;
+      this.int6 = 0;
+      this.int7 = -1;
+      this.int4 = 0;
+      this.int5 = 0;
       this.flag2 = mc.player != null && mc.player.isSprinting();
       this.run();
    }
@@ -232,11 +232,11 @@ public class AttackAura extends Module {
       this.class_1309 = null;
       this.class_13092 = null;
       this.class_243 = null;
-      this.intVal7 = -1;
+      this.int7 = -1;
       flag = false;
       intVal = -1;
-      this.intVal4 = 0;
-      this.intVal5 = 0;
+      this.int4 = 0;
+      this.int5 = 0;
       OffHelper.run();
    }
 
@@ -253,12 +253,12 @@ public class AttackAura extends Module {
          if (int3 > 0) {
             int3--;
          } else {
-            this.intVal6++;
+            this.int6++;
             if (mc.player != null) {
                if (mc.player.isOnGround()) {
-                  this.intVal8 = 0;
+                  this.int8 = 0;
                } else {
-                  this.intVal8++;
+                  this.int8++;
                }
             }
 
@@ -320,22 +320,22 @@ public class AttackAura extends Module {
                   VecRotationHelper.getInstance().setProvider(this);
                }
 
-               if (System.currentTimeMillis() - this.longVal6 > 5000L) {
+               if (System.currentTimeMillis() - this.long6 > 5000L) {
                   this.map.clear();
                   this.map2.clear();
-                  this.longVal6 = System.currentTimeMillis();
+                  this.long6 = System.currentTimeMillis();
                }
 
                if (int3 > 0) {
                   int3--;
                }
 
-               if (this.intVal4 > 0 && mc.player != null && this.intVal7 != mc.player.age) {
-                  this.intVal4--;
+               if (this.int4 > 0 && mc.player != null && this.int7 != mc.player.age) {
+                  this.int4--;
                }
 
-               if (this.intVal5 > 0 && mc.player != null && this.intVal7 != mc.player.age) {
-                  this.intVal5--;
+               if (this.int5 > 0 && mc.player != null && this.int7 != mc.player.age) {
+                  this.int5--;
                }
             }
          }
@@ -408,11 +408,11 @@ public class AttackAura extends Module {
             return false;
          } else if (var1.horizontalCollision) {
             return false;
-         } else if (var2 > -0.2 && this.intVal8 < 8) {
+         } else if (var2 > -0.2 && this.int8 < 8) {
             return false;
          } else {
             boolean var4 = this.checkIterator();
-            return var4 ? var2 <= -0.08 : var2 <= -0.2 || this.intVal8 >= 8 && this.intVal8 <= 11;
+            return var4 ? var2 <= -0.08 : var2 <= -0.2 || this.int8 >= 8 && this.int8 <= 11;
          }
       }
    }
@@ -445,7 +445,7 @@ public class AttackAura extends Module {
       } else if ("Only Crits".equals(this.smartCrits.getValue())) {
          return false;
       } else if (!"Smart Crits".equals(this.smartCrits.getValue()) || !var1.isSprinting() && !this.getMc()) {
-         return this.getMc() ? false : this.intVal8 == 0;
+         return this.getMc() ? false : this.int8 == 0;
       } else {
          return false;
       }
@@ -453,19 +453,19 @@ public class AttackAura extends Module {
 
    public void initMax() {
       if (this.class_1309 != null && mc.player != null && mc.interactionManager != null) {
-         if (mc.player.age != this.intVal7) {
+         if (mc.player.age != this.int7) {
             if (this.checkCurrent()) {
                boolean var1 = "Fast".equals(this.adaptive.getValue());
                float var2 = var1 ? 0.92F : 0.95F;
                if (this.noAttackInContainer.isEnabled("Sync with TPS")) {
-                  float var3 = 20.0F / Math.max(this.floatVal2, 1.0F);
+                  float var3 = 20.0F / Math.max(this.float2, 1.0F);
                   if (var3 > 1.05F) {
                      var2 = Math.max(var1 ? 0.9F : 0.92F, var2 / var3);
                   }
                }
 
                if (!(this.computeFloat(0.5F) < var2)) {
-                  if (this.intVal7 == -1 || this.intVal6 >= 10) {
+                  if (this.int7 == -1 || this.int6 >= 10) {
                      boolean var32 = this.check2();
                      if (var32 || this.delayHelper.computeCurrent(this.getMax())) {
                         Rotation var4 = VecRotationHelper.getInstance().getCurrent();
@@ -503,11 +503,11 @@ public class AttackAura extends Module {
                                        ClientPlayerEntityAccessor var27 = (ClientPlayerEntityAccessor)var26;
                                        if (var26.isSprinting() || var27.getLastSprinting()) {
                                           var26.setSprinting(false);
-                                          this.intVal5 = 2;
+                                          this.int5 = 2;
                                           return;
                                        }
 
-                                       this.intVal5 = 2;
+                                       this.int5 = 2;
                                     }
 
                                     boolean var34 = false;
@@ -525,16 +525,16 @@ public class AttackAura extends Module {
                                        }
                                     }
 
-                                    this.longVal3 = System.currentTimeMillis();
-                                    if (this.longVal4 == 0L) {
-                                       this.longVal4 = this.longVal3;
+                                    this.long3 = System.currentTimeMillis();
+                                    if (this.long4 == 0L) {
+                                       this.long4 = this.long3;
                                     }
 
                                     if (!mc.player.isOnGround() && var32 && mc.player.fallDistance <= 0.0F) {
                                        mc.player.fallDistance = (float)Math.max(0.15, -mc.player.getVelocity().y);
                                     }
 
-                                    this.intVal7 = mc.player.age;
+                                    this.int7 = mc.player.age;
                                     flag = true;
                                     intVal = mc.player.age;
 
@@ -557,7 +557,7 @@ public class AttackAura extends Module {
                                        }
                                     }
 
-                                    this.intVal6 = 0;
+                                    this.int6 = 0;
                                     mc.player.resetLastAttackedTicks();
                                     if (this.delayHelper != null) {
                                        this.delayHelper.runCurrent();
@@ -587,17 +587,17 @@ public class AttackAura extends Module {
 
          double var8 = this.computeSqrt(this.class_1309, var4);
          if (this.class_1309.isAlive() && this.class_1309.getHealth() > 0.0F && var8 <= var17) {
-            this.intVal2 = 0;
+            this.int2 = 0;
          } else {
-            this.intVal2++;
-            if (this.intVal2 > 5) {
+            this.int2++;
+            if (this.int2 > 5) {
                if (this.class_1309 != null) {
                   this.class_1309.setGlowing(false);
                }
 
                this.class_1309 = null;
                this.class_13092 = null;
-               this.intVal2 = 0;
+               this.int2 = 0;
             }
          }
       } else {
@@ -634,7 +634,7 @@ public class AttackAura extends Module {
 
             this.class_13092 = var16;
             this.longVal = var2;
-            this.longVal4 = 0L;
+            this.long4 = 0L;
          }
 
          this.class_1309 = var16;
@@ -732,7 +732,7 @@ public class AttackAura extends Module {
       }
 
       var4.withClientLook(false);
-      FromRotationHelper var5 = var4.initClamp(rotation, targetVec, targetx, this);
+      FromRotationHelper var5 = var4.initClamp(rotation, targetVec, target, this);
       VecRotationHelper.getInstance().initAdd(var5, Priority.HIGH, this);
    }
 
@@ -750,10 +750,10 @@ public class AttackAura extends Module {
 
    public Vec3d initGaussian(LivingEntity target) {
       Vec3d var2 = mc.player.getEyePos();
-      Box var3 = targetx.method_5829();
+      Box var3 = target.method_5829();
       if (!var3.contains(var2) && (mc.player == null || !var3.intersects(mc.player.getBoundingBox()))) {
          String var4 = this.noAttackInContainer.isEnabled("Ignore walls") ? this.grim.getValue() : "Off";
-         Vec3d var5 = OffHelper.initInit(targetx, true, var4);
+         Vec3d var5 = OffHelper.initInit(target, true, var4);
          if (var5 == null) {
             var5 = var3.getCenter();
          }
@@ -770,7 +770,7 @@ public class AttackAura extends Module {
             MathHelper.clamp(var13.z, var3.minZ + var14, var3.maxZ - var14)
          );
       } else {
-         return new Vec3d(targetx.method_23317(), targetx.method_23318() + (double)targetx.method_17682() * 0.45, targetx.method_23321());
+         return new Vec3d(target.method_23317(), target.method_23318() + (double)target.method_17682() * 0.45, target.method_23321());
       }
    }
 
@@ -862,13 +862,13 @@ public class AttackAura extends Module {
    public boolean checkCrits2() {
       if (!this.isEnabled() || mc.player == null) {
          return false;
-      } else if (this.intVal5 > 0) {
+      } else if (this.int5 > 0) {
          return true;
       } else if (this.class_1309 == null) {
          return false;
       } else {
          if (!mc.player.isOnGround()) {
-            if (this.intVal8 >= 2 || mc.player.getVelocity().y <= 0.2 || this.check2()) {
+            if (this.int8 >= 2 || mc.player.getVelocity().y <= 0.2 || this.check2()) {
                return true;
             }
          } else {
@@ -935,7 +935,7 @@ public class AttackAura extends Module {
             if (this.mosif > 0L) {
                long var4 = var2 - this.mosif;
                float var6 = 20000.0F / (float)var4;
-               this.floatVal2 = MathHelper.clamp(var6, 1.0F, 20.0F);
+               this.float2 = MathHelper.clamp(var6, 1.0F, 20.0F);
             }
 
             this.mosif = var2;

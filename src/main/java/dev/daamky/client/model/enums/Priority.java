@@ -17,7 +17,7 @@ public enum Priority {
    }
 
    private Priority(int priority) {
-      this.priority = priorityx;
+      this.priority = priority;
    }
 
    public static Priority[] $values() {

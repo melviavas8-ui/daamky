@@ -378,16 +378,16 @@ public class HitTweaks extends Module {
       public final HitTweaks.ModelPose pose;
 
       public Silhouette(UUID uuid, EntityModel<?> model, double x, double y, double z, float yaw, float pitch, long lifetime, HitTweaks.ModelPose pose) {
-         this.uuid = uuidx;
-         this.model = modelx;
-         this.x = xx;
-         this.y = yx;
-         this.z = zx;
-         this.yaw = yawx;
-         this.pitch = pitchx;
+         this.uuid = uuid;
+         this.model = model;
+         this.x = x;
+         this.y = y;
+         this.z = z;
+         this.yaw = yaw;
+         this.pitch = pitch;
          this.longVal = System.currentTimeMillis();
-         this.lifetime = lifetimex;
-         this.pose = posex;
+         this.lifetime = lifetime;
+         this.pose = pose;
       }
    }
 
@@ -398,7 +398,7 @@ public class HitTweaks extends Module {
       }
 
       public void setDelegate(BufferBuilder delegate) {
-         this.delegate = delegatex;
+         this.delegate = delegate;
       }
 
       public VertexConsumer vertex(float x, float y, float z) {

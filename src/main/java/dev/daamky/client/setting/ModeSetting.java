@@ -13,7 +13,7 @@ public class ModeSetting extends Setting<String> {
    }
 
    public ModeSetting values(String... values) {
-      this.values.addAll(Arrays.asList(valuesx));
+      this.values.addAll(Arrays.asList(values));
       if (this.value == null && !this.values.isEmpty()) {
          this.value = this.values.getFirst();
       }
@@ -72,13 +72,8 @@ public class ModeSetting extends Setting<String> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((String)var1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((String)var1);
+   public Setting withValue(String param1) {
+      return this.value(param1);
    }
 
    public static String lambda$values$0(Enum e) {

@@ -140,7 +140,7 @@ public class Pointers extends Module {
       float var7 = (float)color.getGreen() / 255.0F;
       float var8 = (float)color.getBlue() / 255.0F;
       float var9 = (float)color.getAlpha() / 255.0F;
-      this.handleString(context, x, y, sizex, var6, var7, var8, var9, this.arrow6.getValue());
+      this.handleString(context, x, y, size, var6, var7, var8, var9, this.arrow6.getValue());
    }
 
    public void handleBlue2(DrawContext context, float x, float y, float size, Color color) {
@@ -148,7 +148,7 @@ public class Pointers extends Module {
       float var7 = (float)color.getGreen() / 255.0F;
       float var8 = (float)color.getBlue() / 255.0F;
       float var9 = (float)color.getAlpha() / 255.0F;
-      this.handleString(context, x, y, sizex, var6, var7, var8, var9, this.arrow6Setting.getValue());
+      this.handleString(context, x, y, size, var6, var7, var8, var9, this.arrow6Setting.getValue());
    }
 
    public float getGps() {
@@ -171,7 +171,7 @@ public class Pointers extends Module {
       RenderSystem.disableDepthTest();
       RenderSystem.setShader(ShaderProgramKeys.POSITION_TEX_COLOR);
       BufferBuilder var11 = Tessellator.getInstance().begin(DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
-      float var16 = sizex + 8.0F;
+      float var16 = size + 8.0F;
       int var13 = (int)(a * 255.0F) << 24 | (int)(r * 255.0F) << 16 | (int)(g * 255.0F) << 8 | (int)(b * 255.0F);
       Matrix4f var14 = context.getMatrices().peek().getPositionMatrix();
       var11.vertex(var14, x - var16 / 2.0F, y + var16, 0.0F).texture(0.0F, 1.0F).color(var13);

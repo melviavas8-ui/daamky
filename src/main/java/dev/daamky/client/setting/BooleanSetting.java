@@ -37,13 +37,8 @@ public class BooleanSetting extends Setting<Boolean> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((Boolean)var1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((Boolean)var1);
+   public Setting withValue(Boolean param1) {
+      return this.value(param1);
    }
 
 }

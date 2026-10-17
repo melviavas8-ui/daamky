@@ -17,24 +17,24 @@ public class FrameSizeHelper {
    public final int int3;
 
    public FrameSizeHelper(Identifier texture, int intVal, int rows, int totalFrames, int fps, int frameWidth, int frameHeight) {
-      this.texture = texturex;
+      this.texture = texture;
       this.intVal = intx;
-      this.rows = rowsx;
-      this.totalFrames = totalFramesx;
-      this.fps = fpsx;
-      this.frameWidth = frameWidthx;
-      this.frameHeight = frameHeightx;
-      this.intValVal2 = intx * frameWidthx;
-      this.intValVal3 = rowsx * frameHeightx;
+      this.rows = rows;
+      this.totalFrames = totalFrames;
+      this.fps = fps;
+      this.frameWidth = frameWidth;
+      this.frameHeight = frameHeight;
+      this.int2 = intx * frameWidth;
+      this.int3 = rows * frameHeight;
    }
 
    public FrameSizeHelper(Identifier texture, int intVal, int rows, int totalFrames, int fps, int frameSize) {
-      this(texturex, intx, rowsx, totalFramesx, fpsx, frameSize, frameSize);
+      this(texture, intx, rows, totalFrames, fps, frameSize, frameSize);
    }
 
    @Deprecated
    public FrameSizeHelper(Identifier texture, int intVal, int rows, int totalFrames, int fps) {
-      this(texturex, intx, rowsx, totalFramesx, fpsx, 256, 256);
+      this(texture, intx, rows, totalFrames, fps, 256, 256);
    }
 
    public void handleFrame(DrawContext context, float x, float y, float width, float height, Color color) {
@@ -56,8 +56,8 @@ public class FrameSizeHelper {
          (int)height,
          this.frameWidth,
          this.frameHeight,
-         this.intValVal2,
-         this.intValVal3,
+         this.int2,
+         this.int3,
          color.getRGB()
       );
    }

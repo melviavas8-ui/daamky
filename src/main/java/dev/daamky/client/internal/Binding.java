@@ -63,10 +63,10 @@ public class Binding extends ExpandableSettingComponent3 {
    }
 
    public Binding(Module feature) {
-      this.feature = featurex;
-      this.string = featurex.getName().toLowerCase();
+      this.feature = feature;
+      this.string = feature.getName().toLowerCase();
 
-      for (Setting var3 : featurex.getSettings()) {
+      for (Setting var3 : feature.getSettings()) {
          if (var3 instanceof BooleanSetting var4) {
             this.list.add(new BooleanValue(var4));
          }
@@ -100,7 +100,7 @@ public class Binding extends ExpandableSettingComponent3 {
          }
       }
 
-      this.animatedValue.handleStart(featurex.isEnabled() ? 1.0 : 0.0);
+      this.animatedValue.handleStart(feature.isEnabled() ? 1.0 : 0.0);
    }
 
    public void runFeature() {
@@ -221,16 +221,16 @@ public class Binding extends ExpandableSettingComponent3 {
          float var36 = InterfaceMetrics.computeFloat(9.5F);
          float var69;
          this.floatVal = var69 = var67 - var35;
-         this.floatValVal2 = var12 - var36 / 2.0F;
-         this.floatValVal3 = var35;
-         this.floatValVal4 = var36;
+         this.float2 = var12 - var36 / 2.0F;
+         this.float3 = var35;
+         this.float4 = var36;
          Render.rectRenderer
             .handleRgb(
                var7,
                this.floatVal,
-               this.floatValVal2,
-               this.floatValVal3,
-               this.floatValVal4,
+               this.float2,
+               this.float3,
+               this.float4,
                InterfaceMetrics.computeFloat(2.4F),
                InterfaceMetrics.computeMax2((int)((float)var8 * var30), 0.62F)
             );
@@ -239,7 +239,7 @@ public class Binding extends ExpandableSettingComponent3 {
                .handleColor(
                   var7,
                   var31,
-                  this.floatVal + this.floatValVal3 / 2.0F - var33 / 2.0F,
+                  this.floatVal + this.float3 / 2.0F - var33 / 2.0F,
                   var12 - var32 / 2.0F + InterfaceMetrics.computeFloat(0.15F),
                   var32,
                   InterfaceMetrics.computeColor2((int)((float)var8 * var30))
@@ -249,7 +249,7 @@ public class Binding extends ExpandableSettingComponent3 {
                .handleColor(
                   var7,
                   "Z",
-                  this.floatVal + this.floatValVal3 / 2.0F - var33 / 2.0F,
+                  this.floatVal + this.float3 / 2.0F - var33 / 2.0F,
                   var12 - var32 / 2.0F - InterfaceMetrics.computeFloat(0.65F),
                   var32,
                   InterfaceMetrics.initBlue(Color.WHITE, (int)((float)var8 * var30))
@@ -463,29 +463,29 @@ public class Binding extends ExpandableSettingComponent3 {
          float var6 = InterfaceMetrics.computeFloat(6.5F);
          float var7 = InterfaceMetrics.computeFloat(5.5F);
          float var8 = InterfaceMetrics.computeFloat(8.0F);
-         this.floatValVal7 = this.getWidth() - var8 * 2.0F - InterfaceMetrics.computeFloat(4.0F);
-         this.floatValVal8 = InterfaceMetrics.computeFloat(46.0F);
-         this.floatValVal5 = this.getX() + var8 + InterfaceMetrics.computeFloat(2.0F);
-         this.floatValVal6 = this.getY() + this.getFloat() + InterfaceMetrics.computeFloat(3.0F);
+         this.float7 = this.getWidth() - var8 * 2.0F - InterfaceMetrics.computeFloat(4.0F);
+         this.float8 = InterfaceMetrics.computeFloat(46.0F);
+         this.float5 = this.getX() + var8 + InterfaceMetrics.computeFloat(2.0F);
+         this.float6 = this.getY() + this.getFloat() + InterfaceMetrics.computeFloat(3.0F);
          int var9 = (int)((float)alpha * var3);
          Render.rectRenderer
-            .handleRgb(matrixStack, this.floatValVal5, this.floatValVal6, this.floatValVal7, this.floatValVal8, var5, InterfaceMetrics.computeColor((int)((float)var9 * 0.92F)));
+            .handleRgb(matrixStack, this.float5, this.float6, this.float7, this.float8, var5, InterfaceMetrics.computeColor((int)((float)var9 * 0.92F)));
          Render.rectRenderer
-            .handleRgb(matrixStack, this.floatValVal5, this.floatValVal6, this.floatValVal7, this.floatValVal8, var5, InterfaceMetrics.computeColor3((int)((float)var9 * 0.055F)));
+            .handleRgb(matrixStack, this.float5, this.float6, this.float7, this.float8, var5, InterfaceMetrics.computeColor3((int)((float)var9 * 0.055F)));
          FontBootstrap.mdoswa
-            .handleColor(matrixStack, "Bind", this.floatValVal5 + var4, this.floatValVal6 + InterfaceMetrics.computeFloat(4.5F), var6, InterfaceMetrics.computeColor2(var9));
+            .handleColor(matrixStack, "Bind", this.float5 + var4, this.float6 + InterfaceMetrics.computeFloat(4.5F), var6, InterfaceMetrics.computeColor2(var9));
          String var10 = this.flag ? "Press key..." : KeyNames.computeNone(this.feature.getBind()).toUpperCase();
-         this.floatValVal11 = this.floatValVal7 - var4 * 2.0F;
-         this.floatValVal12 = InterfaceMetrics.computeFloat(13.0F);
-         this.floatValVal9 = this.floatValVal5 + var4;
-         this.floatValVal10 = this.floatValVal6 + InterfaceMetrics.computeFloat(15.5F);
+         this.float11 = this.float7 - var4 * 2.0F;
+         this.float12 = InterfaceMetrics.computeFloat(13.0F);
+         this.float9 = this.float5 + var4;
+         this.float10 = this.float6 + InterfaceMetrics.computeFloat(15.5F);
          Render.rectRenderer
             .handleRgb(
                matrixStack,
-               this.floatValVal9,
-               this.floatValVal10,
-               this.floatValVal11,
-               this.floatValVal12,
+               this.float9,
+               this.float10,
+               this.float11,
+               this.float12,
                InterfaceMetrics.computeFloat(3.0F),
                this.flag ? InterfaceMetrics.computeColor3((int)((float)var9 * 0.16F)) : InterfaceMetrics.computeMax2(var9, 0.62F)
             );
@@ -493,19 +493,19 @@ public class Binding extends ExpandableSettingComponent3 {
             .handleColor(
                matrixStack,
                var10,
-               this.floatValVal9 + InterfaceMetrics.computeFloat(4.0F),
-               this.floatValVal10 + this.floatValVal12 / 2.0F - var7 / 2.0F + InterfaceMetrics.computeFloat(0.1F),
+               this.float9 + InterfaceMetrics.computeFloat(4.0F),
+               this.float10 + this.float12 / 2.0F - var7 / 2.0F + InterfaceMetrics.computeFloat(0.1F),
                var7,
                this.flag ? InterfaceMetrics.computeColor2(var9) : InterfaceMetrics.computeColor4(var9)
             );
          float var11 = InterfaceMetrics.computeFloat(4.5F);
-         this.floatValVal19 = this.floatValVal15 = (this.floatValVal11 - var11) / 2.0F;
-         this.floatValVal20 = this.floatValVal16 = InterfaceMetrics.computeFloat(12.0F);
-         this.floatValVal13 = this.floatValVal9;
-         this.floatValVal17 = this.floatValVal13 + this.floatValVal15 + var11;
-         this.floatValVal18 = this.floatValVal14 = this.floatValVal10 + this.floatValVal12 + InterfaceMetrics.computeFloat(4.5F);
-         this.handleWhite(matrixStack, this.floatValVal13, this.floatValVal14, this.floatValVal15, this.floatValVal16, "c", "Toggle", !this.feature.isBindHold(), var9);
-         this.handleWhite(matrixStack, this.floatValVal17, this.floatValVal18, this.floatValVal19, this.floatValVal20, "W", "Hold", this.feature.isBindHold(), var9);
+         this.float19 = this.float15 = (this.float11 - var11) / 2.0F;
+         this.float20 = this.float16 = InterfaceMetrics.computeFloat(12.0F);
+         this.float13 = this.float9;
+         this.float17 = this.float13 + this.float15 + var11;
+         this.float18 = this.float14 = this.float10 + this.float12 + InterfaceMetrics.computeFloat(4.5F);
+         this.handleWhite(matrixStack, this.float13, this.float14, this.float15, this.float16, "c", "Toggle", !this.feature.isBindHold(), var9);
+         this.handleWhite(matrixStack, this.float17, this.float18, this.float19, this.float20, "W", "Hold", this.feature.isBindHold(), var9);
       }
    }
 
@@ -568,27 +568,27 @@ public class Binding extends ExpandableSettingComponent3 {
          this.flag = false;
       } else {
          if (button == 0 && this.animatedValue3.getValue() > 0.05F) {
-            if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatValVal9, (double)this.floatValVal10, (double)this.floatValVal11, (double)this.floatValVal12)) {
+            if (Geometry.computeFlag(mouseX, mouseY, (double)this.float9, (double)this.float10, (double)this.float11, (double)this.float12)) {
                this.flag = true;
                return;
             }
 
-            if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatValVal13, (double)this.floatValVal14, (double)this.floatValVal15, (double)this.floatValVal16)) {
+            if (Geometry.computeFlag(mouseX, mouseY, (double)this.float13, (double)this.float14, (double)this.float15, (double)this.float16)) {
                this.feature.setBindHold(false);
                return;
             }
 
-            if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatValVal17, (double)this.floatValVal18, (double)this.floatValVal19, (double)this.floatValVal20)) {
+            if (Geometry.computeFlag(mouseX, mouseY, (double)this.float17, (double)this.float18, (double)this.float19, (double)this.float20)) {
                this.feature.setBindHold(true);
                return;
             }
 
-            if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatValVal5, (double)this.floatValVal6, (double)this.floatValVal7, (double)this.floatValVal8)) {
+            if (Geometry.computeFlag(mouseX, mouseY, (double)this.float5, (double)this.float6, (double)this.float7, (double)this.float8)) {
                return;
             }
          }
 
-         if (button == 0 && Geometry.computeFlag(mouseX, mouseY, (double)this.floatVal, (double)this.floatValVal2, (double)this.floatValVal3, (double)this.floatValVal4)) {
+         if (button == 0 && Geometry.computeFlag(mouseX, mouseY, (double)this.floatVal, (double)this.float2, (double)this.float3, (double)this.float4)) {
             this.flag2 = !this.flag2;
             this.flag = false;
          } else if (Geometry.computeFlag(mouseX, mouseY, (double)this.getX(), (double)this.getY(), (double)this.getWidth(), (double)this.getFloat())) {
@@ -606,7 +606,7 @@ public class Binding extends ExpandableSettingComponent3 {
                   this.flag = true;
             }
          } else {
-            if (!Geometry.computeFlag(mouseX, mouseY, (double)this.floatValVal5, (double)this.floatValVal6, (double)this.floatValVal7, (double)this.floatValVal8)) {
+            if (!Geometry.computeFlag(mouseX, mouseY, (double)this.float5, (double)this.float6, (double)this.float7, (double)this.float8)) {
                this.flag2 = false;
                this.flag = false;
             }
@@ -730,79 +730,79 @@ public class Binding extends ExpandableSettingComponent3 {
 
    @Override
    public float getFloat2() {
-      return this.floatValVal2;
+      return this.float2;
    }
 
    public float getFloat3() {
-      return this.floatValVal3;
+      return this.float3;
    }
 
    public float getFloat4() {
-      return this.floatValVal4;
+      return this.float4;
    }
 
    public float getFloat5() {
-      return this.floatValVal5;
+      return this.float5;
    }
 
    public float getFloat6() {
-      return this.floatValVal6;
+      return this.float6;
    }
 
    public float getFloat7() {
-      return this.floatValVal7;
+      return this.float7;
    }
 
    public float getFloat8() {
-      return this.floatValVal8;
+      return this.float8;
    }
 
    public float getFloat9() {
-      return this.floatValVal9;
+      return this.float9;
    }
 
    public float getFloat10() {
-      return this.floatValVal10;
+      return this.float10;
    }
 
    public float getFloat11() {
-      return this.floatValVal11;
+      return this.float11;
    }
 
    public float getFloat12() {
-      return this.floatValVal12;
+      return this.float12;
    }
 
    public float getFloat13() {
-      return this.floatValVal13;
+      return this.float13;
    }
 
    public float getFloat14() {
-      return this.floatValVal14;
+      return this.float14;
    }
 
    public float getFloat15() {
-      return this.floatValVal15;
+      return this.float15;
    }
 
    public float getFloat16() {
-      return this.floatValVal16;
+      return this.float16;
    }
 
    public float getFloat17() {
-      return this.floatValVal17;
+      return this.float17;
    }
 
    public float getFloat18() {
-      return this.floatValVal18;
+      return this.float18;
    }
 
    public float getFloat19() {
-      return this.floatValVal19;
+      return this.float19;
    }
 
    public float getFloat20() {
-      return this.floatValVal20;
+      return this.float20;
    }
 
    public long getLong() {

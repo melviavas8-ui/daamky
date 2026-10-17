@@ -221,8 +221,8 @@ public class AltsJsonHelper {
       public transient Identifier cachedSkinIdentifier;
 
       public AltAccount(String name, String server) {
-         this.name = namex;
-         this.server = serverx;
+         this.name = name;
+         this.server = server;
          this.active = false;
          this.pinned = false;
 

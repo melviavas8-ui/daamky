@@ -196,21 +196,21 @@ public class ConfigStore {
          Boolean enableAutoParse,
          Integer priceParseDelay
       ) {
-         this.multiplier = multiplierx;
-         this.disabledItems = disabledItemsx;
-         this.staffEnabled = staffEnabledx;
-         this.staffNicknames = staffNicknamesx;
-         this.enableAutoPay = enableAutoPayx;
-         this.leftSum = leftSumx;
-         this.payWhen = payWhenx;
-         this.targetName = targetNamex;
-         this.enableRejoin = enableRejoinx;
-         this.joinDelay = joinDelayx;
-         this.randomAnarchy = randomAnarchyx;
-         this.anarchyNumber = anarchyNumberx;
-         this.autoSellMoney = autoSellMoneyx;
-         this.enableAutoParse = enableAutoParsex;
-         this.priceParseDelay = priceParseDelayx;
+         this.multiplier = multiplier;
+         this.disabledItems = disabledItems;
+         this.staffEnabled = staffEnabled;
+         this.staffNicknames = staffNicknames;
+         this.enableAutoPay = enableAutoPay;
+         this.leftSum = leftSum;
+         this.payWhen = payWhen;
+         this.targetName = targetName;
+         this.enableRejoin = enableRejoin;
+         this.joinDelay = joinDelay;
+         this.randomAnarchy = randomAnarchy;
+         this.anarchyNumber = anarchyNumber;
+         this.autoSellMoney = autoSellMoney;
+         this.enableAutoParse = enableAutoParse;
+         this.priceParseDelay = priceParseDelay;
       }
    }
 }

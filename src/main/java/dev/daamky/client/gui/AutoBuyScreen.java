@@ -410,20 +410,20 @@ public class AutoBuyScreen extends Screen {
       float var10 = InterfaceMetrics.computeFloat(16.5F);
       float var11 = InterfaceMetrics.computeFloat(3.0F);
       float var12 = Math.max(0.0F, (float)var9.size() * (var10 + var11) - var11 - h);
-      if (this.doubleValVal2 > 0.0) {
-         this.doubleValVal2 = 0.0;
+      if (this.double2 > 0.0) {
+         this.double2 = 0.0;
       }
 
-      if (this.doubleValVal2 < (double)(-var12)) {
-         this.doubleValVal2 = (double)(-var12);
+      if (this.double2 < (double)(-var12)) {
+         this.double2 = (double)(-var12);
       }
 
-      int var13 = Math.max(0, (int)(-this.doubleValVal2 / (double)(var10 + var11)));
+      int var13 = Math.max(0, (int)(-this.double2 / (double)(var10 + var11)));
       int var14 = Math.min(var9.size(), (int)(h / (var10 + var11)) + 2);
 
       for (int var15 = var13; var15 < Math.min(var9.size(), var13 + var14); var15++) {
          AutoBuyScreen.SettingEntry var16 = (AutoBuyScreen.SettingEntry)var9.get(var15);
-         float var17 = y + (float)this.doubleValVal2 + (float)var15 * (var10 + var11);
+         float var17 = y + (float)this.double2 + (float)var15 * (var10 + var11);
          if (!(var17 > y + h) && !(var17 + var10 < y)) {
             switch (var16.type()) {
                case 0:
@@ -673,12 +673,12 @@ public class AutoBuyScreen extends Screen {
       List var10 = this.initInit(var9);
       float var11 = InterfaceMetrics.computeFloat(16.5F);
       float var12 = InterfaceMetrics.computeFloat(3.0F);
-      int var13 = Math.max(0, (int)(-this.doubleValVal2 / (double)(var11 + var12)));
+      int var13 = Math.max(0, (int)(-this.double2 / (double)(var11 + var12)));
       int var14 = Math.min(var10.size(), (int)(h / (var11 + var12)) + 2);
 
       for (int var15 = var13; var15 < Math.min(var10.size(), var13 + var14); var15++) {
          AutoBuyScreen.SettingEntry var16 = (AutoBuyScreen.SettingEntry)var10.get(var15);
-         float var17 = y + (float)this.doubleValVal2 + (float)var15 * (var11 + var12);
+         float var17 = y + (float)this.double2 + (float)var15 * (var11 + var12);
          if (this.computeFlag(mx, my, (double)x, (double)var17, (double)w, var11)) {
             switch (var15) {
                case 1:
@@ -778,16 +778,16 @@ public class AutoBuyScreen extends Screen {
    }
 
    public void handleCurrent(String field, String currentValue) {
-      this.field = fieldx;
-      this.currentValue = currentValuex;
+      this.field = field;
+      this.currentValue = currentValue;
    }
 
    public void handleString(String field) {
       AutoBuy var2 = AutoBuy.getInstance();
 
       try {
-         if (fieldx.startsWith("price_")) {
-            String var3 = fieldx.substring("price_".length());
+         if (field.startsWith("price_")) {
+            String var3 = field.substring("price_".length());
             ItemActionCatalog var7 = ItemActionCatalog.valueOf(var3);
             if (!this.currentValue.isEmpty() && !this.currentValue.equals("-1")) {
                var2.getMap().put(var7, Math.max(1, Integer.parseInt(this.currentValue)));
@@ -800,7 +800,7 @@ public class AutoBuyScreen extends Screen {
             return;
          }
 
-         switch (fieldx) {
+         switch (field) {
             case "multiplier":
                var2.setV(Math.max(0.0, Math.min(1.0, Double.parseDouble(this.currentValue))));
                break;
@@ -870,7 +870,7 @@ public class AutoBuyScreen extends Screen {
 
    public boolean mouseScrolled(double mx, double my, double hAmt, double vAmt) {
       if (this.intVal == 2) {
-         this.doubleValVal2 += vAmt * 16.5;
+         this.double2 += vAmt * 16.5;
       } else if (this.intVal == 1) {
          this.doubleVal += vAmt * 25.0;
       } else {

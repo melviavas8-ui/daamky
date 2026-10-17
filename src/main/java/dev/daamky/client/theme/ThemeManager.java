@@ -31,8 +31,8 @@ public class ThemeManager {
    }
 
    public ThemeManager(String path) {
-      this.path = pathx;
-      this.file = new File(pathx);
+      this.path = path;
+      this.file = new File(path);
       this.file2 = new File(this.file, "last_selected");
       this.run();
       this.loadDefaultThemes();
@@ -88,7 +88,7 @@ public class ThemeManager {
    }
 
    public void setLightMode(boolean lightMode) {
-      this.lightMode = lightModex;
+      this.lightMode = lightMode;
       if (White.getInstance() != null) {
          this.writeName(White.getInstance().getTheme());
       }
@@ -129,9 +129,9 @@ public class ThemeManager {
    }
 
    public ColorTheme initName(File file) {
-      if (filex != null && filex.exists()) {
-         Map var2 = this.initNext(filex.toPath());
-         String var3 = var2.getOrDefault("name", this.computeLast(filex.getName()));
+      if (file != null && file.exists()) {
+         Map var2 = this.initNext(file.toPath());
+         String var3 = var2.getOrDefault("name", this.computeLast(file.getName()));
          ColorTheme var4 = new ColorTheme(var3);
 
          for (ColorTheme.ElementColor var6 : var4.getList()) {

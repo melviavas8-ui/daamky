@@ -12,8 +12,8 @@ public class Context2 extends SettingRow {
    public final AnimatedValue animatedValue = new AnimatedValue();
 
    public Context2(ButtonSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
       this.handleFloat(this.getFloat());
    }
 

@@ -17,15 +17,15 @@ public class ExpandableSettingComponent extends ExpandableSettingComponent3.Expa
    public boolean flag4;
 
    public ExpandableSettingComponent(ColorSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
       this.elementColor = null;
       this.handleFloat(this.getFloat7());
    }
 
    public ExpandableSettingComponent(ColorTheme.ElementColor elementColor) {
       super(null);
-      this.elementColor = elementColorx;
+      this.elementColor = elementColor;
       this.setting = null;
       this.handleFloat(this.getFloat7());
    }

@@ -9,11 +9,11 @@ public final class IntCodec158 {
    }
 
    public int decode1() {
-      return(intVal)this.key1 ^ 21;
+      return(key0)this.key1 ^ 21;
    }
 
    public int decode2() {
-      return(intVal)this.key1 ^ 29;
+      return(key0)this.key1 ^ 29;
    }
 
    public static int encode6(int var0) {

@@ -14,14 +14,14 @@ public class BooleanValue extends SettingRow {
    public final AnimatedValue animatedValue2 = new AnimatedValue();
 
    public BooleanValue(BooleanSetting setting) {
-      super(settingx);
-      this.setting = settingx;
-      this.animatedValue.handleStart(settingx.getValue() ? 1.0 : 0.0);
+      super(setting);
+      this.setting = setting;
+      this.animatedValue.handleStart(setting.getValue() ? 1.0 : 0.0);
       this.handleFloat(this.getFloat());
    }
 
    public BooleanValue(BooleanSetting setting, boolean inMenu) {
-      this(settingx);
+      this(setting);
    }
 
    public void initInit(DrawContext context, int mouseX, int mouseY, float delta) {

@@ -12,8 +12,8 @@ public class Configurable implements MinecraftAccess {
    public final List<Subscription> eventListeners = new ArrayList<>();
 
    public void addSettings(Setting<?>... settings) {
-      if (settingsx != null) {
-         for (Setting var5 : settingsx) {
+      if (settings != null) {
+         for (Setting var5 : settings) {
             if (var5 != null) {
                this.settings.add(var5);
             }
@@ -22,8 +22,8 @@ public class Configurable implements MinecraftAccess {
    }
 
    public void addSettings(List<Setting<?>> settings) {
-      if (settingsx != null) {
-         for (Setting var3 : settingsx) {
+      if (settings != null) {
+         for (Setting var3 : settings) {
             if (var3 != null) {
                this.settings.add(var3);
             }
@@ -32,11 +32,11 @@ public class Configurable implements MinecraftAccess {
    }
 
    public void addEventListeners(Subscription... eventListeners) {
-      this.eventListeners.addAll(Arrays.asList(eventListenersx));
+      this.eventListeners.addAll(Arrays.asList(eventListeners));
    }
 
    public void addEventListeners(List<Subscription> eventListeners) {
-      this.eventListeners.addAll(eventListenersx);
+      this.eventListeners.addAll(eventListeners);
    }
 
    public void clearEventListeners() {
@@ -45,11 +45,11 @@ public class Configurable implements MinecraftAccess {
    }
 
    public void removeEventListeners(Subscription... eventListeners) {
-      this.eventListeners.removeAll(Arrays.asList(eventListenersx));
+      this.eventListeners.removeAll(Arrays.asList(eventListeners));
    }
 
    public void removeEventListeners(List<Subscription> eventListeners) {
-      this.eventListeners.removeAll(eventListenersx);
+      this.eventListeners.removeAll(eventListeners);
    }
 
    public void onEvent() {

@@ -99,18 +99,18 @@ public abstract class TargetRenderer implements MinecraftAccess {
          float var3 = var1.getImpactFadeOut().getValue();
          float var4 = var1.getImpactIntensity().getValue();
          int var5 = class_1297 instanceof LivingEntity var6 ? var6.hurtTime : 0;
-         this.floatVal2 = var5 <= this.intVal && (var5 <= 0 || this.intVal != 0)
-            ? (var5 > 0 ? Math.min(var4, this.floatVal2 + var2 * 0.5F) : Math.max(0.0F, this.floatVal2 - var3))
-            : Math.min(var4, this.floatVal2 + var2);
+         this.float2 = var5 <= this.intVal && (var5 <= 0 || this.intVal != 0)
+            ? (var5 > 0 ? Math.min(var4, this.float2 + var2 * 0.5F) : Math.max(0.0F, this.float2 - var3))
+            : Math.min(var4, this.float2 + var2);
          this.intVal = var5;
       } else {
-         this.floatVal2 = 0.0F;
+         this.float2 = 0.0F;
          this.intVal = 0;
       }
    }
 
    public float getFloat2() {
-      return this.floatVal2;
+      return this.float2;
    }
 
    public int computeMin(int originalColor, float impact) {

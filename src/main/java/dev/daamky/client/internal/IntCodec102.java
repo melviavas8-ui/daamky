@@ -14,7 +14,7 @@ public final class IntCodec102 {
    }
 
    public long decode2() {
-      return(longVal)this.key2 + 482L;
+      return(key0)this.key2 + 482L;
    }
 
    public static int encode2(int var0) {

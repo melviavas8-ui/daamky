@@ -59,7 +59,7 @@ public class AutoEnd extends Module {
       this.state = AutoEnd.State.SCANNING;
       this.set.clear();
       this.class_2338 = null;
-      this.longVal = System.currentTimeMillis();
+      this.timeStamp = System.currentTimeMillis();
    }
 
    @Override
@@ -96,7 +96,7 @@ public class AutoEnd extends Module {
          case SCANNING:
             if (this.getMc()) {
                this.state = AutoEnd.State.DEPOSITING;
-               this.longVal = var1;
+               this.timeStamp = var1;
                return;
             }
 
@@ -116,7 +116,7 @@ public class AutoEnd extends Module {
             if (var10 <= 9.0 || this.stopHelper.check2()) {
                this.stopHelper.runStop();
                this.state = AutoEnd.State.OPENING;
-               this.longVal = var1;
+               this.timeStamp = var1;
             } else if (this.stopHelper.check3()) {
                this.set.add(this.class_2338);
                this.state = AutoEnd.State.SCANNING;
@@ -125,12 +125,12 @@ public class AutoEnd extends Module {
          case OPENING:
             if (mc.currentScreen != null) {
                this.state = AutoEnd.State.LOOTING;
-               this.longVal = var1;
+               this.timeStamp = var1;
                return;
             }
 
-            if (var1 - this.longVal > 500L && this.class_2338 != null) {
-               this.longVal = var1;
+            if (var1 - this.timeStamp > 500L && this.class_2338 != null) {
+               this.timeStamp = var1;
                Vec3d var9 = Vec3d.ofCenter(this.class_2338);
                BlockHitResult var12 = new BlockHitResult(var9, Direction.UP, this.class_2338, false);
                if (mc.interactionManager != null) {
@@ -141,7 +141,7 @@ public class AutoEnd extends Module {
             break;
          case LOOTING:
             if (!(mc.player.currentScreenHandler instanceof GenericContainerScreenHandler var8)) {
-               if (var1 - this.longVal > 800L) {
+               if (var1 - this.timeStamp > 800L) {
                   if (this.class_2338 != null) {
                      this.set.add(this.class_2338);
                   }
@@ -152,7 +152,7 @@ public class AutoEnd extends Module {
                return;
             }
 
-            if (var1 - this.longVal < this.lootDelayMs.getValue().longValue()) {
+            if (var1 - this.timeStamp < this.lootDelayMs.getValue().longValue()) {
                return;
             }
 
@@ -163,7 +163,7 @@ public class AutoEnd extends Module {
                ItemStack var7 = var8.getSlot(var6).getStack();
                if (!var7.isEmpty() && this.computeContains(var7) && mc.interactionManager != null) {
                   mc.interactionManager.clickSlot(var8.syncId, var6, 0, SlotActionType.QUICK_MOVE, mc.player);
-                  this.longVal = var1;
+                  this.timeStamp = var1;
                   var5 = true;
                   break;
                }
@@ -179,13 +179,13 @@ public class AutoEnd extends Module {
             }
             break;
          case DEPOSITING:
-            if (var1 - this.longVal > 1000L) {
+            if (var1 - this.timeStamp > 1000L) {
                String var3 = this.stringSetting.getValue();
                if (var3 != null && !var3.isEmpty() && mc.player.networkHandler != null) {
                   mc.player.networkHandler.sendChatCommand("home " + var3);
                }
 
-               this.longVal = var1;
+               this.timeStamp = var1;
                this.state = AutoEnd.State.SCANNING;
             }
       }

@@ -10,7 +10,7 @@ public class GlideState {
    public Easing easing;
 
    public boolean computeForward(boolean forward) {
-      return this.delayHelper.computeCurrent((long)this.speed) && (forwardx ? this.forward : !this.forward);
+      return this.delayHelper.computeCurrent((long)this.speed) && (forward ? this.forward : !this.forward);
    }
 
    public boolean checkForward() {
@@ -18,8 +18,8 @@ public class GlideState {
    }
 
    public GlideState withForward(boolean forward) {
-      if (this.forward != forwardx) {
-         this.forward = forwardx;
+      if (this.forward != forward) {
+         this.forward = forward;
          this.delayHelper.setMillis((long)((double)System.currentTimeMillis() - (this.doubleVal - Math.min(this.doubleVal, (double)this.delayHelper.getCurrent()))));
       }
 
@@ -32,12 +32,12 @@ public class GlideState {
    }
 
    public GlideState withEasing(Easing easing) {
-      this.easing = easingx;
+      this.easing = easing;
       return this;
    }
 
    public GlideState withSpeed(int speed) {
-      this.speed = speedx;
+      this.speed = speed;
       return this;
    }
 

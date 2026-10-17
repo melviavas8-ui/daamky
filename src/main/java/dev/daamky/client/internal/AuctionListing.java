@@ -11,11 +11,11 @@ public class AuctionListing {
    public long timestamp = System.currentTimeMillis();
 
    public AuctionListing(ItemActionCatalog itemType, int price, int allPrice, int auctionPrice, int balance) {
-      this.itemType = itemTypex;
-      this.price = pricex;
-      this.allPrice = allPricex;
-      this.auctionPrice = auctionPricex;
-      this.balance = balancex;
+      this.itemType = itemType;
+      this.price = price;
+      this.allPrice = allPrice;
+      this.auctionPrice = auctionPrice;
+      this.balance = balance;
       this.timestamp = System.currentTimeMillis();
    }
 
@@ -44,27 +44,27 @@ public class AuctionListing {
    }
 
    public void setItemType(ItemActionCatalog itemType) {
-      this.itemType = itemTypex;
+      this.itemType = itemType;
    }
 
    public void setPrice(int price) {
-      this.price = pricex;
+      this.price = price;
    }
 
    public void setAllPrice(int allPrice) {
-      this.allPrice = allPricex;
+      this.allPrice = allPrice;
    }
 
    public void setAuctionPrice(int auctionPrice) {
-      this.auctionPrice = auctionPricex;
+      this.auctionPrice = auctionPrice;
    }
 
    public void setBalance(int balance) {
-      this.balance = balancex;
+      this.balance = balance;
    }
 
    public void setTimestamp(long timestamp) {
-      this.timestamp = timestampx;
+      this.timestamp = timestamp;
    }
 
    public boolean computePrice(Object o) {
@@ -109,12 +109,12 @@ public class AuctionListing {
    }
 
    public AuctionListing(ItemActionCatalog itemType, int price, int allPrice, int auctionPrice, int balance, long timestamp) {
-      this.itemType = itemTypex;
-      this.price = pricex;
-      this.allPrice = allPricex;
-      this.auctionPrice = auctionPricex;
-      this.balance = balancex;
-      this.timestamp = timestampx;
+      this.itemType = itemType;
+      this.price = price;
+      this.allPrice = allPrice;
+      this.auctionPrice = auctionPrice;
+      this.balance = balance;
+      this.timestamp = timestamp;
    }
 
    public AuctionListing() {

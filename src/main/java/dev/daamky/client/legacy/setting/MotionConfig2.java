@@ -48,8 +48,8 @@ public class MotionConfig2 extends LegacySetting {
 
    public void runNext() {
       RotationProfileManager.getInstance().initActive2();
-      this.floatVal9 = this.floatVal9 + (this.random.nextFloat() - 0.5F) * 0.06F;
-      this.floatVal10 = this.floatVal10 + 0.04F + this.random.nextFloat() * 0.04F;
+      this.float9 = this.float9 + (this.random.nextFloat() - 0.5F) * 0.06F;
+      this.float10 = this.float10 + 0.04F + this.random.nextFloat() * 0.04F;
    }
 
    @Override
@@ -57,15 +57,15 @@ public class MotionConfig2 extends LegacySetting {
       this.flag = false;
       this.intVal = -1;
       this.floatVal = 0.0F;
-      this.floatVal2 = 0.0F;
-      this.floatVal3 = 0.0F;
-      this.floatVal4 = 0.0F;
-      this.floatVal5 = 0.0F;
-      this.floatVal6 = 0.0F;
-      this.floatVal7 = 0.0F;
-      this.floatVal8 = 0.0F;
-      this.floatVal9 = 0.0F;
-      this.floatVal10 = 0.0F;
+      this.float2 = 0.0F;
+      this.float3 = 0.0F;
+      this.float4 = 0.0F;
+      this.float5 = 0.0F;
+      this.float6 = 0.0F;
+      this.float7 = 0.0F;
+      this.float8 = 0.0F;
+      this.float9 = 0.0F;
+      this.float10 = 0.0F;
       this.flag2 = false;
       this.flag = false;
    }
@@ -83,36 +83,36 @@ public class MotionConfig2 extends LegacySetting {
             this.majxa = currentRotation != null ? currentRotation.getYaw() : mc.player.getYaw();
             this.mtoaqu = currentRotation != null ? currentRotation.getPitch() : mc.player.getPitch();
             this.floatVal = 0.0F;
-            this.floatVal2 = 0.0F;
-            this.floatVal3 = 0.0F;
-            this.floatVal4 = 0.0F;
+            this.float2 = 0.0F;
+            this.float3 = 0.0F;
+            this.float4 = 0.0F;
             this.flag = true;
-            this.longVal = var5;
+            this.timeStamp = var5;
             this.intVal = entity != null ? entity.getId() : -1;
             this.handleChance(var7, var5);
          }
 
          if (entity != null && entity.getId() != this.intVal) {
             this.intVal = entity.getId();
-            this.longVal = var5;
-            this.floatVal3 *= 0.25F;
-            this.floatVal4 *= 0.25F;
-            this.floatVal11 = this.random.nextBoolean() ? 1.0F : -1.0F;
-            this.floatVal12 = 0.6F + this.random.nextFloat() * 1.2F;
+            this.timeStamp = var5;
+            this.float3 *= 0.25F;
+            this.float4 *= 0.25F;
+            this.float11 = this.random.nextBoolean() ? 1.0F : -1.0F;
+            this.float12 = 0.6F + this.random.nextFloat() * 1.2F;
             this.handleChance(var7, var5);
          }
 
-         if (var5 - this.longVal2 > 1200L + (long)this.random.nextInt(800)) {
-            this.longVal2 = var5;
+         if (var5 - this.long2 > 1200L + (long)this.random.nextInt(800)) {
+            this.long2 = var5;
             this.minuk = (float)(this.random.nextGaussian() * 0.06);
-            this.floatVal16 = (float)(this.random.nextGaussian() * 0.05);
-            this.floatVal17 = (float)(this.random.nextGaussian() * 0.06);
+            this.float16 = (float)(this.random.nextGaussian() * 0.05);
+            this.float17 = (float)(this.random.nextGaussian() * 0.06);
          }
 
-         this.floatVal13 = this.floatVal13 + (this.minuk - this.floatVal13) * 0.08F;
-         this.floatVal14 = this.floatVal14 + (this.floatVal16 - this.floatVal14) * 0.08F;
-         this.floatVal15 = this.floatVal15 + (this.floatVal17 - this.floatVal15) * 0.08F;
-         long var8 = var5 - this.longVal;
+         this.float13 = this.float13 + (this.minuk - this.float13) * 0.08F;
+         this.float14 = this.float14 + (this.float16 - this.float14) * 0.08F;
+         this.float15 = this.float15 + (this.float17 - this.float15) * 0.08F;
+         long var8 = var5 - this.timeStamp;
          float var10 = MathHelper.clamp((float)(var8 % 1200L) / 1200.0F, 0.0F, 1.0F);
          float[] var11;
          if (var7.isSmoothPath()) {
@@ -135,9 +135,9 @@ public class MotionConfig2 extends LegacySetting {
             double var20 = var16 / 1.8;
             double var22 = (var14.getX() - var14.prevX) * 0.45;
             double var24 = (var14.getZ() - var14.prevZ) * 0.45;
-            double var26 = var14.getX() + (double)var11[0] * var18 + var22 + (double)this.floatVal13;
-            double var28 = var15.minY + MathHelper.clamp((double)var11[1] * var20 + (double)this.floatVal14, 0.1, var16 - 0.05);
-            double var30 = var14.getZ() + (double)var11[2] * var18 + var24 + (double)this.floatVal15;
+            double var26 = var14.getX() + (double)var11[0] * var18 + var22 + (double)this.float13;
+            double var28 = var15.minY + MathHelper.clamp((double)var11[1] * var20 + (double)this.float14, 0.1, var16 - 0.05);
+            double var30 = var14.getZ() + (double)var11[2] * var18 + var24 + (double)this.float15;
             var13 = new Vec3d(var26, var28, var30);
          } else {
             if (vec3d == null) {
@@ -158,12 +158,12 @@ public class MotionConfig2 extends LegacySetting {
             float var46 = var7.getHumanizeJitter();
             float var47 = var7.getYawNoise() * (0.025F + var46 * 0.04F);
             float var17 = var7.getPitchNoise() * (0.02F + var46 * 0.03F);
-            this.floatVal7 = (this.floatVal7 + (float)(this.random.nextGaussian() * (double)var47)) * 0.78F;
-            this.floatVal8 = (this.floatVal8 + (float)(this.random.nextGaussian() * (double)var17)) * 0.78F;
-            this.floatVal5 = MathHelper.clamp(this.floatVal5 + this.floatVal7, -0.3F, 0.3F);
-            this.floatVal6 = MathHelper.clamp(this.floatVal6 + this.floatVal8, -0.22F, 0.22F);
-            this.floatVal9 *= 0.65F;
-            this.floatVal10 *= 0.65F;
+            this.float7 = (this.float7 + (float)(this.random.nextGaussian() * (double)var47)) * 0.78F;
+            this.float8 = (this.float8 + (float)(this.random.nextGaussian() * (double)var17)) * 0.78F;
+            this.float5 = MathHelper.clamp(this.float5 + this.float7, -0.3F, 0.3F);
+            this.float6 = MathHelper.clamp(this.float6 + this.float8, -0.22F, 0.22F);
+            this.float9 *= 0.65F;
+            this.float10 *= 0.65F;
             float var48 = 0.0F;
             float var19 = 0.0F;
             if (this.flag2) {
@@ -172,8 +172,8 @@ public class MotionConfig2 extends LegacySetting {
                if ((float)var49 < var51 && var51 > 10.0F) {
                   float var23 = (float)var49 / var51;
                   float var54 = (float)Math.sin((double)var23 * Math.PI);
-                  var48 = this.floatVal18 * var54;
-                  var19 = this.floatVal19 * var54;
+                  var48 = this.float18 * var54;
+                  var19 = this.float19 * var54;
                } else {
                   this.flag2 = false;
                }
@@ -185,7 +185,7 @@ public class MotionConfig2 extends LegacySetting {
             float var53 = 0.0F;
             if (var52 > 3.0F && var52 < 65.0F) {
                float var55 = (float)Math.sin(Math.PI * Math.min(1.0, (double)var52 / 50.0));
-               var53 = var55 * this.floatVal11 * this.floatVal12;
+               var53 = var55 * this.float11 * this.float12;
             }
 
             float var56 = var7.computeCurve(var10);
@@ -195,10 +195,10 @@ public class MotionConfig2 extends LegacySetting {
             float var58 = 0.68F;
             float var29 = var50 * var27 + var53 * 0.15F;
             float var59 = var21 * var27 * 0.88F;
-            this.floatVal3 = (this.floatVal3 + var29) * var58;
-            this.floatVal4 = (this.floatVal4 + var59) * var58;
-            float var31 = this.floatVal3 + this.floatVal5 + this.floatVal9 + var48;
-            float var32 = this.floatVal4 + this.floatVal6 + this.floatVal10 + var19;
+            this.float3 = (this.float3 + var29) * var58;
+            this.float4 = (this.float4 + var59) * var58;
+            float var31 = this.float3 + this.float5 + this.float9 + var48;
+            float var32 = this.float4 + this.float6 + this.float10 + var19;
             float var33 = Math.min(var7.getMaxYawStep(), 55.0F);
             float var34 = Math.min(var7.getMaxPitchStep(), 35.0F);
             var31 = MathHelper.clamp(var31, -var33, var33);
@@ -211,11 +211,11 @@ public class MotionConfig2 extends LegacySetting {
             float var36 = currentRotation != null ? currentRotation.getYaw() : this.majxa;
             float var37 = currentRotation != null ? currentRotation.getPitch() : this.mtoaqu;
             float var38 = (var31 + this.floatVal) / var35;
-            float var39 = (var32 + this.floatVal2) / var35;
+            float var39 = (var32 + this.float2) / var35;
             int var40 = Math.round(var38);
             int var41 = Math.round(var39);
             this.floatVal = var31 + this.floatVal - (float)var40 * var35;
-            this.floatVal2 = var32 + this.floatVal2 - (float)var41 * var35;
+            this.float2 = var32 + this.float2 - (float)var41 * var35;
             float var42 = (float)var40 * var35;
             float var43 = (float)var41 * var35;
             this.majxa = MathHelper.wrapDegrees(var36 + var42);
@@ -228,11 +228,11 @@ public class MotionConfig2 extends LegacySetting {
    public void handleChance(RotationProfileManager profile, long now) {
       if (profile.getOvershootChance() > 0.01F && Math.random() < (double)profile.getOvershootChance()) {
          this.flag2 = true;
-         this.now = nowx;
+         this.now = now;
          float var4 = profile.getOvershootDistance();
          float var5 = (float)(Math.random() * Math.PI * 2.0);
-         this.floatVal18 = (float)Math.cos((double)var5) * var4;
-         this.floatVal19 = (float)Math.sin((double)var5) * var4 * 0.6F;
+         this.float18 = (float)Math.cos((double)var5) * var4;
+         this.float19 = (float)Math.sin((double)var5) * var4 * 0.6F;
       } else {
          this.flag2 = false;
       }

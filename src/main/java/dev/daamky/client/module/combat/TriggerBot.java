@@ -53,8 +53,8 @@ public class TriggerBot extends Module {
    public Subscription subscription2;
    public int intVal = 0;
    public LivingEntity class_1309 = null;
-   public long timeStamp = 0L;
-   public int int2 = 0;
+   public long longVal = 0L;
+   public int intVal2 = 0;
 
    public static TriggerBot getInstance() {
       if (triggerBot == null) {

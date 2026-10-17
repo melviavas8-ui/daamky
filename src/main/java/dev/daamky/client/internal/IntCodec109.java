@@ -10,7 +10,7 @@ public final class IntCodec109 {
    }
 
    public int decode1() {
-      return(intVal)this.key0 ^ 20;
+      return(key2)this.key0 ^ 20;
    }
 
    public static int encode4(int var0) {

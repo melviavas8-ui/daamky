@@ -10,8 +10,8 @@ public class MouseDeltaEvent extends Event<MouseDeltaEvent> {
    }
 
    public void handleYaw(double yaw, double pitch) {
-      this.yaw = yawx;
-      this.pitch = pitchx;
+      this.yaw = yaw;
+      this.pitch = pitch;
    }
 
    public double getYaw() {
@@ -23,10 +23,10 @@ public class MouseDeltaEvent extends Event<MouseDeltaEvent> {
    }
 
    public void setYaw(double yaw) {
-      this.yaw = yawx;
+      this.yaw = yaw;
    }
 
    public void setPitch(double pitch) {
-      this.pitch = pitchx;
+      this.pitch = pitch;
    }
 }

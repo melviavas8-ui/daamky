@@ -426,7 +426,7 @@ public class Trails extends Module {
 
          if (isLine) {
             GL11.glPolygonMode(1032, 6913);
-            RenderSystem.lineWidth(lineWidthx);
+            RenderSystem.lineWidth(lineWidth);
          } else {
             GL11.glPolygonMode(1032, 6914);
          }
@@ -809,7 +809,7 @@ public class Trails extends Module {
       }
 
       public void setDelegate(BufferBuilder delegate) {
-         this.delegate = delegatex;
+         this.delegate = delegate;
       }
 
       public VertexConsumer vertex(float x, float y, float z) {
@@ -922,16 +922,16 @@ public class Trails extends Module {
       public final EntityModel model;
 
       public PlayerGhost(double x, double y, double z, float yaw, float pitch, float bodyYaw, long lifetime, Trails.ModelPose pose, EntityModel model) {
-         this.x = xx;
-         this.y = yx;
-         this.z = zx;
-         this.yaw = yawx;
-         this.pitch = pitchx;
-         this.bodyYaw = bodyYawx;
+         this.x = x;
+         this.y = y;
+         this.z = z;
+         this.yaw = yaw;
+         this.pitch = pitch;
+         this.bodyYaw = bodyYaw;
          this.longVal = System.currentTimeMillis();
-         this.lifetime = lifetimex;
-         this.pose = posex;
-         this.model = modelx;
+         this.lifetime = lifetime;
+         this.pose = pose;
+         this.model = model;
       }
    }
 
@@ -957,8 +957,8 @@ public class Trails extends Module {
          String physicsMode
       ) {
          super(x, y, z, lifetime);
-         this.trail = trailx;
-         this.trailLength = trailLengthx;
+         this.trail = trail;
+         this.trailLength = trailLength;
          boolean var15 = "Comet".equalsIgnoreCase(physicsMode);
          boolean var16 = "Drop".equalsIgnoreCase(physicsMode);
          super.withCometMode(var15)

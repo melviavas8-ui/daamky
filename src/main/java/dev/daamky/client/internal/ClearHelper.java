@@ -15,7 +15,7 @@ public class ClearHelper {
 
    public void initInit(List<BlockPos> path, BlockPos target) {
       this.list = path != null ? new ArrayList<>(path) : new ArrayList<>();
-      this.target = targetx;
+      this.target = target;
    }
 
    public List<BlockPos> getList() {

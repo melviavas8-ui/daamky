@@ -77,16 +77,16 @@ public class CategoryComponent extends Component<Map<String, CheckComponent>> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.computeAction(var1);
+      return this.computeAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeCategoryComponent(var1);
+      return this.computeCategoryComponent(param1);
    }
 }

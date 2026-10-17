@@ -12,13 +12,13 @@ public class Rotation {
    public static final Rotation rotation2 = new Rotation(0.0F, 0.0F);
 
    public Rotation(float yaw, float pitch) {
-      this(yawx, pitchx, false);
+      this(yaw, pitch, false);
    }
 
    public Rotation(float yaw, float pitch, boolean isNormalized) {
-      this.yaw = yawx;
-      this.pitch = pitchx;
-      this.isNormalized = isNormalizedx;
+      this.yaw = yaw;
+      this.pitch = pitch;
+      this.isNormalized = isNormalized;
    }
 
    public static Rotation computeRotation(Vec3d point, Vec3d from) {
@@ -154,7 +154,7 @@ public class Rotation {
    }
 
    public void setIsNormalized(boolean isNormalized) {
-      this.isNormalized = isNormalizedx;
+      this.isNormalized = isNormalized;
    }
 
    public static record VecRotation(Rotation rotation, Vec3d vec) {

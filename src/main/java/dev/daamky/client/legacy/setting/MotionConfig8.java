@@ -40,24 +40,24 @@ public class MotionConfig8 extends LegacySetting {
 
    @Override
    public void run() {
-      this.intVal3 = 0;
+      this.int3 = 0;
    }
 
    public void run2() {
-      this.intVal3 = 3;
+      this.int3 = 3;
    }
 
    public void run3() {
       this.flag = false;
       this.intVal = 0;
-      this.floatVal3 = 0.0F;
-      this.floatVal4 = 0.0F;
-      this.floatVal5 = 0.0F;
+      this.float3 = 0.0F;
+      this.float4 = 0.0F;
+      this.float5 = 0.0F;
       this.muunid = 0.0F;
-      this.intVal2 = 0;
-      this.floatVal6 = 0.0F;
-      this.floatVal7 = 0.0F;
-      this.intVal4 = -1;
+      this.int2 = 0;
+      this.float6 = 0.0F;
+      this.float7 = 0.0F;
+      this.int4 = -1;
    }
 
    @Override
@@ -66,7 +66,7 @@ public class MotionConfig8 extends LegacySetting {
          super.runCurrent();
          if (this.flag) {
             this.floatVal = this.floatVal;
-            this.mubizl = this.floatVal2;
+            this.mubizl = this.float2;
          }
       }
    }
@@ -76,33 +76,33 @@ public class MotionConfig8 extends LegacySetting {
       if (mc.player != null && mc.world != null) {
          if (!this.flag) {
             this.floatVal = currentRotation != null ? currentRotation.getYaw() : mc.player.getYaw();
-            this.floatVal2 = currentRotation != null ? currentRotation.getPitch() : mc.player.getPitch();
+            this.float2 = currentRotation != null ? currentRotation.getPitch() : mc.player.getPitch();
             this.intVal = 0;
-            this.floatVal3 = 0.0F;
-            this.floatVal4 = 0.0F;
-            this.floatVal5 = computeCurrent(-2.4F, 2.4F);
+            this.float3 = 0.0F;
+            this.float4 = 0.0F;
+            this.float5 = computeCurrent(-2.4F, 2.4F);
             this.muunid = computeCurrent(-1.5F, 1.5F);
-            this.intVal2 = 0;
-            this.floatVal6 = 0.0F;
-            this.floatVal7 = 0.0F;
+            this.int2 = 0;
+            this.float6 = 0.0F;
+            this.float7 = 0.0F;
             this.flag = true;
-            this.intVal4 = entity != null ? entity.getId() : -1;
+            this.int4 = entity != null ? entity.getId() : -1;
          }
 
-         if (entity != null && entity.getId() != this.intVal4) {
-            this.intVal4 = entity.getId();
+         if (entity != null && entity.getId() != this.int4) {
+            this.int4 = entity.getId();
             this.intVal = 0;
-            this.floatVal3 = 0.0F;
-            this.floatVal4 = 0.0F;
-            this.floatVal5 = computeCurrent(-2.4F, 2.4F);
+            this.float3 = 0.0F;
+            this.float4 = 0.0F;
+            this.float5 = computeCurrent(-2.4F, 2.4F);
             this.muunid = computeCurrent(-1.5F, 1.5F);
-            this.intVal2 = 0;
-            this.floatVal6 = 0.0F;
-            this.floatVal7 = 0.0F;
+            this.int2 = 0;
+            this.float6 = 0.0F;
+            this.float7 = 0.0F;
          }
 
-         if (this.intVal3 > 0) {
-            this.intVal3--;
+         if (this.int3 > 0) {
+            this.int3--;
          }
 
          if (!this.flag && entity instanceof LivingEntity var5 && var5.isAlive()) {
@@ -119,35 +119,35 @@ public class MotionConfig8 extends LegacySetting {
                ? mc.player.getPitch()
                : (float)(-Math.toDegrees(Math.atan2(var10.y, Math.hypot(var10.x, var10.z))));
             float var13 = this.floatVal;
-            float var14 = this.floatVal2;
+            float var14 = this.float2;
             if (this.intVal <= 0) {
                this.intVal = (int)computeCurrent(30.0F, 60.0F);
-               this.floatVal5 = computeCurrent(-2.4F, 2.4F);
+               this.float5 = computeCurrent(-2.4F, 2.4F);
                this.muunid = computeCurrent(-1.5F, 1.5F);
             } else {
                this.intVal--;
             }
 
-            this.floatVal3 = this.floatVal3 + (this.floatVal5 - this.floatVal3) * 0.045F;
-            this.floatVal4 = this.floatVal4 + (this.muunid - this.floatVal4) * 0.045F;
-            float var15 = MathHelper.wrapDegrees(MathHelper.wrapDegrees(var11 + this.floatVal3) - var13);
-            float var16 = MathHelper.wrapDegrees(MathHelper.clamp(var12 + this.floatVal4, -89.0F, 89.0F) - var14);
-            if (this.intVal2 > 0) {
-               this.intVal2--;
+            this.float3 = this.float3 + (this.float5 - this.float3) * 0.045F;
+            this.float4 = this.float4 + (this.muunid - this.float4) * 0.045F;
+            float var15 = MathHelper.wrapDegrees(MathHelper.wrapDegrees(var11 + this.float3) - var13);
+            float var16 = MathHelper.wrapDegrees(MathHelper.clamp(var12 + this.float4, -89.0F, 89.0F) - var14);
+            if (this.int2 > 0) {
+               this.int2--;
                var15 *= 0.35F;
                var16 *= 0.35F;
             } else if (Math.abs(var15) > 1.5F && ThreadLocalRandom.current().nextDouble() < 0.08) {
-               this.intVal2 = (int)computeCurrent(1.0F, 4.0F);
+               this.int2 = (int)computeCurrent(1.0F, 4.0F);
             }
 
             float var17 = MathHelper.clamp(0.5F + Math.abs(var15) * 0.12F, 0.5F, 1.0F);
             float var18 = MathHelper.clamp(0.5F + Math.abs(var16) * 0.12F, 0.5F, 1.0F);
-            float var19 = this.intVal3 > 0 ? 15.0F : 12.0F;
-            float var20 = this.intVal3 > 0 ? 10.0F : 8.0F;
-            float var21 = MathHelper.clamp(this.floatVal6 + (MathHelper.clamp(var15 * 0.6F, -var19, var19) - this.floatVal6) * var17, -var19, var19);
-            float var22 = MathHelper.clamp(this.floatVal7 + (MathHelper.clamp(var16 * 0.6F, -var20, var20) - this.floatVal7) * var18, -var20, var20);
-            this.floatVal6 = var21;
-            this.floatVal7 = var22;
+            float var19 = this.int3 > 0 ? 15.0F : 12.0F;
+            float var20 = this.int3 > 0 ? 10.0F : 8.0F;
+            float var21 = MathHelper.clamp(this.float6 + (MathHelper.clamp(var15 * 0.6F, -var19, var19) - this.float6) * var17, -var19, var19);
+            float var22 = MathHelper.clamp(this.float7 + (MathHelper.clamp(var16 * 0.6F, -var20, var20) - this.float7) * var18, -var20, var20);
+            this.float6 = var21;
+            this.float7 = var22;
             float var23 = var13 + var21;
             float var24 = MathHelper.clamp(var14 + var22, -89.0F, 89.0F);
             if (ThreadLocalRandom.current().nextDouble() > 0.985) {
@@ -166,8 +166,8 @@ public class MotionConfig8 extends LegacySetting {
             }
 
             this.floatVal = var25;
-            this.floatVal2 = MathHelper.clamp(var26, -89.0F, 89.0F);
-            return new Rotation(this.floatVal, this.floatVal2);
+            this.float2 = MathHelper.clamp(var26, -89.0F, 89.0F);
+            return new Rotation(this.floatVal, this.float2);
          }
 
          float var6 = CameraManager.getFlag() ? CameraManager.getFloat() : mc.player.getYaw();

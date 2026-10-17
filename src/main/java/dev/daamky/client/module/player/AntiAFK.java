@@ -29,7 +29,7 @@ public class AntiAFK extends Module {
    public float float2 = 0.0F;
 
    public AntiAFK() {
-      this.addSettings(new Setting[]{this.modeSetting, this.intValervalS});
+      this.addSettings(new Setting[]{this.modeSetting, this.intervalS});
    }
 
    @Override
@@ -50,40 +50,40 @@ public class AntiAFK extends Module {
       String var1 = this.modeSetting.getValue();
       switch (var1) {
          case "FunTime":
-            this.intVal2 = ThreadLocalRandom.current().nextInt(10, 30);
+            this.int2 = ThreadLocalRandom.current().nextInt(10, 30);
             this.floatVal = ThreadLocalRandom.current().nextFloat(-60.0F, 60.0F);
-            this.floatVal2 = ThreadLocalRandom.current().nextFloat(-20.0F, 20.0F);
+            this.float2 = ThreadLocalRandom.current().nextFloat(-20.0F, 20.0F);
             break;
          case "HolyWorld":
-            this.intVal2 = ThreadLocalRandom.current().nextInt(5, 15);
+            this.int2 = ThreadLocalRandom.current().nextInt(5, 15);
             this.floatVal = ThreadLocalRandom.current().nextFloat(-90.0F, 90.0F);
-            this.floatVal2 = ThreadLocalRandom.current().nextFloat(-30.0F, 30.0F);
+            this.float2 = ThreadLocalRandom.current().nextFloat(-30.0F, 30.0F);
             break;
          case "Default":
-            this.intVal2 = ThreadLocalRandom.current().nextInt(20, 40);
+            this.int2 = ThreadLocalRandom.current().nextInt(20, 40);
             this.floatVal = ThreadLocalRandom.current().nextFloat(-180.0F, 180.0F);
-            this.floatVal2 = ThreadLocalRandom.current().nextFloat(-40.0F, 40.0F);
+            this.float2 = ThreadLocalRandom.current().nextFloat(-40.0F, 40.0F);
       }
    }
 
    public void run2() {
-      this.intVal2--;
-      if (this.floatVal != 0.0F || this.floatVal2 != 0.0F) {
+      this.int2--;
+      if (this.floatVal != 0.0F || this.float2 != 0.0F) {
          float var1 = this.floatVal * 0.15F;
-         float var2 = this.floatVal2 * 0.15F;
+         float var2 = this.float2 * 0.15F;
          float var3 = GameTimer.getMc2();
          var1 = (float)Math.round(var1 / var3) * var3;
          var2 = (float)Math.round(var2 / var3) * var3;
          mc.player.setYaw(mc.player.getYaw() + var1);
          mc.player.setPitch(Math.max(-90.0F, Math.min(90.0F, mc.player.getPitch() + var2)));
          this.floatVal -= var1;
-         this.floatVal2 -= var2;
+         this.float2 -= var2;
          if (Math.abs(this.floatVal) < 1.0F) {
             this.floatVal = 0.0F;
          }
 
-         if (Math.abs(this.floatVal2) < 1.0F) {
-            this.floatVal2 = 0.0F;
+         if (Math.abs(this.float2) < 1.0F) {
+            this.float2 = 0.0F;
          }
       }
 
@@ -93,26 +93,26 @@ public class AntiAFK extends Module {
       String var4 = this.modeSetting.getValue();
       switch (var4) {
          case "FunTime":
-            if (this.intVal2 % 4 == 0) {
+            if (this.int2 % 4 == 0) {
                var9 = true;
             }
 
-            if (this.intVal2 == 5) {
+            if (this.int2 == 5) {
                mc.player.swingHand(Hand.MAIN_HAND);
             }
             break;
          case "HolyWorld":
-            if (this.intVal2 == 10) {
+            if (this.int2 == 10) {
                var7 = true;
             }
 
-            if (this.intVal2 % 3 == 0) {
+            if (this.int2 % 3 == 0) {
                mc.player.swingHand(Hand.MAIN_HAND);
             }
             break;
          case "Default":
             var10 = true;
-            if (this.intVal2 == 15) {
+            if (this.int2 == 15) {
                var7 = true;
             }
       }
@@ -120,7 +120,7 @@ public class AntiAFK extends Module {
       mc.options.jumpKey.setPressed(var7);
       mc.options.sneakKey.setPressed(var9);
       mc.options.forwardKey.setPressed(var10);
-      if (this.intVal2 <= 0) {
+      if (this.int2 <= 0) {
          this.meufijk = 0;
          mc.options.jumpKey.setPressed(false);
          mc.options.sneakKey.setPressed(false);
@@ -131,9 +131,9 @@ public class AntiAFK extends Module {
    public void getMc() {
       this.intVal = 0;
       this.meufijk = 0;
-      this.intVal2 = 0;
+      this.int2 = 0;
       this.floatVal = 0.0F;
-      this.floatVal2 = 0.0F;
+      this.float2 = 0.0F;
       if (mc.options != null) {
          mc.options.jumpKey.setPressed(false);
          mc.options.sneakKey.setPressed(false);
@@ -154,7 +154,7 @@ public class AntiAFK extends Module {
    public void lambda$onEvent$0(UpdateEvent event) {
       if (mc.player != null) {
          this.intVal++;
-         int var2 = this.intValervalS.getValue().intValue() * 20;
+         int var2 = this.intervalS.getValue().intValue() * 20;
          if (this.meufijk == 0) {
             if (this.intVal >= var2 + ThreadLocalRandom.current().nextInt(-40, 40)) {
                this.run();

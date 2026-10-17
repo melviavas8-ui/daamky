@@ -73,7 +73,7 @@ public class ESPConfiguratorScreen extends Screen {
 
    public ESPConfiguratorScreen(Screen parentScreen) {
       super(Text.literal("ESP Configurator"));
-      this.parentScreen = parentScreenx;
+      this.parentScreen = parentScreen;
    }
 
    public void init() {
@@ -82,15 +82,15 @@ public class ESPConfiguratorScreen extends Screen {
       this.direction.setDirection(AnimationDirection.FORWARDS);
       this.mqiwt.setDirection(AnimationDirection.FORWARDS);
       this.momevou = 0.0F;
-      this.floatValVal3 = 0.0F;
+      this.float3 = 0.0F;
       this.floatVal = -1.0F;
-      this.floatValVal2 = -1.0F;
+      this.float2 = -1.0F;
    }
 
    public void runCurrent() {
       if (!this.flag) {
          this.flag = true;
-         this.longVal = System.currentTimeMillis();
+         this.timeStamp = System.currentTimeMillis();
       }
    }
 
@@ -104,8 +104,8 @@ public class ESPConfiguratorScreen extends Screen {
    }
 
    public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
-      this.floatValVal3 -= (float)(verticalAmount * 28.0);
-      this.floatValVal3 = MathHelper.clamp(this.floatValVal3, 0.0F, Math.max(0.0F, this.floatValVal4));
+      this.float3 -= (float)(verticalAmount * 28.0);
+      this.float3 = MathHelper.clamp(this.float3, 0.0F, Math.max(0.0F, this.float4));
       return true;
    }
 
@@ -142,7 +142,7 @@ public class ESPConfiguratorScreen extends Screen {
    public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
       float var5 = this.direction.getEnd();
       if (this.flag) {
-         float var6 = (float)(System.currentTimeMillis() - this.longVal) / 160.0F;
+         float var6 = (float)(System.currentTimeMillis() - this.timeStamp) / 160.0F;
          if (var6 >= 1.0F) {
             if (this.client != null) {
                this.client.setScreen(this.parentScreen);
@@ -202,7 +202,7 @@ public class ESPConfiguratorScreen extends Screen {
       this.initAdd(ctx, var27, var28, var29, var30, var12, mouseX, mouseY, var5, var7, var8, var9, var10, var11);
       TintColorHelper.class_4587.pop();
       var20.pop();
-      this.momevou = computeFloat(this.momevou, this.floatValVal3, 0.25F);
+      this.momevou = computeFloat(this.momevou, this.float3, 0.25F);
    }
 
    public void handleMax(
@@ -254,10 +254,10 @@ public class ESPConfiguratorScreen extends Screen {
 
       if (this.floatVal < 0.0F) {
          this.floatVal = var24;
-         this.floatValVal2 = var25;
+         this.float2 = var25;
       } else {
          this.floatVal = computeFloat(this.floatVal, var24, 0.22F);
-         this.floatValVal2 = computeFloat(this.floatValVal2, var25, 0.22F);
+         this.float2 = computeFloat(this.float2, var25, 0.22F);
       }
 
       int var45 = isDay ? computeRound(241, 245, 249, 0.45F * alpha) : computeRound(20, 24, 34, 0.4F * alpha);
@@ -289,11 +289,11 @@ public class ESPConfiguratorScreen extends Screen {
          float var39 = var34[var37] * var47 * alpha * (isDay ? 0.45F : 1.0F);
          int var40 = var46 | (int)(var39 * 255.0F) << 24;
          RenderKit.Render2D.handleFloat(
-            this.floatVal - var38 + var48, var23 + var33 * var36[var37], this.floatValVal2 + var38 * 2.0F, var15 - var33 * 0.35F + var38, var40, var16 + var38
+            this.floatVal - var38 + var48, var23 + var33 * var36[var37], this.float2 + var38 * 2.0F, var15 - var33 * 0.35F + var38, var40, var16 + var38
          );
       }
 
-      RenderKit.Render2D.handleFloat(this.floatVal, var23, this.floatValVal2, var15, GlyphMap.computeRound2(accent, 0.92F * alpha), var16);
+      RenderKit.Render2D.handleFloat(this.floatVal, var23, this.float2, var15, GlyphMap.computeRound2(accent, 0.92F * alpha), var16);
 
       for (int var49 = 0; var49 < var14.length; var49++) {
          boolean var50 = this.intVal == var49;
@@ -379,7 +379,7 @@ public class ESPConfiguratorScreen extends Screen {
          var21 = var35 + 10.0F * u;
       }
 
-      this.floatValVal4 = Math.max(0.0F, var21 - bodyH);
+      this.float4 = Math.max(0.0F, var21 - bodyH);
       RenderQueue.runGl();
    }
 
@@ -827,7 +827,7 @@ public class ESPConfiguratorScreen extends Screen {
                   this.mqiwt.getTimerUtil();
                   this.mqiwt.setDirection(AnimationDirection.FORWARDS);
                   this.momevou = 0.0F;
-                  this.floatValVal3 = 0.0F;
+                  this.float3 = 0.0F;
                }
 
                return true;
@@ -917,7 +917,7 @@ public class ESPConfiguratorScreen extends Screen {
                   float var55 = var25 + 13.0F * u;
                   float var58 = 3.5F * u;
                   if (MaxMinHelper.computeFlag(mx, my, var26 - 2.0F * u, var55 - 5.0F * u, var27 + 4.0F * u, var58 + 10.0F * u)) {
-                     this.floatValValSetting = var30;
+                     this.floatSetting = var30;
                      this.handleMax(var30, mx, var26, var27);
                      return true;
                   }
@@ -1034,7 +1034,7 @@ public class ESPConfiguratorScreen extends Screen {
    }
 
    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
-      if (this.floatValValSetting != null) {
+      if (this.floatSetting != null) {
          float var40 = this.getMin();
          float var41 = this.computeFloat(var40);
          float var42 = this.computeFloat2(var40);
@@ -1046,7 +1046,7 @@ public class ESPConfiguratorScreen extends Screen {
          ESPConfiguratorScreen.EspItem[] var48 = ESPConfiguratorScreen.EspItem.values();
 
          for (ESPConfiguratorScreen.EspItem var52 : var48) {
-            if (var52.feature.getSettings().contains(this.floatValValSetting)) {
+            if (var52.feature.getSettings().contains(this.floatSetting)) {
                float var53 = 38.0F * var40;
                float var54 = var43 + 12.0F * var40;
                float var55 = var44 + var53 + 6.0F * var40;
@@ -1072,7 +1072,7 @@ public class ESPConfiguratorScreen extends Screen {
                }
 
                float var59 = var56 + 11.0F * var40;
-               this.handleMax(this.floatValValSetting, (float)mouseX, var59, var47);
+               this.handleMax(this.floatSetting, (float)mouseX, var59, var47);
                return true;
             }
          }
@@ -1152,7 +1152,7 @@ public class ESPConfiguratorScreen extends Screen {
    }
 
    public boolean mouseReleased(double mouseX, double mouseY, int button) {
-      this.floatValValSetting = null;
+      this.floatSetting = null;
       this.colorSetting2 = null;
       return super.mouseReleased(mouseX, mouseY, button);
    }
@@ -1174,10 +1174,10 @@ public class ESPConfiguratorScreen extends Screen {
       public final String desc;
 
       private EspItem(String rawName, String displayName, Module feature, String desc) {
-         this.rawName = rawNamex;
-         this.displayName = displayNamex;
-         this.feature = featurex;
-         this.desc = descx;
+         this.rawName = rawName;
+         this.displayName = displayName;
+         this.feature = feature;
+         this.desc = desc;
       }
 
       public static ESPConfiguratorScreen.EspItem[] $values() {

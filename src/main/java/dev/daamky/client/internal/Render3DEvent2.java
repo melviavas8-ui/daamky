@@ -32,7 +32,7 @@ public class Render3DEvent2 extends TargetRenderer {
    @Override
    public void runOrbit() {
       this.runMin();
-      this.floatValVal2 = this.floatVal;
+      this.float2 = this.floatVal;
       this.floatVal = this.floatVal + TargetESP.getInstance().getRingSpeed().getValue() * 5.5F;
       if (class_1297 != null) {
          TargetESP var1 = TargetESP.getInstance();
@@ -43,26 +43,26 @@ public class Render3DEvent2 extends TargetRenderer {
          double var7 = class_1297.getY() + (double)class_1297.getHeight() - 0.03;
          double var9 = var5 + (var7 - var5) * (double)var4;
          int var11 = Math.min(32, Math.max(4, var1.getTrailLength().getValue().intValue()));
-         int var12 = Math.min(this.intValVal2, var11 - 1);
+         int var12 = Math.min(this.int2, var11 - 1);
 
          for (int var13 = var12; var13 > 0; var13--) {
-            this.doubleValVals[var13] = this.doubleValVals[var13 - 1];
-            this.floatValVals[var13] = this.floatValVals[var13 - 1];
-            this.floatValVals2[var13] = this.floatValVals2[var13 - 1];
-            this.doubleValVals2[var13] = this.doubleValVals2[var13 - 1];
-            this.doubleValVals3[var13] = this.doubleValVals3[var13 - 1];
+            this.doubles[var13] = this.doubles[var13 - 1];
+            this.floats[var13] = this.floats[var13 - 1];
+            this.floats2[var13] = this.floats2[var13 - 1];
+            this.doubles2[var13] = this.doubles2[var13 - 1];
+            this.doubles3[var13] = this.doubles3[var13 - 1];
          }
 
-         this.doubleValVals[0] = var9;
-         this.floatValVals[0] = var3;
-         this.floatValVals2[0] = this.floatVal;
-         this.doubleValVals2[0] = class_1297.getX();
-         this.doubleValVals3[0] = class_1297.getZ();
-         if (this.intValVal2 < var11) {
-            this.intValVal2++;
+         this.doubles[0] = var9;
+         this.floats[0] = var3;
+         this.floats2[0] = this.floatVal;
+         this.doubles2[0] = class_1297.getX();
+         this.doubles3[0] = class_1297.getZ();
+         if (this.int2 < var11) {
+            this.int2++;
          }
       } else {
-         this.intValVal2 = 0;
+         this.int2 = 0;
       }
    }
 
@@ -86,7 +86,7 @@ public class Render3DEvent2 extends TargetRenderer {
          float var14 = (float)animatedValue2.getValue();
          float var15 = 0.72F + 0.28F * var14;
          float var16 = (TargetRenderer.getFloat4() * 0.86F + 0.18F) * var4.getRingSize().getValue() * var15;
-         float var17 = EntityHelper.computeFloat(this.floatValVal2, this.floatVal, event.getPartialTicks());
+         float var17 = EntityHelper.computeFloat(this.float2, this.floatVal, event.getPartialTicks());
          float var18 = (float)animatedValue.getValue();
          float var19 = this.computeRadians(var17);
          double var20 = var12 + (double)(TargetRenderer.getFloat3() * var19);
@@ -98,7 +98,7 @@ public class Render3DEvent2 extends TargetRenderer {
          RenderSystem.disableCull();
          RenderSystem.enableDepthTest();
          RenderSystem.depthMask(false);
-         if (var4.getGhostTrail().getValue() && this.intValVal2 > 1) {
+         if (var4.getGhostTrail().getValue() && this.int2 > 1) {
             this.handlePow(var5, var7, var18 * var14, var2);
          }
 
@@ -121,23 +121,23 @@ public class Render3DEvent2 extends TargetRenderer {
       RenderSystem.setShader(ShaderProgramKeys.POSITION_COLOR);
       Matrix4f var6 = ms.peek().getPositionMatrix();
       BufferBuilder var7 = Tessellator.getInstance().begin(DrawMode.TRIANGLES, VertexFormats.POSITION_COLOR);
-      int var8 = Math.min(this.intValVal2 - 1, 8);
+      int var8 = Math.min(this.int2 - 1, 8);
 
       for (int var9 = 0; var9 < var8; var9++) {
          float var10 = (float)var9 / (float)var8;
          float var11 = (float)(var9 + 1) / (float)var8;
          float var12 = (float)Math.pow((double)(1.0F - var10), 1.3F) * 0.7F;
          float var13 = (float)Math.pow((double)(1.0F - var11), 1.3F) * 0.7F;
-         double var14 = this.doubleValVals2[var9] - cameraPos.x;
-         double var16 = this.doubleValVals[var9] - cameraPos.y;
-         double var18 = this.doubleValVals3[var9] - cameraPos.z;
-         float var20 = this.floatValVals[var9];
-         float var21 = this.floatValVals2[var9];
-         double var22 = this.doubleValVals2[var9 + 1] - cameraPos.x;
-         double var24 = this.doubleValVals[var9 + 1] - cameraPos.y;
-         double var26 = this.doubleValVals3[var9 + 1] - cameraPos.z;
-         float var28 = this.floatValVals[var9 + 1];
-         float var29 = this.floatValVals2[var9 + 1];
+         double var14 = this.doubles2[var9] - cameraPos.x;
+         double var16 = this.doubles[var9] - cameraPos.y;
+         double var18 = this.doubles3[var9] - cameraPos.z;
+         float var20 = this.floats[var9];
+         float var21 = this.floats2[var9];
+         double var22 = this.doubles2[var9 + 1] - cameraPos.x;
+         double var24 = this.doubles[var9 + 1] - cameraPos.y;
+         double var26 = this.doubles3[var9 + 1] - cameraPos.z;
+         float var28 = this.floats[var9 + 1];
+         float var29 = this.floats2[var9 + 1];
 
          for (int var30 = 0; var30 < 48; var30++) {
             int var31 = (var30 + 1) % 48;
@@ -276,9 +276,9 @@ public class Render3DEvent2 extends TargetRenderer {
    public int computeMax(int baseColorRGB, float alpha) {
       int var3 = Math.max(0, Math.min(255, (int)(255.0F * alpha)));
       int var4 = var3 << 24 | baseColorRGB & 16777215;
-      if (this.floatValVal2 > 0.0F) {
+      if (this.float2 > 0.0F) {
          int var5 = var3 << 24 | 0xFF0000 | 8192 | 32;
-         return this.computeMax(var4, var5, this.floatValVal2);
+         return this.computeMax(var4, var5, this.float2);
       } else {
          return var4;
       }
@@ -306,10 +306,10 @@ public class Render3DEvent2 extends TargetRenderer {
    public void runEnabled() {
       super.runEnabled();
       if (class_1297 == null) {
-         this.intValVal2 = 0;
-         this.floatValVal2 = 0.0F;
+         this.int2 = 0;
+         this.float2 = 0.0F;
          this.intVal = 0;
-         this.floatValVal2 = this.floatVal;
+         this.float2 = this.floatVal;
       }
    }
 

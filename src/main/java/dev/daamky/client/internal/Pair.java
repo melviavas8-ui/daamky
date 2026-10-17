@@ -5,8 +5,8 @@ public class Pair<A, B> {
    public final B right;
 
    public Pair(A left, B right) {
-      this.left = (A)leftx;
-      this.right = (B)rightx;
+      this.left = (A)left;
+      this.right = (B)right;
    }
 
    public A getLeft() {

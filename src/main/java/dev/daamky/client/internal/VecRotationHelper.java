@@ -173,19 +173,19 @@ public class VecRotationHelper implements MinecraftAccess {
    }
 
    public void setLastRotationPlan(FromRotationHelper lastRotationPlan) {
-      this.lastRotationPlan = lastRotationPlanx;
+      this.lastRotationPlan = lastRotationPlan;
    }
 
    public void setCurrentRotation(Rotation currentRotation) {
-      this.currentRotation = currentRotationx;
+      this.currentRotation = currentRotation;
    }
 
    public void setPreviousRotation(Rotation previousRotation) {
-      this.previousRotation = previousRotationx;
+      this.previousRotation = previousRotation;
    }
 
    public void setServerRotation(Rotation serverRotation) {
-      this.serverRotation = serverRotationx;
+      this.serverRotation = serverRotation;
    }
 
    public static VecRotationHelper getInstance() {

@@ -61,18 +61,18 @@ public abstract class Widget implements Callback10 {
    }
 
    public void setX(float x) {
-      this.x = xx;
+      this.x = x;
    }
 
    public void setY(float y) {
-      this.y = yx;
+      this.y = y;
    }
 
    public void setWidth(float width) {
-      this.width = widthx;
+      this.width = width;
    }
 
    public void setHeight(float height) {
-      this.height = heightx;
+      this.height = height;
    }
 }

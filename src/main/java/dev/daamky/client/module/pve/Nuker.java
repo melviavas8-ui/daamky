@@ -282,9 +282,9 @@ public class Nuker extends Module {
       public final Vec3d aim;
 
       public Candidate(BlockPos pos, Direction face, Vec3d aim) {
-         this.pos = posx;
-         this.face = facex;
-         this.aim = aimx;
+         this.pos = pos;
+         this.face = face;
+         this.aim = aim;
       }
    }
 }

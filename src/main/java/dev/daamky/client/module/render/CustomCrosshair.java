@@ -145,10 +145,10 @@ public class CustomCrosshair extends Module {
    }
 
    public void handleBlend(MatrixStack matrices, float x1, float y1, float x2, float y2, int color) {
-      float var7 = (float)(colorx >> 24 & 0xFF) / 255.0F;
-      float var8 = (float)(colorx >> 16 & 0xFF) / 255.0F;
-      float var9 = (float)(colorx >> 8 & 0xFF) / 255.0F;
-      float var10 = (float)(colorx & 0xFF) / 255.0F;
+      float var7 = (float)(color >> 24 & 0xFF) / 255.0F;
+      float var8 = (float)(color >> 16 & 0xFF) / 255.0F;
+      float var9 = (float)(color >> 8 & 0xFF) / 255.0F;
+      float var10 = (float)(color & 0xFF) / 255.0F;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.setShader(ShaderProgramKeys.POSITION_COLOR);

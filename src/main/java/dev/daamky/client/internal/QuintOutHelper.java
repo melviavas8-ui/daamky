@@ -24,6 +24,6 @@ public abstract class QuintOutHelper {
    }
 
    public void setOpen(boolean open) {
-      this.open = openx;
+      this.open = open;
    }
 }

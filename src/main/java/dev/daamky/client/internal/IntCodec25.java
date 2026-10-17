@@ -6,7 +6,7 @@ public final class IntCodec25 {
    public int key2 = 1425;
 
    public long decode0() {
-      return(longVal)this.key2 + 767L;
+      return(key0)this.key2 + 767L;
    }
 
    public int decode1() {

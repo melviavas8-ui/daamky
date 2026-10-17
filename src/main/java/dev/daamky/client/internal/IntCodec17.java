@@ -10,7 +10,7 @@ public final class IntCodec17 {
    }
 
    public long decode1() {
-      return(longVal)this.key1 + 540L;
+      return(key2)this.key1 + 540L;
    }
 
    public long decode2() {

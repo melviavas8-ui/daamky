@@ -21,9 +21,9 @@ public class Render2DEvent extends Event<Render2DEvent.Render2DEventData> {
       public float partialTicks;
 
       public Render2DEventData(DrawContext context, MatrixStack matrixStack, float partialTicks) {
-         this.context = contextx;
-         this.matrixStack = matrixStackx;
-         this.partialTicks = partialTicksx;
+         this.context = context;
+         this.matrixStack = matrixStack;
+         this.partialTicks = partialTicks;
       }
 
       public DrawContext getContext() {

@@ -10,13 +10,13 @@ public class EventListener<T> implements Comparable<EventListener<T>> {
    public final long id;
 
    public EventListener(int priority, Consumer<T> handler2) {
-      this.priority = priorityx;
-      this.handler2 = handler2x;
+      this.priority = priority;
+      this.handler2 = handler2;
       this.id = COUNTER.getAndIncrement();
    }
 
    public EventListener(Consumer<T> handler2) {
-      this(0, handler2x);
+      this(0, handler2);
    }
 
    public int compareTo(EventListener<T> other) {
@@ -32,8 +32,4 @@ public class EventListener<T> implements Comparable<EventListener<T>> {
       return this.handler2;
    }
 
-   @Override
-   public int compareTo(Object param1) {
-      return this.compareTo((EventListener<T>)var1);
-   }
 }

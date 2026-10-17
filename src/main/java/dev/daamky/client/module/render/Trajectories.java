@@ -208,8 +208,8 @@ public class Trajectories extends Module {
       float var10 = (float)(pos.x + (double)var6);
       float var11 = (float)(pos.y + (double)var6);
       float var12 = (float)(pos.z + (double)var6);
-      int var13 = colorx.getAlpha();
-      int var14 = colorx.getRGB() & 16777215 | Math.min(255, (int)((float)var13 * 0.25F)) << 24;
+      int var13 = color.getAlpha();
+      int var14 = color.getRGB() & 16777215 | Math.min(255, (int)((float)var13 * 0.25F)) << 24;
       buffer.vertex(matrix, var7, var8, var9).color(var14);
       buffer.vertex(matrix, var10, var8, var9).color(var14);
       buffer.vertex(matrix, var10, var8, var12).color(var14);
@@ -671,9 +671,9 @@ public class Trajectories extends Module {
       public int ticks;
 
       public ProjectilePrediction(Vec3d pos, boolean hitEntity, int ticks) {
-         this.pos = posx;
-         this.hitEntity = hitEntityx;
-         this.ticks = ticksx;
+         this.pos = pos;
+         this.hitEntity = hitEntity;
+         this.ticks = ticks;
       }
    }
 }

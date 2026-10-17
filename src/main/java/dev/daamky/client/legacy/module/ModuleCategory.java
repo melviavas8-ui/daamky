@@ -39,8 +39,8 @@ public enum ModuleCategory {
    }
 
       private ModuleCategory(final String name, final String icon) {
-      this.name = namex;
-      this.icon = iconx;
+      this.name = name;
+      this.icon = icon;
    }
 
    public static ModuleCategory[] $values() {

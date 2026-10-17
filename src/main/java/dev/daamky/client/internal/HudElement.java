@@ -68,7 +68,7 @@ public abstract class HudElement implements MinecraftAccess, Callback6 {
    }
 
    public void setRenderContent(boolean renderContent) {
-      this.renderContent = renderContentx;
+      this.renderContent = renderContent;
    }
 
    public float getHeight() {
@@ -163,10 +163,10 @@ public abstract class HudElement implements MinecraftAccess, Callback6 {
    }
 
    public void setEnabled(boolean enabled) {
-      this.enabled = enabledx;
+      this.enabled = enabled;
    }
 
    public void setCurrentEvent(Render2DEvent.Render2DEventData currentEvent) {
-      this.currentEvent = currentEventx;
+      this.currentEvent = currentEvent;
    }
 }

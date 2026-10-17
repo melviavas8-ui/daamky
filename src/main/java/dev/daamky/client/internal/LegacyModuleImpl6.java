@@ -7,7 +7,7 @@ import dev.daamky.client.setting.BooleanSetting;
 public class LegacyModuleImpl6 extends CheckComponent {
    public LegacyModuleImpl6(final LegacyModule this$0, Module parent, String name, Boolean value, final BooleanSetting param5) {
       super(parent, name, value);
-      this.cachedValue = var5;
+      this.cachedValue = param5;
    }
 
    public CheckComponent withCachedValue(Boolean value) {
@@ -24,7 +24,8 @@ public class LegacyModuleImpl6 extends CheckComponent {
       return this.getCachedValue();
    }
 
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Boolean)var1);
+   public Component withValue(Boolean param1) {
+      return this.withCachedValue(param1);
    }
+
 }

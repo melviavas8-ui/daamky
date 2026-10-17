@@ -15,10 +15,10 @@ public final class InputState {
    public static final InputState inputState3 = new InputState(false, false, false, true);
 
    public InputState(boolean forwards2, boolean backwards, boolean left, boolean right) {
-      this.forwards2 = forwards2x;
-      this.backwards = backwardsx;
-      this.left = leftx;
-      this.right = rightx;
+      this.forwards2 = forwards2;
+      this.backwards = backwards;
+      this.left = left;
+      this.right = right;
    }
 
    public InputState(Input input) {
@@ -79,18 +79,18 @@ public final class InputState {
    }
 
    public void setForwards(boolean forwards2) {
-      this.forwards2 = forwards2x;
+      this.forwards2 = forwards2;
    }
 
    public void setBackwards(boolean backwards) {
-      this.backwards = backwardsx;
+      this.backwards = backwards;
    }
 
    public void setLeft(boolean left) {
-      this.left = leftx;
+      this.left = left;
    }
 
    public void setRight(boolean right) {
-      this.right = rightx;
+      this.right = right;
    }
 }

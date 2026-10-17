@@ -45,42 +45,42 @@ public class MotionEvent extends Event<MotionEvent.MotionEventData> {
       }
 
       public MotionEvent.MotionEventData withX(double x) {
-         this.x = xx;
+         this.x = x;
          return this;
       }
 
       public MotionEvent.MotionEventData withY(double y) {
-         this.y = yx;
+         this.y = y;
          return this;
       }
 
       public MotionEvent.MotionEventData withZ(double z) {
-         this.z = zx;
+         this.z = z;
          return this;
       }
 
       public MotionEvent.MotionEventData withYaw(double yaw) {
-         this.yaw = yawx;
+         this.yaw = yaw;
          return this;
       }
 
       public MotionEvent.MotionEventData withPitch(double pitch) {
-         this.pitch = pitchx;
+         this.pitch = pitch;
          return this;
       }
 
       public MotionEvent.MotionEventData withGround(boolean ground) {
-         this.ground = groundx;
+         this.ground = ground;
          return this;
       }
 
       public MotionEventData(double x, double y, double z, double yaw, double pitch, boolean ground) {
-         this.x = xx;
-         this.y = yx;
-         this.z = zx;
-         this.yaw = yawx;
-         this.pitch = pitchx;
-         this.ground = groundx;
+         this.x = x;
+         this.y = y;
+         this.z = z;
+         this.yaw = yaw;
+         this.pitch = pitch;
+         this.ground = ground;
       }
    }
 }

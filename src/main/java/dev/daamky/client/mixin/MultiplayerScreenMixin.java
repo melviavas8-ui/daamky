@@ -53,8 +53,8 @@ public abstract class MultiplayerScreenMixin extends Overlay {
          this.startTime = var8;
       }
 
-      if (this.intValroAnimation == null) {
-         this.intValroAnimation = new FrameSizeHelper(Identifier.of("daamky", "images/interface/atlas.png"), 8, 8, 61, 14, 256, 190);
+      if (this.introAnimation == null) {
+         this.introAnimation = new FrameSizeHelper(Identifier.of("daamky", "images/interface/atlas.png"), 8, 8, 61, 14, 256, 190);
       }
 
       context.fill(0, 0, var6, var7, -16052972);
@@ -64,7 +64,7 @@ public abstract class MultiplayerScreenMixin extends Overlay {
       float var13 = ((float)var7 - var11) / 2.0F - 24.0F;
 
       try {
-         this.intValroAnimation.handleFrame(context, var12, var13, var10, var11, Color.WHITE);
+         this.introAnimation.handleFrame(context, var12, var13, var10, var11, Color.WHITE);
       } catch (Throwable var21) {
       }
 

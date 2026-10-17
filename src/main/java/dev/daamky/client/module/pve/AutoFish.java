@@ -43,7 +43,7 @@ public class AutoFish extends Module {
       UpdateEvent.getInstance().subscribe(this.eventListener);
       PacketEvent.getInstance().subscribe(this.eventListener2);
       this.flag = false;
-      this.longVal = -1L;
+      this.timeStamp = -1L;
    }
 
    @Override
@@ -71,7 +71,7 @@ public class AutoFish extends Module {
                      .interactItem(
                         mc.player, mc.player.getMainHandStack().getItem() == Items.FISHING_ROD ? Hand.MAIN_HAND : Hand.OFF_HAND
                      );
-                  this.longVal = System.currentTimeMillis() + floatSetting.getValue().longValue();
+                  this.timeStamp = System.currentTimeMillis() + floatSetting.getValue().longValue();
                }
             }
          }
@@ -84,10 +84,10 @@ public class AutoFish extends Module {
             || mc.player.getOffHandStack().getItem() == Items.FISHING_ROD;
          if (!var2) {
             this.flag = false;
-            this.longVal = -1L;
+            this.timeStamp = -1L;
          } else {
-            if (this.longVal != -1L && System.currentTimeMillis() >= this.longVal) {
-               this.longVal = -1L;
+            if (this.timeStamp != -1L && System.currentTimeMillis() >= this.timeStamp) {
+               this.timeStamp = -1L;
                mc.interactionManager
                   .interactItem(
                      mc.player, mc.player.getMainHandStack().getItem() == Items.FISHING_ROD ? Hand.MAIN_HAND : Hand.OFF_HAND

@@ -81,9 +81,9 @@ public class MacroManager implements MinecraftAccess {
       public final int key;
 
       public Macro(String name, String message, int key) {
-         this.name = namex;
-         this.message = messagex;
-         this.key = keyx;
+         this.name = name;
+         this.message = message;
+         this.key = key;
       }
 
       public String getName() {

@@ -29,22 +29,22 @@ public class ColorSetting extends Setting<Color> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.handleAction((Color)var1);
+   public void setValue(Color param1) {
+      this.handleAction(param1);
    }
 
    @Override
-   public Setting withValue(Object param1) {
-      return this.computeColorSetting((Color)var1);
+   public Setting withValue(Color param1) {
+      return this.computeColorSetting(param1);
    }
 
    @Override
    public Setting onAction(Runnable param1) {
-      return this.computeAction(var1);
+      return this.computeAction(param1);
    }
 
    @Override
    public Setting visibleWhen(Supplier param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 }

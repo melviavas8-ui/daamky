@@ -78,7 +78,7 @@ public abstract class ChatHudMixin {
    private void onAddMessageReturn(Text message, MessageSignatureData signatureData, MessageIndicator indicator, CallbackInfo ci) {
       if (MinecraftTweaks.getInstance().chatAnimations.getValue()) {
          if (MinecraftTweaks.getInstance().left.is("Left")) {
-            this.floatVal2 = 100.0F;
+            this.float2 = 100.0F;
          } else {
             Objects.requireNonNull(MinecraftClient.getInstance().textRenderer);
             this.floatVal += 9.0F;
@@ -94,13 +94,13 @@ public abstract class ChatHudMixin {
       this.flag2 = false;
       if (MinecraftTweaks.getInstance().chatAnimations.getValue()) {
          float var7 = MinecraftClient.getInstance().getRenderTickCounter().getTickDelta(false);
-         if (MinecraftTweaks.getInstance().left.is("Left") && this.floatVal2 > 0.0F) {
+         if (MinecraftTweaks.getInstance().left.is("Left") && this.float2 > 0.0F) {
             context.getMatrices().push();
-            context.getMatrices().translate(-this.floatVal2, 0.0F, 0.0F);
+            context.getMatrices().translate(-this.float2, 0.0F, 0.0F);
             this.flag2 = true;
-            this.floatVal2 = EntityHelper.computeFloat(this.floatVal2, 0.0F, 0.45F * var7);
-            if (this.floatVal2 < 0.1F) {
-               this.floatVal2 = 0.0F;
+            this.float2 = EntityHelper.computeFloat(this.float2, 0.0F, 0.45F * var7);
+            if (this.float2 < 0.1F) {
+               this.float2 = 0.0F;
             }
          } else if (MinecraftTweaks.getInstance().left.is("Bottom") && this.floatVal > 0.0F) {
             context.getMatrices().push();
@@ -112,7 +112,7 @@ public abstract class ChatHudMixin {
             }
          } else {
             this.floatVal = 0.0F;
-            this.floatVal2 = 0.0F;
+            this.float2 = 0.0F;
          }
       }
    }

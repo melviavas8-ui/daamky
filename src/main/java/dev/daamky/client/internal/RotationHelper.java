@@ -19,19 +19,19 @@ public class RotationHelper {
    public static final RotationHelper rotationHelper3 = new RotationHelper(new MotionConfig4(), true);
 
    public RotationHelper(LegacySetting rotationMode, boolean moveCorrection) {
-      this.rotationMode = rotationModex;
-      this.moveCorrection = moveCorrectionx;
+      this.rotationMode = rotationMode;
+      this.moveCorrection = moveCorrection;
       this.freeCorrection = false;
    }
 
    public RotationHelper(LegacySetting rotationMode, boolean moveCorrection, boolean freeCorrection) {
-      this.rotationMode = rotationModex;
-      this.moveCorrection = moveCorrectionx;
-      this.freeCorrection = freeCorrectionx;
+      this.rotationMode = rotationMode;
+      this.moveCorrection = moveCorrection;
+      this.freeCorrection = freeCorrection;
    }
 
    public RotationHelper(boolean moveCorrection) {
-      this(new MotionConfig6(), moveCorrectionx);
+      this(new MotionConfig6(), moveCorrection);
    }
 
    public RotationHelper() {
@@ -51,23 +51,23 @@ public class RotationHelper {
    }
 
    public FromRotationHelper initClamp(Rotation rotation, Vec3d vec, Entity entity, boolean moveCorrection, boolean freeCorrection, Module provider) {
-      return new FromRotationHelper(rotation, vec, entity, this.rotationMode, this.ticksUntilReset, 2.0F, moveCorrectionx, freeCorrectionx, provider)
+      return new FromRotationHelper(rotation, vec, entity, this.rotationMode, this.ticksUntilReset, 2.0F, moveCorrection, freeCorrection, provider)
          .withClientLook(this.clientLook)
          .withNoClamp(this.noClamp);
    }
 
    public RotationHelper withTicksUntilReset(int ticksUntilReset) {
-      this.ticksUntilReset = ticksUntilResetx;
+      this.ticksUntilReset = ticksUntilReset;
       return this;
    }
 
    public RotationHelper withClientLook(boolean clientLook) {
-      this.clientLook = clientLookx;
+      this.clientLook = clientLook;
       return this;
    }
 
    public RotationHelper withNoClamp(boolean noClamp) {
-      this.noClamp = noClampx;
+      this.noClamp = noClamp;
       return this;
    }
 }

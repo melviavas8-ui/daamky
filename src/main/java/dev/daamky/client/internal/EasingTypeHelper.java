@@ -176,8 +176,8 @@ public final class EasingTypeHelper {
       public final String displayName;
 
       private EasingType(String codeName, String displayName) {
-         this.codeName = codeNamex;
-         this.displayName = displayNamex;
+         this.codeName = codeName;
+         this.displayName = displayName;
       }
 
       public String getCodeName() {

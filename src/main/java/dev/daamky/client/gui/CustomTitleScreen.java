@@ -115,15 +115,15 @@ public class CustomTitleScreen extends Screen {
 
       this.animatedValue2.handleStart(0.0);
       this.mxayh.handleStart(0.0);
-      this.floatValVal4 = 0.0F;
+      this.float4 = 0.0F;
       this.flag = false;
       if (!this.flag2) {
          this.animatedValue3.handleStart(0.0);
          this.mhadcu.handleStart(0.0);
          this.animatedValue4.handleStart(0.0);
-         this.floatValVal11 = 0.0F;
+         this.float11 = 0.0F;
          this.longVal = 0L;
-         this.longValVal3 = 0L;
+         this.long3 = 0L;
          this.maiab = false;
       }
 
@@ -141,10 +141,10 @@ public class CustomTitleScreen extends Screen {
       var7 += var2 + var3;
       this.list.add(new CustomTitleScreen.MenuButton("T", "Settings", var5, var7, var1, var2, this::lambda$init$3));
       var7 += var2 + var3;
-      this.floatValVal9 = var1;
-      this.floatValVal10 = 18.5F;
-      this.floatValVal7 = var5;
-      this.floatValVal8 = var7 + 2.0F;
+      this.float9 = var1;
+      this.float10 = 18.5F;
+      this.float7 = var5;
+      this.float8 = var7 + 2.0F;
       String[] var8 = new String[]{"See you later,", "Goodbye,", "Have a nice day,", "Closing down,"};
       this.string = var8[(int)(Math.random() * (double)var8.length)];
    }
@@ -203,18 +203,18 @@ public class CustomTitleScreen extends Screen {
          Color var20 = ThemeColor.getColor4();
          Color var21 = new Color(var20.getRed(), var20.getGreen(), var20.getBlue(), var7);
          FontBootstrap.clientFont2.handleColor(ms, username, var18 + var15, var19, var14, var21);
-         this.floatValVal5 = var8 - 118.0F / 2.0F;
+         this.float5 = var8 - 118.0F / 2.0F;
          this.mejesv = var9 + 12.0F;
          float var22 = 2.0F;
          float var23 = 20.0F - var22 * 2.0F;
          float var24 = 118.0F - var23 - var22 * 2.0F;
          if (this.flag) {
-            float var25 = (float)mouseX - (this.floatValVal5 + var22) - var23 / 2.0F;
-            this.floatValVal4 = Math.max(0.0F, Math.min(1.0F, var25 / var24));
+            float var25 = (float)mouseX - (this.float5 + var22) - var23 / 2.0F;
+            this.float4 = Math.max(0.0F, Math.min(1.0F, var25 / var24));
          } else if (!mzojoky) {
             this.animatedValue2.update();
             this.animatedValue2.animateTo(0.0, 240L, Easing.CUBIC_OUT, true);
-            this.floatValVal4 = (float)this.animatedValue2.getValue();
+            this.float4 = (float)this.animatedValue2.getValue();
          }
 
          float var45 = 20.0F / 2.0F;
@@ -232,24 +232,24 @@ public class CustomTitleScreen extends Screen {
                int var35 = var34 << 24;
                Render.rectRenderer
                   .handleRgb(
-                     ms, this.floatValVal5 - var33, this.mejesv + var29 + var33 * 0.35F, 118.0F + var33 * 2.0F, 20.0F + var33, var45 + var33, new Color(var35, true)
+                     ms, this.float5 - var33, this.mejesv + var29 + var33 * 0.35F, 118.0F + var33 * 2.0F, 20.0F + var33, var45 + var33, new Color(var35, true)
                   );
             }
          }
 
-         Render.shaderProgram.handleVal(ms, this.floatValVal5, this.mejesv, 118.0F, 20.0F, var45, var27.getRGB());
-         Render.rectRenderer.handleRgb(ms, this.floatValVal5 - 0.5F, this.mejesv - 0.5F, 118.0F + 1.0F, 20.0F + 1.0F, var45 + 0.5F, var26);
-         Render.rectRenderer.handleRgb(ms, this.floatValVal5, this.mejesv, 118.0F, 20.0F, var45, var27);
-         float var46 = this.floatValVal5 + var22 + var24 * this.floatValVal4;
+         Render.shaderProgram.handleVal(ms, this.float5, this.mejesv, 118.0F, 20.0F, var45, var27.getRGB());
+         Render.rectRenderer.handleRgb(ms, this.float5 - 0.5F, this.mejesv - 0.5F, 118.0F + 1.0F, 20.0F + 1.0F, var45 + 0.5F, var26);
+         Render.rectRenderer.handleRgb(ms, this.float5, this.mejesv, 118.0F, 20.0F, var45, var27);
+         float var46 = this.float5 + var22 + var24 * this.float4;
          float var47 = this.mejesv + var22;
-         if (this.floatValVal4 > 0.005F) {
-            float var48 = var46 - this.floatValVal5 + var23 / 2.0F;
-            float var50 = var48 + this.floatValVal4 * (118.0F - var48);
-            float var36 = this.floatValVal4 * var45;
+         if (this.float4 > 0.005F) {
+            float var48 = var46 - this.float5 + var23 / 2.0F;
+            float var50 = var48 + this.float4 * (118.0F - var48);
+            float var36 = this.float4 * var45;
             Vector4f var37 = new Vector4f(var36, var36, var45, var45);
-            int var38 = Math.max(0, Math.min(255, (int)(this.floatValVal4 * 140.0F * var6)));
+            int var38 = Math.max(0, Math.min(255, (int)(this.float4 * 140.0F * var6)));
             Color var39 = new Color(var20.getRed(), var20.getGreen(), var20.getBlue(), var38);
-            Render.rectRenderer.handleRgb(ms, this.floatValVal5, this.mejesv, var50, 20.0F, var37, var39);
+            Render.rectRenderer.handleRgb(ms, this.float5, this.mejesv, var50, 20.0F, var37, var39);
          }
 
          boolean var49 = Geometry.computeFlag((float)mouseX, (float)mouseY, var46, var47, var23, var23);
@@ -331,10 +331,10 @@ public class CustomTitleScreen extends Screen {
          float var37 = Easing.QUINT_OUT.ease(var36);
          float var38 = (1.0F - var37) * 42.0F;
          float var39 = Math.max(0.0F, Math.min(1.0F, var36 * 1.3F));
-         this.floatValVal9 = var7;
-         this.floatValVal10 = 18.5F;
-         this.floatValVal7 = var11;
-         this.floatValVal8 = var27 + 2.0F + var38;
+         this.float9 = var7;
+         this.float10 = 18.5F;
+         this.float7 = var11;
+         this.float8 = var27 + 2.0F + var38;
          this.initInit(ms, mouseX, mouseY, var39 * 255.0F);
       }
    }
@@ -343,15 +343,15 @@ public class CustomTitleScreen extends Screen {
       float var5 = 5.5F;
       float var6 = alpha / 255.0F;
       float var7 = 1.75F;
-      float var8 = this.floatValVal10 - var7 * 2.0F;
-      float var10 = this.floatValVal9 - var8 - var7 * 2.0F;
+      float var8 = this.float10 - var7 * 2.0F;
+      float var10 = this.float9 - var8 - var7 * 2.0F;
       if (this.flag2) {
-         this.floatValVal11 = 1.0F;
+         this.float11 = 1.0F;
          this.murogi = false;
       } else if (this.murogi) {
-         float var11 = (float)mouseX - (this.floatValVal7 + var7) - var8 / 2.0F;
-         this.floatValVal11 = Math.max(0.0F, Math.min(1.0F, var11 / var10));
-         if (this.floatValVal11 >= 1.0F) {
+         float var11 = (float)mouseX - (this.float7 + var7) - var8 / 2.0F;
+         this.float11 = Math.max(0.0F, Math.min(1.0F, var11 / var10));
+         if (this.float11 >= 1.0F) {
             this.murogi = false;
             MinecraftClient var12 = MinecraftClient.getInstance();
             if (var12 != null) {
@@ -365,10 +365,10 @@ public class CustomTitleScreen extends Screen {
       } else {
          this.mhadcu.update();
          this.mhadcu.animateTo(0.0, 220L, Easing.CUBIC_OUT, true);
-         this.floatValVal11 = (float)this.mhadcu.getValue();
+         this.float11 = (float)this.mhadcu.getValue();
       }
 
-      float var38 = this.flag2 ? 1.0F : this.floatValVal11;
+      float var38 = this.flag2 ? 1.0F : this.float11;
       float var39 = 0.38F;
       float var13 = 2.0F;
       float[] var14 = new float[]{0.26F, 0.14F, 0.07F, 0.03F};
@@ -382,10 +382,10 @@ public class CustomTitleScreen extends Screen {
             Render.rectRenderer
                .handleRgb(
                   ms,
-                  this.floatValVal7 - var17,
-                  this.floatValVal8 + var13 + var17 * 0.35F,
-                  this.floatValVal9 + var17 * 2.0F,
-                  this.floatValVal10 + var17,
+                  this.float7 - var17,
+                  this.float8 + var13 + var17 * 0.35F,
+                  this.float9 + var17 * 2.0F,
+                  this.float10 + var17,
                   var5 + var17,
                   new Color(var19, true)
                );
@@ -394,20 +394,20 @@ public class CustomTitleScreen extends Screen {
 
       Color var40 = new Color(255, 255, 255, (int)(38.0F * var6));
       Color var41 = new Color(13, 15, 22, (int)(225.0F * var6));
-      Render.shaderProgram.handleVal(ms, this.floatValVal7, this.floatValVal8, this.floatValVal9, this.floatValVal10, var5, var41.getRGB());
-      Render.rectRenderer.handleRgb(ms, this.floatValVal7 - 0.5F, this.floatValVal8 - 0.5F, this.floatValVal9 + 1.0F, this.floatValVal10 + 1.0F, var5 + 0.5F, var40);
-      Render.rectRenderer.handleRgb(ms, this.floatValVal7, this.floatValVal8, this.floatValVal9, this.floatValVal10, var5, var41);
+      Render.shaderProgram.handleVal(ms, this.float7, this.float8, this.float9, this.float10, var5, var41.getRGB());
+      Render.rectRenderer.handleRgb(ms, this.float7 - 0.5F, this.float8 - 0.5F, this.float9 + 1.0F, this.float10 + 1.0F, var5 + 0.5F, var40);
+      Render.rectRenderer.handleRgb(ms, this.float7, this.float8, this.float9, this.float10, var5, var41);
       Color var42 = ThemeColor.getColor4();
-      float var43 = this.floatValVal7 + var7 + var10 * var38;
-      float var20 = this.floatValVal8 + var7;
+      float var43 = this.float7 + var7 + var10 * var38;
+      float var20 = this.float8 + var7;
       if (var38 > 0.005F) {
-         float var21 = var43 - this.floatValVal7 + var8 / 2.0F;
-         float var22 = var21 + var38 * (this.floatValVal9 - var21);
+         float var21 = var43 - this.float7 + var8 / 2.0F;
+         float var22 = var21 + var38 * (this.float9 - var21);
          float var23 = var38 * var5;
          Vector4f var24 = new Vector4f(var23, var23, var5, var5);
          int var25 = Math.max(0, Math.min(255, (int)(var38 * 140.0F * var6)));
          Color var26 = new Color(var42.getRed(), var42.getGreen(), var42.getBlue(), var25);
-         Render.rectRenderer.handleRgb(ms, this.floatValVal7, this.floatValVal8, var22, this.floatValVal10, var24, var26);
+         Render.rectRenderer.handleRgb(ms, this.float7, this.float8, var22, this.float10, var24, var26);
       }
 
       boolean var44 = EngHelper.getInstance().check();
@@ -417,8 +417,8 @@ public class CustomTitleScreen extends Screen {
       float var48 = Math.max(0.0F, 1.0F - var38 * 1.6F);
       int var49 = (int)(var48 * 185.0F * var6);
       if (var49 > 0) {
-         float var27 = this.floatValVal7 + (this.floatValVal9 - var47) / 2.0F + 6.0F;
-         float var28 = this.floatValVal8 + (this.floatValVal10 - var46) / 2.0F - 0.5F;
+         float var27 = this.float7 + (this.float9 - var47) / 2.0F + 6.0F;
+         float var28 = this.float8 + (this.float10 - var46) / 2.0F - 0.5F;
          FontBootstrap.mkadw.handleColor(ms, var45, var27, var28, var46, new Color(215, 222, 238, var49));
       }
 
@@ -447,13 +447,13 @@ public class CustomTitleScreen extends Screen {
 
    public boolean mouseClicked(double mouseX, double mouseY, int button) {
       if (!mzojoky) {
-         if (button == 0 && Geometry.computeFlag((float)mouseX, (float)mouseY, this.floatValVal5, this.mejesv, 118.0F, 20.0F)) {
+         if (button == 0 && Geometry.computeFlag((float)mouseX, (float)mouseY, this.float5, this.mejesv, 118.0F, 20.0F)) {
             this.flag = true;
             return true;
          } else {
             return super.mouseClicked(mouseX, mouseY, button);
          }
-      } else if (button == 0 && Geometry.computeFlag((float)mouseX, (float)mouseY, this.floatValVal7, this.floatValVal8, this.floatValVal9, this.floatValVal10)) {
+      } else if (button == 0 && Geometry.computeFlag((float)mouseX, (float)mouseY, this.float7, this.float8, this.float9, this.float10)) {
          this.murogi = true;
          return true;
       } else {
@@ -472,21 +472,21 @@ public class CustomTitleScreen extends Screen {
          if (this.flag) {
             this.flag = false;
             if (!mzojoky) {
-               if (this.floatValVal4 >= 0.85F) {
-                  this.floatValVal4 = 1.0F;
+               if (this.float4 >= 0.85F) {
+                  this.float4 = 1.0F;
                   mzojoky = true;
                   this.animatedValue.handleStart(0.0);
                   this.animatedValue.animateTo(1.0, 520L, Easing.QUINT_OUT, true);
                } else {
-                  this.animatedValue2.handleStart((double)this.floatValVal4);
+                  this.animatedValue2.handleStart((double)this.float4);
                }
             }
          }
 
          if (this.murogi) {
             this.murogi = false;
-            if (this.floatValVal11 >= 0.85F) {
-               this.floatValVal11 = 1.0F;
+            if (this.float11 >= 0.85F) {
+               this.float11 = 1.0F;
                MinecraftClient var6 = MinecraftClient.getInstance();
                if (var6 != null) {
                   var6.scheduleStop();
@@ -497,7 +497,7 @@ public class CustomTitleScreen extends Screen {
                return true;
             }
 
-            this.mhadcu.handleStart((double)this.floatValVal11);
+            this.mhadcu.handleStart((double)this.float11);
          }
       }
 
@@ -544,13 +544,13 @@ public class CustomTitleScreen extends Screen {
       public final AnimatedValue animatedValue = new AnimatedValue();
 
       public MenuButton(String icon, String title, float x, float y, float w, float h, Runnable action) {
-         this.icon = iconx;
-         this.title = titlex;
-         this.x = xx;
-         this.y = yx;
-         this.w = wx;
-         this.h = hx;
-         this.action = actionx;
+         this.icon = icon;
+         this.title = title;
+         this.x = x;
+         this.y = y;
+         this.w = w;
+         this.h = h;
+         this.action = action;
       }
 
       public boolean computeAction(double mouseX, double mouseY, int button) {

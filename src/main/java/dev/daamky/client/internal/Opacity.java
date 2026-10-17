@@ -15,9 +15,9 @@ public class Opacity extends SettingRow {
    public final AnimatedValue animatedValue2 = new AnimatedValue();
 
    public Opacity(FloatSetting setting) {
-      super(settingx);
-      this.setting = settingx;
-      float var2 = (settingx.getValue() - settingx.getMin()) / (settingx.getMax() - settingx.getMin()) * this.getWidth();
+      super(setting);
+      this.setting = setting;
+      float var2 = (setting.getValue() - setting.getMin()) / (setting.getMax() - setting.getMin()) * this.getWidth();
       this.animatedValue.handleStart((double)var2);
       this.handleFloat(this.getFloat());
    }

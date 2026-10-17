@@ -111,7 +111,7 @@ public class AutoBuy extends Module {
    }
 
    public void setV(long v) {
-      this.v2 = vx;
+      this.v2 = v;
    }
 
    public int getV3() {
@@ -119,7 +119,7 @@ public class AutoBuy extends Module {
    }
 
    public void setV(int v) {
-      this.v3 = vx;
+      this.v3 = v;
    }
 
    public String getV4() {
@@ -127,7 +127,7 @@ public class AutoBuy extends Module {
    }
 
    public void setV(String v) {
-      this.v4 = vx;
+      this.v4 = v;
    }
 
    public boolean check() {
@@ -135,15 +135,15 @@ public class AutoBuy extends Module {
    }
 
    public void setV(boolean v) {
-      this.v5 = vx;
+      this.v5 = v;
    }
 
    public long getLong() {
-      return this.longVal;
+      return this.timeStamp;
    }
 
    public void setLong(long v) {
-      this.longVal = vx;
+      this.timeStamp = v;
    }
 
    public List<AuctionListing> getList3() {
@@ -171,7 +171,7 @@ public class AutoBuy extends Module {
    }
 
    public void setV(double v) {
-      this.v6 = vx;
+      this.v6 = v;
    }
 
    public boolean isV() {
@@ -179,23 +179,23 @@ public class AutoBuy extends Module {
    }
 
    public void setV2(boolean v) {
-      this.v = vx;
+      this.v = v;
    }
 
    public int getInt2() {
-      return this.intVal2;
+      return this.int2;
    }
 
    public void setInt2(int v) {
-      this.intVal2 = vx;
+      this.int2 = v;
    }
 
    public int getInt3() {
-      return this.intVal3;
+      return this.int3;
    }
 
    public void setInt3(int v) {
-      this.intVal3 = vx;
+      this.int3 = v;
    }
 
    public String getString() {
@@ -203,7 +203,7 @@ public class AutoBuy extends Module {
    }
 
    public void setString(String v) {
-      this.string = vx;
+      this.string = v;
    }
 
    public boolean check2() {
@@ -211,15 +211,15 @@ public class AutoBuy extends Module {
    }
 
    public void setFlag(boolean v) {
-      this.flag = vx;
+      this.flag = v;
    }
 
    public int getInt5() {
-      return this.intVal5;
+      return this.int5;
    }
 
    public void setInt5(int v) {
-      this.intVal5 = vx;
+      this.int5 = v;
    }
 
    public boolean check3() {
@@ -227,23 +227,23 @@ public class AutoBuy extends Module {
    }
 
    public void setFlag2(boolean v) {
-      this.flag2 = vx;
+      this.flag2 = v;
    }
 
    public int getInt6() {
-      return this.intVal6;
+      return this.int6;
    }
 
    public void setInt6(int v) {
-      this.intVal6 = vx;
+      this.int6 = v;
    }
 
    public int getInt4() {
-      return this.intVal4;
+      return this.int4;
    }
 
    public void setInt4(int v) {
-      this.intVal4 = vx;
+      this.int4 = v;
    }
 
    public boolean check4() {
@@ -251,15 +251,15 @@ public class AutoBuy extends Module {
    }
 
    public void setFlag3(boolean v) {
-      this.flag3 = vx;
+      this.flag3 = v;
    }
 
    public int getInt7() {
-      return this.intVal7;
+      return this.int7;
    }
 
    public void setInt7(int v) {
-      this.intVal7 = vx;
+      this.int7 = v;
    }
 
    public AutoBuy() {
@@ -309,11 +309,11 @@ public class AutoBuy extends Module {
       int var1 = parseParse();
       if (var1 != -1 && this.intVal != var1) {
          String var2 = MinecraftClient.getInstance().player.getNameForScoreboard();
-         if (var1 >= this.intVal3 && !var2.equalsIgnoreCase(this.string) && this.v && var1 - this.intVal2 > 0 && !"[ник]".equals(this.string)) {
-            MinecraftClient.getInstance().player.networkHandler.sendChatMessage("/pay " + this.string + " " + (var1 - this.intVal2));
+         if (var1 >= this.int3 && !var2.equalsIgnoreCase(this.string) && this.v && var1 - this.int2 > 0 && !"[ник]".equals(this.string)) {
+            MinecraftClient.getInstance().player.networkHandler.sendChatMessage("/pay " + this.string + " " + (var1 - this.int2));
          }
 
-         if (var1 > this.intVal4 && this.v5) {
+         if (var1 > this.int4 && this.v5) {
             this.v5 = false;
             ClientPlayerEntity var3 = MinecraftClient.getInstance().player;
             if (var3 != null) {
@@ -475,9 +475,9 @@ public class AutoBuy extends Module {
       public final String tag;
 
       public DelayedTask(Runnable action, int ticks, String tag) {
-         this.action = actionx;
-         this.ticks = ticksx;
-         this.tag = tagx;
+         this.action = action;
+         this.ticks = ticks;
+         this.tag = tag;
       }
    }
 }

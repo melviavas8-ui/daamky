@@ -32,12 +32,12 @@ public final class MacroEngine {
       public final String label;
 
       private ActionType(String label) {
-         this.label = labelx;
+         this.label = label;
       }
 
       public static MacroEngine.ActionType fromLabel(String label) {
          for (MacroEngine.ActionType var4 : values()) {
-            if (var4.label.equalsIgnoreCase(labelx)) {
+            if (var4.label.equalsIgnoreCase(label)) {
                return var4;
             }
          }
@@ -88,7 +88,7 @@ public final class MacroEngine {
       public final String label;
 
       private ConditionType(String label) {
-         this.label = labelx;
+         this.label = label;
       }
 
       public static MacroEngine.ConditionType[] $values() {
@@ -107,8 +107,8 @@ public final class MacroEngine {
       }
 
       public Macro(String name, int key) {
-         this.name = namex;
-         this.key = keyx;
+         this.name = name;
+         this.key = key;
       }
 
       public JsonObject initAdd() {
@@ -151,11 +151,11 @@ public final class MacroEngine {
       }
 
       public void setName(String name) {
-         this.name = namex;
+         this.name = name;
       }
 
       public void setKey(int key) {
-         this.key = keyx;
+         this.key = key;
       }
    }
 
@@ -168,7 +168,7 @@ public final class MacroEngine {
       }
 
       public MacroStep(MacroEngine.ActionType type) {
-         this.type = typex;
+         this.type = type;
       }
 
       public String computeParams(String key) {
@@ -240,7 +240,7 @@ public final class MacroEngine {
       }
 
       public void setType(MacroEngine.ActionType type) {
-         this.type = typex;
+         this.type = type;
       }
    }
 }

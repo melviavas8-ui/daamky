@@ -17,9 +17,9 @@ public class SliderComponent extends Component<Float> {
 
    public SliderComponent(Module parent, String name, float value, float min, float max, float increment) {
       super(parent, name, value);
-      this.min = minx;
-      this.max = maxx;
-      this.increment = incrementx;
+      this.min = min;
+      this.max = max;
+      this.increment = increment;
       this.cachedValue = value;
    }
 
@@ -56,22 +56,22 @@ public class SliderComponent extends Component<Float> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeSliderComponent(var1);
+      return this.computeSliderComponent(param1);
    }
 
    @Override
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Float)var1);
+   public Component withValue(Float param1) {
+      return this.withCachedValue(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

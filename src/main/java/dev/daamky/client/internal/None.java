@@ -14,8 +14,8 @@ public class None extends SettingRow {
    public boolean flag;
 
    public None(IntegerSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
       this.handleFloat(this.getFloat());
    }
 

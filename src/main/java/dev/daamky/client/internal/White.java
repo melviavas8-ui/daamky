@@ -57,14 +57,14 @@ public class White extends Widget {
    }
 
    public void setTheme(ColorTheme theme) {
-      if (themex != null) {
-         this.theme = themex;
+      if (theme != null) {
+         this.theme = theme;
       }
    }
 
    public void handleColorTheme(ColorTheme theme) {
-      this.colorTheme2 = themex;
-      if (themex != null) {
+      this.colorTheme2 = theme;
+      if (theme != null) {
          this.animatedValue.handleStart(0.0);
       }
    }
@@ -167,25 +167,25 @@ public class White extends Widget {
                      var11,
                      InterfaceMetrics.computeColor2(var6)
                   );
-               this.floatVal3 = InterfaceMetrics.computeFloat(7.0F);
-               this.floatVal = this.getX() + this.getWidth() - var7 - this.floatVal3;
-               this.floatVal2 = var13;
-               boolean var28 = Geometry.computeFlag((float)mouseX, (float)mouseY, this.floatVal, this.floatVal2, this.floatVal3, this.floatVal3);
+               this.float3 = InterfaceMetrics.computeFloat(7.0F);
+               this.floatVal = this.getX() + this.getWidth() - var7 - this.float3;
+               this.float2 = var13;
+               boolean var28 = Geometry.computeFlag((float)mouseX, (float)mouseY, this.floatVal, this.float2, this.float3, this.float3);
                FontBootstrap.clientFont15
                   .handleColor(
-                     var9, "o", this.floatVal, this.floatVal2, this.floatVal3, var28 ? InterfaceMetrics.computeColor2(var6) : InterfaceMetrics.computeColor5(var6)
+                     var9, "o", this.floatVal, this.float2, this.float3, var28 ? InterfaceMetrics.computeColor2(var6) : InterfaceMetrics.computeColor5(var6)
                   );
                if (this.list.size() > 1) {
-                  this.floatVal6 = InterfaceMetrics.computeFloat(7.0F);
-                  this.floatVal4 = this.floatVal - this.floatVal6 - InterfaceMetrics.computeFloat(6.0F);
-                  this.floatVal5 = var13;
-                  boolean var29 = Geometry.computeFlag((float)mouseX, (float)mouseY, this.floatVal4, this.floatVal5, this.floatVal6, this.floatVal6);
+                  this.float6 = InterfaceMetrics.computeFloat(7.0F);
+                  this.float4 = this.floatVal - this.float6 - InterfaceMetrics.computeFloat(6.0F);
+                  this.float5 = var13;
+                  boolean var29 = Geometry.computeFlag((float)mouseX, (float)mouseY, this.float4, this.float5, this.float6, this.float6);
                   FontBootstrap.clientFont15
                      .handleColor(
-                        var9, "j", this.floatVal4, this.floatVal5, this.floatVal6, var29 ? ThemeColor.computeNegative(var6) : InterfaceMetrics.computeColor5(var6)
+                        var9, "j", this.float4, this.float5, this.float6, var29 ? ThemeColor.computeNegative(var6) : InterfaceMetrics.computeColor5(var6)
                      );
                } else {
-                  this.floatVal4 = -1.0F;
+                  this.float4 = -1.0F;
                }
 
                var13 += var14 + InterfaceMetrics.computeFloat(10.0F);
@@ -227,10 +227,10 @@ public class White extends Widget {
    @Override
    public void mouseClicked(double mouseX, double mouseY, int button) {
       if (this.open && this.colorTheme2 != null) {
-         if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatVal, (double)this.floatVal2, (double)this.floatVal3, (double)this.floatVal3)) {
+         if (Geometry.computeFlag(mouseX, mouseY, (double)this.floatVal, (double)this.float2, (double)this.float3, (double)this.float3)) {
             this.colorTheme2 = null;
-         } else if (this.floatVal4 != -1.0F
-            && Geometry.computeFlag(mouseX, mouseY, (double)this.floatVal4, (double)this.floatVal5, (double)this.floatVal6, (double)this.floatVal6)) {
+         } else if (this.float4 != -1.0F
+            && Geometry.computeFlag(mouseX, mouseY, (double)this.float4, (double)this.float5, (double)this.float6, (double)this.float6)) {
             if (this.list.removeIf(this::lambda$mouseClicked$0)) {
                ThemeManager.getInstance().remove(this.colorTheme2.getName());
                this.colorTheme2 = null;
@@ -300,23 +300,23 @@ public class White extends Widget {
 
    @Override
    public float getFloat2() {
-      return this.floatVal2;
+      return this.float2;
    }
 
    public float getFloat3() {
-      return this.floatVal3;
+      return this.float3;
    }
 
    public float getFloat4() {
-      return this.floatVal4;
+      return this.float4;
    }
 
    public float getFloat5() {
-      return this.floatVal5;
+      return this.float5;
    }
 
    public float getFloat6() {
-      return this.floatVal6;
+      return this.float6;
    }
 
    public AnimatedValue getAnimatedValue() {
@@ -336,11 +336,11 @@ public class White extends Widget {
    }
 
    public void setOpen(boolean open) {
-      this.open = openx;
+      this.open = open;
    }
 
    public void setAnim(float anim) {
-      this.anim = animx;
+      this.anim = anim;
    }
 
    public boolean lambda$mouseClicked$0(Context ts) {

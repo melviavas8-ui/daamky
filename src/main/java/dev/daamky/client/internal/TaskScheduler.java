@@ -54,10 +54,10 @@ public class TaskScheduler<T> {
       public final T value;
 
       public Task(int expiresIn, int priority, Module provider, T value) {
-         this.expiresIn = expiresInx;
-         this.priority = priorityx;
-         this.provider = providerx;
-         this.value = (T)valuex;
+         this.expiresIn = expiresIn;
+         this.priority = priority;
+         this.provider = provider;
+         this.value = (T)value;
       }
 
       public void run() {

@@ -36,7 +36,7 @@ public enum EasingPreset {
    }
 
       private EasingPreset(final ApplyFunction2 easing) {
-      this.easing = easingx;
+      this.easing = easing;
    }
 
    public static EasingPreset[] $values() {

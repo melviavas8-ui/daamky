@@ -28,6 +28,6 @@ public class DelayHelper {
    }
 
    public void setMillis(long millis2) {
-      this.millis2 = millis2x;
+      this.millis2 = millis2;
    }
 }

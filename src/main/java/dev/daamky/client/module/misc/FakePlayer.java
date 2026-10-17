@@ -52,7 +52,7 @@ public class FakePlayer extends Module {
       super.onDisable();
       this.run();
       this.floatVal = 0.0F;
-      this.floatVal2 = 0.0F;
+      this.float2 = 0.0F;
    }
 
    @Override
@@ -195,17 +195,17 @@ public class FakePlayer extends Module {
       if (this.isEnabled() && this.profile != null && mc.player != null && mc.world != null) {
          if (mc.currentScreen != null) {
             this.floatVal = 0.0F;
-            this.floatVal2 = 0.0F;
+            this.float2 = 0.0F;
             this.profile.setSprinting(false);
-         } else if (this.floatVal == 0.0F && this.floatVal2 == 0.0F) {
+         } else if (this.floatVal == 0.0F && this.float2 == 0.0F) {
             this.profile.setSprinting(false);
             this.profile.setVelocity(0.0, this.profile.getVelocity().y, 0.0);
             this.profile.limbAnimator.setSpeed(0.0F);
          } else {
             float var2 = mc.player.getYaw();
             double var3 = 0.2;
-            double var5 = (double)this.floatVal2 * Math.cos(Math.toRadians((double)var2)) - (double)this.floatVal * Math.sin(Math.toRadians((double)var2));
-            double var7 = (double)this.floatVal * Math.cos(Math.toRadians((double)var2)) + (double)this.floatVal2 * Math.sin(Math.toRadians((double)var2));
+            double var5 = (double)this.float2 * Math.cos(Math.toRadians((double)var2)) - (double)this.floatVal * Math.sin(Math.toRadians((double)var2));
+            double var7 = (double)this.floatVal * Math.cos(Math.toRadians((double)var2)) + (double)this.float2 * Math.sin(Math.toRadians((double)var2));
             Vec3d var9 = new Vec3d(var5 * var3, this.profile.getVelocity().y, var7 * var3);
             this.profile.move(MovementType.SELF, var9);
             this.profile.setSprinting(true);
@@ -223,9 +223,9 @@ public class FakePlayer extends Module {
          } else if (var2 == 264) {
             this.floatVal = var3 != 0 ? -var4 : 0.0F;
          } else if (var2 == 263) {
-            this.floatVal2 = var3 != 0 ? var4 : 0.0F;
+            this.float2 = var3 != 0 ? var4 : 0.0F;
          } else if (var2 == 262) {
-            this.floatVal2 = var3 != 0 ? -var4 : 0.0F;
+            this.float2 = var3 != 0 ? -var4 : 0.0F;
          }
       }
    }

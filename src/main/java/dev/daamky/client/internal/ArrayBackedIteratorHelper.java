@@ -11,7 +11,7 @@ public class ArrayBackedIteratorHelper<T> implements List<T> {
    public final T[] array;
 
    public ArrayBackedIteratorHelper(T[] array) {
-      this.array = (T[])arrayx;
+      this.array = (T[])array;
    }
 
    public ArrayBackedIteratorHelper(Collection<T> collection) {
@@ -19,7 +19,7 @@ public class ArrayBackedIteratorHelper<T> implements List<T> {
    }
 
    public static <T> ArrayBackedIteratorHelper<T> copy(T[] array) {
-      return new ArrayBackedIteratorHelper<>((T[])Arrays.copyOf(arrayx, arrayx.length));
+      return new ArrayBackedIteratorHelper<>((T[])Arrays.copyOf(array, array.length));
    }
 
    @Override
@@ -161,8 +161,8 @@ public class ArrayBackedIteratorHelper<T> implements List<T> {
       public int initialCursor;
 
       public ArrayBackedIterator(T[] array, int initialCursor) {
-         this.array = (T[])arrayx;
-         this.initialCursor = initialCursorx;
+         this.array = (T[])array;
+         this.initialCursor = initialCursor;
       }
 
       @Override

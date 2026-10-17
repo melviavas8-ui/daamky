@@ -13,13 +13,13 @@ public class EqualsHelper2 {
    }
 
    public EqualsHelper2(float slide) {
-      this.slide = slidex;
+      this.slide = slide;
    }
 
    public void setNext(String next) {
-      if (nextx != null && !nextx.equals(this.next)) {
+      if (next != null && !next.equals(this.next)) {
          this.mgikn = this.next;
-         this.next = nextx;
+         this.next = next;
          this.valueToHelper.handleAction(0.0);
          this.valueToHelper.computeValueToHelper(1.0, 0.18, ValueHelper.applyFunction23);
       }

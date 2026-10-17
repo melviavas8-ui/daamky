@@ -16,7 +16,7 @@ public class TextFieldComponent extends Component<String> {
 
    public TextFieldComponent(Module parent, String name, String value, boolean onlyNumber) {
       super(parent, name, value);
-      this.onlyNumber = onlyNumberx;
+      this.onlyNumber = onlyNumber;
       this.cachedValue = value;
    }
 
@@ -56,22 +56,22 @@ public class TextFieldComponent extends Component<String> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeTextFieldComponent(var1);
+      return this.computeTextFieldComponent(param1);
    }
 
    @Override
-   public Component withValue(Object param1) {
-      return this.withCachedValue((String)var1);
+   public Component withValue(String param1) {
+      return this.withCachedValue(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

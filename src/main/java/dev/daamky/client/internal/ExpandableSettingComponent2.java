@@ -15,12 +15,12 @@ public class ExpandableSettingComponent2 extends ExpandableSettingComponent3.Exp
    public final List<BooleanValue> list = new ArrayList<>();
 
    public ExpandableSettingComponent2(MultiBooleanSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
       this.handleOpen(true);
       this.handleFloat(this.getFloat());
 
-      for (BooleanSetting var3 : settingx.getValue()) {
+      for (BooleanSetting var3 : setting.getValue()) {
          this.list.add(new BooleanValue(var3, true));
       }
    }

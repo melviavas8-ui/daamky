@@ -29,13 +29,8 @@ public class IntegerSetting extends Setting<Integer> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((Integer)var1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((Integer)var1);
+   public Setting withValue(Integer param1) {
+      return this.value(param1);
    }
 
 }

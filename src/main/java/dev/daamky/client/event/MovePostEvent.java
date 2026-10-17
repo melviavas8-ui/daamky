@@ -14,8 +14,8 @@ public class MovePostEvent extends Event<MovePostEvent.EventOnMovePostData> {
       public final Vec3d movementInput;
 
       public EventOnMovePostData(float speed, Vec3d movementInput) {
-         this.speed = speedx;
-         this.movementInput = movementInputx;
+         this.speed = speed;
+         this.movementInput = movementInput;
       }
 
       public float getSpeed() {

@@ -10,18 +10,18 @@ public abstract class Animation {
 
    public Animation(int ms, double endPoint) {
       this.duration = ms;
-      this.endPoint = endPointx;
+      this.endPoint = endPoint;
       this.direction = AnimationDirection.FORWARDS;
    }
 
    public Animation(int ms, double endPoint, AnimationDirection direction) {
       this.duration = ms;
-      this.endPoint = endPointx;
-      this.direction = directionx;
+      this.endPoint = endPoint;
+      this.direction = direction;
    }
 
    public boolean computeEquals(AnimationDirection direction) {
-      return this.checkDuration() && this.direction.equals(directionx);
+      return this.checkDuration() && this.direction.equals(direction);
    }
 
    public double getDuration() {
@@ -33,7 +33,7 @@ public abstract class Animation {
    }
 
    public void setEndPoint(double endPoint) {
-      this.endPoint = endPointx;
+      this.endPoint = endPoint;
    }
 
    public void getTimerUtil() {
@@ -49,14 +49,14 @@ public abstract class Animation {
    }
 
    public void setDirection(AnimationDirection direction) {
-      if (this.direction != directionx) {
-         this.direction = directionx;
+      if (this.direction != direction) {
+         this.direction = direction;
          this.timerUtil.setLastMS(System.currentTimeMillis() - ((long)this.duration - Math.min((long)this.duration, this.timerUtil.getCurrent())));
       }
    }
 
    public void setDuration(int duration) {
-      this.duration = durationx;
+      this.duration = duration;
    }
 
    public boolean check() {

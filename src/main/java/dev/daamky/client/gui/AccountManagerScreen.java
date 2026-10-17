@@ -54,7 +54,7 @@ public class AccountManagerScreen extends Screen {
 
    public AccountManagerScreen(Screen parent) {
       super(Text.of(""));
-      this.parent = parentx;
+      this.parent = parent;
    }
 
    public void run() {
@@ -145,7 +145,7 @@ public class AccountManagerScreen extends Screen {
          float var35 = 27.0F;
          float var36 = 2.5F;
          float var37 = (float)var34.size() * (var35 + var36) + 4.0F;
-         this.doubleValVal2 = Math.max(0.0, (double)(var37 - var33));
+         this.double2 = Math.max(0.0, (double)(var37 - var33));
          this.animatedValue7.update();
          this.animatedValue7.animateTo(this.doubleVal, 160L, Easing.QUINT_OUT, true);
          float var38 = (float)this.animatedValue7.getValue();
@@ -545,9 +545,9 @@ public class AccountManagerScreen extends Screen {
    }
 
    public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
-      if (this.doubleValVal2 > 0.0) {
+      if (this.double2 > 0.0) {
          this.doubleVal -= verticalAmount * 28.0;
-         this.doubleVal = Math.max(0.0, Math.min(this.doubleValVal2, this.doubleVal));
+         this.doubleVal = Math.max(0.0, Math.min(this.double2, this.doubleVal));
          return true;
       } else {
          return super.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);

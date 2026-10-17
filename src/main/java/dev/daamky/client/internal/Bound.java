@@ -18,10 +18,10 @@ public class Bound extends SettingRow {
    public final Map<String, AnimatedValue> map2 = new HashMap<>();
 
    public Bound(ModeSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
 
-      for (String var3 : settingx.getValues()) {
+      for (String var3 : setting.getValues()) {
          this.map.put(var3, new AnimatedValue());
          this.map2.put(var3, new AnimatedValue());
       }
@@ -131,11 +131,11 @@ public class Bound extends SettingRow {
       public final String value;
 
       public BoundRec(float x, float y, float width, float height, String value) {
-         this.x = xx;
-         this.y = yx;
-         this.width = widthx;
-         this.height = heightx;
-         this.value = valuex;
+         this.x = x;
+         this.y = y;
+         this.width = width;
+         this.height = height;
+         this.value = value;
       }
    }
 }

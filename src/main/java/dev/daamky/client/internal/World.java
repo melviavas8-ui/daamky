@@ -42,13 +42,13 @@ public class World extends Particles.BaseSettings {
       super("World");
       this.cometSetting = new ModeSetting(this.string + "Physics").value("Drop").values("Drop", "Comet");
       this.comet = new FloatSetting(this.string + "Distance").value(8.0F).range(2.0F, 25.0F).step(1.0F);
-      this.floatValSetting = new FloatSetting(this.string + "Height").value(1.5F).range(0.2F, 4.0F).step(0.1F);
-      this.floatValSetting2 = new FloatSetting(this.string + "Speed").value(0.5F).range(0.1F, 2.0F).step(0.1F);
-      this.floatValSetting3 = new FloatSetting(this.string + "Spread").value(0.3F).range(0.0F, 1.0F).step(0.05F);
+      this.floatSetting = new FloatSetting(this.string + "Height").value(1.5F).range(0.2F, 4.0F).step(0.1F);
+      this.floatSetting2 = new FloatSetting(this.string + "Speed").value(0.5F).range(0.1F, 2.0F).step(0.1F);
+      this.floatSetting3 = new FloatSetting(this.string + "Spread").value(0.3F).range(0.0F, 1.0F).step(0.05F);
       this.list = new ArrayList<>();
       this.mafol = new HashMap<>();
       this.delayHelper = new DelayHelper();
-      this.addSettings(new Setting[]{this.cometSetting, this.comet, this.floatValSetting, this.floatValSetting2, this.floatValSetting3});
+      this.addSettings(new Setting[]{this.cometSetting, this.comet, this.floatSetting, this.floatSetting2, this.floatSetting3});
    }
 
    public void runClear() {
@@ -150,9 +150,9 @@ public class World extends Particles.BaseSettings {
          this.delayHelper.runCurrent();
          int var5 = Math.min(var4, 5);
          float var6 = this.comet.getValue();
-         float var7 = this.floatValSetting.getValue();
-         float var8 = this.floatValSetting2.getValue();
-         float var9 = this.floatValSetting3.getValue();
+         float var7 = this.floatSetting.getValue();
+         float var8 = this.floatSetting2.getValue();
+         float var9 = this.floatSetting3.getValue();
          boolean var10 = this.cometSetting.is("Comet");
 
          for (int var11 = 0; var11 < var5; var11++) {

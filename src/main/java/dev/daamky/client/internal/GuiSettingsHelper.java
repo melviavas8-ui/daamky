@@ -30,7 +30,7 @@ public class GuiSettingsHelper {
    }
 
    public void setTheme(ThemeVariant theme) {
-      this.theme = themex;
+      this.theme = theme;
       this.closeClose();
    }
 

@@ -208,8 +208,8 @@ public class HitEffect extends Module {
       public final long startTime;
 
       public HitWave(List<HitEffect.RenderBlock> blocks, long startTime) {
-         this.blocks = blocksx;
-         this.startTime = startTimex;
+         this.blocks = blocks;
+         this.startTime = startTime;
       }
    }
 
@@ -219,9 +219,9 @@ public class HitEffect extends Module {
       public final float dist;
 
       public RenderBlock(BlockPos pos, List<Box> boxes, float dist) {
-         this.pos = posx;
-         this.boxes = boxesx;
-         this.dist = distx;
+         this.pos = pos;
+         this.boxes = boxes;
+         this.dist = dist;
       }
    }
 }

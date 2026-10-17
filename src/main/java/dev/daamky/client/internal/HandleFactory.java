@@ -26,12 +26,12 @@ public class HandleFactory implements Callback8 {
       this.classVal = method.getParameters()[0].getType();
       this.flag = Modifier.isStatic(method.getModifiers());
       this.intVal = method.getAnnotation(EventHandler.class).priority();
-      this.klass = klassx;
+      this.klass = klass;
 
       try {
          this.consumer = this.flag
-            ? (Consumer)computeType(factory, klassx, method).invoke()
-            : (Consumer)computeType2(factory, klassx, method).invoke((Object)object);
+            ? (Consumer)computeType(factory, klass, method).invoke()
+            : (Consumer)computeType2(factory, klass, method).invoke((Object)object);
       } catch (Throwable var6) {
          throw new RuntimeException(var6);
       }
@@ -39,9 +39,9 @@ public class HandleFactory implements Callback8 {
 
    public static MethodHandle computeType(HandleFactory.Factory factory, Class<?> klass, Method method) throws Throwable {
       String var3 = method.getName();
-      Lookup var4 = lookupFactory.lookup(factory, klassx);
+      Lookup var4 = lookupFactory.lookup(factory, klass);
       MethodType var5 = MethodType.methodType(void.class, method.getParameters()[0].getType());
-      MethodHandle var6 = var4.findStatic(klassx, var3, var5);
+      MethodHandle var6 = var4.findStatic(klass, var3, var5);
       MethodType var7 = MethodType.methodType(Consumer.class);
       return LambdaMetafactory.metafactory(var4, "accept", var7, MethodType.methodType(void.class, Object.class), var6, var5).getTarget();
    }
@@ -52,10 +52,10 @@ public class HandleFactory implements Callback8 {
          return var3;
       } else {
          String var4 = method.getName();
-         Lookup var5 = lookupFactory.lookup(factory, klassx);
+         Lookup var5 = lookupFactory.lookup(factory, klass);
          MethodType var6 = MethodType.methodType(void.class, method.getParameters()[0].getType());
-         MethodHandle var7 = var5.findVirtual(klassx, var4, var6);
-         MethodType var8 = MethodType.methodType(Consumer.class, klassx);
+         MethodHandle var7 = var5.findVirtual(klass, var4, var6);
+         MethodType var8 = MethodType.methodType(Consumer.class, klass);
          var3 = LambdaMetafactory.metafactory(var5, "accept", var8, MethodType.methodType(void.class, Object.class), var7, var6).getTarget();
          map.put(method, var3);
          return var3;
@@ -118,7 +118,7 @@ public class HandleFactory implements Callback8 {
       public final boolean requireLambdaFactory;
 
       public LookupFactory(boolean requireLambdaFactory) {
-         this.requireLambdaFactory = requireLambdaFactoryx;
+         this.requireLambdaFactory = requireLambdaFactory;
       }
 
    }

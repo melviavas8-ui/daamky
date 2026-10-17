@@ -352,7 +352,7 @@ public class RotationProfileManager {
    }
 
    public void setEasingType(EasingTypeHelper.EasingType easingType) {
-      this.easingType = easingTypex;
+      this.easingType = easingType;
    }
 
    public RotationProfileManager.TraversalMode getTraversalMode() {
@@ -360,7 +360,7 @@ public class RotationProfileManager {
    }
 
    public void setTraversalMode(RotationProfileManager.TraversalMode traversalMode) {
-      this.traversalMode = traversalModex;
+      this.traversalMode = traversalMode;
    }
 
    public float getRotationSpeed() {
@@ -368,7 +368,7 @@ public class RotationProfileManager {
    }
 
    public void setRotationSpeed(float rotationSpeed) {
-      this.rotationSpeed = rotationSpeedx;
+      this.rotationSpeed = rotationSpeed;
    }
 
    public float getYawSpeed() {
@@ -376,7 +376,7 @@ public class RotationProfileManager {
    }
 
    public void setYawSpeed(float yawSpeed) {
-      this.yawSpeed = yawSpeedx;
+      this.yawSpeed = yawSpeed;
    }
 
    public float getPitchSpeed() {
@@ -384,7 +384,7 @@ public class RotationProfileManager {
    }
 
    public void setPitchSpeed(float pitchSpeed) {
-      this.pitchSpeed = pitchSpeedx;
+      this.pitchSpeed = pitchSpeed;
    }
 
    public float getAccelFactor() {
@@ -392,7 +392,7 @@ public class RotationProfileManager {
    }
 
    public void setAccelFactor(float accelFactor) {
-      this.accelFactor = accelFactorx;
+      this.accelFactor = accelFactor;
    }
 
    public float getMaxYawStep() {
@@ -400,7 +400,7 @@ public class RotationProfileManager {
    }
 
    public void setMaxYawStep(float maxYawStep) {
-      this.maxYawStep = maxYawStepx;
+      this.maxYawStep = maxYawStep;
    }
 
    public float getMaxPitchStep() {
@@ -408,7 +408,7 @@ public class RotationProfileManager {
    }
 
    public void setMaxPitchStep(float maxPitchStep) {
-      this.maxPitchStep = maxPitchStepx;
+      this.maxPitchStep = maxPitchStep;
    }
 
    public float getNoiseFrequency() {
@@ -416,7 +416,7 @@ public class RotationProfileManager {
    }
 
    public void setNoiseFrequency(float noiseFrequency) {
-      this.noiseFrequency = noiseFrequencyx;
+      this.noiseFrequency = noiseFrequency;
    }
 
    public float getYawNoise() {
@@ -424,7 +424,7 @@ public class RotationProfileManager {
    }
 
    public void setYawNoise(float yawNoise) {
-      this.yawNoise = yawNoisex;
+      this.yawNoise = yawNoise;
    }
 
    public float getPitchNoise() {
@@ -432,7 +432,7 @@ public class RotationProfileManager {
    }
 
    public void setPitchNoise(float pitchNoise) {
-      this.pitchNoise = pitchNoisex;
+      this.pitchNoise = pitchNoise;
    }
 
    public float getHumanizeJitter() {
@@ -440,7 +440,7 @@ public class RotationProfileManager {
    }
 
    public void setHumanizeJitter(float humanizeJitter) {
-      this.humanizeJitter = humanizeJitterx;
+      this.humanizeJitter = humanizeJitter;
    }
 
    public float getOvershootChance() {
@@ -448,7 +448,7 @@ public class RotationProfileManager {
    }
 
    public void setOvershootChance(float overshootChance) {
-      this.overshootChance = overshootChancex;
+      this.overshootChance = overshootChance;
    }
 
    public float getOvershootDistance() {
@@ -456,7 +456,7 @@ public class RotationProfileManager {
    }
 
    public void setOvershootDistance(float overshootDistance) {
-      this.overshootDistance = overshootDistancex;
+      this.overshootDistance = overshootDistance;
    }
 
    public float getOvershootDuration() {
@@ -464,7 +464,7 @@ public class RotationProfileManager {
    }
 
    public void setOvershootDuration(float overshootDuration) {
-      this.overshootDuration = overshootDurationx;
+      this.overshootDuration = overshootDuration;
    }
 
    public float getSmoothness() {
@@ -472,7 +472,7 @@ public class RotationProfileManager {
    }
 
    public void setSmoothness(float smoothness) {
-      this.smoothness = smoothnessx;
+      this.smoothness = smoothness;
    }
 
    public boolean isSmoothPath() {
@@ -480,7 +480,7 @@ public class RotationProfileManager {
    }
 
    public void setSmoothPath(boolean smoothPath) {
-      this.smoothPath = smoothPathx;
+      this.smoothPath = smoothPath;
    }
 
    public String getCurrentPresetName() {
@@ -488,7 +488,7 @@ public class RotationProfileManager {
    }
 
    public void setCurrentPresetName2(String currentPresetName) {
-      this.currentPresetName = currentPresetNamex;
+      this.currentPresetName = currentPresetName;
    }
 
    public float getYawNoise2() {
@@ -523,12 +523,12 @@ public class RotationProfileManager {
       }
 
       public AimNode(int id, String label, float relX, float relY, float relZ, float weight) {
-         this.id = idx;
-         this.label = labelx;
-         this.relX = relXx;
-         this.relY = relYx;
-         this.relZ = relZx;
-         this.weight = weightx;
+         this.id = id;
+         this.label = label;
+         this.relX = relX;
+         this.relY = relY;
+         this.relZ = relZ;
+         this.weight = weight;
       }
    }
 
@@ -540,8 +540,8 @@ public class RotationProfileManager {
       }
 
       public CurvePoint(float time, float speed) {
-         this.time = Math.max(0.0F, Math.min(1.0F, timex));
-         this.speed = Math.max(0.0F, Math.min(2.5F, speedx));
+         this.time = Math.max(0.0F, Math.min(1.0F, time));
+         this.speed = Math.max(0.0F, Math.min(2.5F, speed));
       }
    }
 
@@ -554,7 +554,7 @@ public class RotationProfileManager {
       public final String displayName;
 
       private TraversalMode(String displayName) {
-         this.displayName = displayNamex;
+         this.displayName = displayName;
       }
 
       public String getDisplayName() {

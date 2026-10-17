@@ -60,8 +60,8 @@ public class Prediction extends Configurable {
       }
 
       private PredictMode(String name, Prediction.PredictMode.PredictFunction predict) {
-         this.name = namex;
-         this.predict = predictx;
+         this.name = name;
+         this.predict = predict;
       }
 
       public Vec3d predict(LivingEntity target, Vec3d targetPosition, double multiplier) {

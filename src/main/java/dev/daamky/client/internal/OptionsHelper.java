@@ -35,15 +35,15 @@ public class OptionsHelper {
       if (MinecraftAccess.mc.world != null) {
          long var1 = MinecraftAccess.mc.world.getTime();
          long var3 = System.currentTimeMillis();
-         if (this.longVal >= 0L && var1 != this.longVal) {
-            long var5 = var3 - this.longValVal2;
+         if (this.timeStamp >= 0L && var1 != this.timeStamp) {
+            long var5 = var3 - this.long2;
             float var7 = 1000.0F / (float)Math.max(var5, 1L);
             this.floatVal = MathHelper.clamp(var7, 1.0F, 20.0F);
          }
 
-         if (var1 != this.longVal) {
-            this.longVal = var1;
-            this.longValVal2 = var3;
+         if (var1 != this.timeStamp) {
+            this.timeStamp = var1;
+            this.long2 = var3;
          }
       }
    }
@@ -77,11 +77,11 @@ public class OptionsHelper {
    }
 
    public long getLong() {
-      return this.longVal;
+      return this.timeStamp;
    }
 
    public long getLong2() {
-      return this.longValVal2;
+      return this.long2;
    }
 
    public float getFloat() {
@@ -116,23 +116,23 @@ public class OptionsHelper {
          boolean ignoreWalls,
          boolean noAttackIfEat
       ) {
-         this.target = targetx;
-         this.rotation = rotationx;
-         this.distance = distancex;
-         this.onlyCrits = onlyCritsx;
-         this.smartCrits = smartCritsx;
-         this.flag = flagx;
-         this.shieldBreak = shieldBreakx;
-         this.alwaysShield = alwaysShieldx;
-         this.ignoreWalls = ignoreWallsx;
-         this.noAttackIfEat = noAttackIfEatx;
+         this.target = target;
+         this.rotation = rotation;
+         this.distance = distance;
+         this.onlyCrits = onlyCrits;
+         this.smartCrits = smartCrits;
+         this.flag = flag;
+         this.shieldBreak = shieldBreak;
+         this.alwaysShield = alwaysShield;
+         this.ignoreWalls = ignoreWalls;
+         this.noAttackIfEat = noAttackIfEat;
       }
 
       public CombatConfigurable(LivingEntity target, Rotation rotation, float distance, List<String> options) {
          this(
-            targetx,
-            rotationx,
-            distancex,
+            target,
+            rotation,
+            distance,
             options.contains("Only crits"),
             options.contains("Smart crits"),
             options.contains("Raytrace"),

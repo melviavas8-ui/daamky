@@ -57,13 +57,13 @@ public class Alerts extends Module {
       .value(24.0F)
       .range(8.0F, 64.0F)
       .step(1.0F)
-      .visibleWhen(this.booleanValSetting8::getValue);
+      .visibleWhen(this.booleanSetting8::getValue);
    public final BooleanSetting booleanSetting9 = new BooleanSetting("Высокий пинг").value(false);
    public final FloatSetting floatSetting2 = new FloatSetting("Порог пинга (мс)")
       .value(200.0F)
       .range(100.0F, 500.0F)
       .step(10.0F)
-      .visibleWhen(this.booleanValSetting9::getValue);
+      .visibleWhen(this.booleanSetting9::getValue);
    public int intVal = -1;
    public boolean flag = false;
    public boolean flag2 = false;
@@ -79,19 +79,19 @@ public class Alerts extends Module {
    public Alerts() {
       this.addSettings(
          new Setting[]{
-            this.booleanValSetting,
+            this.booleanSetting,
             this.myewq,
-            this.booleanValSetting2,
-            this.booleanValSetting3,
-            this.booleanValSetting4,
-            this.booleanValSetting5,
-            this.booleanValSetting6,
-            this.booleanValSetting7,
+            this.booleanSetting2,
+            this.booleanSetting3,
+            this.booleanSetting4,
+            this.booleanSetting5,
+            this.booleanSetting6,
+            this.booleanSetting7,
             this.mpoozub,
-            this.booleanValSetting8,
-            this.floatValSetting,
-            this.booleanValSetting9,
-            this.floatValSetting2
+            this.booleanSetting8,
+            this.floatSetting,
+            this.booleanSetting9,
+            this.floatSetting2
          }
       );
    }
@@ -113,7 +113,7 @@ public class Alerts extends Module {
    public void runClear() {
       if (mc.player != null && mc.world != null) {
          this.flag3 = this.computeFlag(mc.player);
-         if (this.booleanValSetting.getValue()) {
+         if (this.booleanSetting.getValue()) {
             boolean var1 = mc.player.isUsingItem();
             if (var1 && !this.flag2) {
                this.initInit2(mc.player.getActiveItem());
@@ -127,7 +127,7 @@ public class Alerts extends Module {
             if (var3.getId() != this.intVal) {
                this.intVal = var3.getId();
                this.flag = false;
-               this.intVal2 = 0;
+               this.int2 = 0;
             }
 
             this.flag4 = this.computeFlag(var3);
@@ -147,14 +147,14 @@ public class Alerts extends Module {
             this.scanProjectiles();
          }
 
-         if (this.booleanValSetting8.getValue()) {
+         if (this.booleanSetting8.getValue()) {
             this.initAdd();
          } else {
             this.set2.clear();
             this.flag5 = false;
          }
 
-         if (this.booleanValSetting9.getValue()) {
+         if (this.booleanSetting9.getValue()) {
             this.runCurrent();
          }
       } else {
@@ -166,7 +166,7 @@ public class Alerts extends Module {
       this.intVal = -1;
       this.flag = false;
       this.flag4 = false;
-      this.intVal2 = 0;
+      this.int2 = 0;
       this.set.clear();
       this.set2.clear();
       this.flag5 = false;
@@ -179,14 +179,14 @@ public class Alerts extends Module {
          if (var3 instanceof EntityStatusS2CPacket && (var2 = (EntityStatusS2CPacket)var3).getStatus() == 35) {
             Entity var4 = var2.getEntity(mc.world);
             if (var4 == mc.player) {
-               if (this.booleanValSetting7.getValue()) {
+               if (this.booleanSetting7.getValue()) {
                   NotificationManager.handleWarning(this.flag3 ? "Твой тотем лопнул (чар.)" : "Твой тотем лопнул", new ItemStack(Items.TOTEM_OF_UNDYING));
                }
             } else {
-               if (this.booleanValSetting6.getValue() && var4 != null && var4 == AttackAura.getInstance().class_1309) {
-                  this.intVal2++;
+               if (this.booleanSetting6.getValue() && var4 != null && var4 == AttackAura.getInstance().class_1309) {
+                  this.int2++;
                   String var5 = this.flag4 ? "чар." : "обычный";
-                  NotificationManager.handleWarning("Цель лопнула тотем (" + var5 + ") ×" + this.intVal2, new ItemStack(Items.TOTEM_OF_UNDYING));
+                  NotificationManager.handleWarning("Цель лопнула тотем (" + var5 + ") ×" + this.int2, new ItemStack(Items.TOTEM_OF_UNDYING));
                }
             }
          }
@@ -196,7 +196,7 @@ public class Alerts extends Module {
    public void initInit(ItemStack stack) {
       if (stack != null && !stack.isEmpty()) {
          if (stack.isOf(Items.ENCHANTED_GOLDEN_APPLE)) {
-            if (this.booleanValSetting2.getValue()) {
+            if (this.booleanSetting2.getValue()) {
                NotificationManager.handleInfo("Цель ест зачарованное яблоко", new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
             }
          } else if (stack.isOf(Items.GOLDEN_APPLE)) {
@@ -204,15 +204,15 @@ public class Alerts extends Module {
                NotificationManager.handleInfo("Цель ест золотое яблоко", new ItemStack(Items.GOLDEN_APPLE));
             }
          } else if (stack.isOf(Items.CHORUS_FRUIT)) {
-            if (this.booleanValSetting3.getValue()) {
+            if (this.booleanSetting3.getValue()) {
                NotificationManager.handleInfo("Цель ест хорус", new ItemStack(Items.CHORUS_FRUIT));
             }
          } else if (stack.getItem() instanceof PotionItem) {
-            if (!this.booleanValSetting4.getValue()) {
+            if (!this.booleanSetting4.getValue()) {
                return;
             }
 
-            String var2 = this.booleanValSetting5.getValue() ? this.computeNext(stack) : null;
+            String var2 = this.booleanSetting5.getValue() ? this.computeNext(stack) : null;
             NotificationManager.handleInfo(var2 != null ? "Цель пьёт зелье: " + var2 : "Цель пьёт зелье", stack.copy());
          }
       }
@@ -227,7 +227,7 @@ public class Alerts extends Module {
          } else if (stack.isOf(Items.CHORUS_FRUIT)) {
             NotificationManager.handleInfo("Ты ешь хорус", new ItemStack(Items.CHORUS_FRUIT));
          } else if (stack.getItem() instanceof PotionItem) {
-            String var2 = this.booleanValSetting5.getValue() ? this.computeNext(stack) : null;
+            String var2 = this.booleanSetting5.getValue() ? this.computeNext(stack) : null;
             NotificationManager.handleInfo(var2 != null ? "Ты пьёшь зелье: " + var2 : "Ты пьёшь зелье", stack.copy());
          }
       }
@@ -257,7 +257,7 @@ public class Alerts extends Module {
    }
 
    public void initAdd() {
-      double var1 = (double)this.floatValSetting.getValue().floatValue();
+      double var1 = (double)this.floatSetting.getValue().floatValue();
       HashSet var3 = new HashSet();
 
       for (PlayerEntity var5 : mc.world.getPlayers()) {
@@ -276,14 +276,14 @@ public class Alerts extends Module {
 
    public void runCurrent() {
       long var2 = System.currentTimeMillis();
-      if (var2 - this.longVal >= 2000L) {
-         this.longVal = var2;
+      if (var2 - this.timeStamp >= 2000L) {
+         this.timeStamp = var2;
          if (mc.getNetworkHandler() != null) {
             PlayerListEntry var4 = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
             if (var4 != null) {
                int var5 = var4.getLatency();
                int var1;
-               if (var5 > (var1 = this.floatValSetting2.getValue().intValue())) {
+               if (var5 > (var1 = this.floatSetting2.getValue().intValue())) {
                   if (var2 - this.mzivpe > 6000L) {
                      NotificationManager.handleWarning("Высокий пинг: " + var5 + " мс");
                      this.mzivpe = var2;

@@ -31,7 +31,7 @@ public class MotionBlur extends Module {
    }
 
    public void handleFloat(float strength) {
-      this.irisHelper.setStrength(strengthx);
+      this.irisHelper.setStrength(strength);
    }
 
    public static MotionBlur getInstance() {

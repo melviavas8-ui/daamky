@@ -10,7 +10,7 @@ public class PotionEntryHelper {
    public final NameTags module;
 
    public PotionEntryHelper(NameTags module) {
-      this.module = modulex;
+      this.module = module;
    }
 
    public List<PotionEntryHelper.PotionEntry> initInit(Collection<StatusEffectInstance> effects) {

@@ -309,13 +309,13 @@ public class JumpCircle extends Module {
       }
 
       public Circle(Vec3d position, float size, int index, int lifeTime, int spawnDur, int dyingDur, String animMode) {
-         this.position = positionx;
-         this.size = sizex;
-         this.index = indexx;
-         this.lifeTime = lifeTimex;
-         this.spawnDur = spawnDurx;
-         this.dyingDur = dyingDurx;
-         this.animMode = animModex;
+         this.position = position;
+         this.size = size;
+         this.index = index;
+         this.lifeTime = lifeTime;
+         this.spawnDur = spawnDur;
+         this.dyingDur = dyingDur;
+         this.animMode = animMode;
       }
    }
 }

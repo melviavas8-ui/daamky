@@ -35,8 +35,8 @@ public class ModuleRow {
    public static final Map<String, String> map = new HashMap<>();
 
    public ModuleRow(Module feature) {
-      this.feature = featurex;
-      this.animatedValue.handleStart(featurex.isEnabled() ? 1.0 : 0.0);
+      this.feature = feature;
+      this.animatedValue.handleStart(feature.isEnabled() ? 1.0 : 0.0);
    }
 
    public float getNext() {
@@ -210,7 +210,7 @@ public class ModuleRow {
       float var9 = computeFloat(5.2F);
       float var10 = computeFloat(5.2F);
       float var11 = computeFloat(4.2F);
-      if (this.flag && this.floatValValSetting == sl) {
+      if (this.flag && this.floatSetting == sl) {
          float var12 = ((float)mx - sx) / sw;
          var12 = sl.getMin() + var12 * (sl.getMax() - sl.getMin());
          var12 = (float)Math.round(var12 / sl.getStep()) * sl.getStep();
@@ -495,7 +495,7 @@ public class ModuleRow {
                      float var38 = computeFloat(10.0F);
                      if (Geometry.computeFlag(mx, my, (double)var19, (double)(var36 - computeFloat(3.0F)), (double)var20, (double)var38)) {
                         this.flag = true;
-                        this.floatValValSetting = var24;
+                        this.floatSetting = var24;
                         float var40 = ((float)mx - var19) / var20;
                         var40 = var24.getMin() + var40 * (var24.getMax() - var24.getMin());
                         var40 = (float)Math.round(var40 / var24.getStep()) * var24.getStep();
@@ -573,7 +573,7 @@ public class ModuleRow {
    public boolean computeFlag(double mx, double my, int button) {
       if (button == 0) {
          this.flag = false;
-         this.floatValValSetting = null;
+         this.floatSetting = null;
       }
 
       return false;
@@ -595,15 +595,15 @@ public class ModuleRow {
    }
 
    public void setX(float x) {
-      this.x = xx;
+      this.x = x;
    }
 
    public void setY(float y) {
-      this.y = yx;
+      this.y = y;
    }
 
    public void setW(float w) {
-      this.w = wx;
+      this.w = w;
    }
 
    public void setA(float a) {

@@ -34,8 +34,8 @@ public class ButtonSetting extends Setting<Runnable> {
    }
 
    @Override
-   public Setting withValue(Object param1) {
-      return this.action((Runnable)var1);
+   public Setting withValue(Runnable param1) {
+      return this.action(param1);
    }
 
 }

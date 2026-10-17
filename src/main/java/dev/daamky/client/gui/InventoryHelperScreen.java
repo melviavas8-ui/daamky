@@ -276,13 +276,13 @@ public class InventoryHelperScreen extends Screen {
       public final boolean isOffhand;
 
       public SlotBox(int slotIndex, int x, int y, int w, int h, boolean isArmor, boolean isOffhand) {
-         this.slotIndex = slotIndexx;
-         this.x = xx;
-         this.y = yx;
-         this.w = wx;
-         this.h = hx;
-         this.isArmor = isArmorx;
-         this.isOffhand = isOffhandx;
+         this.slotIndex = slotIndex;
+         this.x = x;
+         this.y = y;
+         this.w = w;
+         this.h = h;
+         this.isArmor = isArmor;
+         this.isOffhand = isOffhand;
       }
    }
 }

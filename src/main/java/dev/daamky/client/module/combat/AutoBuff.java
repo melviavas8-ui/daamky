@@ -70,7 +70,7 @@ public class AutoBuff extends Module {
    @Override
    public void onDisable() {
       super.onDisable();
-      if (this.flag4 && this.inv != -1 && this.intVal2 != -1) {
+      if (this.flag4 && this.inv != -1 && this.int2 != -1) {
          this.swapBack();
       }
 
@@ -134,22 +134,22 @@ public class AutoBuff extends Module {
    }
 
    public void initBack(boolean packet) {
-      if (this.flag4 && !packetx) {
+      if (this.flag4 && !packet) {
          this.swapBack();
       }
 
-      if (!packetx) {
+      if (!packet) {
          InventoryUtil.handleInt(this.intVal);
       }
 
       VecRotationHelper.getInstance().handleModule(new Rotation(mc.player.getYaw(), this.floatVal), RotationHelper.rotationHelper3, Priority.HIGH, this);
-      if (!packetx) {
+      if (!packet) {
          this.flag2 = false;
       } else {
          this.flag = false;
       }
 
-      if (this.autoDisable.getValue() && (packetx || this.allBuffed())) {
+      if (this.autoDisable.getValue() && (packet || this.allBuffed())) {
          this.toggle();
       }
    }
@@ -157,7 +157,7 @@ public class AutoBuff extends Module {
    public void runBack() {
       this.flag3 = false;
       this.flag = false;
-      if (this.flag4 && this.inv != -1 && this.intVal2 != -1) {
+      if (this.flag4 && this.inv != -1 && this.int2 != -1) {
          this.swapBack();
       }
    }
@@ -171,7 +171,7 @@ public class AutoBuff extends Module {
       }
 
       this.flag4 = false;
-      this.intVal2 = -1;
+      this.int2 = -1;
       this.inv = -1;
    }
 
@@ -258,11 +258,11 @@ public class AutoBuff extends Module {
 
    public void swapFromInventory(int inv, RegistryEntry<StatusEffect> e) {
       this.flag4 = true;
-      this.inv = invx;
+      this.inv = inv;
       int var3 = InventoryUtil.getMc();
-      this.intVal2 = var3 != -1 && var3 < 9 ? var3 : InventoryUtil.getInt();
-      int var4 = this.intVal2;
-      if (this.intVal2 != -1) {
+      this.int2 = var3 != -1 && var3 < 9 ? var3 : InventoryUtil.getInt();
+      int var4 = this.int2;
+      if (this.int2 != -1) {
          Runnable var5 = this::lambda$swapFromInventory$4;
          if (EntryHelper.check()) {
             EntryHelper.handleLong(10L, var5);
@@ -317,10 +317,10 @@ public class AutoBuff extends Module {
    }
 
    public static void lambda$throwAll$6(int inv, int best, Runnable use) {
-      InventoryUtil.initInit(invx, best);
+      InventoryUtil.initInit(inv, best);
       InventoryUtil.handleInt(best);
       use.run();
-      InventoryUtil.initInit(invx, best);
+      InventoryUtil.initInit(inv, best);
    }
 
    public static void lambda$throwAll$5() {
@@ -328,8 +328,8 @@ public class AutoBuff extends Module {
    }
 
    public void lambda$swapFromInventory$4() {
-      InventoryUtil.initInit(this.inv, this.intVal2);
-      InventoryUtil.handleInt(this.intVal2);
+      InventoryUtil.initInit(this.inv, this.int2);
+      InventoryUtil.handleInt(this.int2);
       this.run();
    }
 
@@ -344,7 +344,7 @@ public class AutoBuff extends Module {
    }
 
    public void lambda$swapBack$1() {
-      InventoryUtil.initInit(this.inv, this.intVal2);
+      InventoryUtil.initInit(this.inv, this.int2);
    }
 
    public void lambda$onEvent$0(TickEvent e) {

@@ -80,10 +80,10 @@ public enum ItemActionCatalog {
    }
 
    private ItemActionCatalog(Item itemType, String searchString, String name, List<String> tags) {
-      this.itemType = itemTypex;
-      this.searchString = searchStringx;
-      this.name = namex;
-      this.tags = tagsx;
+      this.itemType = itemType;
+      this.searchString = searchString;
+      this.name = name;
+      this.tags = tags;
    }
 
    public static ItemActionCatalog[] $values() {

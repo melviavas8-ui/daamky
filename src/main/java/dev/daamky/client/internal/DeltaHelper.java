@@ -7,8 +7,8 @@ public class DeltaHelper {
    public final float deltaPitch;
 
    public DeltaHelper(float deltaYaw, float deltaPitch) {
-      this.deltaYaw = deltaYawx;
-      this.deltaPitch = deltaPitchx;
+      this.deltaYaw = deltaYaw;
+      this.deltaPitch = deltaPitch;
    }
 
    public float sqrt() {

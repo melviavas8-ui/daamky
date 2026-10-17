@@ -2013,7 +2013,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
                            );
                            float var247 = var105 + var107 * var239[0];
                            float var248 = var106 + var108 * (1.0F - var239[2]);
-                           float var249 = this.smooth(var209 + ":kx", var247);
+                           float var249 = this.smooth(var209 + ":k", var247);
                            float var250 = this.smooth(var209 + ":ky", var248);
                            float var251 = 4.2F * this.U;
                            Render.ringRenderer.handleRgb(SHARED_MS, var249, var250, var251 + 1.6F * this.U, new Color(0, 0, 0, (int)(var84 * var165 * 140.0F)));

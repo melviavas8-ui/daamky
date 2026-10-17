@@ -255,65 +255,65 @@ public class ChinaHat extends Module {
    }
 
    public void setSegs(int segs) {
-      if (this.segs != segsx || this.floats == null) {
-         this.floats = new float[segsx + 1];
-         this.floats2 = new float[segsx + 1];
+      if (this.segs != segs || this.floats == null) {
+         this.floats = new float[segs + 1];
+         this.floats2 = new float[segs + 1];
 
-         for (int var2 = 0; var2 <= segsx; var2++) {
-            double var3 = (Math.PI * 2) * (double)var2 / (double)segsx;
+         for (int var2 = 0; var2 <= segs; var2++) {
+            double var3 = (Math.PI * 2) * (double)var2 / (double)segs;
             this.floats[var2] = (float)Math.cos(var3);
             this.floats2[var2] = (float)Math.sin(var3);
          }
 
-         this.segs = segsx;
+         this.segs = segs;
       }
    }
 
    public void handleCos(int segs) {
-      if (this.intVal != segsx || this.floats3 == null) {
-         this.floats3 = new float[segsx + 1];
-         this.floats4 = new float[segsx + 1];
+      if (this.intVal != segs || this.floats3 == null) {
+         this.floats3 = new float[segs + 1];
+         this.floats4 = new float[segs + 1];
 
-         for (int var2 = 0; var2 <= segsx; var2++) {
-            double var3 = (Math.PI * 2) * (double)var2 / (double)segsx;
+         for (int var2 = 0; var2 <= segs; var2++) {
+            double var3 = (Math.PI * 2) * (double)var2 / (double)segs;
             this.floats3[var2] = (float)Math.sin(var3);
             this.floats4[var2] = (float)Math.cos(var3);
          }
 
-         this.intVal = segsx;
+         this.intVal = segs;
       }
    }
 
    public void setInnerSegs(int innerSegs) {
-      if (this.innerSegs != innerSegsx || this.floats5 == null) {
-         this.floats5 = new float[innerSegsx + 1];
-         this.floats6 = new float[innerSegsx + 1];
+      if (this.innerSegs != innerSegs || this.floats5 == null) {
+         this.floats5 = new float[innerSegs + 1];
+         this.floats6 = new float[innerSegs + 1];
 
-         for (int var2 = 0; var2 <= innerSegsx; var2++) {
-            double var3 = (Math.PI * 2) * (double)var2 / (double)innerSegsx;
+         for (int var2 = 0; var2 <= innerSegs; var2++) {
+            double var3 = (Math.PI * 2) * (double)var2 / (double)innerSegs;
             this.floats5[var2] = (float)Math.cos(var3);
             this.floats6[var2] = (float)Math.sin(var3);
          }
 
-         this.innerSegs = innerSegsx;
+         this.innerSegs = innerSegs;
       }
    }
 
    public void handleSegs(MatrixStack ms, int segs, float r, float h, int alpha, boolean glowPass) {
-      this.setSegs(segsx);
+      this.setSegs(segs);
       BufferBuilder var7 = Tessellator.getInstance().begin(DrawMode.TRIANGLES, VertexFormats.POSITION_COLOR);
       Matrix4f var8 = ms.peek().getPositionMatrix();
 
-      for (int var9 = 0; var9 < segsx; var9++) {
+      for (int var9 = 0; var9 < segs; var9++) {
          float var10 = this.floats[var9] * r;
          float var11 = this.floats2[var9] * r;
          float var12 = this.floats[var9 + 1] * r;
          float var13 = this.floats2[var9 + 1] * r;
-         float var14 = (float)var9 / (float)segsx;
-         float var15 = (float)(var9 + 1) / (float)segsx;
-         int var16 = this.computeRgb(var14, alphax);
-         int var17 = this.computeRgb(var15, alphax);
-         int var18 = this.computeBlue(alphax);
+         float var14 = (float)var9 / (float)segs;
+         float var15 = (float)(var9 + 1) / (float)segs;
+         int var16 = this.computeRgb(var14, alpha);
+         int var17 = this.computeRgb(var15, alpha);
+         int var18 = this.computeBlue(alpha);
          var7.vertex(var8, 0.0F, h, 0.0F).color(var18);
          var7.vertex(var8, var10, 0.0F, var11).color(var16);
          var7.vertex(var8, var12, 0.0F, var13).color(var17);
@@ -323,20 +323,20 @@ public class ChinaHat extends Module {
    }
 
    public void handleSegs(MatrixStack ms, int segs, float r, float h, int alpha) {
-      this.setSegs(segsx);
+      this.setSegs(segs);
       BufferBuilder var6 = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
       Matrix4f var7 = ms.peek().getPositionMatrix();
 
-      for (int var8 = 0; var8 < segsx; var8++) {
+      for (int var8 = 0; var8 < segs; var8++) {
          float var9 = this.floats[var8] * r;
          float var10 = this.floats2[var8] * r;
          float var11 = this.floats[var8 + 1] * r;
          float var12 = this.floats2[var8 + 1] * r;
-         float var13 = (float)var8 / (float)segsx;
-         float var14 = (float)(var8 + 1) / (float)segsx;
-         int var15 = this.computeRgb(var13, alphax);
-         int var16 = this.computeRgb(var14, alphax);
-         int var17 = this.computeBlue((int)((float)alphax * 0.9F));
+         float var13 = (float)var8 / (float)segs;
+         float var14 = (float)(var8 + 1) / (float)segs;
+         int var15 = this.computeRgb(var13, alpha);
+         int var16 = this.computeRgb(var14, alpha);
+         int var17 = this.computeBlue((int)((float)alpha * 0.9F));
          var6.vertex(var7, var9, 0.0F, var10).color(var15);
          var6.vertex(var7, var11, 0.0F, var12).color(var16);
          var6.vertex(var7, 0.0F, h, 0.0F).color(var17);
@@ -347,19 +347,19 @@ public class ChinaHat extends Module {
    }
 
    public void handleInner(MatrixStack ms, int segs, float ringRadius, float tubeRadius, int alpha) {
-      int var6 = Math.min(16, Math.max(6, segsx / 4));
-      this.handleCos(segsx);
+      int var6 = Math.min(16, Math.max(6, segs / 4));
+      this.handleCos(segs);
       this.setInnerSegs(var6);
       BufferBuilder var7 = Tessellator.getInstance().begin(DrawMode.TRIANGLES, VertexFormats.POSITION_COLOR);
       Matrix4f var8 = ms.peek().getPositionMatrix();
 
-      for (int var9 = 0; var9 < segsx; var9++) {
+      for (int var9 = 0; var9 < segs; var9++) {
          float var10 = this.floats3[var9];
          float var11 = this.floats4[var9];
          float var12 = this.floats3[var9 + 1];
          float var13 = this.floats4[var9 + 1];
-         float var14 = (float)var9 / (float)segsx;
-         int var15 = this.computeRgb(var14, alphax);
+         float var14 = (float)var9 / (float)segs;
+         int var15 = this.computeRgb(var14, alpha);
 
          for (int var16 = 0; var16 < var6; var16++) {
             float var17 = this.floats5[var16];
@@ -391,21 +391,21 @@ public class ChinaHat extends Module {
    }
 
    public void handleMax(MatrixStack ms, int segs, float ringRadius, float tubeRadius, int alpha) {
-      this.handleCos(segsx);
+      this.handleCos(segs);
       BufferBuilder var6 = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
       Matrix4f var7 = ms.peek().getPositionMatrix();
       float var8 = ringRadius + tubeRadius;
       float var9 = Math.max(0.01F, ringRadius - tubeRadius);
 
-      for (int var10 = 0; var10 < segsx; var10++) {
+      for (int var10 = 0; var10 < segs; var10++) {
          float var11 = this.floats3[var10];
          float var12 = this.floats4[var10];
          float var13 = this.floats3[var10 + 1];
          float var14 = this.floats4[var10 + 1];
-         float var15 = (float)var10 / (float)segsx;
-         float var16 = (float)(var10 + 1) / (float)segsx;
-         int var17 = this.computeRgb(var15, alphax);
-         int var18 = this.computeRgb(var16, alphax);
+         float var15 = (float)var10 / (float)segs;
+         float var16 = (float)(var10 + 1) / (float)segs;
+         int var17 = this.computeRgb(var15, alpha);
+         int var18 = this.computeRgb(var16, alpha);
          float var19 = var11 * var8;
          float var20 = var12 * var8;
          float var21 = var13 * var8;
@@ -425,7 +425,7 @@ public class ChinaHat extends Module {
 
    public int computeRgb(float progress, int alpha) {
       Color var3 = this.computeColor((int)(progress * 360.0F));
-      return alphax << 24 | var3.getRGB() & 16777215;
+      return alpha << 24 | var3.getRGB() & 16777215;
    }
 
    public int computeBlue(int alpha) {
@@ -433,7 +433,7 @@ public class ChinaHat extends Module {
       int var3 = (int)((float)var2.getRed() + (float)(255 - var2.getRed()) * 0.35F);
       int var4 = (int)((float)var2.getGreen() + (float)(255 - var2.getGreen()) * 0.35F);
       int var5 = (int)((float)var2.getBlue() + (float)(255 - var2.getBlue()) * 0.35F);
-      return alphax << 24 | var3 << 16 | var4 << 8 | var5;
+      return alpha << 24 | var3 << 16 | var4 << 8 | var5;
    }
 
    public Color computeColor(int seed) {

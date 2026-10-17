@@ -25,10 +25,10 @@ public class ClickGui extends Widget {
    public final AnimatedValue animatedValue5 = new AnimatedValue();
 
    public ClickGui(ModuleCategory tag) {
-      this.tag = tagx;
+      this.tag = tag;
 
       for (Module var3 : ModuleRegistry.getInstance().getList()) {
-         if (var3.getCategory() == tagx
+         if (var3.getCategory() == tag
             && !var3.getName().equalsIgnoreCase("Click GUI")
             && !var3.getName().equalsIgnoreCase("Configs")
             && !var3.getName().equalsIgnoreCase("IRC Chat")) {
@@ -335,7 +335,7 @@ public class ClickGui extends Widget {
    }
 
    public void setPveMode(boolean pveMode) {
-      this.pveMode = pveModex;
+      this.pveMode = pveMode;
    }
 
    public static void lambda$mouseReleased$1(double mouseX, double mouseY, int button, Binding module) {

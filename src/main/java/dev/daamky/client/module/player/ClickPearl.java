@@ -46,13 +46,13 @@ public class ClickPearl extends Module {
    }
 
    public void run() {
-      if (this.intVal3 != 0) {
+      if (this.int3 != 0) {
          InventoryUtil.handleFlag(true);
       }
 
-      this.intVal3 = 0;
+      this.int3 = 0;
       this.intVal = -1;
-      this.intVal2 = -1;
+      this.int2 = -1;
       this.flag = false;
    }
 
@@ -80,9 +80,9 @@ public class ClickPearl extends Module {
             }
          } else {
             this.intVal = var1;
-            this.intVal2 = mc.player.getInventory().selectedSlot;
+            this.int2 = mc.player.getInventory().selectedSlot;
             this.mxoeav.runCurrent();
-            this.intVal3 = 1;
+            this.int3 = 1;
          }
       }
    }
@@ -95,7 +95,7 @@ public class ClickPearl extends Module {
       int var2 = this.throwKey.getValue();
       if (var2 != -999 && var2 != -1 && mc.currentScreen == null) {
          boolean var3 = KeyNames.computeGlfw(var2);
-         if (var3 && !this.flag && this.intVal3 == 0) {
+         if (var3 && !this.flag && this.int3 == 0) {
             this.flag = true;
             this.runNotify();
          } else if (!var3) {
@@ -104,36 +104,36 @@ public class ClickPearl extends Module {
       }
 
       if (mc.player != null && mc.interactionManager != null) {
-         if (this.intVal3 != 0) {
+         if (this.int3 != 0) {
             InventoryUtil.handleFlag(false);
             AttackAura.int3 = 3;
             if (this.mxoeav.computeCurrent(50L)) {
                this.mxoeav.runCurrent();
                int var4 = mc.player.playerScreenHandler.syncId;
-               switch (this.intVal3) {
+               switch (this.int3) {
                   case 1:
                      if (this.intVal < 9) {
                         mc.player.getInventory().selectedSlot = this.intVal;
                         mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.intVal));
                      } else {
-                        mc.interactionManager.clickSlot(var4, this.intVal, this.intVal2, SlotActionType.SWAP, mc.player);
+                        mc.interactionManager.clickSlot(var4, this.intVal, this.int2, SlotActionType.SWAP, mc.player);
                      }
 
-                     this.intVal3 = 2;
+                     this.int3 = 2;
                      break;
                   case 2:
                      mc.interactionManager.interactItem(mc.player, Hand.MAIN_HAND);
-                     this.intVal3 = 3;
+                     this.int3 = 3;
                      break;
                   case 3:
                      if (this.intVal < 9) {
-                        mc.player.getInventory().selectedSlot = this.intVal2;
-                        mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.intVal2));
+                        mc.player.getInventory().selectedSlot = this.int2;
+                        mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.int2));
                      } else {
-                        mc.interactionManager.clickSlot(var4, this.intVal, this.intVal2, SlotActionType.SWAP, mc.player);
+                        mc.interactionManager.clickSlot(var4, this.intVal, this.int2, SlotActionType.SWAP, mc.player);
                      }
 
-                     this.intVal3 = 4;
+                     this.int3 = 4;
                      break;
                   case 4:
                      if (this.intVal >= 9) {
@@ -142,9 +142,9 @@ public class ClickPearl extends Module {
                      }
 
                      InventoryUtil.handleFlag(true);
-                     this.intVal3 = 0;
+                     this.int3 = 0;
                      this.intVal = -1;
-                     this.intVal2 = -1;
+                     this.int2 = -1;
                }
             }
          }

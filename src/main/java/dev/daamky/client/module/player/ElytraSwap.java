@@ -62,7 +62,7 @@ public class ElytraSwap extends Module {
 
       this.momvoj = 0;
       this.intVal = -1;
-      this.intVal2 = -1;
+      this.int2 = -1;
       this.flag2 = false;
    }
 
@@ -108,7 +108,7 @@ public class ElytraSwap extends Module {
 
             if (var1 != -1) {
                this.intVal = var1;
-               this.intVal2 = mc.player.getInventory().selectedSlot;
+               this.int2 = mc.player.getInventory().selectedSlot;
                this.delayHelper2.runCurrent();
                this.momvoj = 1;
             }
@@ -129,7 +129,7 @@ public class ElytraSwap extends Module {
                         mc.player.getInventory().selectedSlot = this.intVal;
                         mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.intVal));
                      } else {
-                        mc.interactionManager.clickSlot(var1, this.intVal, this.intVal2, SlotActionType.SWAP, mc.player);
+                        mc.interactionManager.clickSlot(var1, this.intVal, this.int2, SlotActionType.SWAP, mc.player);
                         mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(var1));
                         mc.player.closeHandledScreen();
                      }
@@ -142,10 +142,10 @@ public class ElytraSwap extends Module {
                      break;
                   case 3:
                      if (this.intVal < 9) {
-                        mc.player.getInventory().selectedSlot = this.intVal2;
-                        mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.intVal2));
+                        mc.player.getInventory().selectedSlot = this.int2;
+                        mc.player.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.int2));
                      } else {
-                        mc.interactionManager.clickSlot(var1, this.intVal, this.intVal2, SlotActionType.SWAP, mc.player);
+                        mc.interactionManager.clickSlot(var1, this.intVal, this.int2, SlotActionType.SWAP, mc.player);
                         mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(var1));
                         mc.player.closeHandledScreen();
                      }
@@ -155,7 +155,7 @@ public class ElytraSwap extends Module {
                   case 4:
                      this.momvoj = 0;
                      this.intVal = -1;
-                     this.intVal2 = -1;
+                     this.int2 = -1;
                }
             }
          }

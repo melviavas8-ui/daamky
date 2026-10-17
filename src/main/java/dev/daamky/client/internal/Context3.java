@@ -13,8 +13,8 @@ public class Context3 extends SettingRow {
    public long longVal;
 
    public Context3(StringSetting setting) {
-      super(settingx);
-      this.setting = settingx;
+      super(setting);
+      this.setting = setting;
       this.handleFloat(this.getFloat());
    }
 

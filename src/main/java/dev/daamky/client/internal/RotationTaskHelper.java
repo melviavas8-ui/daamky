@@ -65,16 +65,16 @@ public class RotationTaskHelper implements MinecraftAccess {
          this.runCurrent();
       } else {
          long var1 = System.nanoTime();
-         if (this.longValVal2 == 0L) {
-            this.longValVal2 = var1;
-            this.longValVal3 = var1;
-            this.floatValVal3 = (float)(Math.random() * 1000.0);
+         if (this.long2 == 0L) {
+            this.long2 = var1;
+            this.long3 = var1;
+            this.float3 = (float)(Math.random() * 1000.0);
          }
 
-         float var3 = (float)(var1 - this.longValVal3) / 1.0E9F;
-         this.longValVal3 = var1;
+         float var3 = (float)(var1 - this.long3) / 1.0E9F;
+         this.long3 = var1;
          var3 = MathHelper.clamp(var3, 0.0F, 0.1F);
-         float var4 = (float)(var1 - this.longValVal2) / 1.0E9F;
+         float var4 = (float)(var1 - this.long2) / 1.0E9F;
          float var5 = CameraManager.getFloat();
          float var6 = CameraManager.getMrula();
          Rotation var7 = new Rotation(mc.player.getYaw(), mc.player.getPitch());
@@ -85,17 +85,17 @@ public class RotationTaskHelper implements MinecraftAccess {
             float var11 = 75.0F + var10 * 450.0F;
             float var12 = var11 * MathHelper.clamp(var8 / 45.0F, 0.6F, 1.6F) * var3;
             float var13 = MathHelper.clamp(var8 / 25.0F, 0.0F, 1.0F);
-            float var14 = (float)(Math.sin((double)var4 * 8.3 + (double)this.floatValVal3) * 0.55 + Math.sin((double)var4 * 3.7 + (double)this.floatValVal3 * 1.3) * 0.35)
+            float var14 = (float)(Math.sin((double)var4 * 8.3 + (double)this.float3) * 0.55 + Math.sin((double)var4 * 3.7 + (double)this.float3 * 1.3) * 0.35)
                * var13;
-            float var15 = (float)(Math.cos((double)var4 * 6.9 + (double)this.floatValVal3 * 0.7) * 0.4) * var13;
+            float var15 = (float)(Math.cos((double)var4 * 6.9 + (double)this.float3 * 0.7) * 0.4) * var13;
             Rotation var16 = new Rotation(var5 + var14, MathHelper.clamp(var6 + var15, -90.0F, 90.0F));
             this.initAbs(var16, var12, var12);
          } else {
             float var9 = mc.player.getYaw();
             mc.player.setYaw(var9 + MathHelper.wrapDegrees(var5 - var9));
             mc.player.setPitch(MathHelper.clamp(var6, -90.0F, 90.0F));
-            this.longValVal2 = 0L;
-            this.longValVal3 = 0L;
+            this.long2 = 0L;
+            this.long3 = 0L;
             this.runCurrent();
          }
       }
@@ -145,11 +145,11 @@ public class RotationTaskHelper implements MinecraftAccess {
    }
 
    public static void handleVal(Rotation targetRotation, float turnSpeed, float returnSpeed, int timeout, int priority) {
-      handleCurrent(targetRotationx, turnSpeed, turnSpeed, returnSpeed, returnSpeed, timeout, priority, false);
+      handleCurrent(targetRotation, turnSpeed, turnSpeed, returnSpeed, returnSpeed, timeout, priority, false);
    }
 
    public static void handleVal(Rotation targetRotation, float yawSpeed, float pitchSpeed, float returnSpeed, int timeout, int priority) {
-      handleCurrent(targetRotationx, yawSpeed, pitchSpeed, returnSpeed, returnSpeed, timeout, priority, false);
+      handleCurrent(targetRotation, yawSpeed, pitchSpeed, returnSpeed, returnSpeed, timeout, priority, false);
    }
 
    public boolean initAbs(Rotation rotation, float turnYawSpeed, float turnPitchSpeed) {
@@ -185,8 +185,8 @@ public class RotationTaskHelper implements MinecraftAccess {
    public void runCurrent() {
       this.withCurrentTask(RotationTaskHelper.RotationTask.IDLE);
       this.withCurrentPriority(0);
-      this.longValVal2 = 0L;
-      this.longValVal3 = 0L;
+      this.long2 = 0L;
+      this.long3 = 0L;
       this.withIdleTicks(0);
       CameraManager.setState(false);
    }
@@ -232,47 +232,47 @@ public class RotationTaskHelper implements MinecraftAccess {
    }
 
    public RotationTaskHelper withCurrentTask(RotationTaskHelper.RotationTask currentTask) {
-      this.currentTask = currentTaskx;
+      this.currentTask = currentTask;
       return this;
    }
 
    public RotationTaskHelper withCurrentYawSpeed(float currentYawSpeed) {
-      this.currentYawSpeed = currentYawSpeedx;
+      this.currentYawSpeed = currentYawSpeed;
       return this;
    }
 
    public RotationTaskHelper withCurrentPitchSpeed(float currentPitchSpeed) {
-      this.currentPitchSpeed = currentPitchSpeedx;
+      this.currentPitchSpeed = currentPitchSpeed;
       return this;
    }
 
    public RotationTaskHelper withCurrentYawReturnSpeed(float currentYawReturnSpeed) {
-      this.currentYawReturnSpeed = currentYawReturnSpeedx;
+      this.currentYawReturnSpeed = currentYawReturnSpeed;
       return this;
    }
 
    public RotationTaskHelper withCurrentPitchReturnSpeed(float currentPitchReturnSpeed) {
-      this.currentPitchReturnSpeed = currentPitchReturnSpeedx;
+      this.currentPitchReturnSpeed = currentPitchReturnSpeed;
       return this;
    }
 
    public RotationTaskHelper withCurrentPriority(int currentPriority) {
-      this.currentPriority = currentPriorityx;
+      this.currentPriority = currentPriority;
       return this;
    }
 
    public RotationTaskHelper withCurrentTimeout(int currentTimeout) {
-      this.currentTimeout = currentTimeoutx;
+      this.currentTimeout = currentTimeout;
       return this;
    }
 
    public RotationTaskHelper withIdleTicks(int idleTicks) {
-      this.idleTicks = idleTicksx;
+      this.idleTicks = idleTicks;
       return this;
    }
 
    public RotationTaskHelper withTargetRotation(Rotation targetRotation) {
-      this.targetRotation = targetRotationx;
+      this.targetRotation = targetRotation;
       return this;
    }
 

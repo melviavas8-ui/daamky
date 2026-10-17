@@ -78,9 +78,9 @@ public class EqualsHelper {
    }
 
    public EqualsHelper(String username, UUID uuid, String token, String type) {
-      this.username = usernamex;
-      this.uuid = uuidx;
-      this.token = tokenx;
-      this.type = typex;
+      this.username = username;
+      this.uuid = uuid;
+      this.token = token;
+      this.type = type;
    }
 }

@@ -58,7 +58,7 @@ public final class InterfaceMetrics {
 
    public static Color initBlue(Color color, int alpha) {
       int var2 = alpha & 0xFF;
-      return new Color(colorx.getRed(), colorx.getGreen(), colorx.getBlue(), var2);
+      return new Color(color.getRed(), color.getGreen(), color.getBlue(), var2);
    }
 
    public static Color initMax(int alpha, float strength) {

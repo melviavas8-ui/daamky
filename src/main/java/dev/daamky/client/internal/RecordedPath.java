@@ -8,7 +8,7 @@ public class RecordedPath {
    public List<RotationSample> points = new ArrayList<>();
 
    public RecordedPath(boolean jump) {
-      this.jump = jumpx;
+      this.jump = jump;
    }
 
    public void initAdd(long timeOffset, float yawOffset, float pitchOffset) {

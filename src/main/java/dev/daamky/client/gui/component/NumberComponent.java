@@ -19,7 +19,7 @@ public class NumberComponent extends Component<Integer> {
 
    public NumberComponent(Module parent, String name, boolean allowMouse) {
       super(parent, name, -1);
-      this.allowMouse = allowMousex;
+      this.allowMouse = allowMouse;
       this.cachedValue = -1;
    }
 
@@ -31,7 +31,7 @@ public class NumberComponent extends Component<Integer> {
 
    public NumberComponent(Module parent, String name, Integer value, boolean allowMouse) {
       super(parent, name, value);
-      this.allowMouse = allowMousex;
+      this.allowMouse = allowMouse;
       this.cachedValue = value;
    }
 
@@ -71,22 +71,22 @@ public class NumberComponent extends Component<Integer> {
 
    @Override
    public Component withOnSetVisible(Runnable param1) {
-      return this.computeVisible(var1);
+      return this.computeVisible(param1);
    }
 
    @Override
    public Component withOnAction(Runnable param1) {
-      return this.onAction(var1);
+      return this.onAction(param1);
    }
 
    @Override
    public Component withValue(Supplier param1) {
-      return this.computeNumberComponent(var1);
+      return this.computeNumberComponent(param1);
    }
 
    @Override
-   public Component withValue(Object param1) {
-      return this.withCachedValue((Integer)var1);
+   public Component withValue(Integer param1) {
+      return this.withCachedValue(param1);
    }
 
    public void lambda$onAction$0(Runnable action) {

@@ -28,19 +28,19 @@ public class LegacyModule extends Module {
 
    public LegacyModule(dev.daamky.client.module.Module feature) {
       super(false);
-      this.feature = featurex;
-      this.setName(featurex.getName().trim().replaceAll(" ", ""));
-      this.setBigName(featurex.getName());
-      this.setDesc(featurex.getDescription() != null ? featurex.getDescription() : "");
+      this.feature = feature;
+      this.setName(feature.getName().trim().replaceAll(" ", ""));
+      this.setBigName(feature.getName());
+      this.setDesc(feature.getDescription() != null ? feature.getDescription() : "");
       this.setCategory(
-         (featurex.getSubCategory() == null || !featurex.getSubCategory().equalsIgnoreCase("PvE")) && featurex.getCategory() != ModuleCategory.PVE
-            ? computeModuleCategory(featurex.getCategory())
+         (feature.getSubCategory() == null || !feature.getSubCategory().equalsIgnoreCase("PvE")) && feature.getCategory() != ModuleCategory.PVE
+            ? computeModuleCategory(feature.getCategory())
             : dev.daamky.client.legacy.module.ModuleCategory.PVE
       );
-      this.setKey(featurex.getBind());
-      this.handleEnabled(featurex.isEnabled(), false);
+      this.setKey(feature.getBind());
+      this.handleEnabled(feature.isEnabled(), false);
 
-      for (Setting var3 : featurex.getSettings()) {
+      for (Setting var3 : feature.getSettings()) {
          if (var3 instanceof BooleanSetting var4) {
             CheckComponent var23 = new CheckComponent(this, var4.getName(), var4.getValue()) {
                @Override
@@ -51,8 +51,8 @@ public class LegacyModule extends Module {
                }
 
                @Override
-               public Component withValue(Object param1) {
-                  return this.withCachedValue((Boolean)var1);
+               public Component withValue(Boolean param1) {
+                  return this.withCachedValue(param1);
                }
             };
             var23.computeCheckComponent(var4::isVisible);

@@ -33,18 +33,18 @@ public class MovementInputEvent extends Event<MovementInputEvent.MovementInputEv
       }
 
       public MovementInputEventData(PlayerInput playerInput, boolean jump, boolean sneak, InputState directionalInput) {
-         this.playerInput = playerInputx;
-         this.jump = jumpx;
-         this.sneak = sneakx;
-         this.directionalInput = directionalInputx;
+         this.playerInput = playerInput;
+         this.jump = jump;
+         this.sneak = sneak;
+         this.directionalInput = directionalInput;
       }
 
       public void setJump(boolean jump) {
-         this.jump = jumpx;
+         this.jump = jump;
       }
 
       public void setSneak(boolean sneak) {
-         this.sneak = sneakx;
+         this.sneak = sneak;
       }
    }
 }

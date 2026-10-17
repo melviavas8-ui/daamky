@@ -53,13 +53,13 @@ public class SparkHelper implements MinecraftAccess {
    public static String[] stringList = new String[]{"Spark", "Star", "Heart", "Dollar", "Snowflake", "Glow", "Ball"};
 
    public SparkHelper(float x, float y, float z, int lifeTime) {
-      this.floatVal = xx;
-      this.y = yx;
-      this.z = zx;
-      this.x = xx;
-      this.floatValVal2 = yx;
-      this.floatValVal3 = zx;
-      this.maxLife = EntityHelper.computeRandom(Math.max(lifeTimex / 2, 0), lifeTimex);
+      this.floatVal = x;
+      this.y = y;
+      this.z = z;
+      this.x = x;
+      this.float2 = y;
+      this.float3 = z;
+      this.maxLife = EntityHelper.computeRandom(Math.max(lifeTime / 2, 0), lifeTime);
       this.rotation = EntityHelper.computeRandom(-180.0F, 180.0F);
       this.cometPhase = EntityHelper.computeRandom(0.0F, (float) (Math.PI * 2));
    }
@@ -82,8 +82,8 @@ public class SparkHelper implements MinecraftAccess {
    public boolean checkComet() {
       this.tickCount++;
       this.floatVal = this.x;
-      this.y = this.floatValVal2;
-      this.z = this.floatValVal3;
+      this.y = this.float2;
+      this.z = this.float3;
       if (this.cometMode) {
          this.motionX *= 0.995F;
          this.motionY *= 0.995F;
@@ -119,19 +119,19 @@ public class SparkHelper implements MinecraftAccess {
       }
 
       this.x = this.x + this.motionX;
-      this.floatValVal2 = this.floatValVal2 + this.motionY;
-      this.floatValVal3 = this.floatValVal3 + this.motionZ;
+      this.float2 = this.float2 + this.motionY;
+      this.float3 = this.float3 + this.motionZ;
       if (this.dropPhysics && !this.cometMode) {
          float var7 = this.prevSize;
-         if (this.computeFlag(this.x, this.floatValVal2 - var7 - 0.05F, this.floatValVal3)) {
+         if (this.computeFlag(this.x, this.float2 - var7 - 0.05F, this.float3)) {
             this.motionY = -this.motionY * 0.4F;
             this.motionX *= 0.6F;
             this.motionZ *= 0.6F;
-            this.floatValVal2 += 0.1F;
-         } else if (this.computeFlag(this.x + var7, this.floatValVal2, this.floatValVal3)
-            || this.computeFlag(this.x - var7, this.floatValVal2, this.floatValVal3)
-            || this.computeFlag(this.x, this.floatValVal2, this.floatValVal3 + var7)
-            || this.computeFlag(this.x, this.floatValVal2, this.floatValVal3 - var7)) {
+            this.float2 += 0.1F;
+         } else if (this.computeFlag(this.x + var7, this.float2, this.float3)
+            || this.computeFlag(this.x - var7, this.float2, this.float3)
+            || this.computeFlag(this.x, this.float2, this.float3 + var7)
+            || this.computeFlag(this.x, this.float2, this.float3 - var7)) {
             this.motionX = -this.motionX * 0.4F;
             this.motionZ = -this.motionZ * 0.4F;
          }
@@ -145,7 +145,7 @@ public class SparkHelper implements MinecraftAccess {
       if (mc.player == null) {
          return false;
       } else {
-         double var8 = mc.player.getPos().squaredDistanceTo((double)this.x, (double)this.floatValVal2, (double)this.floatValVal3);
+         double var8 = mc.player.getPos().squaredDistanceTo((double)this.x, (double)this.float2, (double)this.float3);
          return var8 >= 4900.0
             ? true
             : this.animatedValue.getValue() <= 0.0 && this.delayHelper.computeCurrent((this.spawnDuration + this.dyingDuration + (float)this.maxLife) * 50.0F);
@@ -177,7 +177,7 @@ public class SparkHelper implements MinecraftAccess {
    public void setMatrixStack(MatrixStack matrixStack) {
       int var3 = this.getInt();
       if (var3 > 2) {
-         Vec3d var4 = this.initInit(this.floatVal, this.y, this.z, this.x, this.floatValVal2, this.floatValVal3);
+         Vec3d var4 = this.initInit(this.floatVal, this.y, this.z, this.x, this.float2, this.float3);
          double var5 = var4.x * var4.x + var4.y * var4.y + var4.z * var4.z;
          if (!(var5 > 4096.0)) {
             Camera var7 = mc.gameRenderer.getCamera();
@@ -207,7 +207,7 @@ public class SparkHelper implements MinecraftAccess {
    }
 
    public boolean computeFlag(float x, float y, float z) {
-      return mc.world == null ? false : mc.world.getBlockState(BlockPos.ofFloored((double)xx, (double)yx, (double)zx)).isSolid();
+      return mc.world == null ? false : mc.world.getBlockState(BlockPos.ofFloored((double)x, (double)y, (double)z)).isSolid();
    }
 
    public Vec3d initInit(float prevX, float prevY, float prevZ, float currentX, float currentY, float currentZ) {
@@ -234,137 +234,137 @@ public class SparkHelper implements MinecraftAccess {
    }
 
    public SparkHelper withX(float x) {
-      this.x = xx;
+      this.x = x;
       return this;
    }
 
    public SparkHelper withY(float y) {
-      this.floatValVal2 = yx;
+      this.float2 = y;
       return this;
    }
 
    public SparkHelper withZ(float z) {
-      this.floatValVal3 = zx;
+      this.float3 = z;
       return this;
    }
 
    public SparkHelper withMotionX(float motionX) {
-      this.motionX = motionXx;
+      this.motionX = motionX;
       return this;
    }
 
    public SparkHelper withMotionY(float motionY) {
-      this.motionY = motionYx;
+      this.motionY = motionY;
       return this;
    }
 
    public SparkHelper withMotionZ(float motionZ) {
-      this.motionZ = motionZx;
+      this.motionZ = motionZ;
       return this;
    }
 
    public SparkHelper withLifeTime(int lifeTime) {
-      this.lifeTime = lifeTimex;
+      this.lifeTime = lifeTime;
       return this;
    }
 
    public SparkHelper withMaxLife(int maxLife) {
-      this.maxLife = maxLifex;
+      this.maxLife = maxLife;
       return this;
    }
 
    public SparkHelper withPrevSize(float prevSize) {
-      this.prevSize = prevSizex;
+      this.prevSize = prevSize;
       return this;
    }
 
    public SparkHelper withRotation(float rotation) {
-      this.rotation = rotationx;
+      this.rotation = rotation;
       return this;
    }
 
    public SparkHelper withPrevRotation(float prevRotation) {
-      this.prevRotation = prevRotationx;
+      this.prevRotation = prevRotation;
       return this;
    }
 
    public SparkHelper withRotateSpeed(float rotateSpeed) {
-      this.rotateSpeed = rotateSpeedx;
+      this.rotateSpeed = rotateSpeed;
       return this;
    }
 
    public SparkHelper withSize(float size) {
-      this.size = sizex;
+      this.size = size;
       return this;
    }
 
    public SparkHelper withIndex(int index) {
-      this.index = indexx;
+      this.index = index;
       return this;
    }
 
    public SparkHelper withIdentifier(Identifier identifier) {
-      this.identifier = identifierx;
+      this.identifier = identifier;
       return this;
    }
 
    public SparkHelper withDropPhysics(boolean dropPhysics) {
-      this.dropPhysics = dropPhysicsx;
+      this.dropPhysics = dropPhysics;
       return this;
    }
 
    public SparkHelper withRotating(boolean rotating) {
-      this.rotating = rotatingx;
+      this.rotating = rotating;
       return this;
    }
 
    public SparkHelper withSpawnDuration(float spawnDuration) {
-      this.spawnDuration = spawnDurationx;
+      this.spawnDuration = spawnDuration;
       return this;
    }
 
    public SparkHelper withDyingDuration(float dyingDuration) {
-      this.dyingDuration = dyingDurationx;
+      this.dyingDuration = dyingDuration;
       return this;
    }
 
    public SparkHelper withGravityFalls(boolean gravityFalls) {
-      this.gravityFalls = gravityFallsx;
+      this.gravityFalls = gravityFalls;
       return this;
    }
 
    public SparkHelper withCometMode(boolean cometMode) {
-      this.cometMode = cometModex;
+      this.cometMode = cometMode;
       return this;
    }
 
    public SparkHelper withCometPhase(float cometPhase) {
-      this.cometPhase = cometPhasex;
+      this.cometPhase = cometPhase;
       return this;
    }
 
    public SparkHelper withCometWobbleStrength(float cometWobbleStrength) {
-      this.cometWobbleStrength = cometWobbleStrengthx;
+      this.cometWobbleStrength = cometWobbleStrength;
       return this;
    }
 
    public SparkHelper withCometWobbleSpeed(float cometWobbleSpeed) {
-      this.cometWobbleSpeed = cometWobbleSpeedx;
+      this.cometWobbleSpeed = cometWobbleSpeed;
       return this;
    }
 
    public SparkHelper withSpawnStarted(boolean spawnStarted) {
-      this.spawnStarted = spawnStartedx;
+      this.spawnStarted = spawnStarted;
       return this;
    }
 
    public SparkHelper withDyingStarted(boolean dyingStarted) {
-      this.dyingStarted = dyingStartedx;
+      this.dyingStarted = dyingStarted;
       return this;
    }
 
    public SparkHelper withTickCount(int tickCount) {
-      this.tickCount = tickCountx;
+      this.tickCount = tickCount;
       return this;
    }
 
@@ -385,11 +385,11 @@ public class SparkHelper implements MinecraftAccess {
    }
 
    public float getFloat2() {
-      return this.floatValVal2;
+      return this.float2;
    }
 
    public float getFloat3() {
-      return this.floatValVal3;
+      return this.float3;
    }
 
    public float getMotionX() {

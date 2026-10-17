@@ -29,7 +29,7 @@ public class MaceAttacker extends Module {
    public int intVal = -1;
 
    public MaceAttacker() {
-      this.addSettings(new Setting[]{this.booleanValSetting, this.booleanValSetting2, this.floatValSetting});
+      this.addSettings(new Setting[]{this.booleanSetting, this.booleanSetting2, this.floatSetting});
    }
 
    @Override
@@ -48,7 +48,7 @@ public class MaceAttacker extends Module {
       if (mc.player != null && mc.world != null) {
          if (mc.player.isOnGround() || mc.player.isTouchingWater() || mc.player.isClimbing() || mc.player.getAbilities().flying) {
             this.run();
-         } else if (this.booleanValSetting2.getValue()) {
+         } else if (this.booleanSetting2.getValue()) {
             int var1 = this.getMc();
             if (var1 == -1) {
                this.run();
@@ -66,7 +66,7 @@ public class MaceAttacker extends Module {
                if (var2 != null) {
                   double var8 = Math.hypot(var2.getX() - mc.player.getX(), var2.getZ() - mc.player.getZ());
                   if (!(var8 > 6.0)) {
-                     float var10 = this.floatValSetting.getValue();
+                     float var10 = this.floatSetting.getValue();
                      boolean var7 = mc.player.fallDistance >= var10
                         || mc.player.getVelocity().y < -0.2 && mc.player.getY() > var2.getY() + 1.2;
                      if (var7 && !this.flag && mc.player.getInventory().selectedSlot != var1) {

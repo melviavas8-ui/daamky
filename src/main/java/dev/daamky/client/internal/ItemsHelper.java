@@ -36,9 +36,9 @@ public class ItemsHelper implements MinecraftAccess {
    public final Vector2f vector2f = new Vector2f();
 
    public ItemsHelper(NameTags mod) {
-      this.mod = modx;
-      this.enchantsHelper = new EnchantsHelper(modx);
-      this.potionEntryHelper = new PotionEntryHelper(modx);
+      this.mod = mod;
+      this.enchantsHelper = new EnchantsHelper(mod);
+      this.potionEntryHelper = new PotionEntryHelper(mod);
    }
 
    public void handleContext(Render2DEvent.Render2DEventData event) {

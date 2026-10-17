@@ -32,13 +32,13 @@ public class FloatSetting extends Setting<Float> {
    }
 
    public FloatSetting range(float min, float max) {
-      this.min = minx;
-      this.max = maxx;
+      this.min = min;
+      this.max = max;
       return this;
    }
 
    public FloatSetting step(float step) {
-      this.step = stepx;
+      this.step = step;
       return this;
    }
 
@@ -55,13 +55,8 @@ public class FloatSetting extends Setting<Float> {
    }
 
    @Override
-   public void setValue(Object param1) {
-      this.setValue((Float)var1);
-   }
-
-   @Override
-   public Setting withValue(Object param1) {
-      return this.value((Float)var1);
+   public Setting withValue(Float param1) {
+      return this.value(param1);
    }
 
 }
