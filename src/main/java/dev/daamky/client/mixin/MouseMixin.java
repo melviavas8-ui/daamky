@@ -70,7 +70,7 @@ public class MouseMixin {
             }
          }
 
-         DraggableManagerSaveHelper.getInstance().getDraggables().forEach(MouseMixin::lambda$mousePressHook$0);
+         DraggableManagerSaveHelper.getInstance().getDraggables().forEach((p0, p1) -> MouseMixin.lambda$mousePressHook$0(action, button, p0, p1));
       }
    }
 

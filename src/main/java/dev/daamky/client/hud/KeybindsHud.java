@@ -49,7 +49,7 @@ public class KeybindsHud extends HudElement {
          float var14 = 0.0F;
          boolean var15 = false;
 
-         for (Module var17 : var2) {
+         for (Module var17 : (Iterable<Module>)(Iterable)var2) {
             boolean var18 = var17.isEnabled() && var17.hasBind() && var17.getBind() != 0 && var17.getBind() != -1;
             AnimatedValue var19 = this.map.computeIfAbsent(var17, KeybindsHud::lambda$render$0);
             var19.update();
@@ -117,7 +117,7 @@ public class KeybindsHud extends HudElement {
                   this.handleMax(matrixStack, var36[0], var36[1], var33.k(), var3, var32 + (1.0F - var33.k()) * var34, var24, var5, var6, var11);
                }
             } else {
-               for (Module var48 : var2) {
+               for (Module var48 : (Iterable<Module>)(Iterable)var2) {
                   AnimatedValue var49 = this.map.get(var48);
                   if (var49 != null) {
                      float var50 = (float)var49.getValue();

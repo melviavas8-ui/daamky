@@ -213,7 +213,7 @@ public class ThemeManager {
             if (var9 != null) {
                boolean var10 = false;
 
-               for (Context var12 : var13) {
+               for (Context var12 : (Iterable<Context>)(Iterable)var13) {
                   if (var12.getTheme().getName().equalsIgnoreCase(var9.getName())) {
                      var10 = true;
                      break;

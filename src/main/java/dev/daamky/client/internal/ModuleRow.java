@@ -47,7 +47,7 @@ public class ModuleRow {
       } else {
          float var3 = computeFloat(6.0F);
 
-         for (Setting var5 : var2) {
+         for (Setting var5 : (Iterable<Setting>)(Iterable)var2) {
             if (var5 instanceof FloatSetting) {
                var3 += computeFloat(36.0F);
             } else if (var5 instanceof ModeSetting) {
@@ -181,7 +181,7 @@ public class ModuleRow {
                .handleRgb(ms, this.x + var12, var34, this.w - var12 * 2.0F, computeFloat(0.7F), 0.0F, new Color(255, 255, 255, (int)((float)var11 * 0.05F)));
             var34 += computeFloat(6.0F);
 
-            for (Setting var36 : var33) {
+            for (Setting var36 : (Iterable<Setting>)(Iterable)var33) {
                if (var36 instanceof FloatSetting var37) {
                   var34 = this.initMin(ms, mx, my, var37, this.x + var12, var34, this.w - var12 * 2.0F, var11);
                } else if (var36 instanceof ModeSetting) {
@@ -489,7 +489,7 @@ public class ModuleRow {
                float var20 = this.w - var6 * 2.0F;
                float var21 = this.y + computeFloat(30.0F);
 
-               for (Setting var23 : var18) {
+               for (Setting var23 : (Iterable<Setting>)(Iterable)var18) {
                   if (var23 instanceof FloatSetting var24) {
                      float var36 = var21 + computeFloat(15.0F);
                      float var38 = computeFloat(10.0F);

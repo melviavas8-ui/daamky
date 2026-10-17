@@ -39,7 +39,7 @@ public abstract class LegacySetting implements MinecraftAccess, ModeSetting.Name
          Rotation var1 = VecRotationHelper.getInstance().getCurrent();
          this.floatVal = var1.getYaw();
          this.mubizl = var1.getPitch();
-         this.longVal = System.currentTimeMillis();
+         this.timeStamp = System.currentTimeMillis();
          this.flag = true;
       }
    }
@@ -56,7 +56,7 @@ public abstract class LegacySetting implements MinecraftAccess, ModeSetting.Name
       if (!this.flag) {
          return targetRotation;
       } else {
-         long var3 = System.currentTimeMillis() - this.longVal;
+         long var3 = System.currentTimeMillis() - this.timeStamp;
          if (var3 >= 220L) {
             this.flag = false;
             return targetRotation;

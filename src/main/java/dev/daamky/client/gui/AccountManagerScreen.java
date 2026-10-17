@@ -494,7 +494,7 @@ public class AccountManagerScreen extends Screen {
                         float var31 = 2.5F;
                         float var32 = var26 + 1.5F - (float)this.animatedValue7.getValue();
 
-                        for (AltsJsonHelper.AltAccount var34 : var29) {
+                        for (AltsJsonHelper.AltAccount var34 : (Iterable<AltsJsonHelper.AltAccount>)(Iterable)var29) {
                            if (Geometry.computeFlag((float)mouseX, (float)mouseY, var25, var32, var20, var30)) {
                               float var35 = 14.0F;
                               float var36 = var25 + var20 - var35 - 3.0F;

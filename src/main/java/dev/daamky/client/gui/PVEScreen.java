@@ -364,7 +364,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
          mc.mouse.lockCursor();
          return true;
       } else {
-         this.list.forEach(PVEScreen::lambda$keyPressed$0);
+         this.list.forEach((p0) -> PVEScreen.lambda$keyPressed$0(keyCode, scanCode, modifiers, p0));
          return super.keyPressed(keyCode, scanCode, modifiers);
       }
    }
@@ -419,7 +419,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
             this.flag3 = false;
          }
 
-         this.list.forEach(PVEScreen::lambda$mouseClicked$1);
+         this.list.forEach((p0) -> PVEScreen.lambda$mouseClicked$1(mouseX, mouseY, button, p0));
          this.translator.mouseClicked(mouseX, mouseY, button);
          return super.mouseClicked(mouseX, mouseY, button);
       }
@@ -430,7 +430,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
          this.clickGui.mouseReleased(mouseX, mouseY, button);
          return super.mouseReleased(mouseX, mouseY, button);
       } else {
-         this.list.forEach(PVEScreen::lambda$mouseReleased$2);
+         this.list.forEach((p0) -> PVEScreen.lambda$mouseReleased$2(mouseX, mouseY, button, p0));
          this.translator.mouseReleased(mouseX, mouseY, button);
          return super.mouseReleased(mouseX, mouseY, button);
       }
@@ -441,7 +441,7 @@ public class PVEScreen extends Screen implements MinecraftAccess {
    }
 
    public boolean mouseScrolled(double mouseX, double mouseY, double h, double v) {
-      this.list.forEach(PVEScreen::lambda$mouseScrolled$3);
+      this.list.forEach((p0) -> PVEScreen.lambda$mouseScrolled$3(mouseX, mouseY, h, v, p0));
       this.translator.handleDouble(mouseX, mouseY, h, v);
       return super.mouseScrolled(mouseX, mouseY, h, v);
    }

@@ -57,7 +57,7 @@ public class NeuroCommand extends Command {
       } else {
          this.handleString("§a[Neuro] §7Список моделей:");
 
-         for (StrokesHelper var5 : var3) {
+         for (StrokesHelper var5 : (Iterable<StrokesHelper>)(Iterable)var3) {
             boolean var6 = var5 == nm.getStrokesHelper();
             String var7 = var5.mvijuk < 0.0 ? "§cне обучена" : "§aобучена §7(loss §f" + String.format("%.5f", var5.mvijuk) + "§7)";
             String var8 = var6 ? "§a▶ " : "§7  ";

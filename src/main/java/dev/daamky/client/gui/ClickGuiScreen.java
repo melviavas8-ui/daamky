@@ -400,7 +400,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
          float var27 = cy + var23;
          float var28 = cy + var23 + ch;
 
-         for (ModuleRow var30 : var16) {
+         for (ModuleRow var30 : (Iterable<ModuleRow>)(Iterable)var16) {
             float var31 = var30.getNext();
             var30.setX(cx + var34);
             var30.setY(var26);
@@ -418,7 +418,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
 
          float var36 = cy + var34;
 
-         for (ModuleRow var39 : var17) {
+         for (ModuleRow var39 : (Iterable<ModuleRow>)(Iterable)var17) {
             float var41 = var39.getNext();
             var39.setX(cx + var34 + var15 + var14);
             var39.setY(var36);
@@ -434,7 +434,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
             var36 += var41 + computeFloat(10.0F);
          }
 
-         for (ModuleRow.DropdownOverlay var40 : var25) {
+         for (ModuleRow.DropdownOverlay var40 : (Iterable<ModuleRow.DropdownOverlay>)(Iterable)var25) {
             ModuleRow.initInit(ctx, ms, mx, (int)((float)my + var23), var40);
          }
 
@@ -732,7 +732,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
                   if (var61 != null) {
                      float var63 = (float)this.animatedValue3.getValue();
 
-                     for (ModuleRow var67 : var61) {
+                     for (ModuleRow var67 : (Iterable<ModuleRow>)(Iterable)var61) {
                         if (var67.computeMin(mx, my + (double)var63, button)) {
                            return true;
                         }
@@ -751,7 +751,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
       if (var6 != null) {
          float var7 = (float)this.animatedValue3.getValue();
 
-         for (ModuleRow var9 : var6) {
+         for (ModuleRow var9 : (Iterable<ModuleRow>)(Iterable)var6) {
             var9.computeFlag(mx, my + (double)var7, button);
          }
       }
@@ -816,7 +816,7 @@ public class ClickGuiScreen extends Screen implements MinecraftAccess {
       } else {
          List var4 = this.map.get(this.string);
          if (var4 != null) {
-            for (ModuleRow var6 : var4) {
+            for (ModuleRow var6 : (Iterable<ModuleRow>)(Iterable)var4) {
                if (var6.computeBind(keyCode, scanCode, modifiers)) {
                   return true;
                }

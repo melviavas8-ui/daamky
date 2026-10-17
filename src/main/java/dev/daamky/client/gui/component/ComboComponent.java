@@ -51,7 +51,7 @@ public class ComboComponent extends Component<String> {
    }
 
    public ComboComponent onAction(Runnable action) {
-      return (ComboComponent)super.withOnAction(this::lambda$onAction$0);
+      return (ComboComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public ComboComponent computeVisible(Runnable action) {

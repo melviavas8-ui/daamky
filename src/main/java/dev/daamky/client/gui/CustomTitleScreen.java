@@ -122,7 +122,7 @@ public class CustomTitleScreen extends Screen {
          this.mhadcu.handleStart(0.0);
          this.animatedValue4.handleStart(0.0);
          this.float11 = 0.0F;
-         this.longVal = 0L;
+         this.timeStamp = 0L;
          this.long3 = 0L;
          this.maiab = false;
       }

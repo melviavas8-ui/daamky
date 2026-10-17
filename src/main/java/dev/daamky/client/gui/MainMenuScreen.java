@@ -520,7 +520,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
    }
 
    public float smooth(String key, float target) {
-      float[] var3 = this.smoothVals.computeIfAbsent(key, MainMenuScreen::lambda$smooth$1);
+      float[] var3 = this.smoothVals.computeIfAbsent(key, (p0) -> MainMenuScreen.lambda$smooth$1(target, p0));
       var3[0] += (target - var3[0]) * 0.3F;
       return var3[0];
    }
@@ -559,7 +559,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
          float var4 = 0.0F;
          float var5 = 0.0F;
 
-         for (CheckComponent var7 : var3) {
+         for (CheckComponent var7 : (Iterable<CheckComponent>)(Iterable)var3) {
             String var8 = EngHelper.computeString(var7.getName());
             float var9 = IconFontRegistry.fontRegistry3.computeDelegate(var8, this.computeFont(8.5F)) + 12.0F * this.U;
             if (var4 + var9 > width && var4 > 0.0F) {
@@ -1363,7 +1363,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
 
          float var207 = var135 + 3.0F * this.U;
 
-         for (Module var139 : var128) {
+         for (Module var139 : (Iterable<Module>)(Iterable)var128) {
             boolean var140 = MaxMinHelper.computeFlag(
                (float)this.lastMouseX, (float)this.lastMouseY, var134 + 4.0F * this.U, var207, var131 - 8.0F * this.U, var132
             );
@@ -2488,7 +2488,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
             GlyphMap.computeRound2(C_DIM, ga)
          );
       } else {
-         for (String var38 : var36) {
+         for (String var38 : (Iterable<String>)(Iterable)var36) {
             float var39 = 36.0F * this.U;
             float var40 = var35;
             var35 += var39 + 6.0F * this.U;
@@ -4077,7 +4077,7 @@ public class MainMenuScreen extends Screen implements RenderAccess {
                      if (MaxMinHelper.computeFlag(var12, var13, var43, var50, var41, var48)) {
                         float var106 = var50 + 3.0F * this.U;
 
-                        for (Module var115 : var45) {
+                        for (Module var115 : (Iterable<Module>)(Iterable)var45) {
                            if (MaxMinHelper.computeFlag(var12, var13, var49 + 4.0F * this.U, var106, var46 - 8.0F * this.U, var47) && button == 0) {
                               currentView = MainMenuScreen.ViewMode.MODULES;
                               this.active = var115.getCategory();

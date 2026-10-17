@@ -341,4 +341,9 @@ public class Translator extends Widget implements MinecraftAccess {
    public static Translator getInstance() {
       return translator;
    }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.handleEnabled(context, mouseX, mouseY, delta);
+   }
 }

@@ -84,7 +84,7 @@ public class FontLoader {
             Map var7 = var1.getGlyphs().stream().collect(Collectors.toMap(AtlasDataHelper.GlyphData::getUnicode, FontLoader::lambda$load$1));
             HashMap var8 = new HashMap();
             if (var1.getKernings() != null) {
-               var1.getKernings().forEach(FontLoader::lambda$load$2);
+               var1.getKernings().forEach((p0) -> FontLoader.lambda$load$2(var8, p0));
             }
 
             return new ClientFont(this.name, var13, var1.getAtlas(), var1.getMetrics(), var7, var8);

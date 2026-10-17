@@ -34,7 +34,7 @@ public class SliderComponent extends Component<Float> {
    }
 
    public SliderComponent onAction(Runnable action) {
-      return (SliderComponent)super.withOnAction(this::lambda$onAction$0);
+      return (SliderComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public SliderComponent computeVisible(Runnable action) {

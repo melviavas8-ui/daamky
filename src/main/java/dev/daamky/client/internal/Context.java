@@ -70,4 +70,9 @@ public class Context extends Widget {
    public AnimatedValue getAnimatedValue2() {
       return this.animatedValue2;
    }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.handleTheme(context, mouseX, mouseY, delta);
+   }
 }

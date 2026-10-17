@@ -31,7 +31,7 @@ public class TextFieldComponent extends Component<String> {
    }
 
    public TextFieldComponent onAction(Runnable action) {
-      return (TextFieldComponent)super.withOnAction(this::lambda$onAction$0);
+      return (TextFieldComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public TextFieldComponent computeVisible(Runnable action) {

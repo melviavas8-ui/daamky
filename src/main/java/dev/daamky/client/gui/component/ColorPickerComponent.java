@@ -33,7 +33,7 @@ public class ColorPickerComponent extends Component<Integer> {
    }
 
    public ColorPickerComponent onAction(Runnable action) {
-      return (ColorPickerComponent)super.withOnAction(this::lambda$onAction$0);
+      return (ColorPickerComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public ColorPickerComponent computeVisible(Runnable action) {

@@ -79,7 +79,7 @@ public class AutoBuy extends Module {
    }
 
    public void cancelAll(String tag) {
-      this.list.removeIf(AutoBuy::lambda$cancelAll$0);
+      this.list.removeIf((p0) -> AutoBuy.lambda$cancelAll$0(tag, p0));
    }
 
    public void runNext() {

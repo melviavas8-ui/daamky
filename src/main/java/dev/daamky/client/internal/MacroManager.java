@@ -24,12 +24,12 @@ public class MacroManager implements MinecraftAccess {
    }
 
    public void remove(String name) {
-      this.list.removeIf(MacroManager::lambda$remove$0);
+      this.list.removeIf((p0) -> MacroManager.lambda$remove$0(name, p0));
       this.run2();
    }
 
    public boolean has(String name) {
-      return this.list.stream().anyMatch(MacroManager::lambda$has$1);
+      return this.list.stream().anyMatch((p0) -> MacroManager.lambda$has$1(name, p0));
    }
 
    public void runClear() {
@@ -39,7 +39,7 @@ public class MacroManager implements MinecraftAccess {
 
    public void onKeyPressed(int key) {
       if (mc.player != null) {
-         this.list.stream().filter(MacroManager::lambda$onKeyPressed$2).findFirst().ifPresent(MacroManager::lambda$onKeyPressed$3);
+         this.list.stream().filter((p0) -> MacroManager.lambda$onKeyPressed$2(key, p0)).findFirst().ifPresent(MacroManager::lambda$onKeyPressed$3);
       }
    }
 

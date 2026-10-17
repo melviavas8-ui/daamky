@@ -37,7 +37,7 @@ public class CheckComponent extends Component<Boolean> {
    }
 
    public CheckComponent onAction(Runnable action) {
-      return (CheckComponent)super.withOnAction(this::lambda$onAction$0);
+      return (CheckComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public CheckComponent computeVisible(Runnable action) {

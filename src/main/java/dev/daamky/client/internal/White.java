@@ -349,4 +349,9 @@ public class White extends Widget {
 
    private static record ThemeBound(float x, float y, float width, float height, ColorTheme.ElementColor elementColor) {
    }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.initNext(context, mouseX, mouseY, delta);
+   }
 }

@@ -161,7 +161,7 @@ public class ClickGui extends Widget {
 
    @Override
    public void keyPressed(int keyCode, int scanCode, int modifiers) {
-      this.list.forEach(ClickGui::lambda$keyPressed$0);
+      this.list.forEach((p0) -> ClickGui.lambda$keyPressed$0(keyCode, scanCode, modifiers, p0));
    }
 
    @Override
@@ -198,7 +198,7 @@ public class ClickGui extends Widget {
 
    @Override
    public void mouseReleased(double mouseX, double mouseY, int button) {
-      this.list.forEach(ClickGui::lambda$mouseReleased$1);
+      this.list.forEach((p0) -> ClickGui.lambda$mouseReleased$1(mouseX, mouseY, button, p0));
    }
 
    @Override
@@ -344,5 +344,10 @@ public class ClickGui extends Widget {
 
    public static void lambda$keyPressed$0(int keyCode, int scanCode, int modifiers, Binding module) {
       module.keyPressed(keyCode, scanCode, modifiers);
+   }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.handleNext(context, mouseX, mouseY, delta);
    }
 }

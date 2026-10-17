@@ -30,7 +30,7 @@ public class ManagedShader {
 
    public ManagedShader(Identifier id, VertexFormat vertexFormat, DrawMode drawMode, int uniformBlockSize) {
       this.class_10156 = new ShaderProgramKey(id.withPrefixedPath("core/"), vertexFormat, Defines.EMPTY);
-      list.add(this::lambda$new$0);
+      list.add(() -> this.lambda$new$0(id));
    }
 
    public void runAccent() {
@@ -233,6 +233,10 @@ public class ManagedShader {
             this.y = y;
          }
 
+         @Override
+         public void handleVal(ManagedShader shader) {
+         } // STUB (body lost by decompiler)
+
       }
 
       private static class Vec4Entry implements ManagedShader.CustomUniforms.UniformEntry {
@@ -249,6 +253,10 @@ public class ManagedShader {
             this.z = z;
             this.w = w;
          }
+
+         @Override
+         public void handleVal(ManagedShader shader) {
+         } // STUB (body lost by decompiler)
 
       }
    }

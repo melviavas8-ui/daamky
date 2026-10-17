@@ -108,7 +108,7 @@ public class AltsJsonHelper {
 
    public void addAlt(AltsJsonHelper.AltAccount alt) {
       if (alt != null && alt.name != null) {
-         if (this.alts.stream().noneMatch(AltsJsonHelper::lambda$addAlt$1)) {
+         if (this.alts.stream().noneMatch((p0) -> AltsJsonHelper.lambda$addAlt$1(alt, p0))) {
             alt.addAnim = new AnimatedValue();
             alt.addAnim.handleStart(0.0);
             this.alts.add(alt);
@@ -138,7 +138,7 @@ public class AltsJsonHelper {
    public void loadSkinAsync(AltsJsonHelper.AltAccount alt) {
       if (alt != null && !alt.skinLoading && alt.skinTexturesSupplier == null) {
          alt.skinLoading = true;
-         CompletableFuture.runAsync(AltsJsonHelper::lambda$loadSkinAsync$2);
+         CompletableFuture.runAsync(() -> AltsJsonHelper.lambda$loadSkinAsync$2(alt));
       }
    }
 

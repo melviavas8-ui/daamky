@@ -272,7 +272,7 @@ public class NotificationManager extends HudElement {
 
       long var62 = System.currentTimeMillis();
       synchronized (list) {
-         list.removeIf(this::lambda$render$0);
+         list.removeIf((p0) -> this.lambda$render$0(var62, p0));
       }
 
       if (list.isEmpty()) {
@@ -507,7 +507,7 @@ public class NotificationManager extends HudElement {
          List var3 = this.initInit();
          float var4 = 0.0F;
 
-         for (NotificationManager.TextSpan var6 : var3) {
+         for (NotificationManager.TextSpan var6 : (Iterable<NotificationManager.TextSpan>)(Iterable)var3) {
             var4 += font.computeFloat(var6.text, fontSize);
          }
 

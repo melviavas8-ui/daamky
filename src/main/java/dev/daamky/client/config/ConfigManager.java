@@ -94,7 +94,7 @@ public class ConfigManager {
       List var2 = ModuleRegistry.getInstance().getList();
       JsonObject var3 = new JsonObject();
 
-      for (Module var5 : var2) {
+      for (Module var5 : (Iterable<Module>)(Iterable)var2) {
          var3.add(var5.getName(), this.createConfigFromModule(var5));
       }
 
@@ -203,7 +203,7 @@ public class ConfigManager {
       var2.addProperty("bind", feature.getBind());
       var2.addProperty("bindHold", feature.isBindHold());
       JsonObject var3 = new JsonObject();
-      feature.getSettings().forEach(this::lambda$createConfigFromModule$4);
+      feature.getSettings().forEach((p0) -> this.lambda$createConfigFromModule$4(var3, p0));
       var2.add("settings", var3);
       return var2;
    }
@@ -223,7 +223,7 @@ public class ConfigManager {
 
       if (json.has("settings")) {
          JsonObject var3 = json.getAsJsonObject("settings");
-         feature.getSettings().forEach(this::lambda$applyConfigToModule$5);
+         feature.getSettings().forEach((p0) -> this.lambda$applyConfigToModule$5(var3, p0));
       }
    }
 
@@ -243,7 +243,7 @@ public class ConfigManager {
       } else if (s instanceof MultiBooleanSetting var5) {
          JsonObject var6 = new JsonObject();
          if (var5.getValue() != null) {
-            var5.getValue().forEach(ConfigManager::lambda$serializeSetting$6);
+            var5.getValue().forEach((p0) -> ConfigManager.lambda$serializeSetting$6(var6, p0));
          }
 
          return var6;
@@ -280,7 +280,7 @@ public class ConfigManager {
             } else if (s instanceof MultiBooleanSetting var3) {
                JsonObject var4 = e.getAsJsonObject();
                if (var3.getValue() != null) {
-                  var3.getValue().forEach(ConfigManager::lambda$deserializeSetting$7);
+                  var3.getValue().forEach((p0) -> ConfigManager.lambda$deserializeSetting$7(var4, p0));
                }
             } else if (s instanceof ColorSetting var10) {
                JsonObject var11 = e.getAsJsonObject();
@@ -334,7 +334,7 @@ public class ConfigManager {
    }
 
    public void lambda$loadFromJson$3(Entry entry) {
-      Module var2 = ModuleRegistry.getInstance().getList().stream().filter(ConfigManager::lambda$loadFromJson$2).findFirst().orElse(null);
+      Module var2 = ModuleRegistry.getInstance().getList().stream().filter((p0) -> ConfigManager.lambda$loadFromJson$2(entry, p0)).findFirst().orElse(null);
       if (var2 == null) {
          System.err.println("Module not found for config: " + (String)entry.getKey());
       } else {

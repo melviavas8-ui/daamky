@@ -59,7 +59,7 @@ public class StaffHud extends HudElement {
          var5.flag = false;
       }
 
-      for (StaffHud.Staff var40 : var3) {
+      for (StaffHud.Staff var40 : (Iterable<StaffHud.Staff>)(Iterable)var3) {
          StaffHud.Entry var6 = this.linkedHashMap.computeIfAbsent(var40.n(), StaffHud::lambda$render$0);
          var6.intVal = var40.c();
          var6.flag = true;

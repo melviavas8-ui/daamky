@@ -133,7 +133,7 @@ public class ThemeConfigManager {
          Files.createDirectories(THEME_DIR);
 
          try (DirectoryStream var1 = Files.newDirectoryStream(THEME_DIR, "*.json")) {
-            for (Path var3 : var1) {
+            for (Path var3 : (Iterable<Path>)(Iterable)var1) {
                ArraycopyHelper var4 = this.initInit(var3);
                if (var4 != null && !this.nameExists(var4.name, null)) {
                   this.themes.add(var4);
@@ -145,7 +145,7 @@ public class ThemeConfigManager {
       }
 
       String var8 = this.getACTIVE_FILE();
-      this.active = this.themes.stream().filter(ThemeConfigManager::lambda$load$0).findFirst().orElse(this.themes.get(0));
+      this.active = this.themes.stream().filter((p0) -> ThemeConfigManager.lambda$load$0(var8, p0)).findFirst().orElse(this.themes.get(0));
    }
 
    public void initAdd(ArraycopyHelper theme) {
@@ -261,7 +261,7 @@ public class ThemeConfigManager {
    }
 
    public boolean nameExists(String name, ArraycopyHelper exclude) {
-      return this.themes.stream().anyMatch(ThemeConfigManager::lambda$nameExists$1);
+      return this.themes.stream().anyMatch((p0) -> ThemeConfigManager.lambda$nameExists$1(exclude, name, p0));
    }
 
    public static String computeString(int i) {

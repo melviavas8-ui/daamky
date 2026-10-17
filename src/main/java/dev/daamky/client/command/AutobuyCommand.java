@@ -107,7 +107,7 @@ public class AutobuyCommand extends Command {
    }
 
    public static CompletableFuture lambda$execute$19(CommandContext ctx, SuggestionsBuilder b) throws CommandSyntaxException {
-      ConfigStore.list().forEach(AutobuyCommand::lambda$execute$18);
+      ConfigStore.list().forEach((p0) -> AutobuyCommand.lambda$execute$18(b, p0));
       return b.buildFuture();
    }
 
@@ -122,7 +122,7 @@ public class AutobuyCommand extends Command {
    }
 
    public static CompletableFuture lambda$execute$16(CommandContext ctx, SuggestionsBuilder b) throws CommandSyntaxException {
-      ConfigStore.list().forEach(AutobuyCommand::lambda$execute$15);
+      ConfigStore.list().forEach((p0) -> AutobuyCommand.lambda$execute$15(b, p0));
       return b.buildFuture();
    }
 

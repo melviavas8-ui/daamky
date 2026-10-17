@@ -59,7 +59,7 @@ public class Binding extends ExpandableSettingComponent3 {
    public static final long long2 = 800L;
 
    public void runCurrent() {
-      this.longVal = System.currentTimeMillis();
+      this.timeStamp = System.currentTimeMillis();
    }
 
    public Binding(Module feature) {
@@ -424,7 +424,7 @@ public class Binding extends ExpandableSettingComponent3 {
       }
 
       long var5;
-      if ((var5 = System.currentTimeMillis() - this.longVal) >= 0L && var5 < 800L) {
+      if ((var5 = System.currentTimeMillis() - this.timeStamp) >= 0L && var5 < 800L) {
          float var75 = (float)var5 / 800.0F;
          float var78 = var75 < 0.5F ? 2.0F * var75 * var75 : 1.0F - (float)Math.pow((double)(-2.0F * var75 + 2.0F), 2.0) / 2.0F;
          float var81 = InterfaceMetrics.computeFloat(3.5F);
@@ -557,7 +557,7 @@ public class Binding extends ExpandableSettingComponent3 {
       }
 
       if (!this.check()) {
-         this.list.forEach(Binding::lambda$keyPressed$0);
+         this.list.forEach((p0) -> Binding.lambda$keyPressed$0(keyCode, scanCode, modifiers, p0));
       }
    }
 
@@ -669,7 +669,7 @@ public class Binding extends ExpandableSettingComponent3 {
             }
 
             if (!this.check()) {
-               this.list.forEach(Binding::lambda$mouseClicked$1);
+               this.list.forEach((p0) -> Binding.lambda$mouseClicked$1(mouseX, mouseY, button, p0));
             }
          }
       }
@@ -678,7 +678,7 @@ public class Binding extends ExpandableSettingComponent3 {
    @Override
    public void mouseReleased(double mouseX, double mouseY, int button) {
       if (!this.check()) {
-         this.list.forEach(Binding::lambda$mouseReleased$2);
+         this.list.forEach((p0) -> Binding.lambda$mouseReleased$2(mouseX, mouseY, button, p0));
       }
    }
 
@@ -806,7 +806,7 @@ public class Binding extends ExpandableSettingComponent3 {
    }
 
    public long getLong() {
-      return this.longVal;
+      return this.timeStamp;
    }
 
    public int getCase() {
@@ -843,5 +843,10 @@ public class Binding extends ExpandableSettingComponent3 {
       if ((double)s.clamp() > 0.1) {
          s.keyPressed(keyCode, scanCode, modifiers);
       }
+   }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.initInit(context, mouseX, mouseY, delta);
    }
 }

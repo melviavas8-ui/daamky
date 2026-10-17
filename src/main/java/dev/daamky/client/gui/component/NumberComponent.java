@@ -46,7 +46,7 @@ public class NumberComponent extends Component<Integer> {
    }
 
    public NumberComponent onAction(Runnable action) {
-      return (NumberComponent)super.withOnAction(this::lambda$onAction$0);
+      return (NumberComponent)super.withOnAction(() -> this.lambda$onAction$0(action));
    }
 
    public NumberComponent computeVisible(Runnable action) {

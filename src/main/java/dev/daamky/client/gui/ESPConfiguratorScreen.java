@@ -357,7 +357,7 @@ public class ESPConfiguratorScreen extends Screen {
          float var22 = (bodyW - var30) / 2.0F;
          float[] var23 = new float[]{bodyY - this.momevou + var17, bodyY - this.momevou + var17};
 
-         for (ESPConfiguratorScreen.EspItem var25 : var19) {
+         for (ESPConfiguratorScreen.EspItem var25 : (Iterable<ESPConfiguratorScreen.EspItem>)(Iterable)var19) {
             float var26 = this.computeNext(var25, var22, u);
             int var27 = var23[0] <= var23[1] ? 0 : 1;
             float var28 = bodyX + (float)var27 * (var22 + var30);
@@ -581,7 +581,7 @@ public class ESPConfiguratorScreen extends Screen {
                float var145 = Math.max(0.8F, 0.75F * u);
                boolean var149 = MainMenuScreen.computeFlag(accent);
 
-               for (String var157 : var120) {
+               for (String var157 : (Iterable<String>)(Iterable)var120) {
                   String var161 = EngHelper.computeString(var157);
                   float var164 = fontBody.computeDelegate(var161, 6.4F * u) + 10.0F * u;
                   boolean var167 = var157.equalsIgnoreCase(var69.getValue());
@@ -859,7 +859,7 @@ public class ESPConfiguratorScreen extends Screen {
                float var28 = (var23 - var40) / 2.0F;
                float[] var29 = new float[]{var39 - this.momevou, var39 - this.momevou};
 
-               for (ESPConfiguratorScreen.EspItem var31 : var26) {
+               for (ESPConfiguratorScreen.EspItem var31 : (Iterable<ESPConfiguratorScreen.EspItem>)(Iterable)var26) {
                   float var32 = this.computeNext(var31, var28, var6);
                   int var33 = var29[0] <= var29[1] ? 0 : 1;
                   float var34 = var38 + (float)var33 * (var28 + var40);

@@ -22,7 +22,7 @@ public class MotionConfig7 extends LegacySetting {
    public float float2;
    public boolean flag = false;
    public long timeStamp = ThreadLocalRandom.current().nextLong(1000L, 2001L);
-   public long momott = System.currentTimeMillis() + this.longVal;
+   public long momott = System.currentTimeMillis() + this.timeStamp;
    public int intVal = 0;
    public int int2 = 1;
    public float float3 = 0.0F;
@@ -56,24 +56,119 @@ public class MotionConfig7 extends LegacySetting {
          return (float)(Math.sin((double)t / 90.0) * 16.0);
       }
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.JitterPreset() {
+      @Override
+      public float computeSin(long t) { return 0.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float computeCos(long t) { return 0.0F; } // STUB (lost by decompiler)
    }};
    public final MotionConfig7.SpeedPreset[] speedPresetList = new MotionConfig7.SpeedPreset[]{new MotionConfig7.SpeedPreset() {
       @Override
@@ -86,24 +181,119 @@ public class MotionConfig7 extends LegacySetting {
          return 12.0F;
       }
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }, new MotionConfig7.SpeedPreset() {
+      @Override
+      public float getFloat() { return 40.0F; } // STUB (lost by decompiler)
+
+      @Override
+      public float getFloat2() { return 40.0F; } // STUB (lost by decompiler)
    }};
 
    public MotionConfig7() {
@@ -196,13 +386,13 @@ public class MotionConfig7 extends LegacySetting {
                   this.int2 = ThreadLocalRandom.current().nextInt(this.jitterPresetList.length);
                }
 
-               this.longVal = ThreadLocalRandom.current().nextLong(1000L, 2001L);
-               this.momott = var54 + this.longVal;
+               this.timeStamp = ThreadLocalRandom.current().nextLong(1000L, 2001L);
+               this.momott = var54 + this.timeStamp;
             }
 
             MotionConfig7.JitterPreset var21 = this.jitterPresetList[this.intVal];
             MotionConfig7.JitterPreset var22 = this.jitterPresetList[this.int2];
-            float var23 = 1.0F - (float)(this.momott - var54) / (float)this.longVal;
+            float var23 = 1.0F - (float)(this.momott - var54) / (float)this.timeStamp;
             var23 = MathHelper.clamp(var23, 0.0F, 1.0F);
             var23 = var23 * var23 * (3.0F - 2.0F * var23);
             var23 = var23 * var23 * (3.0F - 2.0F * var23);

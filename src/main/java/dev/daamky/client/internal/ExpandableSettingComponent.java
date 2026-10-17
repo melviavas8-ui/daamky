@@ -298,4 +298,9 @@ public class ExpandableSettingComponent extends ExpandableSettingComponent3.Expa
    @Override
    public void handleDouble(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
    }
+
+   @Override
+   public void handleVal(DrawContext context, int mouseX, int mouseY, float delta) {
+      this.initSetting(context, mouseX, mouseY, delta);
+   }
 }
